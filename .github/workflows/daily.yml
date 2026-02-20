@@ -1,0 +1,52 @@
+name: Daily Claude Notice Update
+
+on:
+  schedule:
+    # 每天北京时间 08:00（UTC 00:00）自动运行
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+    # 支持手动触发（GitHub Actions 页面点按钮）
+
+jobs:
+  update:
+    # 关键：runs-on: self-hosted 表示在你的 Mac 本地执行
+    runs-on: self-hosted
+
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+        with:
+          # 使用 deploy key 以便后面能 push
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 设置 Python 环境
+        run: |
+          python3 -m pip install -q -r requirements.txt
+
+      - name: 安装 Playwright 浏览器（首次运行）
+        run: |
+          python3 -m playwright install chromium --with-deps 2>/dev/null || true
+
+      - name: 运行爬虫 + 处理 + 生成网站
+        env:
+          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+          REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python3 main.py all
+
+      - name: 提交并推送更新
+        run: |
+          git config user.name  "ClaudeNotice Bot"
+          git config user.email "bot@claudenotice.local"
+          git add site/ data/processed/ data/seen_ids.json
+          git diff --cached --quiet || git commit -m "chore: daily update $(date -u +%Y-%m-%d)"
+          git push origin main
+
+      - name: 部署到 GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
+          publish_branch: gh-pages
+          commit_message: "deploy: $(date -u +%Y-%m-%d)"

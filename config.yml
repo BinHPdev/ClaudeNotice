@@ -1,0 +1,199 @@
+# ClaudeNotice 配置文件
+# 修改此文件来控制数据源、抓取行为和网站展示
+
+# ────────────────────────────────────────
+# X (Twitter) 监控账号
+# ────────────────────────────────────────
+twitter:
+  accounts:
+    # Anthropic 官方
+    - AnthropicAI
+    - alexalbert__
+    - AmandaAskell
+    - DarioAmodei
+    # 高影响力开发者/研究者
+    - karpathy
+    - simonw
+    - swyx
+    - leeerob
+    - gergelyorosz
+    - GregBrockman
+    - sama
+    - ylecun
+    - srush_nlp
+  keywords:
+    - "claude code"
+    - "claude-code"
+    - "claudecode"
+    - "anthropic claude"
+  max_tweets_per_account: 20
+  # 使用 nitter 镜像列表（按优先级）
+  nitter_instances:
+    - https://nitter.poast.org
+    - https://nitter.privacydev.net
+    - https://nitter.1d4.us
+
+# ────────────────────────────────────────
+# GitHub 数据源
+# ────────────────────────────────────────
+github:
+  topics:
+    - claude-code
+    - claude-cli
+    - anthropic
+    - claude-ai
+  search_queries:
+    - "claude code workflow"
+    - "CLAUDE.md best practices"
+    - "anthropic claude productivity"
+  trending: true
+  min_stars: 10
+
+# ────────────────────────────────────────
+# Reddit 监控
+# ────────────────────────────────────────
+reddit:
+  subreddits:
+    - ClaudeAI
+    - LocalLLaMA
+    - MachineLearning
+    - programming
+    - artificial
+  keywords:
+    - "claude code"
+    - "claude-code"
+    - "anthropic"
+  min_score: 20
+  post_limit: 50
+  # Reddit API 凭据（需要在 https://www.reddit.com/prefs/apps 创建应用）
+  client_id: "${REDDIT_CLIENT_ID}"
+  client_secret: "${REDDIT_CLIENT_SECRET}"
+  user_agent: "ClaudeNotice/1.0"
+
+# ────────────────────────────────────────
+# Hacker News
+# ────────────────────────────────────────
+hackernews:
+  keywords:
+    - "claude"
+    - "claude code"
+    - "anthropic"
+    - "claude-code"
+  min_points: 30
+  stories_limit: 100
+
+# ────────────────────────────────────────
+# RSS 源 — 英文
+# ────────────────────────────────────────
+rss_feeds:
+  official:
+    - name: "Anthropic Blog"
+      url: "https://www.anthropic.com/news"
+      type: "html"  # 需要 HTML 解析
+    - name: "Anthropic Research"
+      url: "https://www.anthropic.com/research"
+      type: "html"
+
+  tech_news:
+    - name: "TechCrunch AI"
+      url: "https://techcrunch.com/tag/anthropic/feed/"
+    - name: "VentureBeat AI"
+      url: "https://venturebeat.com/category/ai/feed/"
+    - name: "The Verge AI"
+      url: "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml"
+    - name: "Wired AI"
+      url: "https://www.wired.com/feed/tag/ai/latest/rss"
+
+  high_quality_blogs:
+    - name: "Simon Willison's Weblog"
+      url: "https://simonwillison.net/atom/everything/"
+    - name: "Interconnects (Nathan Lambert)"
+      url: "https://www.interconnects.ai/feed"
+    - name: "Latent Space"
+      url: "https://www.latent.space/feed"
+    - name: "AI News (Buttondown)"
+      url: "https://buttondown.com/ainews/rss"
+    - name: "Lilian Weng Blog"
+      url: "https://lilianweng.github.io/index.xml"
+    - name: "Eugene Yan"
+      url: "https://eugeneyan.com/rss.xml"
+
+  developer_blogs:
+    - name: "dev.to #claudecode"
+      url: "https://dev.to/feed/tag/claudecode"
+    - name: "dev.to #anthropic"
+      url: "https://dev.to/feed/tag/anthropic"
+
+# ────────────────────────────────────────
+# 中文源
+# ────────────────────────────────────────
+chinese_sources:
+  rss:
+    - name: "少数派 AI"
+      url: "https://sspai.com/tag/AI/feed"
+    - name: "InfoQ AI"
+      url: "https://www.infoq.cn/feed?channel=ai"
+
+  crawl:
+    - name: "V2EX Claude"
+      url: "https://www.v2ex.com/go/claude"
+      type: "v2ex"
+    - name: "掘金 Claude"
+      url: "https://juejin.cn/tag/Claude"
+      type: "juejin"
+
+  keywords:
+    - "Claude Code"
+    - "claude code"
+    - "Anthropic"
+    - "AI编程助手"
+    - "Claude 使用技巧"
+
+# ────────────────────────────────────────
+# YouTube
+# ────────────────────────────────────────
+youtube:
+  channels:
+    - name: "Anthropic"
+      channel_id: "UCln4b2ZqzKLJAfZiMrsgEMw"
+    - name: "AI Explained"
+      channel_id: "UCNJ1Ymd5yFuUPtn21xtRbbw"
+    - name: "Fireship"
+      channel_id: "UCsBjURrPoezykLs9EqgamOA"
+  keywords:
+    - "claude code tutorial"
+    - "anthropic claude"
+  rss_template: "https://www.youtube.com/feeds/videos.xml?channel_id={channel_id}"
+
+# ────────────────────────────────────────
+# 内容处理
+# ────────────────────────────────────────
+processing:
+  # 前沿区：多少天内的内容
+  frontier_days: 7
+  # 最低质量分（0-10）才展示
+  min_quality_score: 5.0
+  # Claude CLI 处理并发数
+  claude_concurrency: 3
+  # 每次最多处理条数（控制 CLI 调用次数）
+  max_items_per_run: 100
+  # 语言：zh=输出中文摘要, en=英文, both=双语
+  summary_language: "zh"
+
+# ────────────────────────────────────────
+# 网站配置
+# ────────────────────────────────────────
+site:
+  title: "ClaudeNotice"
+  description: "Claude Code 最新资讯与最佳实践聚合"
+  base_url: "https://YOUR_GITHUB_USERNAME.github.io/ClaudeNotice"
+  items_per_page: 30
+  # 标签分类
+  tags:
+    - CLAUDE.md
+    - workflow
+    - 提效技巧
+    - 新功能
+    - 最佳实践
+    - 工具集成
+    - 案例分享

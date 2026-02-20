@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# 数据（原始数据不提交，处理后的提交）
+data/raw/
+
+# 本地配置
+.env
+*.env.local
+
+# 系统
+.DS_Store
+Thumbs.db
+
+# Playwright
+.playwright/

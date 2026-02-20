@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ site_title }} — Claude Code 资讯聚合</title>
+  <meta name="description" content="{{ site_description }}" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: { 50:'#fdf4ff', 100:'#fae8ff', 500:'#a855f7', 600:'#9333ea', 700:'#7e22ce' },
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* 平滑过渡 */
+    .card { transition: box-shadow .15s, transform .15s; }
+    .card:hover { box-shadow: 0 4px 20px rgba(168,85,247,.15); transform: translateY(-1px); }
+    /* 标签 pill */
+    .tag-pill { cursor: pointer; transition: background .1s; }
+    .tag-pill.active { background: #7e22ce; color: white; }
+    /* 来源徽章 */
+    .source-badge { font-size: .7rem; letter-spacing: .03em; }
+    /* 分隔线标题 */
+    .section-divider { display: flex; align-items: center; gap: .75rem; }
+    .section-divider::after { content:''; flex:1; height:1px; background: currentColor; opacity:.15; }
+    /* 评分条 */
+    .score-bar { height: 3px; border-radius: 99px; background: linear-gradient(90deg,#a855f7,#ec4899); }
+  </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-950 text-gray-800 dark:text-gray-200 min-h-screen">
+
+<!-- ── 顶部导航 ─────────────────────────────── -->
+<header class="sticky top-0 z-40 bg-white/80 dark:bg-gray-900/80 backdrop-blur border-b border-gray-200 dark:border-gray-800">
+  <div class="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between gap-4">
+    <div class="flex items-center gap-2 font-bold text-lg tracking-tight">
+      <span class="text-brand-600">⚡</span>
+      <span>{{ site_title }}</span>
+      <span class="hidden sm:inline text-xs font-normal text-gray-400 ml-1">Claude Code 资讯聚合</span>
+    </div>
+    <div class="flex items-center gap-3 text-sm text-gray-500 dark:text-gray-400">
+      <span class="hidden md:inline">更新于 {{ updated_at_zh }}</span>
+      <span class="inline-flex items-center gap-1 bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-2 py-0.5 rounded-full text-xs font-medium">
+        ● 每日更新
+      </span>
+      <button onclick="toggleDark()" class="p-1.5 rounded hover:bg-gray-100 dark:hover:bg-gray-800" title="切换暗色模式">
+        <svg id="icon-sun" class="w-4 h-4 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m8.66-9h-1M4.34 12h-1m15.07-6.07-.7.7M6.34 17.66l-.7.7m12.02 0-.7-.7M6.34 6.34l-.7-.7M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg>
+        <svg id="icon-moon" class="w-4 h-4 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ── 主内容 ──────────────────────────────── -->
+<main class="max-w-5xl mx-auto px-4 py-8">
+
+  <!-- 今日摘要 -->
+  {% if daily_summary %}
+  <div class="mb-8 p-4 bg-brand-50 dark:bg-brand-700/10 border border-brand-100 dark:border-brand-700/30 rounded-xl">
+    <div class="flex items-start gap-3">
+      <span class="text-2xl mt-0.5">📋</span>
+      <div>
+        <div class="font-semibold text-brand-700 dark:text-brand-300 mb-1 text-sm">今日速览</div>
+        <p class="text-sm leading-relaxed text-gray-700 dark:text-gray-300">{{ daily_summary }}</p>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- 统计栏 -->
+  <div class="grid grid-cols-3 gap-3 mb-8">
+    <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-gray-100 dark:border-gray-800 text-center">
+      <div class="text-2xl font-bold text-brand-600">{{ total_count }}</div>
+      <div class="text-xs text-gray-500 mt-0.5">今日收录</div>
+    </div>
+    <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-gray-100 dark:border-gray-800 text-center">
+      <div class="text-2xl font-bold text-orange-500">{{ frontier_count }}</div>
+      <div class="text-xs text-gray-500 mt-0.5">前沿速递</div>
+    </div>
+    <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-gray-100 dark:border-gray-800 text-center">
+      <div class="text-2xl font-bold text-blue-500">{{ stable_count }}</div>
+      <div class="text-xs text-gray-500 mt-0.5">成熟实践</div>
+    </div>
+  </div>
+
+  <!-- 标签筛选 -->
+  {% if all_tags %}
+  <div class="flex flex-wrap gap-2 mb-8" id="tag-filter">
+    <button onclick="filterTag('all')" class="tag-pill active px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="all">
+      全部
+    </button>
+    {% for tag in all_tags %}
+    <button onclick="filterTag('{{ tag }}')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="{{ tag }}">
+      #{{ tag }}
+    </button>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <!-- ── 前沿速递 ─────────────────── -->
+  {% if frontier_articles %}
+  <section class="mb-10" id="section-frontier">
+    <h2 class="section-divider text-base font-bold text-orange-500 mb-5">
+      <span>🚀 前沿速递</span>
+      <span class="text-xs font-normal text-gray-400">7天内最新动态</span>
+    </h2>
+    <div class="space-y-3" id="frontier-list">
+      {% for article in frontier_articles %}
+      {{ render_card(article) }}
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- ── 成熟实践 ─────────────────── -->
+  {% if stable_articles %}
+  <section id="section-stable">
+    <h2 class="section-divider text-base font-bold text-blue-500 mb-5">
+      <span>📚 成熟实践</span>
+      <span class="text-xs font-normal text-gray-400">经验证的最佳方法</span>
+    </h2>
+    <div class="space-y-3" id="stable-list">
+      {% for article in stable_articles %}
+      {{ render_card(article) }}
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+</main>
+
+<!-- ── 卡片宏 ───────────────────────────────── -->
+{% macro render_card(article) %}
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-700"
+         data-tags="{{ article.tags | join(' ') }}">
+  <div class="flex items-start gap-3">
+    <!-- 来源图标 -->
+    <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700">
+      {{ article.source | source_icon }}
+    </div>
+
+    <div class="flex-1 min-w-0">
+      <!-- 标题 -->
+      <a href="{{ article.url }}" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug">
+        {{ article.title }}
+      </a>
+
+      <!-- 摘要（如果有）-->
+      {% if article.summary_zh %}
+      <p class="mt-1.5 text-sm text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
+        {{ article.summary_zh }}
+      </p>
+      {% endif %}
+
+      <!-- 底部元数据 -->
+      <div class="mt-2.5 flex flex-wrap items-center gap-x-3 gap-y-1.5">
+        <!-- 来源 -->
+        <span class="source-badge inline-flex items-center gap-1 text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          {{ article.source }}
+        </span>
+
+        <!-- 作者 -->
+        {% if article.author %}
+        <span class="text-xs text-gray-400">· {{ article.author }}</span>
+        {% endif %}
+
+        <!-- 时间 -->
+        {% if article.published_at %}
+        <span class="text-xs text-gray-400">{{ article.published_at | timeago }}</span>
+        {% endif %}
+
+        <!-- 互动数 -->
+        {% if article.score > 0 %}
+        <span class="text-xs text-gray-400">
+          {% if article.source_type == 'community' %}▲{% else %}★{% endif %}
+          {{ article.score }}
+        </span>
+        {% endif %}
+
+        <!-- 标签 -->
+        {% for tag in article.tags[:3] %}
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-brand-50 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300">
+          #{{ tag }}
+        </span>
+        {% endfor %}
+
+        <!-- 质量评分条 -->
+        {% if article.quality_score > 0 %}
+        <div class="ml-auto flex items-center gap-1.5">
+          <div class="w-12 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:{{ (article.quality_score * 10) | int }}%"></div>
+          </div>
+          <span class="text-xs text-gray-400">{{ "%.1f"|format(article.quality_score) }}</span>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</article>
+{% endmacro %}
+
+<!-- ── 页脚 ───────────────────────────────── -->
+<footer class="border-t border-gray-200 dark:border-gray-800 mt-16 py-8 text-center text-sm text-gray-400">
+  <p>{{ site_title }} · 数据来自公开平台 · 每日自动更新</p>
+  <p class="mt-1">由 <a href="https://claude.ai/claude-code" class="text-brand-500 hover:underline">Claude Code</a> 驱动</p>
+</footer>
+
+<script>
+// ── 暗色模式 ──
+function toggleDark() {
+  document.documentElement.classList.toggle('dark');
+  localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+}
+(function() {
+  const saved = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  if (saved === 'dark' || (!saved && prefersDark)) {
+    document.documentElement.classList.add('dark');
+  }
+})();
+
+// ── 标签筛选 ──
+function filterTag(tag) {
+  // 更新按钮状态
+  document.querySelectorAll('.tag-pill').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.tag === tag);
+  });
+
+  // 过滤卡片
+  document.querySelectorAll('article[data-tags]').forEach(card => {
+    if (tag === 'all') {
+      card.style.display = '';
+    } else {
+      const tags = card.dataset.tags || '';
+      card.style.display = tags.includes(tag) ? '' : 'none';
+    }
+  });
+
+  // 如果 section 全部隐藏，隐藏 section 标题
+  ['frontier-list', 'stable-list'].forEach(id => {
+    const list = document.getElementById(id);
+    if (!list) return;
+    const section = list.closest('section');
+    if (!section) return;
+    const visible = [...list.querySelectorAll('article')].some(c => c.style.display !== 'none');
+    section.style.display = visible ? '' : 'none';
+  });
+}
+</script>
+</body>
+</html>
