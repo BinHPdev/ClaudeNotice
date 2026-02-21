@@ -23,10 +23,6 @@ jobs:
         run: |
           python3 -m pip install -q -r requirements.txt
 
-      - name: 安装 Playwright 浏览器（首次运行）
-        run: |
-          python3 -m playwright install chromium --with-deps 2>/dev/null || true
-
       - name: 运行爬虫 + 处理 + 生成网站
         env:
           REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
