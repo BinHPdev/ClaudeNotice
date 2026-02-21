@@ -11,6 +11,9 @@ jobs:
   update:
     # 关键：runs-on: self-hosted 表示在你的 Mac 本地执行
     runs-on: self-hosted
+    permissions:
+      contents: write
+      pages: write
 
     steps:
       - name: 检出代码
