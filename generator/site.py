@@ -8,7 +8,7 @@ from scrapers.base import Article
 
 
 TEMPLATE_DIR = Path("generator/templates")
-SITE_DIR = Path("site")
+SITE_DIR = Path("docs")
 
 
 class SiteGenerator:

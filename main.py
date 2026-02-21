@@ -95,7 +95,7 @@ def cmd_generate(config: dict, articles=None, summary: str = ""):
             summary = summary_path.read_text(encoding="utf-8") if summary_path.exists() else ""
 
     gen.generate(articles, daily_summary=summary)
-    console.print("\n[bold green]✓ 网站生成完成[/] → site/index.html")
+    console.print("\n[bold green]✓ 网站生成完成[/] → docs/index.html")
 
 
 def cmd_serve():
@@ -105,7 +105,7 @@ def cmd_serve():
     import webbrowser
     import os
 
-    os.chdir("site")
+    os.chdir("docs")
     port = 8080
     console.print(f"\n[bold]本地预览: http://localhost:{port}[/]")
     console.print("按 Ctrl+C 停止\n")

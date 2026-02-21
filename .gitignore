@@ -8,6 +8,8 @@ venv/
 # 数据（原始数据不提交，处理后的提交）
 data/raw/
 
+# docs/ 是生成的网站，正常提交（GitHub Pages 需要）
+
 # 本地配置
 .env
 *.env.local
