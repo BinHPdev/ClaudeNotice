@@ -12,7 +12,7 @@
 set -e
 
 # ── 配置区（修改这里）───────────────────────
-GITHUB_REPO="https://github.com/YOUR_USERNAME/ClaudeNotice"
+GITHUB_REPO="https://github.com/BinHPdev/ClaudeNotice"
 RUNNER_TOKEN="YOUR_RUNNER_TOKEN_FROM_GITHUB"
 RUNNER_NAME="my-mac-runner"
 RUNNER_DIR="$HOME/actions-runner"

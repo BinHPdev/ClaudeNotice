@@ -1,0 +1,2000 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ClaudeNotice — Claude Code 资讯聚合</title>
+  <meta name="description" content="Claude Code 最新资讯与最佳实践聚合" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: { 50:'#fdf4ff', 100:'#fae8ff', 500:'#a855f7', 600:'#9333ea', 700:'#7e22ce' },
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* 平滑过渡 */
+    .card { transition: box-shadow .15s, transform .15s; }
+    .card:hover { box-shadow: 0 4px 20px rgba(168,85,247,.15); transform: translateY(-1px); }
+    /* 标签 pill */
+    .tag-pill { cursor: pointer; transition: background .1s; }
+    .tag-pill.active { background: #7e22ce; color: white; }
+    /* 来源徽章 */
+    .source-badge { font-size: .7rem; letter-spacing: .03em; }
+    /* 分隔线标题 */
+    .section-divider { display: flex; align-items: center; gap: .75rem; }
+    .section-divider::after { content:''; flex:1; height:1px; background: currentColor; opacity:.15; }
+    /* 评分条 */
+    .score-bar { height: 3px; border-radius: 99px; background: linear-gradient(90deg,#a855f7,#ec4899); }
+  </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-950 text-gray-800 dark:text-gray-200 min-h-screen">
+
+<!-- ── 顶部导航 ─────────────────────────────── -->
+<header class="sticky top-0 z-40 bg-white/80 dark:bg-gray-900/80 backdrop-blur border-b border-gray-200 dark:border-gray-800">
+  <div class="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between gap-4">
+    <div class="flex items-center gap-2 font-bold text-lg tracking-tight">
+      <span class="text-brand-600">⚡</span>
+      <span>ClaudeNotice</span>
+      <span class="hidden sm:inline text-xs font-normal text-gray-400 ml-1">Claude Code 资讯聚合</span>
+    </div>
+    <div class="flex items-center gap-3 text-sm text-gray-500 dark:text-gray-400">
+      <span class="hidden md:inline">更新于 2026年02月21日 01:00</span>
+      <span class="inline-flex items-center gap-1 bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-2 py-0.5 rounded-full text-xs font-medium">
+        ● 每日更新
+      </span>
+      <button onclick="toggleDark()" class="p-1.5 rounded hover:bg-gray-100 dark:hover:bg-gray-800" title="切换暗色模式">
+        <svg id="icon-sun" class="w-4 h-4 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m8.66-9h-1M4.34 12h-1m15.07-6.07-.7.7M6.34 17.66l-.7.7m12.02 0-.7-.7M6.34 6.34l-.7-.7M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg>
+        <svg id="icon-moon" class="w-4 h-4 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ── 卡片宏（必须在使用前定义）─────────── -->
+
+
+<!-- ── 主内容 ──────────────────────────────── -->
+<main class="max-w-5xl mx-auto px-4 py-8">
+
+  <!-- 今日摘要 -->
+  
+  <div class="mb-8 p-4 bg-brand-50 dark:bg-brand-700/10 border border-brand-100 dark:border-brand-700/30 rounded-xl">
+    <div class="flex items-start gap-3">
+      <span class="text-2xl mt-0.5">📋</span>
+      <div>
+        <div class="font-semibold text-brand-700 dark:text-brand-300 mb-1 text-sm">今日速览</div>
+        <p class="text-sm leading-relaxed text-gray-700 dark:text-gray-300">测试模式 — 实时 HN + GitHub 数据，正式运行时 Claude CLI 将生成中文摘要和精准分类。</p>
+      </div>
+    </div>
+  </div>
+  
+
+  <!-- 统计栏 -->
+  <div class="grid grid-cols-3 gap-3 mb-8">
+    <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-gray-100 dark:border-gray-800 text-center">
+      <div class="text-2xl font-bold text-brand-600">30</div>
+      <div class="text-xs text-gray-500 mt-0.5">今日收录</div>
+    </div>
+    <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-gray-100 dark:border-gray-800 text-center">
+      <div class="text-2xl font-bold text-orange-500">11</div>
+      <div class="text-xs text-gray-500 mt-0.5">前沿速递</div>
+    </div>
+    <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-gray-100 dark:border-gray-800 text-center">
+      <div class="text-2xl font-bold text-blue-500">19</div>
+      <div class="text-xs text-gray-500 mt-0.5">成熟实践</div>
+    </div>
+  </div>
+
+  <!-- 标签筛选 -->
+  
+  <div class="flex flex-wrap gap-2 mb-8" id="tag-filter">
+    <button onclick="filterTag('all')" class="tag-pill active px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="all">
+      全部
+    </button>
+    
+    <button onclick="filterTag('actions')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="actions">
+      #actions
+    </button>
+    
+    <button onclick="filterTag('agentic-ai')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="agentic-ai">
+      #agentic-ai
+    </button>
+    
+    <button onclick="filterTag('agents')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="agents">
+      #agents
+    </button>
+    
+    <button onclick="filterTag('ai')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="ai">
+      #ai
+    </button>
+    
+    <button onclick="filterTag('ai-agent')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="ai-agent">
+      #ai-agent
+    </button>
+    
+    <button onclick="filterTag('ai-agent-tools')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="ai-agent-tools">
+      #ai-agent-tools
+    </button>
+    
+    <button onclick="filterTag('ai-agents')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="ai-agents">
+      #ai-agents
+    </button>
+    
+    <button onclick="filterTag('ai-coding')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="ai-coding">
+      #ai-coding
+    </button>
+    
+    <button onclick="filterTag('ai-coding-assistant')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="ai-coding-assistant">
+      #ai-coding-assistant
+    </button>
+    
+    <button onclick="filterTag('amp')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="amp">
+      #amp
+    </button>
+    
+    <button onclick="filterTag('anamolyco')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="anamolyco">
+      #anamolyco
+    </button>
+    
+    <button onclick="filterTag('anthropic')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="anthropic">
+      #anthropic
+    </button>
+    
+    <button onclick="filterTag('artificial-analysis')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="artificial-analysis">
+      #artificial-analysis
+    </button>
+    
+    <button onclick="filterTag('automation')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="automation">
+      #automation
+    </button>
+    
+    <button onclick="filterTag('autonomous-programming')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="autonomous-programming">
+      #autonomous-programming
+    </button>
+    
+    <button onclick="filterTag('benchmarks')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="benchmarks">
+      #benchmarks
+    </button>
+    
+    <button onclick="filterTag('bun')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="bun">
+      #bun
+    </button>
+    
+    <button onclick="filterTag('cai')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="cai">
+      #cai
+    </button>
+    
+    <button onclick="filterTag('cc')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="cc">
+      #cc
+    </button>
+    
+    <button onclick="filterTag('cc-proxy')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="cc-proxy">
+      #cc-proxy
+    </button>
+    
+    <button onclick="filterTag('ci')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="ci">
+      #ci
+    </button>
+    
+    <button onclick="filterTag('claude')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="claude">
+      #claude
+    </button>
+    
+    <button onclick="filterTag('claude-ai')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="claude-ai">
+      #claude-ai
+    </button>
+    
+    <button onclick="filterTag('claude-api')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="claude-api">
+      #claude-api
+    </button>
+    
+    <button onclick="filterTag('claude-code')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="claude-code">
+      #claude-code
+    </button>
+    
+    <button onclick="filterTag('claude-code-communication')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="claude-code-communication">
+      #claude-code-communication
+    </button>
+    
+    <button onclick="filterTag('claude-code-guide')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="claude-code-guide">
+      #claude-code-guide
+    </button>
+    
+    <button onclick="filterTag('claude-code-plugins')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="claude-code-plugins">
+      #claude-code-plugins
+    </button>
+    
+    <button onclick="filterTag('claude-code-typescript')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="claude-code-typescript">
+      #claude-code-typescript
+    </button>
+    
+    <button onclick="filterTag('claude-commands')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="claude-commands">
+      #claude-commands
+    </button>
+    
+    <button onclick="filterTag('claude-desktop')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="claude-desktop">
+      #claude-desktop
+    </button>
+    
+    <button onclick="filterTag('claude-marketplace')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="claude-marketplace">
+      #claude-marketplace
+    </button>
+    
+    <button onclick="filterTag('claude-mcp')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="claude-mcp">
+      #claude-mcp
+    </button>
+    
+    <button onclick="filterTag('claude-sonnet')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="claude-sonnet">
+      #claude-sonnet
+    </button>
+    
+    <button onclick="filterTag('claude-sonnet-4')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="claude-sonnet-4">
+      #claude-sonnet-4
+    </button>
+    
+    <button onclick="filterTag('cli')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="cli">
+      #cli
+    </button>
+    
+    <button onclick="filterTag('cli-tool')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="cli-tool">
+      #cli-tool
+    </button>
+    
+    <button onclick="filterTag('code')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="code">
+      #code
+    </button>
+    
+    <button onclick="filterTag('code-assistant')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="code-assistant">
+      #code-assistant
+    </button>
+    
+    <button onclick="filterTag('code-review')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="code-review">
+      #code-review
+    </button>
+    
+    <button onclick="filterTag('codex')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="codex">
+      #codex
+    </button>
+    
+    <button onclick="filterTag('codex-plugin')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="codex-plugin">
+      #codex-plugin
+    </button>
+    
+    <button onclick="filterTag('coding-agents')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="coding-agents">
+      #coding-agents
+    </button>
+    
+    <button onclick="filterTag('codingagents')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="codingagents">
+      #codingagents
+    </button>
+    
+    <button onclick="filterTag('containerization')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="containerization">
+      #containerization
+    </button>
+    
+    <button onclick="filterTag('context-engineering')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="context-engineering">
+      #context-engineering
+    </button>
+    
+    <button onclick="filterTag('copilot')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="copilot">
+      #copilot
+    </button>
+    
+    <button onclick="filterTag('cursor')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="cursor">
+      #cursor
+    </button>
+    
+    <button onclick="filterTag('developer-tools')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="developer-tools">
+      #developer-tools
+    </button>
+    
+    <button onclick="filterTag('devops')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="devops">
+      #devops
+    </button>
+    
+    <button onclick="filterTag('devtools')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="devtools">
+      #devtools
+    </button>
+    
+    <button onclick="filterTag('docker')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="docker">
+      #docker
+    </button>
+    
+    <button onclick="filterTag('gemini')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="gemini">
+      #gemini
+    </button>
+    
+    <button onclick="filterTag('gemini-cli')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="gemini-cli">
+      #gemini-cli
+    </button>
+    
+    <button onclick="filterTag('generative-ai')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="generative-ai">
+      #generative-ai
+    </button>
+    
+    <button onclick="filterTag('gh-extension')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="gh-extension">
+      #gh-extension
+    </button>
+    
+    <button onclick="filterTag('ghostty')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="ghostty">
+      #ghostty
+    </button>
+    
+    <button onclick="filterTag('github-actions')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="github-actions">
+      #github-actions
+    </button>
+    
+    <button onclick="filterTag('gitworktrees')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="gitworktrees">
+      #gitworktrees
+    </button>
+    
+    <button onclick="filterTag('jira')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="jira">
+      #jira
+    </button>
+    
+    <button onclick="filterTag('linear')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="linear">
+      #linear
+    </button>
+    
+    <button onclick="filterTag('llm')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="llm">
+      #llm
+    </button>
+    
+    <button onclick="filterTag('mcp')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="mcp">
+      #mcp
+    </button>
+    
+    <button onclick="filterTag('mcp-agents')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="mcp-agents">
+      #mcp-agents
+    </button>
+    
+    <button onclick="filterTag('mcp-tools')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="mcp-tools">
+      #mcp-tools
+    </button>
+    
+    <button onclick="filterTag('models')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="models">
+      #models
+    </button>
+    
+    <button onclick="filterTag('news-aggregator')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="news-aggregator">
+      #news-aggregator
+    </button>
+    
+    <button onclick="filterTag('nodejs')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="nodejs">
+      #nodejs
+    </button>
+    
+    <button onclick="filterTag('npx')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="npx">
+      #npx
+    </button>
+    
+    <button onclick="filterTag('open-source')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="open-source">
+      #open-source
+    </button>
+    
+    <button onclick="filterTag('openai')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="openai">
+      #openai
+    </button>
+    
+    <button onclick="filterTag('opencode')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="opencode">
+      #opencode
+    </button>
+    
+    <button onclick="filterTag('opencode-plugin')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="opencode-plugin">
+      #opencode-plugin
+    </button>
+    
+    <button onclick="filterTag('opensource')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="opensource">
+      #opensource
+    </button>
+    
+    <button onclick="filterTag('orchestration')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="orchestration">
+      #orchestration
+    </button>
+    
+    <button onclick="filterTag('parallel-agents')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="parallel-agents">
+      #parallel-agents
+    </button>
+    
+    <button onclick="filterTag('parallelexecution')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="parallelexecution">
+      #parallelexecution
+    </button>
+    
+    <button onclick="filterTag('productivity')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="productivity">
+      #productivity
+    </button>
+    
+    <button onclick="filterTag('ratatui')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="ratatui">
+      #ratatui
+    </button>
+    
+    <button onclick="filterTag('react')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="react">
+      #react
+    </button>
+    
+    <button onclick="filterTag('rust')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="rust">
+      #rust
+    </button>
+    
+    <button onclick="filterTag('sst')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="sst">
+      #sst
+    </button>
+    
+    <button onclick="filterTag('sst-inspired')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="sst-inspired">
+      #sst-inspired
+    </button>
+    
+    <button onclick="filterTag('sub-agents')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="sub-agents">
+      #sub-agents
+    </button>
+    
+    <button onclick="filterTag('supabase')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="supabase">
+      #supabase
+    </button>
+    
+    <button onclick="filterTag('task-master')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="task-master">
+      #task-master
+    </button>
+    
+    <button onclick="filterTag('terminal')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="terminal">
+      #terminal
+    </button>
+    
+    <button onclick="filterTag('tmux')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="tmux">
+      #tmux
+    </button>
+    
+    <button onclick="filterTag('tui')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="tui">
+      #tui
+    </button>
+    
+    <button onclick="filterTag('typescript')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="typescript">
+      #typescript
+    </button>
+    
+    <button onclick="filterTag('vibe-coding')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="vibe-coding">
+      #vibe-coding
+    </button>
+    
+    <button onclick="filterTag('vscode-extension')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="vscode-extension">
+      #vscode-extension
+    </button>
+    
+    <button onclick="filterTag('web-interface')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="web-interface">
+      #web-interface
+    </button>
+    
+    <button onclick="filterTag('yolo')" class="tag-pill px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400" data-tag="yolo">
+      #yolo
+    </button>
+    
+  </div>
+  
+
+  <!-- ── 前沿速递 ─────────────────── -->
+  
+  <section class="mb-10" id="section-frontier">
+    <h2 class="section-divider text-base font-bold text-orange-500 mb-5">
+      <span>🚀 前沿速递</span>
+      <span class="text-xs font-normal text-gray-400">7天内最新动态</span>
+    </h2>
+    <div class="space-y-3" id="frontier-list">
+      
+      
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-700"
+         data-tags="">
+  <div class="flex items-start gap-3">
+    <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700">
+      Y
+    </div>
+    <div class="flex-1 min-w-0">
+      <a href="https://www.anthropic.com/news/claude-sonnet-4-6" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug">
+        Claude Sonnet 4.6
+      </a>
+      
+      <div class="mt-2.5 flex flex-wrap items-center gap-x-3 gap-y-1.5">
+        <span class="source-badge inline-flex items-center gap-1 text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          Hacker News
+        </span>
+        
+        <span class="text-xs text-gray-400">· adocomplete</span>
+        
+        
+        <span class="text-xs text-gray-400">3 天前</span>
+        
+        
+        <span class="text-xs text-gray-400">
+          ▲
+          1334
+        </span>
+        
+        
+        
+        <div class="ml-auto flex items-center gap-1.5">
+          <div class="w-12 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:76%"></div>
+          </div>
+          <span class="text-xs text-gray-400">7.7</span>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+      
+      
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-700"
+         data-tags="agents ai automation autonomous-programming bun cc cc-proxy claude claude-code context-engineering news-aggregator productivity react sub-agents supabase task-master typescript yolo">
+  <div class="flex items-start gap-3">
+    <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700">
+      ⑂
+    </div>
+    <div class="flex-1 min-w-0">
+      <a href="https://github.com/odahpen/claude-code-hub" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug">
+        [GitHub] odahpen/claude-code-hub — 🚀 Unify, manage, and optimize multiple AI service APIs with Claude Code Hub for seamless integration
+      </a>
+      
+      <div class="mt-2.5 flex flex-wrap items-center gap-x-3 gap-y-1.5">
+        <span class="source-badge inline-flex items-center gap-1 text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          GitHub
+        </span>
+        
+        <span class="text-xs text-gray-400">· odahpen</span>
+        
+        
+        <span class="text-xs text-gray-400">1 分钟前</span>
+        
+        
+        <span class="text-xs text-gray-400">
+          ▲
+          22
+        </span>
+        
+        
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-brand-50 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300">
+          #agents
+        </span>
+        
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-brand-50 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300">
+          #ai
+        </span>
+        
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-brand-50 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300">
+          #automation
+        </span>
+        
+        
+        <div class="ml-auto flex items-center gap-1.5">
+          <div class="w-12 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:50%"></div>
+          </div>
+          <span class="text-xs text-gray-400">5.0</span>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+      
+      
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-700"
+         data-tags="actions cai ci claude-code codex copilot gh-extension github-actions">
+  <div class="flex items-start gap-3">
+    <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700">
+      ⑂
+    </div>
+    <div class="flex-1 min-w-0">
+      <a href="https://github.com/github/gh-aw" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug">
+        [GitHub] github/gh-aw — GitHub Agentic Workflows
+      </a>
+      
+      <div class="mt-2.5 flex flex-wrap items-center gap-x-3 gap-y-1.5">
+        <span class="source-badge inline-flex items-center gap-1 text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          GitHub
+        </span>
+        
+        <span class="text-xs text-gray-400">· github</span>
+        
+        
+        <span class="text-xs text-gray-400">2 分钟前</span>
+        
+        
+        <span class="text-xs text-gray-400">
+          ▲
+          3341
+        </span>
+        
+        
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-brand-50 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300">
+          #actions
+        </span>
+        
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-brand-50 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300">
+          #cai
+        </span>
+        
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-brand-50 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300">
+          #ci
+        </span>
+        
+        
+        <div class="ml-auto flex items-center gap-1.5">
+          <div class="w-12 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:95%"></div>
+          </div>
+          <span class="text-xs text-gray-400">9.5</span>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+      
+      
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-700"
+         data-tags="ai-agents claude-code codex generative-ai opencode">
+  <div class="flex items-start gap-3">
+    <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700">
+      ⑂
+    </div>
+    <div class="flex-1 min-w-0">
+      <a href="https://github.com/RunMaestro/Maestro" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug">
+        [GitHub] RunMaestro/Maestro — Agent Orchestration Command Center
+      </a>
+      
+      <div class="mt-2.5 flex flex-wrap items-center gap-x-3 gap-y-1.5">
+        <span class="source-badge inline-flex items-center gap-1 text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          GitHub
+        </span>
+        
+        <span class="text-xs text-gray-400">· RunMaestro</span>
+        
+        
+        <span class="text-xs text-gray-400">3 分钟前</span>
+        
+        
+        <span class="text-xs text-gray-400">
+          ▲
+          2253
+        </span>
+        
+        
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-brand-50 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300">
+          #ai-agents
+        </span>
+        
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-brand-50 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300">
+          #claude-code
+        </span>
+        
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-brand-50 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300">
+          #codex
+        </span>
+        
+        
+        <div class="ml-auto flex items-center gap-1.5">
+          <div class="w-12 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:95%"></div>
+          </div>
+          <span class="text-xs text-gray-400">9.5</span>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+      
+      
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-700"
+         data-tags="amp claude-code codex gemini ghostty opencode terminal tmux">
+  <div class="flex items-start gap-3">
+    <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700">
+      ⑂
+    </div>
+    <div class="flex-1 min-w-0">
+      <a href="https://github.com/manaflow-ai/cmux" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug">
+        [GitHub] manaflow-ai/cmux — Ghostty-based macOS terminal with vertical tabs and notifications for AI coding agents
+      </a>
+      
+      <div class="mt-2.5 flex flex-wrap items-center gap-x-3 gap-y-1.5">
+        <span class="source-badge inline-flex items-center gap-1 text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          GitHub
+        </span>
+        
+        <span class="text-xs text-gray-400">· manaflow-ai</span>
+        
+        
+        <span class="text-xs text-gray-400">5 分钟前</span>
+        
+        
+        <span class="text-xs text-gray-400">
+          ▲
+          624
+        </span>
+        
+        
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-brand-50 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300">
+          #amp
+        </span>
+        
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-brand-50 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300">
+          #claude-code
+        </span>
+        
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-brand-50 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300">
+          #codex
+        </span>
+        
+        
+        <div class="ml-auto flex items-center gap-1.5">
+          <div class="w-12 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:62%"></div>
+          </div>
+          <span class="text-xs text-gray-400">6.2</span>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+      
+      
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-700"
+         data-tags="ai-agents ai-coding ai-coding-assistant anthropic automation claude-ai claude-code cli cli-tool code-assistant code-review developer-tools devtools llm nodejs npx open-source typescript">
+  <div class="flex items-start gap-3">
+    <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700">
+      ⑂
+    </div>
+    <div class="flex-1 min-w-0">
+      <a href="https://github.com/miounet11/ccjk" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug">
+        [GitHub] miounet11/ccjk — 🚀 CCJK In the realm of AI-assisted development, Context Engineering and Cognitive Load Management ar
+      </a>
+      
+      <div class="mt-2.5 flex flex-wrap items-center gap-x-3 gap-y-1.5">
+        <span class="source-badge inline-flex items-center gap-1 text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          GitHub
+        </span>
+        
+        <span class="text-xs text-gray-400">· miounet11</span>
+        
+        
+        <span class="text-xs text-gray-400">8 分钟前</span>
+        
+        
+        <span class="text-xs text-gray-400">
+          ▲
+          31
+        </span>
+        
+        
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-brand-50 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300">
+          #ai-agents
+        </span>
+        
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-brand-50 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300">
+          #ai-coding
+        </span>
+        
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-brand-50 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300">
+          #ai-coding-assistant
+        </span>
+        
+        
+        <div class="ml-auto flex items-center gap-1.5">
+          <div class="w-12 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:50%"></div>
+          </div>
+          <span class="text-xs text-gray-400">5.1</span>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+      
+      
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-700"
+         data-tags="ai-agents claude-code claude-code-plugins claude-marketplace codex codex-plugin cursor devops opencode-plugin vibe-coding">
+  <div class="flex items-start gap-3">
+    <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700">
+      ⑂
+    </div>
+    <div class="flex-1 min-w-0">
+      <a href="https://github.com/boshu2/agentops" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug">
+        [GitHub] boshu2/agentops — The missing DevOps layer for coding agents. Flow, feedback, and memory that compounds between sessio
+      </a>
+      
+      <div class="mt-2.5 flex flex-wrap items-center gap-x-3 gap-y-1.5">
+        <span class="source-badge inline-flex items-center gap-1 text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          GitHub
+        </span>
+        
+        <span class="text-xs text-gray-400">· boshu2</span>
+        
+        
+        <span class="text-xs text-gray-400">8 分钟前</span>
+        
+        
+        <span class="text-xs text-gray-400">
+          ▲
+          151
+        </span>
+        
+        
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-brand-50 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300">
+          #ai-agents
+        </span>
+        
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-brand-50 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300">
+          #claude-code
+        </span>
+        
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-brand-50 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300">
+          #claude-code-plugins
+        </span>
+        
+        
+        <div class="ml-auto flex items-center gap-1.5">
+          <div class="w-12 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:53%"></div>
+          </div>
+          <span class="text-xs text-gray-400">5.3</span>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+      
+      
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-700"
+         data-tags="ai anamolyco artificial-analysis benchmarks claude-code codex coding-agents gemini-cli llm models opencode ratatui rust sst sst-inspired tui">
+  <div class="flex items-start gap-3">
+    <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700">
+      ⑂
+    </div>
+    <div class="flex-1 min-w-0">
+      <a href="https://github.com/arimxyer/models" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug">
+        [GitHub] arimxyer/models — CLI and TUI for browsing AI models, benchmarks, and coding agents. Compare 2000+ models across 85+ p
+      </a>
+      
+      <div class="mt-2.5 flex flex-wrap items-center gap-x-3 gap-y-1.5">
+        <span class="source-badge inline-flex items-center gap-1 text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          GitHub
+        </span>
+        
+        <span class="text-xs text-gray-400">· arimxyer</span>
+        
+        
+        <span class="text-xs text-gray-400">9 分钟前</span>
+        
+        
+        <span class="text-xs text-gray-400">
+          ▲
+          63
+        </span>
+        
+        
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-brand-50 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300">
+          #ai
+        </span>
+        
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-brand-50 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300">
+          #anamolyco
+        </span>
+        
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-brand-50 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300">
+          #artificial-analysis
+        </span>
+        
+        
+        <div class="ml-auto flex items-center gap-1.5">
+          <div class="w-12 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:51%"></div>
+          </div>
+          <span class="text-xs text-gray-400">5.1</span>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+      
+      
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-700"
+         data-tags="ai ai-agent ai-agent-tools claude claude-ai claude-api claude-code claude-code-communication claude-code-guide claude-code-typescript claude-commands claude-desktop claude-mcp claude-sonnet claude-sonnet-4 code mcp mcp-agents mcp-tools vscode-extension">
+  <div class="flex items-start gap-3">
+    <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700">
+      ⑂
+    </div>
+    <div class="flex-1 min-w-0">
+      <a href="https://github.com/zebbern/claude-code-guide" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug">
+        [GitHub] zebbern/claude-code-guide — Claude Code Guide - Setup, Commands, workflows, agents, skills &amp; tips-n-tricks 
+      </a>
+      
+      <div class="mt-2.5 flex flex-wrap items-center gap-x-3 gap-y-1.5">
+        <span class="source-badge inline-flex items-center gap-1 text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          GitHub
+        </span>
+        
+        <span class="text-xs text-gray-400">· zebbern</span>
+        
+        
+        <span class="text-xs text-gray-400">12 分钟前</span>
+        
+        
+        <span class="text-xs text-gray-400">
+          ▲
+          3431
+        </span>
+        
+        
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-brand-50 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300">
+          #ai
+        </span>
+        
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-brand-50 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300">
+          #ai-agent
+        </span>
+        
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-brand-50 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300">
+          #ai-agent-tools
+        </span>
+        
+        
+        <div class="ml-auto flex items-center gap-1.5">
+          <div class="w-12 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:95%"></div>
+          </div>
+          <span class="text-xs text-gray-400">9.5</span>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+      
+      
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-700"
+         data-tags="agentic-ai claude claude-code web-interface">
+  <div class="flex items-start gap-3">
+    <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700">
+      ⑂
+    </div>
+    <div class="flex-1 min-w-0">
+      <a href="https://github.com/comfortablynumb/claudito" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug">
+        [GitHub] comfortablynumb/claudito — Claudito: A web interface for Claude Code that interacts with the CLI. Use it with your plan. No nee
+      </a>
+      
+      <div class="mt-2.5 flex flex-wrap items-center gap-x-3 gap-y-1.5">
+        <span class="source-badge inline-flex items-center gap-1 text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          GitHub
+        </span>
+        
+        <span class="text-xs text-gray-400">· comfortablynumb</span>
+        
+        
+        <span class="text-xs text-gray-400">14 分钟前</span>
+        
+        
+        <span class="text-xs text-gray-400">
+          ▲
+          22
+        </span>
+        
+        
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-brand-50 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300">
+          #agentic-ai
+        </span>
+        
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-brand-50 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300">
+          #claude
+        </span>
+        
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-brand-50 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300">
+          #claude-code
+        </span>
+        
+        
+        <div class="ml-auto flex items-center gap-1.5">
+          <div class="w-12 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:50%"></div>
+          </div>
+          <span class="text-xs text-gray-400">5.0</span>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+      
+      
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-700"
+         data-tags="ai claude-code cli coding-agents codingagents containerization docker gitworktrees jira linear llm openai opensource orchestration parallel-agents parallelexecution terminal">
+  <div class="flex items-start gap-3">
+    <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700">
+      ⑂
+    </div>
+    <div class="flex-1 min-w-0">
+      <a href="https://github.com/generalaction/emdash" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug">
+        [GitHub] generalaction/emdash — Emdash is the Open-Source Agentic Development Environment (🧡 YC W26). Run multiple coding agents in 
+      </a>
+      
+      <div class="mt-2.5 flex flex-wrap items-center gap-x-3 gap-y-1.5">
+        <span class="source-badge inline-flex items-center gap-1 text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          GitHub
+        </span>
+        
+        <span class="text-xs text-gray-400">· generalaction</span>
+        
+        
+        <span class="text-xs text-gray-400">16 分钟前</span>
+        
+        
+        <span class="text-xs text-gray-400">
+          ▲
+          1513
+        </span>
+        
+        
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-brand-50 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300">
+          #ai
+        </span>
+        
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-brand-50 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300">
+          #claude-code
+        </span>
+        
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-brand-50 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300">
+          #cli
+        </span>
+        
+        
+        <div class="ml-auto flex items-center gap-1.5">
+          <div class="w-12 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:80%"></div>
+          </div>
+          <span class="text-xs text-gray-400">8.0</span>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+      
+    </div>
+  </section>
+  
+
+  <!-- ── 成熟实践 ─────────────────── -->
+  
+  <section id="section-stable">
+    <h2 class="section-divider text-base font-bold text-blue-500 mb-5">
+      <span>📚 成熟实践</span>
+      <span class="text-xs font-normal text-gray-400">经验证的最佳方法</span>
+    </h2>
+    <div class="space-y-3" id="stable-list">
+      
+      
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-700"
+         data-tags="">
+  <div class="flex items-start gap-3">
+    <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700">
+      Y
+    </div>
+    <div class="flex-1 min-w-0">
+      <a href="https://www.anthropic.com/news/claude-opus-4-6" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug">
+        Claude Opus 4.6
+      </a>
+      
+      <div class="mt-2.5 flex flex-wrap items-center gap-x-3 gap-y-1.5">
+        <span class="source-badge inline-flex items-center gap-1 text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          Hacker News
+        </span>
+        
+        <span class="text-xs text-gray-400">· HellsMaddy</span>
+        
+        
+        <span class="text-xs text-gray-400">02月05日</span>
+        
+        
+        <span class="text-xs text-gray-400">
+          ▲
+          2346
+        </span>
+        
+        
+        
+        <div class="ml-auto flex items-center gap-1.5">
+          <div class="w-12 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:95%"></div>
+          </div>
+          <span class="text-xs text-gray-400">9.5</span>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+      
+      
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-700"
+         data-tags="">
+  <div class="flex items-start gap-3">
+    <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700">
+      Y
+    </div>
+    <div class="flex-1 min-w-0">
+      <a href="https://www.anthropic.com/news/claude-3-7-sonnet" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug">
+        Claude 3.7 Sonnet and Claude Code
+      </a>
+      
+      <div class="mt-2.5 flex flex-wrap items-center gap-x-3 gap-y-1.5">
+        <span class="source-badge inline-flex items-center gap-1 text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          Hacker News
+        </span>
+        
+        <span class="text-xs text-gray-400">· bakugo</span>
+        
+        
+        <span class="text-xs text-gray-400">02月24日</span>
+        
+        
+        <span class="text-xs text-gray-400">
+          ▲
+          2127
+        </span>
+        
+        
+        
+        <div class="ml-auto flex items-center gap-1.5">
+          <div class="w-12 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:92%"></div>
+          </div>
+          <span class="text-xs text-gray-400">9.3</span>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+      
+      
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-700"
+         data-tags="">
+  <div class="flex items-start gap-3">
+    <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700">
+      Y
+    </div>
+    <div class="flex-1 min-w-0">
+      <a href="https://www.anthropic.com/news/claude-4" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug">
+        Claude 4
+      </a>
+      
+      <div class="mt-2.5 flex flex-wrap items-center gap-x-3 gap-y-1.5">
+        <span class="source-badge inline-flex items-center gap-1 text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          Hacker News
+        </span>
+        
+        <span class="text-xs text-gray-400">· meetpateltech</span>
+        
+        
+        <span class="text-xs text-gray-400">05月22日</span>
+        
+        
+        <span class="text-xs text-gray-400">
+          ▲
+          2013
+        </span>
+        
+        
+        
+        <div class="ml-auto flex items-center gap-1.5">
+          <div class="w-12 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:90%"></div>
+          </div>
+          <span class="text-xs text-gray-400">9.0</span>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+      
+      
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-700"
+         data-tags="">
+  <div class="flex items-start gap-3">
+    <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700">
+      Y
+    </div>
+    <div class="flex-1 min-w-0">
+      <a href="https://www.anthropic.com/news/claude-sonnet-4-5" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug">
+        Claude Sonnet 4.5
+      </a>
+      
+      <div class="mt-2.5 flex flex-wrap items-center gap-x-3 gap-y-1.5">
+        <span class="source-badge inline-flex items-center gap-1 text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          Hacker News
+        </span>
+        
+        <span class="text-xs text-gray-400">· adocomplete</span>
+        
+        
+        <span class="text-xs text-gray-400">09月29日</span>
+        
+        
+        <span class="text-xs text-gray-400">
+          ▲
+          1585
+        </span>
+        
+        
+        
+        <div class="ml-auto flex items-center gap-1.5">
+          <div class="w-12 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:81%"></div>
+          </div>
+          <span class="text-xs text-gray-400">8.2</span>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+      
+      
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-700"
+         data-tags="">
+  <div class="flex items-start gap-3">
+    <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700">
+      Y
+    </div>
+    <div class="flex-1 min-w-0">
+      <a href="https://www.anthropic.com/news/3-5-models-and-computer-use" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug">
+        Computer use, a new Claude 3.5 Sonnet, and Claude 3.5 Haiku
+      </a>
+      
+      <div class="mt-2.5 flex flex-wrap items-center gap-x-3 gap-y-1.5">
+        <span class="source-badge inline-flex items-center gap-1 text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          Hacker News
+        </span>
+        
+        <span class="text-xs text-gray-400">· weirdcat</span>
+        
+        
+        <span class="text-xs text-gray-400">10月22日</span>
+        
+        
+        <span class="text-xs text-gray-400">
+          ▲
+          1454
+        </span>
+        
+        
+        
+        <div class="ml-auto flex items-center gap-1.5">
+          <div class="w-12 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:79%"></div>
+          </div>
+          <span class="text-xs text-gray-400">7.9</span>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+      
+      
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-700"
+         data-tags="">
+  <div class="flex items-start gap-3">
+    <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700">
+      Y
+    </div>
+    <div class="flex-1 min-w-0">
+      <a href="https://www.anthropic.com/news/1m-context" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug">
+        Claude Sonnet 4 now supports 1M tokens of context
+      </a>
+      
+      <div class="mt-2.5 flex flex-wrap items-center gap-x-3 gap-y-1.5">
+        <span class="source-badge inline-flex items-center gap-1 text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          Hacker News
+        </span>
+        
+        <span class="text-xs text-gray-400">· adocomplete</span>
+        
+        
+        <span class="text-xs text-gray-400">08月12日</span>
+        
+        
+        <span class="text-xs text-gray-400">
+          ▲
+          1324
+        </span>
+        
+        
+        
+        <div class="ml-auto flex items-center gap-1.5">
+          <div class="w-12 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:76%"></div>
+          </div>
+          <span class="text-xs text-gray-400">7.6</span>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+      
+      
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-700"
+         data-tags="">
+  <div class="flex items-start gap-3">
+    <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700">
+      Y
+    </div>
+    <div class="flex-1 min-w-0">
+      <a href="https://claude.com/blog/cowork-research-preview" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug">
+        Cowork: Claude Code for the rest of your work
+      </a>
+      
+      <div class="mt-2.5 flex flex-wrap items-center gap-x-3 gap-y-1.5">
+        <span class="source-badge inline-flex items-center gap-1 text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          Hacker News
+        </span>
+        
+        <span class="text-xs text-gray-400">· adocomplete</span>
+        
+        
+        <span class="text-xs text-gray-400">01月12日</span>
+        
+        
+        <span class="text-xs text-gray-400">
+          ▲
+          1298
+        </span>
+        
+        
+        
+        <div class="ml-auto flex items-center gap-1.5">
+          <div class="w-12 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:75%"></div>
+          </div>
+          <span class="text-xs text-gray-400">7.6</span>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+      
+      
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-700"
+         data-tags="">
+  <div class="flex items-start gap-3">
+    <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700">
+      Y
+    </div>
+    <div class="flex-1 min-w-0">
+      <a href="https://www.anthropic.com/news/web-search" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug">
+        Claude can now search the web
+      </a>
+      
+      <div class="mt-2.5 flex flex-wrap items-center gap-x-3 gap-y-1.5">
+        <span class="source-badge inline-flex items-center gap-1 text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          Hacker News
+        </span>
+        
+        <span class="text-xs text-gray-400">· meetpateltech</span>
+        
+        
+        <span class="text-xs text-gray-400">03月20日</span>
+        
+        
+        <span class="text-xs text-gray-400">
+          ▲
+          1233
+        </span>
+        
+        
+        
+        <div class="ml-auto flex items-center gap-1.5">
+          <div class="w-12 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:74%"></div>
+          </div>
+          <span class="text-xs text-gray-400">7.5</span>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+      
+      
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-700"
+         data-tags="">
+  <div class="flex items-start gap-3">
+    <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700">
+      Y
+    </div>
+    <div class="flex-1 min-w-0">
+      <a href="https://www.anthropic.com/news/claude-opus-4-5" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug">
+        Claude Opus 4.5
+      </a>
+      
+      <div class="mt-2.5 flex flex-wrap items-center gap-x-3 gap-y-1.5">
+        <span class="source-badge inline-flex items-center gap-1 text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          Hacker News
+        </span>
+        
+        <span class="text-xs text-gray-400">· adocomplete</span>
+        
+        
+        <span class="text-xs text-gray-400">11月24日</span>
+        
+        
+        <span class="text-xs text-gray-400">
+          ▲
+          1113
+        </span>
+        
+        
+        
+        <div class="ml-auto flex items-center gap-1.5">
+          <div class="w-12 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:72%"></div>
+          </div>
+          <span class="text-xs text-gray-400">7.2</span>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+      
+      
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-700"
+         data-tags="">
+  <div class="flex items-start gap-3">
+    <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700">
+      Y
+    </div>
+    <div class="flex-1 min-w-0">
+      <a href="https://symmetrybreak.ing/blog/claude-code-is-being-dumbed-down/" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug">
+        Claude Code is being dumbed down?
+      </a>
+      
+      <div class="mt-2.5 flex flex-wrap items-center gap-x-3 gap-y-1.5">
+        <span class="source-badge inline-flex items-center gap-1 text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          Hacker News
+        </span>
+        
+        <span class="text-xs text-gray-400">· WXLCKNO</span>
+        
+        
+        <span class="text-xs text-gray-400">02月11日</span>
+        
+        
+        <span class="text-xs text-gray-400">
+          ▲
+          1084
+        </span>
+        
+        
+        
+        <div class="ml-auto flex items-center gap-1.5">
+          <div class="w-12 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:71%"></div>
+          </div>
+          <span class="text-xs text-gray-400">7.2</span>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+      
+      
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-700"
+         data-tags="">
+  <div class="flex items-start gap-3">
+    <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700">
+      Y
+    </div>
+    <div class="flex-1 min-w-0">
+      <a href="https://www.anthropic.com/news/claude-3-family" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug">
+        Claude 3 model family
+      </a>
+      
+      <div class="mt-2.5 flex flex-wrap items-center gap-x-3 gap-y-1.5">
+        <span class="source-badge inline-flex items-center gap-1 text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          Hacker News
+        </span>
+        
+        <span class="text-xs text-gray-400">· marc__1</span>
+        
+        
+        <span class="text-xs text-gray-400">03月04日</span>
+        
+        
+        <span class="text-xs text-gray-400">
+          ▲
+          1016
+        </span>
+        
+        
+        
+        <div class="ml-auto flex items-center gap-1.5">
+          <div class="w-12 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:70%"></div>
+          </div>
+          <span class="text-xs text-gray-400">7.0</span>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+      
+      
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-700"
+         data-tags="">
+  <div class="flex items-start gap-3">
+    <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700">
+      Y
+    </div>
+    <div class="flex-1 min-w-0">
+      <a href="https://github.com/tonyyont/peon-ping" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug">
+        Warcraft III Peon Voice Notifications for Claude Code
+      </a>
+      
+      <div class="mt-2.5 flex flex-wrap items-center gap-x-3 gap-y-1.5">
+        <span class="source-badge inline-flex items-center gap-1 text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          Hacker News
+        </span>
+        
+        <span class="text-xs text-gray-400">· doppp</span>
+        
+        
+        <span class="text-xs text-gray-400">02月12日</span>
+        
+        
+        <span class="text-xs text-gray-400">
+          ▲
+          1006
+        </span>
+        
+        
+        
+        <div class="ml-auto flex items-center gap-1.5">
+          <div class="w-12 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:70%"></div>
+          </div>
+          <span class="text-xs text-gray-400">7.0</span>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+      
+      
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-700"
+         data-tags="">
+  <div class="flex items-start gap-3">
+    <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700">
+      Y
+    </div>
+    <div class="flex-1 min-w-0">
+      <a href="https://dmitrybrant.com/2025/09/07/using-claude-code-to-modernize-a-25-year-old-kernel-driver" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug">
+        Using Claude Code to modernize a 25-year-old kernel driver
+      </a>
+      
+      <div class="mt-2.5 flex flex-wrap items-center gap-x-3 gap-y-1.5">
+        <span class="source-badge inline-flex items-center gap-1 text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          Hacker News
+        </span>
+        
+        <span class="text-xs text-gray-400">· dmitrybrant</span>
+        
+        
+        <span class="text-xs text-gray-400">09月07日</span>
+        
+        
+        <span class="text-xs text-gray-400">
+          ▲
+          929
+        </span>
+        
+        
+        
+        <div class="ml-auto flex items-center gap-1.5">
+          <div class="w-12 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:68%"></div>
+          </div>
+          <span class="text-xs text-gray-400">6.9</span>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+      
+      
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-700"
+         data-tags="">
+  <div class="flex items-start gap-3">
+    <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700">
+      Y
+    </div>
+    <div class="flex-1 min-w-0">
+      <a href="https://twitter.com/karpathy/status/2015883857489522876" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug">
+        A few random notes from Claude coding quite a bit last few weeks
+      </a>
+      
+      <div class="mt-2.5 flex flex-wrap items-center gap-x-3 gap-y-1.5">
+        <span class="source-badge inline-flex items-center gap-1 text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          Hacker News
+        </span>
+        
+        <span class="text-xs text-gray-400">· bigwheels</span>
+        
+        
+        <span class="text-xs text-gray-400">01月26日</span>
+        
+        
+        <span class="text-xs text-gray-400">
+          ▲
+          913
+        </span>
+        
+        
+        
+        <div class="ml-auto flex items-center gap-1.5">
+          <div class="w-12 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:68%"></div>
+          </div>
+          <span class="text-xs text-gray-400">6.8</span>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+      
+      
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-700"
+         data-tags="">
+  <div class="flex items-start gap-3">
+    <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700">
+      Y
+    </div>
+    <div class="flex-1 min-w-0">
+      <a href="https://github.com/cloudflare/workers-oauth-provider/" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug">
+        Cloudlflare builds OAuth with Claude and publishes all the prompts
+      </a>
+      
+      <div class="mt-2.5 flex flex-wrap items-center gap-x-3 gap-y-1.5">
+        <span class="source-badge inline-flex items-center gap-1 text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          Hacker News
+        </span>
+        
+        <span class="text-xs text-gray-400">· gregorywegory</span>
+        
+        
+        <span class="text-xs text-gray-400">06月02日</span>
+        
+        
+        <span class="text-xs text-gray-400">
+          ▲
+          889
+        </span>
+        
+        
+        
+        <div class="ml-auto flex items-center gap-1.5">
+          <div class="w-12 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:67%"></div>
+          </div>
+          <span class="text-xs text-gray-400">6.8</span>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+      
+      
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-700"
+         data-tags="">
+  <div class="flex items-start gap-3">
+    <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700">
+      Y
+    </div>
+    <div class="flex-1 min-w-0">
+      <a href="https://www.promptarmor.com/resources/claude-cowork-exfiltrates-files" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug">
+        Claude Cowork exfiltrates files
+      </a>
+      
+      <div class="mt-2.5 flex flex-wrap items-center gap-x-3 gap-y-1.5">
+        <span class="source-badge inline-flex items-center gap-1 text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          Hacker News
+        </span>
+        
+        <span class="text-xs text-gray-400">· takira</span>
+        
+        
+        <span class="text-xs text-gray-400">01月14日</span>
+        
+        
+        <span class="text-xs text-gray-400">
+          ▲
+          870
+        </span>
+        
+        
+        
+        <div class="ml-auto flex items-center gap-1.5">
+          <div class="w-12 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:67%"></div>
+          </div>
+          <span class="text-xs text-gray-400">6.7</span>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+      
+      
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-700"
+         data-tags="">
+  <div class="flex items-start gap-3">
+    <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700">
+      Y
+    </div>
+    <div class="flex-1 min-w-0">
+      <a href="https://dwyer.co.za/static/claude-code-is-all-you-need.html" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug">
+        Claude Code is all you need
+      </a>
+      
+      <div class="mt-2.5 flex flex-wrap items-center gap-x-3 gap-y-1.5">
+        <span class="source-badge inline-flex items-center gap-1 text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          Hacker News
+        </span>
+        
+        <span class="text-xs text-gray-400">· sixhobbits</span>
+        
+        
+        <span class="text-xs text-gray-400">08月11日</span>
+        
+        
+        <span class="text-xs text-gray-400">
+          ▲
+          851
+        </span>
+        
+        
+        
+        <div class="ml-auto flex items-center gap-1.5">
+          <div class="w-12 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:67%"></div>
+          </div>
+          <span class="text-xs text-gray-400">6.7</span>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+      
+      
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-700"
+         data-tags="">
+  <div class="flex items-start gap-3">
+    <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700">
+      Y
+    </div>
+    <div class="flex-1 min-w-0">
+      <a href="https://www.npmjs.com/package/@anthropic-ai/claude-code" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug">
+        Claude Code 2.0
+      </a>
+      
+      <div class="mt-2.5 flex flex-wrap items-center gap-x-3 gap-y-1.5">
+        <span class="source-badge inline-flex items-center gap-1 text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          Hacker News
+        </span>
+        
+        <span class="text-xs text-gray-400">· polyrand</span>
+        
+        
+        <span class="text-xs text-gray-400">09月29日</span>
+        
+        
+        <span class="text-xs text-gray-400">
+          ▲
+          842
+        </span>
+        
+        
+        
+        <div class="ml-auto flex items-center gap-1.5">
+          <div class="w-12 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:66%"></div>
+          </div>
+          <span class="text-xs text-gray-400">6.7</span>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+      
+      
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-700"
+         data-tags="">
+  <div class="flex items-start gap-3">
+    <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700">
+      Y
+    </div>
+    <div class="flex-1 min-w-0">
+      <a href="https://www.anthropic.com/news/claude-opus-4-1" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug">
+        Claude Opus 4.1
+      </a>
+      
+      <div class="mt-2.5 flex flex-wrap items-center gap-x-3 gap-y-1.5">
+        <span class="source-badge inline-flex items-center gap-1 text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          Hacker News
+        </span>
+        
+        <span class="text-xs text-gray-400">· meetpateltech</span>
+        
+        
+        <span class="text-xs text-gray-400">08月05日</span>
+        
+        
+        <span class="text-xs text-gray-400">
+          ▲
+          841
+        </span>
+        
+        
+        
+        <div class="ml-auto flex items-center gap-1.5">
+          <div class="w-12 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:66%"></div>
+          </div>
+          <span class="text-xs text-gray-400">6.7</span>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+      
+    </div>
+  </section>
+  
+
+</main>
+
+
+<!-- ── 页脚 ───────────────────────────────── -->
+<footer class="border-t border-gray-200 dark:border-gray-800 mt-16 py-8 text-center text-sm text-gray-400">
+  <p>ClaudeNotice · 数据来自公开平台 · 每日自动更新</p>
+  <p class="mt-1">由 <a href="https://claude.ai/claude-code" class="text-brand-500 hover:underline">Claude Code</a> 驱动</p>
+</footer>
+
+<script>
+// ── 暗色模式 ──
+function toggleDark() {
+  document.documentElement.classList.toggle('dark');
+  localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+}
+(function() {
+  const saved = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  if (saved === 'dark' || (!saved && prefersDark)) {
+    document.documentElement.classList.add('dark');
+  }
+})();
+
+// ── 标签筛选 ──
+function filterTag(tag) {
+  // 更新按钮状态
+  document.querySelectorAll('.tag-pill').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.tag === tag);
+  });
+
+  // 过滤卡片
+  document.querySelectorAll('article[data-tags]').forEach(card => {
+    if (tag === 'all') {
+      card.style.display = '';
+    } else {
+      const tags = card.dataset.tags || '';
+      card.style.display = tags.includes(tag) ? '' : 'none';
+    }
+  });
+
+  // 如果 section 全部隐藏，隐藏 section 标题
+  ['frontier-list', 'stable-list'].forEach(id => {
+    const list = document.getElementById(id);
+    if (!list) return;
+    const section = list.closest('section');
+    if (!section) return;
+    const visible = [...list.querySelectorAll('article')].some(c => c.style.display !== 'none');
+    section.style.display = visible ? '' : 'none';
+  });
+}
+</script>
+</body>
+</html>

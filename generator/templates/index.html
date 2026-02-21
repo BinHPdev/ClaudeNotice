@@ -58,6 +58,59 @@
   </div>
 </header>
 
+<!-- ── 卡片宏（必须在使用前定义）─────────── -->
+{% macro render_card(article) %}
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-700"
+         data-tags="{{ article.tags | join(' ') }}">
+  <div class="flex items-start gap-3">
+    <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700">
+      {{ article.source | source_icon }}
+    </div>
+    <div class="flex-1 min-w-0">
+      <a href="{{ article.url }}" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug">
+        {{ article.title }}
+      </a>
+      {% if article.summary_zh %}
+      <p class="mt-1.5 text-sm text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
+        {{ article.summary_zh }}
+      </p>
+      {% endif %}
+      <div class="mt-2.5 flex flex-wrap items-center gap-x-3 gap-y-1.5">
+        <span class="source-badge inline-flex items-center gap-1 text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          {{ article.source }}
+        </span>
+        {% if article.author %}
+        <span class="text-xs text-gray-400">· {{ article.author }}</span>
+        {% endif %}
+        {% if article.published_at %}
+        <span class="text-xs text-gray-400">{{ article.published_at | timeago }}</span>
+        {% endif %}
+        {% if article.score > 0 %}
+        <span class="text-xs text-gray-400">
+          {% if article.source_type == 'community' %}▲{% else %}★{% endif %}
+          {{ article.score }}
+        </span>
+        {% endif %}
+        {% for tag in article.tags[:3] %}
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-brand-50 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300">
+          #{{ tag }}
+        </span>
+        {% endfor %}
+        {% if article.quality_score > 0 %}
+        <div class="ml-auto flex items-center gap-1.5">
+          <div class="w-12 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:{{ (article.quality_score * 10) | int }}%"></div>
+          </div>
+          <span class="text-xs text-gray-400">{{ "%.1f"|format(article.quality_score) }}</span>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</article>
+{% endmacro %}
+
 <!-- ── 主内容 ──────────────────────────────── -->
 <main class="max-w-5xl mx-auto px-4 py-8">
 
@@ -136,76 +189,6 @@
 
 </main>
 
-<!-- ── 卡片宏 ───────────────────────────────── -->
-{% macro render_card(article) %}
-<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-700"
-         data-tags="{{ article.tags | join(' ') }}">
-  <div class="flex items-start gap-3">
-    <!-- 来源图标 -->
-    <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700">
-      {{ article.source | source_icon }}
-    </div>
-
-    <div class="flex-1 min-w-0">
-      <!-- 标题 -->
-      <a href="{{ article.url }}" target="_blank" rel="noopener"
-         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug">
-        {{ article.title }}
-      </a>
-
-      <!-- 摘要（如果有）-->
-      {% if article.summary_zh %}
-      <p class="mt-1.5 text-sm text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        {{ article.summary_zh }}
-      </p>
-      {% endif %}
-
-      <!-- 底部元数据 -->
-      <div class="mt-2.5 flex flex-wrap items-center gap-x-3 gap-y-1.5">
-        <!-- 来源 -->
-        <span class="source-badge inline-flex items-center gap-1 text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          {{ article.source }}
-        </span>
-
-        <!-- 作者 -->
-        {% if article.author %}
-        <span class="text-xs text-gray-400">· {{ article.author }}</span>
-        {% endif %}
-
-        <!-- 时间 -->
-        {% if article.published_at %}
-        <span class="text-xs text-gray-400">{{ article.published_at | timeago }}</span>
-        {% endif %}
-
-        <!-- 互动数 -->
-        {% if article.score > 0 %}
-        <span class="text-xs text-gray-400">
-          {% if article.source_type == 'community' %}▲{% else %}★{% endif %}
-          {{ article.score }}
-        </span>
-        {% endif %}
-
-        <!-- 标签 -->
-        {% for tag in article.tags[:3] %}
-        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-brand-50 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300">
-          #{{ tag }}
-        </span>
-        {% endfor %}
-
-        <!-- 质量评分条 -->
-        {% if article.quality_score > 0 %}
-        <div class="ml-auto flex items-center gap-1.5">
-          <div class="w-12 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:{{ (article.quality_score * 10) | int }}%"></div>
-          </div>
-          <span class="text-xs text-gray-400">{{ "%.1f"|format(article.quality_score) }}</span>
-        </div>
-        {% endif %}
-      </div>
-    </div>
-  </div>
-</article>
-{% endmacro %}
 
 <!-- ── 页脚 ───────────────────────────────── -->
 <footer class="border-t border-gray-200 dark:border-gray-800 mt-16 py-8 text-center text-sm text-gray-400">
