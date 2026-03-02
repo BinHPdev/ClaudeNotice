@@ -70,14 +70,14 @@ def analyze_article(title: str, content: str, source: str) -> Optional[dict]:
 
     # 提取 JSON
     try:
-        # 尝试直接解析
         return json.loads(result)
     except json.JSONDecodeError:
-        # 从文本中提取 JSON 块
-        match = re.search(r'\{.*?\}', result, re.DOTALL)
-        if match:
+        # 找第一个 { 到最后一个 } 之间的内容（处理 Claude 在 JSON 前后输出多余文字的情况）
+        start = result.find('{')
+        end = result.rfind('}')
+        if start >= 0 and end > start:
             try:
-                return json.loads(match.group())
+                return json.loads(result[start:end + 1])
             except Exception:
                 pass
     return None

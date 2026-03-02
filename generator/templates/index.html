@@ -128,10 +128,14 @@
   {% endif %}
 
   <!-- 统计栏 -->
-  <div class="grid grid-cols-3 gap-3 mb-8">
+  <div class="grid grid-cols-4 gap-3 mb-8">
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-gray-100 dark:border-gray-800 text-center">
       <div class="text-2xl font-bold text-brand-600">{{ total_count }}</div>
       <div class="text-xs text-gray-500 mt-0.5">今日收录</div>
+    </div>
+    <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-amber-100 dark:border-amber-800/40 text-center">
+      <div class="text-2xl font-bold text-amber-500">{{ official_count }}</div>
+      <div class="text-xs text-gray-500 mt-0.5">官方动态</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-gray-100 dark:border-gray-800 text-center">
       <div class="text-2xl font-bold text-orange-500">{{ frontier_count }}</div>
@@ -155,6 +159,21 @@
     </button>
     {% endfor %}
   </div>
+  {% endif %}
+
+  <!-- ── Claude Code 官方动态（置顶专区）─────────── -->
+  {% if official_articles %}
+  <section class="mb-10" id="section-official">
+    <h2 class="section-divider text-base font-bold text-amber-500 mb-5">
+      <span>⚡ 官方动态</span>
+      <span class="text-xs font-normal text-gray-400">来自 Anthropic / SDK / PyPI 的一手信息</span>
+    </h2>
+    <div class="space-y-3" id="official-list">
+      {% for article in official_articles %}
+      {{ render_card(article) }}
+      {% endfor %}
+    </div>
+  </section>
   {% endif %}
 
   <!-- ── 前沿速递 ─────────────────── -->
@@ -228,7 +247,7 @@ function filterTag(tag) {
   });
 
   // 如果 section 全部隐藏，隐藏 section 标题
-  ['frontier-list', 'stable-list'].forEach(id => {
+  ['official-list', 'frontier-list', 'stable-list'].forEach(id => {
     const list = document.getElementById(id);
     if (!list) return;
     const section = list.closest('section');

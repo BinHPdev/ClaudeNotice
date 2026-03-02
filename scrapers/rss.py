@@ -66,7 +66,7 @@ class RssScraper(BaseScraper):
                 content=self._strip_html(content),
                 author=entry.get("author", ""),
                 raw_id=self._make_raw_id(name, entry.get("id", entry.get("link", ""))),
-                language="zh" if "中文" in name or "少数派" in name or "InfoQ" in name else "en",
+                language="zh" if any(k in name for k in ("中文", "少数派", "InfoQ", "掘金", "V2EX")) else "en",
             ))
 
         return articles
@@ -125,8 +125,11 @@ class RssScraper(BaseScraper):
 
     def _map_category(self, category: str) -> str:
         mapping = {
+            "claude_code_official": "official",
             "official": "official",
+            "research": "research",
             "tech_news": "news",
+            "newsletter": "blog",
             "high_quality_blogs": "blog",
             "developer_blogs": "blog",
         }

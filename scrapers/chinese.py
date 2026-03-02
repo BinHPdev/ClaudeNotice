@@ -125,16 +125,6 @@ class ChineseScraper(BaseScraper):
             articles = []
 
             for keyword in keywords[:2]:
-                resp = requests.get(
-                    "https://api.juejin.cn/recommend_api/v1/article/recommend_tag_feed",
-                    params={"id_type": 2, "client_type": 2608, "sort_type": 200, "cursor": "0", "limit": 20},
-                    headers={
-                        "User-Agent": "Mozilla/5.0",
-                        "Referer": "https://juejin.cn/",
-                    },
-                    timeout=10,
-                )
-                # 改用搜索接口
                 resp = requests.post(
                     "https://api.juejin.cn/search_api/v1/article/new_search",
                     json={

@@ -27,7 +27,7 @@ twitter:
     - "claudecode"
     - "anthropic claude"
   max_tweets_per_account: 20
-  # 使用 nitter 镜像列表（按优先级）
+  # 使用 nitter 镜像列表（按优先级，备用方案）
   nitter_instances:
     - https://nitter.poast.org
     - https://nitter.privacydev.net
@@ -55,6 +55,7 @@ github:
 reddit:
   subreddits:
     - ClaudeAI
+    - Anthropic
     - LocalLLaMA
     - MachineLearning
     - programming
@@ -86,14 +87,47 @@ hackernews:
 # RSS 源 — 英文
 # ────────────────────────────────────────
 rss_feeds:
-  official:
-    - name: "Anthropic Blog"
-      url: "https://www.anthropic.com/news"
-      type: "html"  # 需要 HTML 解析
-    - name: "Anthropic Research"
-      url: "https://www.anthropic.com/research"
-      type: "html"
 
+  # ★ Claude Code 官方动态专区
+  # 这里专门收录与 Claude Code 直接相关的一手官方信息
+  claude_code_official:
+    - name: "Claude Code Releases"
+      url: "https://github.com/anthropics/claude-code/releases.atom"
+      note: "Claude Code CLI 版本发布记录"
+    - name: "Anthropic SDK Python"
+      url: "https://github.com/anthropics/anthropic-sdk-python/releases.atom"
+      note: "Python SDK 版本更新"
+    - name: "Anthropic SDK TypeScript"
+      url: "https://github.com/anthropics/anthropic-sdk-typescript/releases.atom"
+      note: "TypeScript SDK 版本更新"
+    - name: "PyPI anthropic"
+      url: "https://pypi.org/rss/project/anthropic/releases.xml"
+      note: "anthropic PyPI 包发布"
+    - name: "PyPI openai"
+      url: "https://pypi.org/rss/project/openai/releases.xml"
+      note: "openai PyPI 包发布（对照参考）"
+
+  # Anthropic 官方内容（使用社区维护的 RSS，含真实发布时间）
+  official:
+    - name: "Anthropic News"
+      url: "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_anthropic_news.xml"
+    - name: "Anthropic Engineering"
+      url: "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_anthropic_engineering.xml"
+    - name: "Anthropic Research"
+      url: "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_anthropic_research.xml"
+    - name: "OpenAI 官方博客"
+      url: "https://openai.com/news/rss.xml"
+    - name: "HuggingFace Blog"
+      url: "https://huggingface.co/blog/feed.xml"
+
+  # 学术研究（高级读者）
+  research:
+    - name: "arXiv cs.AI"
+      url: "https://rss.arxiv.org/rss/cs.ai"
+    - name: "arXiv cs.LG"
+      url: "https://rss.arxiv.org/rss/cs.LG"
+
+  # 科技媒体
   tech_news:
     - name: "TechCrunch AI"
       url: "https://techcrunch.com/tag/anthropic/feed/"
@@ -103,7 +137,21 @@ rss_feeds:
       url: "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml"
     - name: "Wired AI"
       url: "https://www.wired.com/feed/tag/ai/latest/rss"
+    - name: "MIT Technology Review AI"
+      url: "https://www.technologyreview.com/topic/artificial-intelligence/feed/"
 
+  # Newsletter（初/中级读者友好）
+  newsletter:
+    - name: "Ben's Bites"
+      url: "https://bensbites.beehiiv.com/feed"
+    - name: "Import AI (Jack Clark)"
+      url: "https://importai.substack.com/feed"
+    - name: "The Batch (deeplearning.ai)"
+      url: "https://www.deeplearning.ai/the-batch/feed/"
+    - name: "AI News (smol.ai)"
+      url: "https://buttondown.com/ainews/rss"
+
+  # 高质量技术博客
   high_quality_blogs:
     - name: "Simon Willison's Weblog"
       url: "https://simonwillison.net/atom/everything/"
@@ -111,13 +159,12 @@ rss_feeds:
       url: "https://www.interconnects.ai/feed"
     - name: "Latent Space"
       url: "https://www.latent.space/feed"
-    - name: "AI News (Buttondown)"
-      url: "https://buttondown.com/ainews/rss"
     - name: "Lilian Weng Blog"
       url: "https://lilianweng.github.io/index.xml"
     - name: "Eugene Yan"
       url: "https://eugeneyan.com/rss.xml"
 
+  # 开发者社区博客
   developer_blogs:
     - name: "dev.to #claudecode"
       url: "https://dev.to/feed/tag/claudecode"
@@ -133,6 +180,8 @@ chinese_sources:
       url: "https://sspai.com/tag/AI/feed"
     - name: "InfoQ AI"
       url: "https://www.infoq.cn/feed?channel=ai"
+    - name: "V2EX Claude (RSS)"
+      url: "https://www.v2ex.com/feed/claude.xml"
 
   crawl:
     - name: "V2EX Claude"
@@ -197,3 +246,7 @@ site:
     - 最佳实践
     - 工具集成
     - 案例分享
+    - 模型能力
+    - 提示工程
+    - SDK更新
+    - 研究论文
