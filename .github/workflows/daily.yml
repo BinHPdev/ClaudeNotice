@@ -2,8 +2,8 @@ name: Daily Claude Notice Update
 
 on:
   schedule:
-    # 每天北京时间 08:00（UTC 00:00）自动运行
-    - cron: '0 0 * * *'
+    # 每天 3 次自动运行（北京时间 08:00 / 14:00 / 20:00）
+    - cron: '0 0,6,12 * * *'
   workflow_dispatch:
     # 支持手动触发（GitHub Actions 页面点按钮）
 
@@ -22,9 +22,11 @@ jobs:
           # 使用 deploy key 以便后面能 push
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: 设置 Python 环境
+      - name: 设置 Python 虚拟环境
         run: |
-          python3 -m pip install -q -r requirements.txt
+          python3 -m venv .venv
+          source .venv/bin/activate
+          pip install -q -r requirements.txt
 
       - name: 运行爬虫 + 处理 + 生成网站
         env:
@@ -32,6 +34,7 @@ jobs:
           REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          source .venv/bin/activate
           python3 main.py all
 
       - name: 提交并推送更新
