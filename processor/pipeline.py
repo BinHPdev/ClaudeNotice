@@ -1,7 +1,7 @@
 """内容处理流水线：去重 → 过滤 → Claude 分析 → 分类"""
 import json
 import hashlib
-import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from typing import Optional
@@ -111,8 +111,8 @@ class ProcessingPipeline:
             if any(kw in text for kw in exclude_keywords):
                 continue
 
-            # 官方来源直接通过
-            if article.source_type == "official":
+            # 官方/SDK/学术来源直接通过，不做关键词过滤
+            if article.source_type in ("official", "research"):
                 filtered.append(article)
                 continue
 
@@ -123,37 +123,43 @@ class ProcessingPipeline:
         return filtered
 
     def _claude_analyze(self, articles: list[Article]) -> list[Article]:
-        """调用 Claude CLI 分析每篇文章"""
-        analyzed = []
+        """调用 Claude CLI 分析每篇文章（并发执行）"""
+        concurrency = self.proc_config.get("claude_concurrency", 3)
         total = len(articles)
+        analyzed = []
 
-        for i, article in enumerate(articles):
-            print(f"  [{i+1}/{total}] 分析: {article.title[:50]}...")
-
+        def _process_one(idx_article):
+            idx, article = idx_article
+            print(f"  [{idx+1}/{total}] 分析: {article.title[:50]}...")
             result = analyze_article(article.title, article.content, article.source)
+            return idx, article, result
 
-            if result:
-                # 过滤不相关内容
-                if not result.get("is_relevant", True):
-                    print(f"    → 不相关，跳过")
+        with ThreadPoolExecutor(max_workers=concurrency) as executor:
+            futures = [executor.submit(_process_one, (i, a)) for i, a in enumerate(articles)]
+            for future in as_completed(futures):
+                try:
+                    _, article, result = future.result()
+                except Exception as e:
+                    print(f"  [分析错误] {e}")
                     continue
 
-                article.summary_zh = result.get("summary_zh", "")
-                article.tags = result.get("tags", [])
-                article.quality_score = float(result.get("quality_score", 5.0))
-                article.category = result.get("category", "frontier")
-            else:
-                # Claude CLI 不可用时的降级策略
-                article.quality_score = self._rule_based_score(article)
-                article.summary_zh = article.content[:150] if article.content else article.title
+                if result:
+                    if not result.get("is_relevant", True):
+                        print(f"    → 不相关，跳过")
+                        continue
+                    article.summary_zh = result.get("summary_zh", "")
+                    article.tags = result.get("tags", [])
+                    article.quality_score = float(result.get("quality_score", 5.0))
+                    article.category = result.get("category", "frontier")
+                else:
+                    # Claude CLI 不可用时的降级策略
+                    article.quality_score = self._rule_based_score(article)
+                    article.summary_zh = article.content[:150] if article.content else article.title
 
-            if article.quality_score >= self.min_quality:
-                analyzed.append(article)
-            else:
-                print(f"    → 质量评分 {article.quality_score:.1f} 低于阈值，跳过")
-
-            # 避免调用过于频繁
-            time.sleep(0.5)
+                if article.quality_score >= self.min_quality:
+                    analyzed.append(article)
+                else:
+                    print(f"    → 质量评分 {article.quality_score:.1f} 低于阈值，跳过")
 
         return analyzed
 
@@ -184,9 +190,11 @@ class ProcessingPipeline:
         # 来源权重
         source_weights = {
             "official": 3.0,
+            "research": 2.5,
             "blog": 1.5,
-            "community": 1.0,
+            "newsletter": 1.5,
             "news": 1.2,
+            "community": 1.0,
         }
         score += source_weights.get(article.source_type, 0)
 

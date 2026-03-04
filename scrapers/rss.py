@@ -1,8 +1,13 @@
 """RSS/Atom 源爬虫 — 覆盖博客、科技媒体、官方博客"""
 import feedparser
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from dateutil import parser as dateparser
 from .base import BaseScraper, Article
+
+# 每个 feed 最多取最新 N 条，避免历史条目占满处理槽
+MAX_ITEMS_PER_FEED = 10
+# 跳过超过这么多天的旧内容（PyPI 历史版本等）
+MAX_AGE_DAYS = 60
 
 
 class RssScraper(BaseScraper):
@@ -47,9 +52,14 @@ class RssScraper(BaseScraper):
 
         parsed = feedparser.parse(url)
         articles = []
+        cutoff = datetime.now(timezone.utc) - timedelta(days=MAX_AGE_DAYS)
 
-        for entry in parsed.entries:
+        for entry in parsed.entries[:MAX_ITEMS_PER_FEED * 3]:  # 多取一些，过滤后取前 N
             pub = self._parse_date(entry)
+            # 跳过过旧的内容
+            if pub and pub < cutoff:
+                continue
+
             content = (
                 entry.get("summary", "")
                 or entry.get("content", [{}])[0].get("value", "")
@@ -66,10 +76,10 @@ class RssScraper(BaseScraper):
                 content=self._strip_html(content),
                 author=entry.get("author", ""),
                 raw_id=self._make_raw_id(name, entry.get("id", entry.get("link", ""))),
-                language="zh" if "中文" in name or "少数派" in name or "InfoQ" in name else "en",
+                language="zh" if any(k in name for k in ("中文", "少数派", "InfoQ", "掘金", "V2EX")) else "en",
             ))
 
-        return articles
+        return articles[:MAX_ITEMS_PER_FEED]
 
     def _scrape_anthropic_html(self, url: str, name: str) -> list[Article]:
         """专门解析 Anthropic 官方博客（HTML 页面）"""
@@ -125,8 +135,11 @@ class RssScraper(BaseScraper):
 
     def _map_category(self, category: str) -> str:
         mapping = {
+            "claude_code_official": "official",
             "official": "official",
+            "research": "research",
             "tech_news": "news",
+            "newsletter": "blog",
             "high_quality_blogs": "blog",
             "developer_blogs": "blog",
         }

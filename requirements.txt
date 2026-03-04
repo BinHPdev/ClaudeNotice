@@ -10,3 +10,4 @@ python-dateutil==2.9.0
 tenacity==8.2.3
 rich==13.7.0
 click==8.1.7
+Markdown==3.5.2
