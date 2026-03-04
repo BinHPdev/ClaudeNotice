@@ -6,6 +6,12 @@ from pathlib import Path
 from jinja2 import Environment, FileSystemLoader
 from scrapers.base import Article
 
+try:
+    import markdown as md_lib
+    _MD_AVAILABLE = True
+except ImportError:
+    _MD_AVAILABLE = False
+
 
 TEMPLATE_DIR = Path("generator/templates")
 SITE_DIR = Path("docs")
@@ -40,7 +46,11 @@ class SiteGenerator:
         for a in articles:
             sources[a.source] = sources.get(a.source, 0) + 1
 
+        # 渲染 AWESOME-CLAUDE-CODE.md → HTML
+        awesome_html = self._render_awesome_md()
+
         now = datetime.now(timezone.utc)
+        github_repo = self.site_config.get("github_repo", "")
 
         template = self.env.get_template("index.html")
         html = template.render(
@@ -58,6 +68,8 @@ class SiteGenerator:
             frontier_count=len(frontier),
             stable_count=len(stable),
             official_count=len(official_articles),
+            awesome_html=awesome_html,
+            github_repo=github_repo,
         )
 
         output_path = SITE_DIR / "index.html"
@@ -66,6 +78,21 @@ class SiteGenerator:
 
         # 复制静态资源
         self._copy_static()
+
+    def _render_awesome_md(self) -> str:
+        """读取 AWESOME-CLAUDE-CODE.md 并转换为 HTML"""
+        md_path = Path("AWESOME-CLAUDE-CODE.md")
+        if not md_path.exists():
+            return "<p>精选资源文件暂未生成。</p>"
+        content = md_path.read_text(encoding="utf-8")
+        if _MD_AVAILABLE:
+            return md_lib.markdown(
+                content,
+                extensions=["fenced_code", "tables", "toc"],
+            )
+        # 极简 fallback：wrap in <pre>
+        import html as html_lib
+        return f"<pre style='white-space:pre-wrap;font-size:.85rem'>{html_lib.escape(content)}</pre>"
 
     def _copy_static(self):
         static_src = TEMPLATE_DIR / "static"
