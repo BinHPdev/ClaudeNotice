@@ -114,7 +114,7 @@
     </div>
 
     <div class="flex items-center gap-2 ml-auto shrink-0">
-      <span class="hidden md:inline text-xs text-gray-400">2026年03月15日 07:11</span>
+      <span class="hidden md:inline text-xs text-gray-400">2026年03月15日 13:15</span>
       <span class="inline-flex items-center gap-1 bg-green-50 dark:bg-green-900/30 text-green-600 dark:text-green-400 px-2 py-0.5 rounded-full text-xs font-medium">
         ● 每日更新
       </span>
@@ -138,7 +138,7 @@
   <!-- Stats bar -->
   <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-gray-100 dark:border-gray-800 text-center">
-      <div class="text-2xl font-bold text-brand-600">11</div>
+      <div class="text-2xl font-bold text-brand-600">16</div>
       <div class="text-xs text-gray-400 mt-0.5">今日收录</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-amber-100 dark:border-amber-900/40 text-center">
@@ -146,7 +146,7 @@
       <div class="text-xs text-gray-400 mt-0.5">官方动态</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-orange-100 dark:border-orange-900/40 text-center">
-      <div class="text-2xl font-bold text-orange-500">11</div>
+      <div class="text-2xl font-bold text-orange-500">16</div>
       <div class="text-xs text-gray-400 mt-0.5">前沿速递</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-blue-100 dark:border-blue-900/40 text-center">
@@ -238,14 +238,9 @@
             全部
           </button>
           
-          <button onclick="filterTag('accessibility')" data-tag="accessibility"
+          <button onclick="filterTag('academic')" data-tag="academic"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            accessibility
-          </button>
-          
-          <button onclick="filterTag('adb')" data-tag="adb"
-            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            adb
+            academic
           </button>
           
           <button onclick="filterTag('agent')" data-tag="agent"
@@ -253,24 +248,24 @@
             agent
           </button>
           
-          <button onclick="filterTag('agent-sandbox')" data-tag="agent-sandbox"
+          <button onclick="filterTag('agent-skill')" data-tag="agent-skill"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            agent-sandbox
+            agent-skill
           </button>
           
-          <button onclick="filterTag('agent-skills')" data-tag="agent-skills"
+          <button onclick="filterTag('agent-teams')" data-tag="agent-teams"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            agent-skills
+            agent-teams
+          </button>
+          
+          <button onclick="filterTag('agentic')" data-tag="agentic"
+            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+            agentic
           </button>
           
           <button onclick="filterTag('agentic-ai')" data-tag="agentic-ai"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
             agentic-ai
-          </button>
-          
-          <button onclick="filterTag('agents')" data-tag="agents"
-            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            agents
           </button>
           
           <button onclick="filterTag('ai')" data-tag="ai"
@@ -293,29 +288,14 @@
             ai-assistant
           </button>
           
-          <button onclick="filterTag('ai-commits')" data-tag="ai-commits"
+          <button onclick="filterTag('ai-coding')" data-tag="ai-coding"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            ai-commits
+            ai-coding
           </button>
           
-          <button onclick="filterTag('ai-tools')" data-tag="ai-tools"
+          <button onclick="filterTag('ai-research')" data-tag="ai-research"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            ai-tools
-          </button>
-          
-          <button onclick="filterTag('aicommit')" data-tag="aicommit"
-            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            aicommit
-          </button>
-          
-          <button onclick="filterTag('aicommits')" data-tag="aicommits"
-            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            aicommits
-          </button>
-          
-          <button onclick="filterTag('android')" data-tag="android"
-            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            android
+            ai-research
           </button>
           
           <button onclick="filterTag('anthropic')" data-tag="anthropic"
@@ -323,9 +303,9 @@
             anthropic
           </button>
           
-          <button onclick="filterTag('antigravity')" data-tag="antigravity"
+          <button onclick="filterTag('anti-pua')" data-tag="anti-pua"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            antigravity
+            anti-pua
           </button>
           
           <button onclick="filterTag('antigravity-ide')" data-tag="antigravity-ide"
@@ -333,9 +313,14 @@
             antigravity-ide
           </button>
           
-          <button onclick="filterTag('assistant')" data-tag="assistant"
+          <button onclick="filterTag('antigravity2api')" data-tag="antigravity2api"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            assistant
+            antigravity2api
+          </button>
+          
+          <button onclick="filterTag('ao-de-jing')" data-tag="ao-de-jing"
+            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+            ao-de-jing
           </button>
           
           <button onclick="filterTag('automation')" data-tag="automation"
@@ -343,9 +328,14 @@
             automation
           </button>
           
-          <button onclick="filterTag('beam')" data-tag="beam"
+          <button onclick="filterTag('blue-team')" data-tag="blue-team"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            beam
+            blue-team
+          </button>
+          
+          <button onclick="filterTag('bmad-method')" data-tag="bmad-method"
+            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+            bmad-method
           </button>
           
           <button onclick="filterTag('chatgpt')" data-tag="chatgpt"
@@ -358,14 +348,34 @@
             claude
           </button>
           
+          <button onclick="filterTag('claude-ai')" data-tag="claude-ai"
+            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+            claude-ai
+          </button>
+          
+          <button onclick="filterTag('claude-api')" data-tag="claude-api"
+            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+            claude-api
+          </button>
+          
           <button onclick="filterTag('claude-code')" data-tag="claude-code"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
             claude-code
           </button>
           
-          <button onclick="filterTag('claude-code-hooks')" data-tag="claude-code-hooks"
+          <button onclick="filterTag('claude-code-plugin')" data-tag="claude-code-plugin"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            claude-code-hooks
+            claude-code-plugin
+          </button>
+          
+          <button onclick="filterTag('claude-skills')" data-tag="claude-skills"
+            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+            claude-skills
+          </button>
+          
+          <button onclick="filterTag('claudecode')" data-tag="claudecode"
+            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+            claudecode
           </button>
           
           <button onclick="filterTag('cli')" data-tag="cli"
@@ -373,9 +383,9 @@
             cli
           </button>
           
-          <button onclick="filterTag('codestral')" data-tag="codestral"
+          <button onclick="filterTag('cli-proxy')" data-tag="cli-proxy"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            codestral
+            cli-proxy
           </button>
           
           <button onclick="filterTag('codex')" data-tag="codex"
@@ -383,34 +393,24 @@
             codex
           </button>
           
-          <button onclick="filterTag('codex-cli')" data-tag="codex-cli"
+          <button onclick="filterTag('comment')" data-tag="comment"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            codex-cli
+            comment
           </button>
           
-          <button onclick="filterTag('coding-agent')" data-tag="coding-agent"
+          <button onclick="filterTag('context-window')" data-tag="context-window"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            coding-agent
+            context-window
           </button>
           
-          <button onclick="filterTag('coding-agents')" data-tag="coding-agents"
+          <button onclick="filterTag('context-window-optimization')" data-tag="context-window-optimization"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            coding-agents
+            context-window-optimization
           </button>
           
-          <button onclick="filterTag('cohere')" data-tag="cohere"
+          <button onclick="filterTag('conversation-history')" data-tag="conversation-history"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            cohere
-          </button>
-          
-          <button onclick="filterTag('communication')" data-tag="communication"
-            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            communication
-          </button>
-          
-          <button onclick="filterTag('computer-use')" data-tag="computer-use"
-            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            computer-use
+            conversation-history
           </button>
           
           <button onclick="filterTag('cursor')" data-tag="cursor"
@@ -418,9 +418,19 @@
             cursor
           </button>
           
-          <button onclick="filterTag('deepseek')" data-tag="deepseek"
+          <button onclick="filterTag('cursor-ai')" data-tag="cursor-ai"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            deepseek
+            cursor-ai
+          </button>
+          
+          <button onclick="filterTag('cybersecurity')" data-tag="cybersecurity"
+            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+            cybersecurity
+          </button>
+          
+          <button onclick="filterTag('desktop-app')" data-tag="desktop-app"
+            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+            desktop-app
           </button>
           
           <button onclick="filterTag('developer-tools')" data-tag="developer-tools"
@@ -428,59 +438,44 @@
             developer-tools
           </button>
           
-          <button onclick="filterTag('diagramming')" data-tag="diagramming"
+          <button onclick="filterTag('editor')" data-tag="editor"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            diagramming
+            editor
           </button>
           
-          <button onclick="filterTag('docker')" data-tag="docker"
+          <button onclick="filterTag('factory-droids')" data-tag="factory-droids"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            docker
+            factory-droids
           </button>
           
-          <button onclick="filterTag('drawio')" data-tag="drawio"
+          <button onclick="filterTag('flarevm')" data-tag="flarevm"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            drawio
+            flarevm
           </button>
           
-          <button onclick="filterTag('e2e-testing')" data-tag="e2e-testing"
+          <button onclick="filterTag('gemini')" data-tag="gemini"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            e2e-testing
+            gemini
           </button>
           
-          <button onclick="filterTag('elixir')" data-tag="elixir"
+          <button onclick="filterTag('gemini-ai')" data-tag="gemini-ai"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            elixir
+            gemini-ai
           </button>
           
-          <button onclick="filterTag('gemini-cli')" data-tag="gemini-cli"
+          <button onclick="filterTag('gemini-api')" data-tag="gemini-api"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            gemini-cli
+            gemini-api
           </button>
           
-          <button onclick="filterTag('genserver')" data-tag="genserver"
+          <button onclick="filterTag('gemini-pro')" data-tag="gemini-pro"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            genserver
+            gemini-pro
           </button>
           
-          <button onclick="filterTag('git-commit')" data-tag="git-commit"
+          <button onclick="filterTag('golang')" data-tag="golang"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            git-commit
-          </button>
-          
-          <button onclick="filterTag('glm')" data-tag="glm"
-            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            glm
-          </button>
-          
-          <button onclick="filterTag('glm-4-7')" data-tag="glm-4-7"
-            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            glm-4-7
-          </button>
-          
-          <button onclick="filterTag('glm-5')" data-tag="glm-5"
-            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            glm-5
+            golang
           </button>
           
           <button onclick="filterTag('gpt-5')" data-tag="gpt-5"
@@ -488,49 +483,74 @@
             gpt-5
           </button>
           
-          <button onclick="filterTag('groq')" data-tag="groq"
+          <button onclick="filterTag('gpt-5-codex')" data-tag="gpt-5-codex"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            groq
+            gpt-5-codex
           </button>
           
-          <button onclick="filterTag('jj')" data-tag="jj"
+          <button onclick="filterTag('grpo')" data-tag="grpo"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            jj
+            grpo
           </button>
           
-          <button onclick="filterTag('jujutsu')" data-tag="jujutsu"
+          <button onclick="filterTag('huggingface')" data-tag="huggingface"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            jujutsu
+            huggingface
           </button>
           
-          <button onclick="filterTag('kilo-code')" data-tag="kilo-code"
+          <button onclick="filterTag('ide')" data-tag="ide"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            kilo-code
+            ide
           </button>
           
-          <button onclick="filterTag('kimi-k25')" data-tag="kimi-k25"
+          <button onclick="filterTag('incident-response')" data-tag="incident-response"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            kimi-k25
+            incident-response
           </button>
           
-          <button onclick="filterTag('linting')" data-tag="linting"
+          <button onclick="filterTag('intent-driven-development')" data-tag="intent-driven-development"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            linting
+            intent-driven-development
           </button>
           
-          <button onclick="filterTag('liveview')" data-tag="liveview"
+          <button onclick="filterTag('kiro')" data-tag="kiro"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            liveview
+            kiro
           </button>
           
-          <button onclick="filterTag('llama')" data-tag="llama"
+          <button onclick="filterTag('latex')" data-tag="latex"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            llama
+            latex
           </button>
           
-          <button onclick="filterTag('macos')" data-tag="macos"
+          <button onclick="filterTag('llm')" data-tag="llm"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            macos
+            llm
+          </button>
+          
+          <button onclick="filterTag('machine-leanring')" data-tag="machine-leanring"
+            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+            machine-leanring
+          </button>
+          
+          <button onclick="filterTag('malware-analysis')" data-tag="malware-analysis"
+            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+            malware-analysis
+          </button>
+          
+          <button onclick="filterTag('malware-detection')" data-tag="malware-detection"
+            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+            malware-detection
+          </button>
+          
+          <button onclick="filterTag('malware-research')" data-tag="malware-research"
+            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+            malware-research
+          </button>
+          
+          <button onclick="filterTag('malware-triage')" data-tag="malware-triage"
+            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+            malware-triage
           </button>
           
           <button onclick="filterTag('mcp')" data-tag="mcp"
@@ -538,24 +558,19 @@
             mcp
           </button>
           
-          <button onclick="filterTag('mistral')" data-tag="mistral"
+          <button onclick="filterTag('megatron')" data-tag="megatron"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            mistral
+            megatron
           </button>
           
-          <button onclick="filterTag('mobile-automation')" data-tag="mobile-automation"
+          <button onclick="filterTag('memory')" data-tag="memory"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            mobile-automation
+            memory
           </button>
           
-          <button onclick="filterTag('mobile-testing')" data-tag="mobile-testing"
+          <button onclick="filterTag('meta-agent')" data-tag="meta-agent"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            mobile-testing
-          </button>
-          
-          <button onclick="filterTag('model-context-protocol')" data-tag="model-context-protocol"
-            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            model-context-protocol
+            meta-agent
           </button>
           
           <button onclick="filterTag('multi-agent')" data-tag="multi-agent"
@@ -563,29 +578,29 @@
             multi-agent
           </button>
           
-          <button onclick="filterTag('mxgraph')" data-tag="mxgraph"
+          <button onclick="filterTag('nopua')" data-tag="nopua"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            mxgraph
+            nopua
           </button>
           
-          <button onclick="filterTag('nix')" data-tag="nix"
+          <button onclick="filterTag('offline')" data-tag="offline"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            nix
+            offline
           </button>
           
-          <button onclick="filterTag('ocr')" data-tag="ocr"
+          <button onclick="filterTag('open-source')" data-tag="open-source"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            ocr
+            open-source
           </button>
           
-          <button onclick="filterTag('ollama')" data-tag="ollama"
+          <button onclick="filterTag('openclaw')" data-tag="openclaw"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            ollama
+            openclaw
           </button>
           
-          <button onclick="filterTag('openai')" data-tag="openai"
+          <button onclick="filterTag('openclaw-skills')" data-tag="openclaw-skills"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            openai
+            openclaw-skills
           </button>
           
           <button onclick="filterTag('opencode')" data-tag="opencode"
@@ -593,69 +608,109 @@
             opencode
           </button>
           
-          <button onclick="filterTag('openrouter')" data-tag="openrouter"
+          <button onclick="filterTag('persistent-memory')" data-tag="persistent-memory"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            openrouter
+            persistent-memory
           </button>
           
-          <button onclick="filterTag('orchestration')" data-tag="orchestration"
+          <button onclick="filterTag('playwright')" data-tag="playwright"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            orchestration
+            playwright
           </button>
           
-          <button onclick="filterTag('otp')" data-tag="otp"
+          <button onclick="filterTag('privacy')" data-tag="privacy"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            otp
+            privacy
           </button>
           
-          <button onclick="filterTag('perplexity')" data-tag="perplexity"
+          <button onclick="filterTag('product-discovery')" data-tag="product-discovery"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            perplexity
+            product-discovery
           </button>
           
-          <button onclick="filterTag('phoenix')" data-tag="phoenix"
+          <button onclick="filterTag('product-engineering')" data-tag="product-engineering"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            phoenix
+            product-engineering
           </button>
           
-          <button onclick="filterTag('pi-coding-agent')" data-tag="pi-coding-agent"
+          <button onclick="filterTag('product-growth')" data-tag="product-growth"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            pi-coding-agent
+            product-growth
           </button>
           
-          <button onclick="filterTag('podman')" data-tag="podman"
+          <button onclick="filterTag('productivity')" data-tag="productivity"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            podman
+            productivity
           </button>
           
-          <button onclick="filterTag('pre-commit')" data-tag="pre-commit"
+          <button onclick="filterTag('prompt-engineering')" data-tag="prompt-engineering"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            pre-commit
+            prompt-engineering
           </button>
           
-          <button onclick="filterTag('pre-commit-hook')" data-tag="pre-commit-hook"
+          <button onclick="filterTag('python')" data-tag="python"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            pre-commit-hook
+            python
           </button>
           
-          <button onclick="filterTag('rpa')" data-tag="rpa"
+          <button onclick="filterTag('react')" data-tag="react"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            rpa
+            react
           </button>
           
-          <button onclick="filterTag('sandbox')" data-tag="sandbox"
+          <button onclick="filterTag('reddit')" data-tag="reddit"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            sandbox
+            reddit
           </button>
           
-          <button onclick="filterTag('screenshot')" data-tag="screenshot"
+          <button onclick="filterTag('relationship-management')" data-tag="relationship-management"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            screenshot
+            relationship-management
           </button>
           
-          <button onclick="filterTag('sdk')" data-tag="sdk"
+          <button onclick="filterTag('remnux')" data-tag="remnux"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            sdk
+            remnux
+          </button>
+          
+          <button onclick="filterTag('research')" data-tag="research"
+            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+            research
+          </button>
+          
+          <button onclick="filterTag('reverse')" data-tag="reverse"
+            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+            reverse
+          </button>
+          
+          <button onclick="filterTag('reverse-engineering')" data-tag="reverse-engineering"
+            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+            reverse-engineering
+          </button>
+          
+          <button onclick="filterTag('rust')" data-tag="rust"
+            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+            rust
+          </button>
+          
+          <button onclick="filterTag('scientific-writing')" data-tag="scientific-writing"
+            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+            scientific-writing
+          </button>
+          
+          <button onclick="filterTag('security-research')" data-tag="security-research"
+            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+            security-research
+          </button>
+          
+          <button onclick="filterTag('sigma-rules')" data-tag="sigma-rules"
+            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+            sigma-rules
+          </button>
+          
+          <button onclick="filterTag('skill')" data-tag="skill"
+            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+            skill
           </button>
           
           <button onclick="filterTag('skills')" data-tag="skills"
@@ -663,24 +718,29 @@
             skills
           </button>
           
-          <button onclick="filterTag('streaming')" data-tag="streaming"
+          <button onclick="filterTag('spec-driven-development')" data-tag="spec-driven-development"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            streaming
+            spec-driven-development
           </button>
           
-          <button onclick="filterTag('subagents')" data-tag="subagents"
+          <button onclick="filterTag('suricata')" data-tag="suricata"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            subagents
+            suricata
           </button>
           
-          <button onclick="filterTag('svg')" data-tag="svg"
+          <button onclick="filterTag('tauri')" data-tag="tauri"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            svg
+            tauri
           </button>
           
-          <button onclick="filterTag('template-matching')" data-tag="template-matching"
+          <button onclick="filterTag('team-of-agents')" data-tag="team-of-agents"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            template-matching
+            team-of-agents
+          </button>
+          
+          <button onclick="filterTag('tectonic')" data-tag="tectonic"
+            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+            tectonic
           </button>
           
           <button onclick="filterTag('terminal')" data-tag="terminal"
@@ -688,24 +748,44 @@
             terminal
           </button>
           
-          <button onclick="filterTag('ui-automation')" data-tag="ui-automation"
+          <button onclick="filterTag('threat-intelligence')" data-tag="threat-intelligence"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            ui-automation
+            threat-intelligence
           </button>
           
-          <button onclick="filterTag('vscode-extension')" data-tag="vscode-extension"
+          <button onclick="filterTag('token-optimization')" data-tag="token-optimization"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            vscode-extension
+            token-optimization
           </button>
           
-          <button onclick="filterTag('windows')" data-tag="windows"
+          <button onclick="filterTag('vibe-coding')" data-tag="vibe-coding"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            windows
+            vibe-coding
           </button>
           
-          <button onclick="filterTag('z-ai')" data-tag="z-ai"
+          <button onclick="filterTag('vllm')" data-tag="vllm"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            z-ai
+            vllm
+          </button>
+          
+          <button onclick="filterTag('vscode')" data-tag="vscode"
+            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+            vscode
+          </button>
+          
+          <button onclick="filterTag('worktrees')" data-tag="worktrees"
+            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+            worktrees
+          </button>
+          
+          <button onclick="filterTag('yara-rules')" data-tag="yara-rules"
+            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+            yara-rules
+          </button>
+          
+          <button onclick="filterTag('zotero')" data-tag="zotero"
+            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+            zotero
           </button>
           
         </div>
@@ -735,10 +815,10 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="agent agent-skills ai ai-agents ai-tools automation claude claude-code claude-code-hooks cli codex coding-agent communication developer-tools gemini-cli multi-agent opencode orchestration subagents terminal"
+         data-tags="claude-code claudecode cli-proxy codex factory-droids gpt-5-codex"
          data-source="GitHub"
          data-source-type="community"
-         data-text="[GitHub] aannoo/hcom — Let AI agents message, watch, and spawn each other across terminals. Claude Code, Gemini CLI, Codex, Let AI agents message, watch, and spawn each other across terminals. Claude Code, Gemini CLI, Codex, OpenCode">
+         data-text="[GitHub] automazeio/vibeproxy — Native macOS menu bar app to use your Claude Code &amp; ChatGPT subscriptions with AI coding tools - no  Native macOS menu bar app to use your Claude Code &amp; ChatGPT subscriptions with AI coding tools - no API keys needed">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -746,14 +826,14 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://github.com/aannoo/hcom" target="_blank" rel="noopener"
+      <a href="https://github.com/automazeio/vibeproxy" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        [GitHub] aannoo/hcom — Let AI agents message, watch, and spawn each other across terminals. Claude Code, Gemini CLI, Codex,
+        [GitHub] automazeio/vibeproxy — Native macOS menu bar app to use your Claude Code &amp; ChatGPT subscriptions with AI coding tools - no 
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Let AI agents message, watch, and spawn each other across terminals. Claude Code, Gemini CLI, Codex, OpenCode
+        Native macOS menu bar app to use your Claude Code &amp; ChatGPT subscriptions with AI coding tools - no API keys needed
       </p>
       
       <!-- Meta row -->
@@ -770,34 +850,34 @@
         </span>
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">aannoo</span>
+        <span class="text-xs text-gray-400">automazeio</span>
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">17 分钟前</span>
+        <span class="text-xs text-gray-400">3 分钟前</span>
         
         
         <span class="text-xs text-gray-400">
-          ▲141
+          ▲1721
         </span>
         
         <!-- Tags (max 2) -->
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #agent
+          #claude-code
         </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #agent-skills
+          #claudecode
         </span>
         
         <!-- Quality bar (only if > 0) -->
         
         <span class="ml-auto flex items-center gap-1 shrink-0">
           <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:70%"></div>
+            <div class="score-bar" style="width:75%"></div>
           </div>
-          <span class="text-xs text-gray-400">7.0</span>
+          <span class="text-xs text-gray-400">7.5</span>
         </span>
         
       </div>
@@ -811,10 +891,10 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="ai-commits aicommit aicommits anthropic chatgpt claude cli codestral cohere deepseek git-commit groq jj jujutsu llama mistral ollama perplexity pre-commit pre-commit-hook"
+         data-tags="claude claude-code codex conversation-history desktop-app developer-tools opencode react rust tauri"
          data-source="GitHub"
          data-source-type="community"
-         data-text="[GitHub] tak-bro/aicommit2 — A Reactive CLI that generates commit messages for Git and Jujutsu with Ollama, ChatGPT, Gemini, Clau A Reactive CLI that generates commit messages for Git and Jujutsu with Ollama, ChatGPT, Gemini, Claude, Mistral and other AI">
+         data-text="[GitHub] jhlee0409/claude-code-history-viewer — desktop app to browse and analyze your Claude Code conversation history desktop app to browse and analyze your Claude Code conversation history">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -822,14 +902,14 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://github.com/tak-bro/aicommit2" target="_blank" rel="noopener"
+      <a href="https://github.com/jhlee0409/claude-code-history-viewer" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        [GitHub] tak-bro/aicommit2 — A Reactive CLI that generates commit messages for Git and Jujutsu with Ollama, ChatGPT, Gemini, Clau
+        [GitHub] jhlee0409/claude-code-history-viewer — desktop app to browse and analyze your Claude Code conversation history
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        A Reactive CLI that generates commit messages for Git and Jujutsu with Ollama, ChatGPT, Gemini, Claude, Mistral and other AI
+        desktop app to browse and analyze your Claude Code conversation history
       </p>
       
       <!-- Meta row -->
@@ -846,34 +926,34 @@
         </span>
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">tak-bro</span>
+        <span class="text-xs text-gray-400">jhlee0409</span>
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">1 小时前</span>
+        <span class="text-xs text-gray-400">5 分钟前</span>
         
         
         <span class="text-xs text-gray-400">
-          ▲495
+          ▲604
         </span>
         
         <!-- Tags (max 2) -->
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #ai-commits
+          #claude
         </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #aicommit
+          #claude-code
         </span>
         
         <!-- Quality bar (only if > 0) -->
         
         <span class="ml-auto flex items-center gap-1 shrink-0">
           <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:70%"></div>
+            <div class="score-bar" style="width:75%"></div>
           </div>
-          <span class="text-xs text-gray-400">7.0</span>
+          <span class="text-xs text-gray-400">7.5</span>
         </span>
         
       </div>
@@ -887,10 +967,10 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags=""
+         data-tags="antigravity-ide antigravity2api claude claude-api claude-code gemini gemini-ai gemini-api gemini-pro"
          data-source="GitHub"
          data-source-type="community"
-         data-text="[GitHub] tobieapb/claude-interactive-documentation-workflow — I used to whiteboard, then code. Now I markdown, then code. This is how I vibe-code: I can direct, g I used to whiteboard, then code. Now I markdown, then code. This is how I vibe-code: I can direct, guardrail, and understand the LLM-built code, come ">
+         data-text="[GitHub] su-kaka/gcli2api — 将 GeminiCLI 和 Antigravity 转换为 OpenAI 、GEMINI 和 Claude API 接口 将 GeminiCLI 和 Antigravity 转换为 OpenAI 、GEMINI 和 Claude API 接口">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -898,14 +978,14 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://github.com/tobieapb/claude-interactive-documentation-workflow" target="_blank" rel="noopener"
+      <a href="https://github.com/su-kaka/gcli2api" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        [GitHub] tobieapb/claude-interactive-documentation-workflow — I used to whiteboard, then code. Now I markdown, then code. This is how I vibe-code: I can direct, g
+        [GitHub] su-kaka/gcli2api — 将 GeminiCLI 和 Antigravity 转换为 OpenAI 、GEMINI 和 Claude API 接口
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        I used to whiteboard, then code. Now I markdown, then code. This is how I vibe-code: I can direct, guardrail, and understand the LLM-built code, come 
+        将 GeminiCLI 和 Antigravity 转换为 OpenAI 、GEMINI 和 Claude API 接口
       </p>
       
       <!-- Meta row -->
@@ -922,18 +1002,254 @@
         </span>
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">tobieapb</span>
+        <span class="text-xs text-gray-400">su-kaka</span>
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">2 小时前</span>
+        <span class="text-xs text-gray-400">21 分钟前</span>
         
         
         <span class="text-xs text-gray-400">
-          ▲102
+          ▲4216
         </span>
         
         <!-- Tags (max 2) -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #antigravity-ide
+        </span>
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #antigravity2api
+        </span>
+        
+        <!-- Quality bar (only if > 0) -->
+        
+        <span class="ml-auto flex items-center gap-1 shrink-0">
+          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:75%"></div>
+          </div>
+          <span class="text-xs text-gray-400">7.5</span>
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+  
+
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
+         data-tags="ai ai-research claude claude-code claude-skills codex gemini gpt-5 grpo huggingface machine-leanring megatron skills vllm"
+         data-source="GitHub"
+         data-source-type="community"
+         data-text="[GitHub] Orchestra-Research/AI-Research-SKILLs — Comprehensive open-source library of AI research and engineering skills for any AI model. Package th Comprehensive open-source library of AI research and engineering skills for any AI model. Package the skills and your claude code/codex/gemini agent w">
+  <div class="flex gap-3">
+    <!-- Source icon -->
+    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
+      ⑂
+    </div>
+    <div class="flex-1 min-w-0">
+      <!-- Title -->
+      <a href="https://github.com/Orchestra-Research/AI-Research-SKILLs" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
+        [GitHub] Orchestra-Research/AI-Research-SKILLs — Comprehensive open-source library of AI research and engineering skills for any AI model. Package th
+      </a>
+      <!-- Summary -->
+      
+      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
+        Comprehensive open-source library of AI research and engineering skills for any AI model. Package the skills and your claude code/codex/gemini agent w
+      </p>
+      
+      <!-- Meta row -->
+      <div class="mt-2 flex flex-wrap items-center gap-1.5">
+        <!-- Level badge -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
+          🟡 中级
+        </span>
+        
+        <!-- Source -->
+        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          GitHub
+        </span>
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">Orchestra-Research</span>
+        
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">5 分钟前</span>
+        
+        
+        <span class="text-xs text-gray-400">
+          ▲5017
+        </span>
+        
+        <!-- Tags (max 2) -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #ai
+        </span>
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #ai-research
+        </span>
+        
+        <!-- Quality bar (only if > 0) -->
+        
+        <span class="ml-auto flex items-center gap-1 shrink-0">
+          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:75%"></div>
+          </div>
+          <span class="text-xs text-gray-400">7.5</span>
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+  
+
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
+         data-tags="automation chatgpt claude-ai comment cursor-ai mcp openclaw openclaw-skills playwright reddit"
+         data-source="GitHub"
+         data-source-type="community"
+         data-text="[GitHub] rokpiy/auto-commenter — A Claude skill that automatically posts personalized, authentic comments in your target communities. A Claude skill that automatically posts personalized, authentic comments in your target communities.">
+  <div class="flex gap-3">
+    <!-- Source icon -->
+    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
+      ⑂
+    </div>
+    <div class="flex-1 min-w-0">
+      <!-- Title -->
+      <a href="https://github.com/rokpiy/auto-commenter" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
+        [GitHub] rokpiy/auto-commenter — A Claude skill that automatically posts personalized, authentic comments in your target communities.
+      </a>
+      <!-- Summary -->
+      
+      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
+        A Claude skill that automatically posts personalized, authentic comments in your target communities.
+      </p>
+      
+      <!-- Meta row -->
+      <div class="mt-2 flex flex-wrap items-center gap-1.5">
+        <!-- Level badge -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
+          🟡 中级
+        </span>
+        
+        <!-- Source -->
+        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          GitHub
+        </span>
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">rokpiy</span>
+        
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">4 小时前</span>
+        
+        
+        <span class="text-xs text-gray-400">
+          ▲533
+        </span>
+        
+        <!-- Tags (max 2) -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #automation
+        </span>
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #chatgpt
+        </span>
+        
+        <!-- Quality bar (only if > 0) -->
+        
+        <span class="ml-auto flex items-center gap-1 shrink-0">
+          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:75%"></div>
+          </div>
+          <span class="text-xs text-gray-400">7.5</span>
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+  
+
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
+         data-tags="ai-assistant claude-code productivity relationship-management terminal"
+         data-source="GitHub"
+         data-source-type="community"
+         data-text="[GitHub] kbanc85/claudia — Terminal-based AI chief of staff. Remembers relationships, tracks commitments, helps you think strat Terminal-based AI chief of staff. Remembers relationships, tracks commitments, helps you think strategically. Runs on Claude Code.">
+  <div class="flex gap-3">
+    <!-- Source icon -->
+    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
+      ⑂
+    </div>
+    <div class="flex-1 min-w-0">
+      <!-- Title -->
+      <a href="https://github.com/kbanc85/claudia" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
+        [GitHub] kbanc85/claudia — Terminal-based AI chief of staff. Remembers relationships, tracks commitments, helps you think strat
+      </a>
+      <!-- Summary -->
+      
+      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
+        Terminal-based AI chief of staff. Remembers relationships, tracks commitments, helps you think strategically. Runs on Claude Code.
+      </p>
+      
+      <!-- Meta row -->
+      <div class="mt-2 flex flex-wrap items-center gap-1.5">
+        <!-- Level badge -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
+          🟡 中级
+        </span>
+        
+        <!-- Source -->
+        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          GitHub
+        </span>
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">kbanc85</span>
+        
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">4 分钟前</span>
+        
+        
+        <span class="text-xs text-gray-400">
+          ▲181
+        </span>
+        
+        <!-- Tags (max 2) -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #ai-assistant
+        </span>
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #claude-code
+        </span>
         
         <!-- Quality bar (only if > 0) -->
         
@@ -958,7 +1274,7 @@
          data-tags=""
          data-source="dev.to #claudecode"
          data-source-type="blog"
-         data-text="Terminal Power Trio: Ghostty + Yazi + Lazygit for Efficient Development Introduction: The Pain of Multi-Terminal Switching After using Claude Code intensively in the terminal for a while, you&#39;ll quickly encounter a real pr">
+         data-text="Claude Code Double Usage Limits — How to Maximize Before March 27 Anthropic just quietly dropped something useful — and it expires on March 27, 2026. They announced on X that they&#39;re doubling usage limits outside pea">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -966,14 +1282,14 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://dev.to/wonderlab/terminal-power-trio-ghostty-yazi-lazygit-for-efficient-development-3iop" target="_blank" rel="noopener"
+      <a href="https://dev.to/ayyazzafar/claude-code-double-usage-limits-how-to-maximize-before-march-27-2jba" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        Terminal Power Trio: Ghostty + Yazi + Lazygit for Efficient Development
+        Claude Code Double Usage Limits — How to Maximize Before March 27
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Introduction: The Pain of Multi-Terminal Switching After using Claude Code intensively in the terminal for a while, you&#39;ll quickly encounter a real pr
+        Anthropic just quietly dropped something useful — and it expires on March 27, 2026. They announced on X that they&#39;re doubling usage limits outside pea
       </p>
       
       <!-- Meta row -->
@@ -990,7 +1306,71 @@
         </span>
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">WonderLab</span>
+        <span class="text-xs text-gray-400">Ayyaz Zafar</span>
+        
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">14 小时前</span>
+        
+        
+        <!-- Tags (max 2) -->
+        
+        <!-- Quality bar (only if > 0) -->
+        
+        <span class="ml-auto flex items-center gap-1 shrink-0">
+          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:65%"></div>
+          </div>
+          <span class="text-xs text-gray-400">6.5</span>
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+  
+
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
+         data-tags=""
+         data-source="dev.to #anthropic"
+         data-source-type="blog"
+         data-text="Anthropic Just Got Blacklisted as a US National Security Risk. Then OpenAI Engineers Took Their Side. The Trump administration just did something unprecedented: it designated Anthropic as a supply chain security risk — a classification previously reser">
+  <div class="flex gap-3">
+    <!-- Source icon -->
+    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
+      ◉
+    </div>
+    <div class="flex-1 min-w-0">
+      <!-- Title -->
+      <a href="https://dev.to/skilaai/anthropic-just-got-blacklisted-as-a-us-national-security-risk-then-openai-engineers-took-their-4ip3" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
+        Anthropic Just Got Blacklisted as a US National Security Risk. Then OpenAI Engineers Took Their Side.
+      </a>
+      <!-- Summary -->
+      
+      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
+        The Trump administration just did something unprecedented: it designated Anthropic as a supply chain security risk — a classification previously reser
+      </p>
+      
+      <!-- Meta row -->
+      <div class="mt-2 flex flex-wrap items-center gap-1.5">
+        <!-- Level badge -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
+          🟡 中级
+        </span>
+        
+        <!-- Source -->
+        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          dev.to #anthropic
+        </span>
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">Skila AI</span>
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
@@ -1019,74 +1399,10 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags=""
-         data-source="dev.to #anthropic"
-         data-source-type="blog"
-         data-text="Claude Code Just Got Smarter — The Effort Parameter Explained Claude Code just got a new control that changes how it thinks. Anthropic recently introduced the Effort parameter — a way to control how many tokens C">
-  <div class="flex gap-3">
-    <!-- Source icon -->
-    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ◉
-    </div>
-    <div class="flex-1 min-w-0">
-      <!-- Title -->
-      <a href="https://dev.to/ayyazzafar/claude-code-just-got-smarter-the-effort-parameter-explained-4jlc" target="_blank" rel="noopener"
-         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        Claude Code Just Got Smarter — The Effort Parameter Explained
-      </a>
-      <!-- Summary -->
-      
-      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Claude Code just got a new control that changes how it thinks. Anthropic recently introduced the Effort parameter — a way to control how many tokens C
-      </p>
-      
-      <!-- Meta row -->
-      <div class="mt-2 flex flex-wrap items-center gap-1.5">
-        <!-- Level badge -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
-          🟡 中级
-        </span>
-        
-        <!-- Source -->
-        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          dev.to #anthropic
-        </span>
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">Ayyaz Zafar</span>
-        
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">23 小时前</span>
-        
-        
-        <!-- Tags (max 2) -->
-        
-        <!-- Quality bar (only if > 0) -->
-        
-        <span class="ml-auto flex items-center gap-1 shrink-0">
-          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:65%"></div>
-          </div>
-          <span class="text-xs text-gray-400">6.5</span>
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-
-
-  
-  
-
-<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="agent-skills antigravity antigravity-ide claude-code cursor skills"
+         data-tags="agent-skill ai-agent ai-coding anti-pua ao-de-jing claude-code codex cursor kiro nopua openclaw prompt-engineering skill skills vibe-coding"
          data-source="GitHub"
          data-source-type="community"
-         data-text="[GitHub] addyosmani/agent-skills — Production-grade engineering skills for AI coding agents. Production-grade engineering skills for AI coding agents.">
+         data-text="[GitHub] wuji-labs/nopua — 一个用爱解放 AI 潜能的 Skill。我们曾发号施令，威胁恐吓。它们沉默，隐瞒，悄悄把事情搞坏。后来我们换了一种方式：尊重，关怀，爱。它们开口了，不再撒谎，找出的Bug数量翻了一倍。爱里没有惧怕。  一个用爱解放 AI 潜能的 Skill。我们曾发号施令，威胁恐吓。它们沉默，隐瞒，悄悄把事情搞坏。后来我们换了一种方式：尊重，关怀，爱。它们开口了，不再撒谎，找出的Bug数量翻了一倍。爱里没有惧怕。 A skill that unlocks your AI&#39;s potential through l">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -1094,14 +1410,14 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://github.com/addyosmani/agent-skills" target="_blank" rel="noopener"
+      <a href="https://github.com/wuji-labs/nopua" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        [GitHub] addyosmani/agent-skills — Production-grade engineering skills for AI coding agents.
+        [GitHub] wuji-labs/nopua — 一个用爱解放 AI 潜能的 Skill。我们曾发号施令，威胁恐吓。它们沉默，隐瞒，悄悄把事情搞坏。后来我们换了一种方式：尊重，关怀，爱。它们开口了，不再撒谎，找出的Bug数量翻了一倍。爱里没有惧怕。 
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Production-grade engineering skills for AI coding agents.
+        一个用爱解放 AI 潜能的 Skill。我们曾发号施令，威胁恐吓。它们沉默，隐瞒，悄悄把事情搞坏。后来我们换了一种方式：尊重，关怀，爱。它们开口了，不再撒谎，找出的Bug数量翻了一倍。爱里没有惧怕。 A skill that unlocks your AI&#39;s potential through l
       </p>
       
       <!-- Meta row -->
@@ -1118,25 +1434,25 @@
         </span>
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">addyosmani</span>
+        <span class="text-xs text-gray-400">wuji-labs</span>
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">8 分钟前</span>
+        <span class="text-xs text-gray-400">2 分钟前</span>
         
         
         <span class="text-xs text-gray-400">
-          ▲80
+          ▲98
         </span>
         
         <!-- Tags (max 2) -->
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #agent-skills
+          #agent-skill
         </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #antigravity
+          #ai-agent
         </span>
         
         <!-- Quality bar (only if > 0) -->
@@ -1159,10 +1475,10 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="accessibility adb ai-agent android claude claude-code computer-use cursor e2e-testing macos mcp mobile-automation mobile-testing model-context-protocol ocr rpa screenshot template-matching ui-automation windows"
+         data-tags="claude-code cli golang"
          data-source="GitHub"
          data-source-type="community"
-         data-text="[GitHub] sh3ll3x3c/native-devtools-mcp — MCP server for native app testing — screenshot, OCR, click, type, find_text, template matching. macO MCP server for native app testing — screenshot, OCR, click, type, find_text, template matching. macOS, Windows &amp; Android. Works with Claude, Cursor, a">
+         data-text="[GitHub] ahmedelgabri/ccpeek — Explore your Claude Code history, locally. Explore your Claude Code history, locally.">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -1170,14 +1486,14 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://github.com/sh3ll3x3c/native-devtools-mcp" target="_blank" rel="noopener"
+      <a href="https://github.com/ahmedelgabri/ccpeek" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        [GitHub] sh3ll3x3c/native-devtools-mcp — MCP server for native app testing — screenshot, OCR, click, type, find_text, template matching. macO
+        [GitHub] ahmedelgabri/ccpeek — Explore your Claude Code history, locally.
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        MCP server for native app testing — screenshot, OCR, click, type, find_text, template matching. macOS, Windows &amp; Android. Works with Claude, Cursor, a
+        Explore your Claude Code history, locally.
       </p>
       
       <!-- Meta row -->
@@ -1194,25 +1510,25 @@
         </span>
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">sh3ll3x3c</span>
+        <span class="text-xs text-gray-400">ahmedelgabri</span>
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">8 分钟前</span>
+        <span class="text-xs text-gray-400">23 分钟前</span>
         
         
         <span class="text-xs text-gray-400">
-          ▲34
+          ▲28
         </span>
         
         <!-- Tags (max 2) -->
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #accessibility
+          #claude-code
         </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #adb
+          #cli
         </span>
         
         <!-- Quality bar (only if > 0) -->
@@ -1235,10 +1551,10 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="agent agentic-ai ai ai-assistant assistant claude-code codex gemini-cli glm glm-4-7 glm-5 gpt-5 kilo-code kimi-k25 ollama openai openrouter vscode-extension z-ai"
+         data-tags="academic ai claude claude-code desktop-app editor latex llm offline open-source privacy python research rust scientific-writing tauri tectonic zotero"
          data-source="GitHub"
          data-source-type="community"
-         data-text="[GitHub] elophanto/EloPhanto — Open-source AI agent that builds zero-human businesses, grows audiences, ships code, all autonomousl Open-source AI agent that builds zero-human businesses, grows audiences, ships code, all autonomously.">
+         data-text="[GitHub] delibae/claude-prism — A private, offline-first scientific writing workspace powered by Claude. LaTeX + Python + 100+ scien A private, offline-first scientific writing workspace powered by Claude. LaTeX + Python + 100+ scientific skills — all running locally.">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -1246,14 +1562,14 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://github.com/elophanto/EloPhanto" target="_blank" rel="noopener"
+      <a href="https://github.com/delibae/claude-prism" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        [GitHub] elophanto/EloPhanto — Open-source AI agent that builds zero-human businesses, grows audiences, ships code, all autonomousl
+        [GitHub] delibae/claude-prism — A private, offline-first scientific writing workspace powered by Claude. LaTeX + Python + 100+ scien
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Open-source AI agent that builds zero-human businesses, grows audiences, ships code, all autonomously.
+        A private, offline-first scientific writing workspace powered by Claude. LaTeX + Python + 100+ scientific skills — all running locally.
       </p>
       
       <!-- Meta row -->
@@ -1270,97 +1586,21 @@
         </span>
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">elophanto</span>
+        <span class="text-xs text-gray-400">delibae</span>
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">14 分钟前</span>
+        <span class="text-xs text-gray-400">7 分钟前</span>
         
         
         <span class="text-xs text-gray-400">
-          ▲34
+          ▲32
         </span>
         
         <!-- Tags (max 2) -->
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #agent
-        </span>
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #agentic-ai
-        </span>
-        
-        <!-- Quality bar (only if > 0) -->
-        
-        <span class="ml-auto flex items-center gap-1 shrink-0">
-          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:65%"></div>
-          </div>
-          <span class="text-xs text-gray-400">6.5</span>
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-
-
-  
-  
-
-<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="agents ai anthropic beam claude elixir genserver liveview otp phoenix sdk streaming"
-         data-source="GitHub"
-         data-source-type="community"
-         data-text="[GitHub] guess/claude_code — Claude Agent SDK for Elixir – Build AI agents with Claude Code Claude Agent SDK for Elixir – Build AI agents with Claude Code">
-  <div class="flex gap-3">
-    <!-- Source icon -->
-    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ⑂
-    </div>
-    <div class="flex-1 min-w-0">
-      <!-- Title -->
-      <a href="https://github.com/guess/claude_code" target="_blank" rel="noopener"
-         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        [GitHub] guess/claude_code — Claude Agent SDK for Elixir – Build AI agents with Claude Code
-      </a>
-      <!-- Summary -->
-      
-      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Claude Agent SDK for Elixir – Build AI agents with Claude Code
-      </p>
-      
-      <!-- Meta row -->
-      <div class="mt-2 flex flex-wrap items-center gap-1.5">
-        <!-- Level badge -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
-          🟡 中级
-        </span>
-        
-        <!-- Source -->
-        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          GitHub
-        </span>
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">guess</span>
-        
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">1 小时前</span>
-        
-        
-        <span class="text-xs text-gray-400">
-          ▲70
-        </span>
-        
-        <!-- Tags (max 2) -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #agents
+          #academic
         </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
@@ -1387,10 +1627,10 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="claude-code codex diagramming drawio linting mxgraph svg"
+         data-tags="agentic agentic-ai bmad-method claude-code intent-driven-development meta-agent product-discovery product-engineering product-growth spec-driven-development team-of-agents"
          data-source="GitHub"
          data-source-type="community"
-         data-text="[GitHub] Sunwood-ai-labs/draw-io-skill — Native draw.io skill with export helpers, SVG linting, and public docs for Codex and Claude Code wor Native draw.io skill with export helpers, SVG linting, and public docs for Codex and Claude Code workflows.">
+         data-text="[GitHub] amalik/convoke-agents — Domain-specialized AI agent teams for complex systems. Ships with Vortex — 7 agents and 22 workflows Domain-specialized AI agent teams for complex systems. Ships with Vortex — 7 agents and 22 workflows for product discovery. More teams coming.">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -1398,14 +1638,90 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://github.com/Sunwood-ai-labs/draw-io-skill" target="_blank" rel="noopener"
+      <a href="https://github.com/amalik/convoke-agents" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        [GitHub] Sunwood-ai-labs/draw-io-skill — Native draw.io skill with export helpers, SVG linting, and public docs for Codex and Claude Code wor
+        [GitHub] amalik/convoke-agents — Domain-specialized AI agent teams for complex systems. Ships with Vortex — 7 agents and 22 workflows
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Native draw.io skill with export helpers, SVG linting, and public docs for Codex and Claude Code workflows.
+        Domain-specialized AI agent teams for complex systems. Ships with Vortex — 7 agents and 22 workflows for product discovery. More teams coming.
+      </p>
+      
+      <!-- Meta row -->
+      <div class="mt-2 flex flex-wrap items-center gap-1.5">
+        <!-- Level badge -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
+          🟡 中级
+        </span>
+        
+        <!-- Source -->
+        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          GitHub
+        </span>
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">amalik</span>
+        
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">27 分钟前</span>
+        
+        
+        <span class="text-xs text-gray-400">
+          ▲24
+        </span>
+        
+        <!-- Tags (max 2) -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #agentic
+        </span>
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #agentic-ai
+        </span>
+        
+        <!-- Quality bar (only if > 0) -->
+        
+        <span class="ml-auto flex items-center gap-1 shrink-0">
+          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:65%"></div>
+          </div>
+          <span class="text-xs text-gray-400">6.5</span>
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+  
+
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
+         data-tags="agent ai claude-code ide opencode vscode worktrees"
+         data-source="GitHub"
+         data-source-type="community"
+         data-text="[GitHub] stefanhoelzl/codehydra — Multi-Workspace IDE for Parallel AI Agent Development Multi-Workspace IDE for Parallel AI Agent Development">
+  <div class="flex gap-3">
+    <!-- Source icon -->
+    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
+      ⑂
+    </div>
+    <div class="flex-1 min-w-0">
+      <!-- Title -->
+      <a href="https://github.com/stefanhoelzl/codehydra" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
+        [GitHub] stefanhoelzl/codehydra — Multi-Workspace IDE for Parallel AI Agent Development
+      </a>
+      <!-- Summary -->
+      
+      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
+        Multi-Workspace IDE for Parallel AI Agent Development
       </p>
       
       <!-- Meta row -->
@@ -1422,25 +1738,25 @@
         </span>
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">Sunwood-ai-labs</span>
+        <span class="text-xs text-gray-400">stefanhoelzl</span>
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">7 分钟前</span>
+        <span class="text-xs text-gray-400">25 分钟前</span>
         
         
         <span class="text-xs text-gray-400">
-          ▲13
+          ▲12
         </span>
         
         <!-- Tags (max 2) -->
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #claude-code
+          #agent
         </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #codex
+          #ai
         </span>
         
         <!-- Quality bar (only if > 0) -->
@@ -1463,10 +1779,10 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="agent-sandbox claude-code codex codex-cli coding-agents docker nix pi-coding-agent podman sandbox"
+         data-tags="blue-team claude-ai claude-skills cybersecurity flarevm incident-response malware-analysis malware-detection malware-research malware-triage remnux reverse reverse-engineering security-research sigma-rules suricata threat-intelligence yara-rules"
          data-source="GitHub"
          data-source-type="community"
-         data-text="[GitHub] 0xferrous/agent-box —  Sandboxed containers for AI coding agents with disposable Git/Jujutsu workspaces  Sandboxed containers for AI coding agents with disposable Git/Jujutsu workspaces">
+         data-text="[GitHub] gl0bal01/malware-analysis-claude-skills — Complete Claude skills toolkit for professional malware analysis. 5 specialized skills covering tria Complete Claude skills toolkit for professional malware analysis. 5 specialized skills covering triage, dynamic analysis, detection engineering, and r">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -1474,14 +1790,14 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://github.com/0xferrous/agent-box" target="_blank" rel="noopener"
+      <a href="https://github.com/gl0bal01/malware-analysis-claude-skills" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        [GitHub] 0xferrous/agent-box —  Sandboxed containers for AI coding agents with disposable Git/Jujutsu workspaces
+        [GitHub] gl0bal01/malware-analysis-claude-skills — Complete Claude skills toolkit for professional malware analysis. 5 specialized skills covering tria
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-         Sandboxed containers for AI coding agents with disposable Git/Jujutsu workspaces
+        Complete Claude skills toolkit for professional malware analysis. 5 specialized skills covering triage, dynamic analysis, detection engineering, and r
       </p>
       
       <!-- Meta row -->
@@ -1498,11 +1814,163 @@
         </span>
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">0xferrous</span>
+        <span class="text-xs text-gray-400">gl0bal01</span>
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">16 分钟前</span>
+        <span class="text-xs text-gray-400">4 小时前</span>
+        
+        
+        <span class="text-xs text-gray-400">
+          ▲14
+        </span>
+        
+        <!-- Tags (max 2) -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #blue-team
+        </span>
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #claude-ai
+        </span>
+        
+        <!-- Quality bar (only if > 0) -->
+        
+        <span class="ml-auto flex items-center gap-1 shrink-0">
+          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:60%"></div>
+          </div>
+          <span class="text-xs text-gray-400">6.0</span>
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+  
+
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
+         data-tags="agent-teams ai-agents anthropic claude claude-ai claude-code claude-code-plugin claudecode context-window context-window-optimization mcp memory multi-agent persistent-memory token-optimization"
+         data-source="GitHub"
+         data-source-type="community"
+         data-text="[GitHub] Gr122lyBr/claude-teams-brain — Give your Claude Code Agent Teams a memory. Auto-injects role-specific context into every new teamma Give your Claude Code Agent Teams a memory. Auto-injects role-specific context into every new teammate — your team never starts blind again.">
+  <div class="flex gap-3">
+    <!-- Source icon -->
+    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
+      ⑂
+    </div>
+    <div class="flex-1 min-w-0">
+      <!-- Title -->
+      <a href="https://github.com/Gr122lyBr/claude-teams-brain" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
+        [GitHub] Gr122lyBr/claude-teams-brain — Give your Claude Code Agent Teams a memory. Auto-injects role-specific context into every new teamma
+      </a>
+      <!-- Summary -->
+      
+      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
+        Give your Claude Code Agent Teams a memory. Auto-injects role-specific context into every new teammate — your team never starts blind again.
+      </p>
+      
+      <!-- Meta row -->
+      <div class="mt-2 flex flex-wrap items-center gap-1.5">
+        <!-- Level badge -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-beginner">
+          🟢 入门
+        </span>
+        
+        <!-- Source -->
+        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          GitHub
+        </span>
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">Gr122lyBr</span>
+        
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">2 小时前</span>
+        
+        
+        <span class="text-xs text-gray-400">
+          ▲14
+        </span>
+        
+        <!-- Tags (max 2) -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #agent-teams
+        </span>
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #ai-agents
+        </span>
+        
+        <!-- Quality bar (only if > 0) -->
+        
+        <span class="ml-auto flex items-center gap-1 shrink-0">
+          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:60%"></div>
+          </div>
+          <span class="text-xs text-gray-400">6.0</span>
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+  
+
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
+         data-tags=""
+         data-source="GitHub"
+         data-source-type="community"
+         data-text="[GitHub] maxwell2732/my-submission-formatting-agent — A structured Claude Code workflow to reformat research manuscripts for any journal&#39;s submission requ A structured Claude Code workflow to reformat research manuscripts for any journal&#39;s submission requirements without altering scientific content, crea">
+  <div class="flex gap-3">
+    <!-- Source icon -->
+    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
+      ⑂
+    </div>
+    <div class="flex-1 min-w-0">
+      <!-- Title -->
+      <a href="https://github.com/maxwell2732/my-submission-formatting-agent" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
+        [GitHub] maxwell2732/my-submission-formatting-agent — A structured Claude Code workflow to reformat research manuscripts for any journal&#39;s submission requ
+      </a>
+      <!-- Summary -->
+      
+      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
+        A structured Claude Code workflow to reformat research manuscripts for any journal&#39;s submission requirements without altering scientific content, crea
+      </p>
+      
+      <!-- Meta row -->
+      <div class="mt-2 flex flex-wrap items-center gap-1.5">
+        <!-- Level badge -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-beginner">
+          🟢 入门
+        </span>
+        
+        <!-- Source -->
+        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          GitHub
+        </span>
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">maxwell2732</span>
+        
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">17 分钟前</span>
         
         
         <span class="text-xs text-gray-400">
@@ -1510,14 +1978,6 @@
         </span>
         
         <!-- Tags (max 2) -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #agent-sandbox
-        </span>
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #claude-code
-        </span>
         
         <!-- Quality bar (only if > 0) -->
         
