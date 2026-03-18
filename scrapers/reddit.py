@@ -19,8 +19,8 @@ class RedditScraper(BaseScraper):
         client_secret = os.getenv("REDDIT_CLIENT_SECRET", "").strip()
 
         if not client_id or not client_secret:
-            print("[Reddit] 未配置 REDDIT_CLIENT_ID / REDDIT_CLIENT_SECRET，使用只读模式")
-            return self._fetch_readonly(cfg)
+            print("[Reddit] 未配置 REDDIT_CLIENT_ID / REDDIT_CLIENT_SECRET，跳过（只读模式已被 Reddit 封锁）")
+            return []
 
         try:
             reddit = praw.Reddit(

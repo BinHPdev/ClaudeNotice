@@ -68,7 +68,7 @@ class BaseScraper:
         return f"{self.SOURCE_NAME}::" + "::".join(str(p) for p in parts)
 
     @staticmethod
-    def safe_request(url: str, headers: dict = None, timeout: int = 15):
+    def safe_request(url: str, headers: dict = None, timeout: int = 10):
         """带重试的 HTTP 请求"""
         import requests
         from tenacity import retry, stop_after_attempt, wait_exponential

@@ -1,5 +1,6 @@
 """RSS/Atom 源爬虫 — 覆盖博客、科技媒体、官方博客"""
 import feedparser
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone, timedelta
 from dateutil import parser as dateparser
 from .base import BaseScraper, Article
@@ -8,6 +9,8 @@ from .base import BaseScraper, Article
 MAX_ITEMS_PER_FEED = 10
 # 跳过超过这么多天的旧内容（PyPI 历史版本等）
 MAX_AGE_DAYS = 60
+# 单个 feed 抓取超时（秒）
+FEED_TIMEOUT = 15
 
 
 class RssScraper(BaseScraper):
@@ -32,13 +35,24 @@ class RssScraper(BaseScraper):
             url = tpl.format(channel_id=ch["channel_id"])
             all_feeds.append(({"name": ch["name"], "url": url}, "video"))
 
-        for feed_info, source_type in all_feeds:
-            try:
-                items = self._parse_feed(feed_info, source_type)
-                articles.extend(items)
-                print(f"[RSS] {feed_info['name']}: {len(items)} 条")
-            except Exception as e:
-                print(f"[RSS] {feed_info.get('name', '?')} 失败: {e}")
+        # 并发抓取所有 feed
+        def _fetch_one(feed_info, source_type):
+            items = self._parse_feed(feed_info, source_type)
+            return feed_info["name"], items
+
+        with ThreadPoolExecutor(max_workers=8) as executor:
+            futures = {
+                executor.submit(_fetch_one, fi, st): fi
+                for fi, st in all_feeds
+            }
+            for future in as_completed(futures, timeout=120):
+                feed_info = futures[future]
+                try:
+                    name, items = future.result(timeout=FEED_TIMEOUT)
+                    articles.extend(items)
+                    print(f"[RSS] {name}: {len(items)} 条")
+                except Exception as e:
+                    print(f"[RSS] {feed_info.get('name', '?')} 失败: {e}")
 
         return articles
 
@@ -50,7 +64,17 @@ class RssScraper(BaseScraper):
         if feed_info.get("type") == "html":
             return self._scrape_anthropic_html(url, name)
 
-        parsed = feedparser.parse(url)
+        # 先用 requests 带超时下载内容，再交给 feedparser 解析
+        import requests
+        try:
+            resp = requests.get(url, timeout=FEED_TIMEOUT, headers={
+                "User-Agent": "ClaudeNotice/1.0 RSS Reader"
+            })
+            resp.raise_for_status()
+            parsed = feedparser.parse(resp.content)
+        except requests.RequestException as e:
+            print(f"[RSS] {name} 下载超时/失败: {e}")
+            return []
         articles = []
         cutoff = datetime.now(timezone.utc) - timedelta(days=MAX_AGE_DAYS)
 
