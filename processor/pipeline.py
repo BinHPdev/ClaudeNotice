@@ -1,6 +1,7 @@
 """内容处理流水线：去重 → 过滤 → Claude 分析 → 分类"""
 import json
 import hashlib
+import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
@@ -123,10 +124,12 @@ class ProcessingPipeline:
         return filtered
 
     def _claude_analyze(self, articles: list[Article]) -> list[Article]:
-        """调用 Claude CLI 分析每篇文章（并发执行）"""
+        """调用 Claude CLI 分析每篇文章（并发执行，带总体超时保护）"""
         concurrency = self.proc_config.get("claude_concurrency", 3)
+        max_total_seconds = 600  # 10 分钟总超时
         total = len(articles)
         analyzed = []
+        start_time = time.monotonic()
 
         def _process_one(idx_article):
             idx, article = idx_article
@@ -137,8 +140,17 @@ class ProcessingPipeline:
         with ThreadPoolExecutor(max_workers=concurrency) as executor:
             futures = [executor.submit(_process_one, (i, a)) for i, a in enumerate(articles)]
             for future in as_completed(futures):
+                # 检查总超时
+                elapsed = time.monotonic() - start_time
+                if elapsed > max_total_seconds:
+                    print(f"  [超时] Claude 分析已运行 {elapsed:.0f}s，跳过剩余文章，使用规则评分")
+                    # 取消未完成的 futures
+                    for f in futures:
+                        f.cancel()
+                    break
+
                 try:
-                    _, article, result = future.result()
+                    _, article, result = future.result(timeout=60)
                 except Exception as e:
                     print(f"  [分析错误] {e}")
                     continue
@@ -160,6 +172,16 @@ class ProcessingPipeline:
                     analyzed.append(article)
                 else:
                     print(f"    → 质量评分 {article.quality_score:.1f} 低于阈值，跳过")
+
+        # 超时后，对未分析的文章使用规则评分
+        if time.monotonic() - start_time > max_total_seconds:
+            analyzed_ids = {id(a) for a in analyzed}
+            for article in articles:
+                if id(article) not in analyzed_ids:
+                    article.quality_score = self._rule_based_score(article)
+                    article.summary_zh = article.content[:150] if article.content else article.title
+                    if article.quality_score >= self.min_quality:
+                        analyzed.append(article)
 
         return analyzed
 

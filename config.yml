@@ -225,7 +225,7 @@ processing:
   # Claude CLI 处理并发数
   claude_concurrency: 3
   # 每次最多处理条数（控制 CLI 调用次数）
-  max_items_per_run: 100
+  max_items_per_run: 30
   # 语言：zh=输出中文摘要, en=英文, both=双语
   summary_language: "zh"
 

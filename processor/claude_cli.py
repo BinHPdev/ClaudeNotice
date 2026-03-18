@@ -5,7 +5,7 @@ import re
 from typing import Optional
 
 
-def call_claude(prompt: str, input_text: str = "", timeout: int = 60) -> Optional[str]:
+def call_claude(prompt: str, input_text: str = "", timeout: int = 30) -> Optional[str]:
     """
     调用本地 Claude Code CLI。
     需要在本机安装了 claude 命令（Claude Code 桌面版自带）。
