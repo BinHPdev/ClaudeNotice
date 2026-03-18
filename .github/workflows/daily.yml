@@ -25,9 +25,12 @@ jobs:
 
       - name: 设置 Python 虚拟环境
         run: |
-          python3 -m venv .venv
+          # 复用已有 venv 避免重复下载
+          if [ ! -f .venv/bin/activate ]; then
+            python3 -m venv .venv
+          fi
           source .venv/bin/activate
-          pip install -q -r requirements.txt
+          pip install -q --retries 3 --timeout 30 -r requirements.txt
 
       - name: 运行爬虫 + 处理 + 生成网站
         timeout-minutes: 20
