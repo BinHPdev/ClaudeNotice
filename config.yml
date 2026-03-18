@@ -42,10 +42,16 @@ github:
     - claude-cli
     - anthropic
     - claude-ai
+    - ai-agent
+    - llm-tools
+    - mcp-server
   search_queries:
     - "claude code workflow"
     - "CLAUDE.md best practices"
     - "anthropic claude productivity"
+    - "model context protocol"
+    - "claude agent sdk"
+    - "ai coding assistant"
   trending: true
   min_stars: 10
 
@@ -80,6 +86,9 @@ hackernews:
     - "claude code"
     - "anthropic"
     - "claude-code"
+    - "ai coding"
+    - "mcp server"
+    - "ai agent"
   min_points: 30
   stories_limit: 100
 
@@ -163,6 +172,12 @@ rss_feeds:
       url: "https://lilianweng.github.io/index.xml"
     - name: "Eugene Yan"
       url: "https://eugeneyan.com/rss.xml"
+    - name: "Chip Huyen"
+      url: "https://huyenchip.com/feed.xml"
+    - name: "Jay Alammar (Visualizing ML)"
+      url: "https://jalammar.github.io/feed.xml"
+    - name: "Sebastian Raschka"
+      url: "https://magazine.sebastianraschka.com/feed"
 
   # 开发者社区博客
   developer_blogs:
@@ -170,6 +185,19 @@ rss_feeds:
       url: "https://dev.to/feed/tag/claudecode"
     - name: "dev.to #anthropic"
       url: "https://dev.to/feed/tag/anthropic"
+    - name: "dev.to #aitools"
+      url: "https://dev.to/feed/tag/aitools"
+    - name: "dev.to #llm"
+      url: "https://dev.to/feed/tag/llm"
+    - name: "Hacker Noon AI"
+      url: "https://hackernoon.com/tagged/ai/feed"
+
+  # AI 工具与产品
+  ai_tools:
+    - name: "Product Hunt AI"
+      url: "https://www.producthunt.com/feed?category=ai"
+    - name: "There's an AI for That"
+      url: "https://theresanaiforthat.com/rss/"
 
 # ────────────────────────────────────────
 # 中文源
@@ -225,7 +253,7 @@ processing:
   # Claude CLI 处理并发数
   claude_concurrency: 3
   # 每次最多处理条数（控制 CLI 调用次数）
-  max_items_per_run: 30
+  max_items_per_run: 100
   # 语言：zh=输出中文摘要, en=英文, both=双语
   summary_language: "zh"
 

@@ -166,5 +166,6 @@ class RssScraper(BaseScraper):
             "newsletter": "blog",
             "high_quality_blogs": "blog",
             "developer_blogs": "blog",
+            "ai_tools": "news",
         }
         return mapping.get(category, "news")

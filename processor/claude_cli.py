@@ -47,18 +47,20 @@ def analyze_article(title: str, content: str, source: str) -> Optional[dict]:
     - category: frontier / stable
     - is_relevant: 是否与 Claude Code 使用相关
     """
-    prompt = f"""你是一个 Claude Code 技术内容筛选助手。
+    prompt = f"""你是一个 Claude Code / AI 技术内容筛选助手。
 
-请分析以下来自「{source}」的文章，判断它是否与 Claude Code 的使用、技巧、最佳实践、工作流相关。
+请分析以下来自「{source}」的文章，判断它是否与 Claude Code 使用、AI 编程工具、LLM 工作流、最佳实践相关。
 
 请严格输出以下 JSON 格式，不要有任何多余文字：
 
 {{
   "is_relevant": true/false,
   "summary_zh": "2-3句中文摘要，说明文章的核心价值",
-  "tags": ["标签1", "标签2"],  // 从以下选择：CLAUDE.md、workflow、提效技巧、新功能、最佳实践、工具集成、案例分享、模型能力、提示工程
+  "tags": ["标签1", "标签2"],  // 从以下选择：CLAUDE.md、workflow、提效技巧、新功能、最佳实践、工具集成、案例分享、模型能力、提示工程、SDK更新、研究论文、GitHub热门、MCP
   "quality_score": 7.5,  // 0-10分，综合信息密度、实用性、新颖性
-  "category": "frontier"  // frontier=7天内新内容/新技巧; stable=经过验证的成熟实践
+  "category": "frontier",  // frontier=7天内新内容/新技巧; stable=经过验证的成熟实践
+  "should_pin": false,  // 是否值得「经典置顶」— 仅对具有长期参考价值的里程碑内容设为 true（如重大版本发布、开创性教程、权威最佳实践指南、高星开源工具）
+  "pin_reason": ""  // 如 should_pin=true，用一句话说明为什么值得置顶
 }}
 
 文章标题：{title}

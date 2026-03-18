@@ -214,10 +214,14 @@
 <main class="max-w-6xl mx-auto px-4 py-6">
 
   <!-- Stats bar -->
-  <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+  <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 mb-6">
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-gray-100 dark:border-gray-800 text-center">
       <div class="text-2xl font-bold text-brand-600">{{ total_count }}</div>
       <div class="text-xs text-gray-400 mt-0.5">今日收录</div>
+    </div>
+    <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-rose-100 dark:border-rose-900/40 text-center">
+      <div class="text-2xl font-bold text-rose-500">{{ pinned_count }}</div>
+      <div class="text-xs text-gray-400 mt-0.5">经典置顶</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-amber-100 dark:border-amber-900/40 text-center">
       <div class="text-2xl font-bold text-amber-500">{{ official_count }}</div>
@@ -329,6 +333,66 @@
 
     <!-- ── Article Sections ───────────────────── -->
     <div class="flex-1 min-w-0 space-y-10">
+
+      <!-- 📌 经典置顶 -->
+      {% if pinned_articles %}
+      <section id="section-pinned">
+        <h2 class="section-divider text-sm font-bold text-rose-500 mb-4">
+          <span>📌 经典置顶</span>
+          <span class="text-xs font-normal text-gray-400">长期价值内容，由 AI 推荐</span>
+        </h2>
+        <div class="space-y-2" id="pinned-list">
+          {% for pin in pinned_articles %}
+          <article class="card group bg-gradient-to-r from-rose-50 to-white dark:from-rose-950/20 dark:to-gray-900 rounded-xl border border-rose-100 dark:border-rose-900/40 p-4 hover:border-rose-300 dark:hover:border-rose-700 article-item"
+                   data-tags="{{ pin.tags | join(' ') if pin.tags else '' }}"
+                   data-source="{{ pin.source }}"
+                   data-source-type="{{ pin.source_type }}"
+                   data-text="{{ pin.title }} {{ pin.summary_zh }}">
+            <div class="flex gap-3">
+              <div class="shrink-0 w-8 h-8 rounded-lg bg-rose-100 dark:bg-rose-900/30 flex items-center justify-center text-sm font-bold text-rose-500 border border-rose-200 dark:border-rose-800 mt-0.5">
+                📌
+              </div>
+              <div class="flex-1 min-w-0">
+                <a href="{{ pin.url }}" target="_blank" rel="noopener"
+                   class="font-medium text-gray-900 dark:text-gray-100 hover:text-rose-600 dark:hover:text-rose-400 line-clamp-2 leading-snug text-sm">
+                  {{ pin.title }}
+                </a>
+                {% if pin.summary_zh %}
+                <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
+                  {{ pin.summary_zh }}
+                </p>
+                {% endif %}
+                <div class="mt-2 flex flex-wrap items-center gap-1.5">
+                  {% if pin.pin_reason %}
+                  <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium bg-rose-50 dark:bg-rose-900/30 text-rose-600 dark:text-rose-400">
+                    💎 {{ pin.pin_reason }}
+                  </span>
+                  {% endif %}
+                  <span class="text-xs text-gray-400 font-medium uppercase tracking-wide">{{ pin.source }}</span>
+                  {% if pin.score and pin.score > 0 %}
+                  <span class="text-xs text-gray-400">★{{ pin.score }}</span>
+                  {% endif %}
+                  {% for tag in (pin.tags or [])[:2] %}
+                  <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+                    #{{ tag }}
+                  </span>
+                  {% endfor %}
+                  {% if pin.quality_score and pin.quality_score > 0 %}
+                  <span class="ml-auto flex items-center gap-1 shrink-0">
+                    <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+                      <div class="score-bar" style="width:{{ (pin.quality_score * 10) | int }}%"></div>
+                    </div>
+                    <span class="text-xs text-gray-400">{{ "%.1f"|format(pin.quality_score) }}</span>
+                  </span>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </article>
+          {% endfor %}
+        </div>
+      </section>
+      {% endif %}
 
       <!-- 官方动态 -->
       {% if official_articles %}
@@ -504,7 +568,7 @@ function applyFilters() {
   });
 
   // Show/hide section headings
-  ['official-list', 'frontier-list', 'stable-list'].forEach(id => {
+  ['pinned-list', 'official-list', 'frontier-list', 'stable-list'].forEach(id => {
     const list = document.getElementById(id);
     if (!list) return;
     const section = list.closest('section');

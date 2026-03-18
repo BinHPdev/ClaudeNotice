@@ -45,7 +45,7 @@ jobs:
         run: |
           git config user.name  "ClaudeNotice Bot"
           git config user.email "bot@claudenotice.local"
-          git add docs/ data/processed/ data/seen_ids.json
+          git add docs/ data/processed/ data/seen_ids.json data/pinned.json
           git diff --cached --quiet || git commit -m "chore: daily update $(date -u +%Y-%m-%d)"
           git push origin main
 

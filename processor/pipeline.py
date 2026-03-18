@@ -1,4 +1,4 @@
-"""内容处理流水线：去重 → 过滤 → Claude 分析 → 分类"""
+"""内容处理流水线：去重 → 过滤 → Claude 分析 → 分类 → 置顶"""
 import json
 import hashlib
 import time
@@ -14,6 +14,7 @@ DATA_DIR = Path("data")
 RAW_DIR = DATA_DIR / "raw"
 PROCESSED_DIR = DATA_DIR / "processed"
 SEEN_IDS_FILE = DATA_DIR / "seen_ids.json"
+PINNED_FILE = DATA_DIR / "pinned.json"
 
 
 class ProcessingPipeline:
@@ -56,25 +57,32 @@ class ProcessingPipeline:
         # 7. 按质量评分排序
         articles.sort(key=lambda a: a.quality_score, reverse=True)
 
-        # 8. 保存处理后数据
+        # 8. 处理置顶：新发现的经典内容写入 pinned.json
+        self._update_pinned(articles)
+
+        # 9. 保存处理后数据
         self._save_processed(articles, today)
 
-        # 9. 更新已见 ID
+        # 10. 更新已见 ID
         self._update_seen_ids(articles)
 
-        print(f"=== 流水线完成 | 最终 {len(articles)} 条 ===\n")
+        pinned_count = sum(1 for a in articles if a.is_pinned)
+        print(f"=== 流水线完成 | 最终 {len(articles)} 条，{pinned_count} 条置顶 ===\n")
         return articles
 
     def _deduplicate(self, articles: list[Article]) -> list[Article]:
         """基于 raw_id + URL + 标题相似度去重"""
         seen_ids = self._load_seen_ids()
+        # 置顶文章的 ID 不参与去重（允许重新出现）
+        pinned_ids = self._load_pinned_ids()
+
         seen_urls = set()
         seen_title_hashes = set()
         unique = []
 
         for article in articles:
-            # 检查历史已见
-            if article.raw_id in seen_ids:
+            # 置顶文章跳过历史去重
+            if article.raw_id not in pinned_ids and article.raw_id in seen_ids:
                 continue
 
             # URL 去重
@@ -102,7 +110,8 @@ class ProcessingPipeline:
         ]
         required_keywords = [
             "claude", "anthropic", "claude code", "ai", "llm",
-            "gpt", "workflow", "prompt", "模型", "人工智能"
+            "gpt", "workflow", "prompt", "模型", "人工智能",
+            "mcp", "agent", "copilot", "cursor", "coding assistant",
         ]
 
         for article in articles:
@@ -144,7 +153,6 @@ class ProcessingPipeline:
                 elapsed = time.monotonic() - start_time
                 if elapsed > max_total_seconds:
                     print(f"  [超时] Claude 分析已运行 {elapsed:.0f}s，跳过剩余文章，使用规则评分")
-                    # 取消未完成的 futures
                     for f in futures:
                         f.cancel()
                     break
@@ -163,6 +171,11 @@ class ProcessingPipeline:
                     article.tags = result.get("tags", [])
                     article.quality_score = float(result.get("quality_score", 5.0))
                     article.category = result.get("category", "frontier")
+                    # 置顶判断
+                    if result.get("should_pin"):
+                        article.is_pinned = True
+                        article.pin_reason = result.get("pin_reason", "")
+                        print(f"    📌 推荐置顶: {article.pin_reason}")
                 else:
                     # Claude CLI 不可用时的降级策略
                     article.quality_score = self._rule_based_score(article)
@@ -229,6 +242,60 @@ class ProcessingPipeline:
             score += 0.5
 
         return min(score, 10.0)
+
+    # ── 置顶管理 ──────────────────────────────────────
+
+    def _load_pinned(self) -> list[dict]:
+        """加载已置顶文章"""
+        if PINNED_FILE.exists():
+            with open(PINNED_FILE, "r", encoding="utf-8") as f:
+                return json.load(f)
+        return []
+
+    def _load_pinned_ids(self) -> set:
+        return {p.get("raw_id", "") for p in self._load_pinned()}
+
+    def _update_pinned(self, articles: list[Article]):
+        """将新发现的经典内容追加到 pinned.json，最多保留 30 条"""
+        pinned = self._load_pinned()
+        pinned_urls = {p.get("url", "") for p in pinned}
+
+        new_pins = [a for a in articles if a.is_pinned and a.url not in pinned_urls]
+
+        for article in new_pins:
+            pinned.append({
+                "title": article.title,
+                "url": article.url,
+                "source": article.source,
+                "source_type": article.source_type,
+                "summary_zh": article.summary_zh,
+                "pin_reason": article.pin_reason,
+                "quality_score": article.quality_score,
+                "score": article.score,
+                "tags": article.tags,
+                "pinned_at": datetime.now(timezone.utc).isoformat(),
+                "raw_id": article.raw_id,
+                "author": article.author,
+                "language": article.language,
+            })
+            print(f"  📌 新增置顶: {article.title[:60]}")
+
+        # 按 quality_score 降序，保留前 30
+        pinned.sort(key=lambda p: p.get("quality_score", 0), reverse=True)
+        pinned = pinned[:30]
+
+        with open(PINNED_FILE, "w", encoding="utf-8") as f:
+            json.dump(pinned, f, ensure_ascii=False, indent=2, default=str)
+
+        if new_pins:
+            print(f"  📌 置顶库: 共 {len(pinned)} 条（新增 {len(new_pins)} 条）")
+
+        # 标记所有已置顶的文章（包括之前已在库中的）
+        for article in articles:
+            if article.url in {p["url"] for p in pinned}:
+                article.is_pinned = True
+
+    # ── 数据保存 ──────────────────────────────────────
 
     def _save_raw(self, articles: list[Article], date: str):
         path = RAW_DIR / f"{date}.json"

@@ -37,6 +37,8 @@ class Article:
     # 元数据
     language: str = "en"         # en / zh
     raw_id: str = ""             # 原平台 ID，用于去重
+    is_pinned: bool = False      # 经典内容，常驻展示
+    pin_reason: str = ""         # 置顶理由
 
     def to_dict(self) -> dict:
         d = asdict(self)

@@ -15,6 +15,7 @@ except ImportError:
 
 TEMPLATE_DIR = Path("generator/templates")
 SITE_DIR = Path("docs")
+PINNED_FILE = Path("data/pinned.json")
 
 
 class SiteGenerator:
@@ -30,6 +31,9 @@ class SiteGenerator:
 
     def generate(self, articles: list[Article], daily_summary: str = ""):
         SITE_DIR.mkdir(parents=True, exist_ok=True)
+
+        # 加载置顶文章
+        pinned_articles = self._load_pinned()
 
         # Claude Code 官方动态（置顶专区）
         official_articles = [a for a in articles if a.source_type == "official"]
@@ -59,6 +63,7 @@ class SiteGenerator:
             updated_at=now.strftime("%Y-%m-%d %H:%M UTC"),
             updated_at_zh=self._format_date_zh(now),
             daily_summary=daily_summary,
+            pinned_articles=pinned_articles,
             official_articles=official_articles,
             frontier_articles=frontier,
             stable_articles=stable,
@@ -68,6 +73,7 @@ class SiteGenerator:
             frontier_count=len(frontier),
             stable_count=len(stable),
             official_count=len(official_articles),
+            pinned_count=len(pinned_articles),
             awesome_html=awesome_html,
             github_repo=github_repo,
         )
@@ -78,6 +84,16 @@ class SiteGenerator:
 
         # 复制静态资源
         self._copy_static()
+
+    def _load_pinned(self) -> list[dict]:
+        """加载置顶文章"""
+        if not PINNED_FILE.exists():
+            return []
+        try:
+            with open(PINNED_FILE, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception:
+            return []
 
     def _render_awesome_md(self) -> str:
         """读取 AWESOME-CLAUDE-CODE.md 并转换为 HTML"""
@@ -145,9 +161,12 @@ class SiteGenerator:
             "X (Twitter)": "𝕏",
             "Hacker News": "Y",
             "GitHub": "⑂",
+            "GitHub Trending": "🔥",
+            "GitHub Rising": "📈",
             "YouTube": "▶",
             "Ben's Bites": "🍔",
             "Import AI": "📬",
+            "Product Hunt": "🚀",
             "掘金": "稀",
             "V2EX": "V",
             "少数派": "少",
