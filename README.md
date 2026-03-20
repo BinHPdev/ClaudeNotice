@@ -2,7 +2,7 @@
 
 > Claude Code 最新资讯与最佳实践自动聚合，每日更新
 
-**访问地址**: `https://YOUR_USERNAME.github.io/ClaudeNotice`
+**访问地址**: `https://binhpdev.github.io/ClaudeNotice/`
 
 ---
 
