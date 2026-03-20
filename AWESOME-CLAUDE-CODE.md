@@ -4,7 +4,7 @@
 >
 > 永久性知识沉淀 · 持续社区共建 · 按层级分类 · 中英双语
 >
-> 更新日期：2026-03-04 | 维护：ClaudeNotice
+> 更新日期：2026-03-20 | 维护：ClaudeNotice
 
 ---
 
@@ -60,6 +60,30 @@
 |------|-------|------|
 | [anthropics/claude-code](https://github.com/anthropics/claude-code) | 55k+ | Claude Code CLI 官方仓库，CHANGELOG 和 Issue 追踪 |
 | [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers) | — | 官方 MCP 参考服务器实现集合 |
+
+### Anthropic Academy（官方培训平台）
+
+> 🎓 Anthropic 官方推出的系统化学习平台，部分课程完成后可参加考试获取认证证书
+
+| 课程 | 层级 | 说明 |
+|------|------|------|
+| [Anthropic Academy 首页](https://anthropic.skilljar.com/) | 🟢🟡🔴 | 官方培训门户，包含 13+ 课程，**免费注册** |
+| [Claude 101](https://anthropic.skilljar.com/claude-101) | 🟢 | Claude 入门课程：日常工作任务、核心功能、进阶学习路径 |
+| [Claude Code in Action](https://anthropic.skilljar.com/claude-code-in-action) | 🟡🔴 | Claude Code 实战：工具集成、MCP Server、GitHub 工作流、推理模式 |
+| [AI Fluency: Framework & Foundations](https://anthropic.skilljar.com/ai-fluency-framework-foundations) | 🟢🟡 | AI 素养框架：与 AI 高效、安全、合乎伦理地协作，**完成后可获认证证书** |
+| [Building with the Claude API](https://anthropic.skilljar.com/building-with-the-claude-api) | 🟡🔴 | Claude API 开发实战 |
+| [Introduction to Model Context Protocol](https://anthropic.skilljar.com/introduction-to-model-context-protocol) | 🟡🔴 | MCP 入门：用 Python 构建 MCP Server/Client，掌握 Tools/Resources/Prompts 三大原语 |
+| [Model Context Protocol: Advanced Topics](https://anthropic.skilljar.com/model-context-protocol-advanced-topics) | 🔴 | MCP 进阶主题 |
+| [Introduction to Agent Skills](https://anthropic.skilljar.com/introduction-to-agent-skills) | 🟡🔴 | Agent Skills 入门：构建模块化智能体能力 |
+| [AI Fluency for Educators](https://anthropic.skilljar.com/ai-fluency-for-educators) | 🟢🟡 | 面向教育工作者的 AI 素养课程 |
+| [AI Fluency for Students](https://anthropic.skilljar.com/ai-fluency-for-students) | 🟢 | 面向学生的 AI 素养课程 |
+
+```
+💡 学习路径建议：
+   初学者：Claude 101 → AI Fluency → Claude Code in Action
+   开发者：Building with Claude API → Intro to MCP → MCP Advanced → Agent Skills
+   完成 AI Fluency 课程后可参加考试，通过后获得 Anthropic 官方认证证书
+```
 
 ### 官方报告 & 白皮书
 
