@@ -1,1 +1,118 @@
-[]
+[
+  {
+    "title": "Harness design for long-running application development",
+    "url": "https://www.anthropic.com/engineering/harness-design-long-running-apps",
+    "source": "Anthropic Engineering",
+    "source_type": "official",
+    "summary_zh": "Anthropic Engineering 深度解析如何为长时运行的自主软件工程任务设计「Harness」框架，以突破 Claude 在前端设计和复杂编程任务中的性能瓶颈。文章聚焦 agentic coding 前沿，揭示评估与执行环境的架构设计对模型表现的关键影响。对构建 Claude Code 工作流和 AI 编程 Agent 的开发者具有重要参考价值。",
+    "pin_reason": "来自 Anthropic 官方工程博客，系统阐述 agentic coding harness 设计原则，是长时运行 AI 编程 Agent 架构的权威参考，具有长期指导价值。",
+    "quality_score": 9.0,
+    "score": 0,
+    "tags": [
+      "workflow",
+      "最佳实践",
+      "工具集成",
+      "模型能力"
+    ],
+    "pinned_at": "2026-03-28T16:22:51.361958+00:00",
+    "raw_id": "rss::Anthropic Engineering::https://www.anthropic.com/engineering/harness-design-long-running-apps",
+    "author": "",
+    "language": "en"
+  },
+  {
+    "title": "Claude Code auto mode: a safer way to skip permissions",
+    "url": "https://www.anthropic.com/engineering/claude-code-auto-mode",
+    "source": "Anthropic Engineering",
+    "source_type": "official",
+    "summary_zh": "Claude Code 推出 auto mode，通过分类器自动处理权限提示，用户原本需要手动批准 93% 的权限请求。该功能在提升安全性的同时减少审批疲劳，文章详细说明了分类器能捕获的场景及其局限性。",
+    "pin_reason": "Claude Code 权限管理重大新功能发布，auto mode 直接改变日常使用体验，具有长期参考价值",
+    "quality_score": 8.5,
+    "score": 0,
+    "tags": [
+      "新功能",
+      "workflow",
+      "最佳实践"
+    ],
+    "pinned_at": "2026-03-28T16:22:51.361996+00:00",
+    "raw_id": "rss::Anthropic Engineering::https://www.anthropic.com/engineering/claude-code-auto-mode",
+    "author": "",
+    "language": "en"
+  },
+  {
+    "title": "Anthropic hands Claude Code more control, but keeps it on a leash",
+    "url": "https://techcrunch.com/2026/03/24/anthropic-hands-claude-code-more-control-but-keeps-it-on-a-leash/",
+    "source": "TechCrunch AI",
+    "source_type": "news",
+    "summary_zh": "Anthropic 为 Claude Code 推出新的「自动模式」，允许 AI 在执行任务时减少用户审批步骤，提升自主性。该模式通过内置安全机制在速度与安全之间取得平衡，反映了 AI 编程工具向更自主化方向演进的趋势。",
+    "pin_reason": "Claude Code 官方重大功能更新——自动模式正式发布，对日常使用工作流有直接影响，具有长期参考价值。",
+    "quality_score": 8.5,
+    "score": 0,
+    "tags": [
+      "新功能",
+      "workflow",
+      "最佳实践"
+    ],
+    "pinned_at": "2026-03-28T16:22:51.362012+00:00",
+    "raw_id": "rss::TechCrunch AI::https://techcrunch.com/?p=3105640",
+    "author": "Rebecca Bellan",
+    "language": "en"
+  },
+  {
+    "title": "[AINews] The Biggest Claude Launch of All Time",
+    "url": "https://www.latent.space/p/ainews-the-biggest-claude-launch",
+    "source": "Latent Space",
+    "source_type": "blog",
+    "summary_zh": "Latent Space AINews 对史上最大规模 Claude 发布的深度报道，涵盖新模型能力与重要特性更新。作为 Claude Code 的底层模型，此次发布直接影响 AI 编程工具的能力边界。对关注 Claude 生态的开发者具有重要参考价值。",
+    "pin_reason": "Latent Space 对重大 Claude 版本发布的权威解读，具有长期参考价值，是理解 Claude 能力演进的里程碑内容",
+    "quality_score": 8.5,
+    "score": 0,
+    "tags": [
+      "新功能",
+      "模型能力",
+      "workflow"
+    ],
+    "pinned_at": "2026-03-28T16:22:51.362021+00:00",
+    "raw_id": "rss::Latent Space::https://www.latent.space/p/ainews-the-biggest-claude-launch",
+    "author": "",
+    "language": "en"
+  },
+  {
+    "title": "CLAUDE.md: the config file that makes Claude Code agents actually remember things",
+    "url": "https://dev.to/subprime2010/claudemd-the-config-file-that-makes-claude-code-agents-actually-remember-things-3a5p",
+    "source": "dev.to #claudecode",
+    "source_type": "blog",
+    "summary_zh": "深入介绍 CLAUDE.md 配置文件的作用与最佳实践，该文件作为项目级系统提示，为 Claude Code 提供跨会话的持久记忆、行为规则和项目上下文。文章详细讲解如何正确配置此文件，使 Agent 在每次任务和子任务中都能继承项目特定知识。对于希望提升 Claude Code 工作效率的开发者具有直接参考价值。",
+    "pin_reason": "CLAUDE.md 是 Claude Code 持久化配置的核心机制，本文提供了权威的配置指南，具有长期参考价值。",
+    "quality_score": 8.5,
+    "score": 0,
+    "tags": [
+      "CLAUDE.md",
+      "最佳实践",
+      "workflow",
+      "提效技巧"
+    ],
+    "pinned_at": "2026-03-28T16:22:51.362026+00:00",
+    "raw_id": "rss::dev.to #claudecode::https://dev.to/subprime2010/claudemd-the-config-file-that-makes-claude-code-agents-actually-remember-things-3a5p",
+    "author": "brian austin",
+    "language": "en"
+  },
+  {
+    "title": "[AINews] Every Lab serious enough about Developers has bought their own Devtools",
+    "url": "https://www.latent.space/p/ainews-every-lab-serious-enough-about",
+    "source": "Latent Space",
+    "source_type": "blog",
+    "summary_zh": "文章报道了主要 AI 实验室（OpenAI、Anthropic、Google DeepMind）相继收购开发者工具公司的趋势：OpenAI 收购 Astral（Python 工具链），Anthropic 收购 Bun（JS 运行时），Google DeepMind 收购 Antigravity 团队。这标志着 AI 巨头正在将开发者工具能力内化为核心战略资产，直接影响 AI 编程工具生态格局。",
+    "pin_reason": "AI 实验室批量收购主流开发者工具链是行业结构性转变的里程碑事件，对 Claude Code 生态（Bun 收购）及整个 AI 编程工具格局有长期影响，值得持续参考。",
+    "quality_score": 7.8,
+    "score": 0,
+    "tags": [
+      "工具集成",
+      "新功能",
+      "模型能力"
+    ],
+    "pinned_at": "2026-03-28T16:22:51.362036+00:00",
+    "raw_id": "rss::Latent Space::https://www.latent.space/p/ainews-every-lab-serious-enough-about",
+    "author": "",
+    "language": "en"
+  }
+]
