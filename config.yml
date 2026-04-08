@@ -45,6 +45,11 @@ github:
     - ai-agent
     - llm-tools
     - mcp-server
+    - claude-skills
+    - claude-hooks
+    - claude-plugins
+    - claude-agent-sdk
+    - agentic-coding
   search_queries:
     - "claude code workflow"
     - "CLAUDE.md best practices"
@@ -52,6 +57,11 @@ github:
     - "model context protocol"
     - "claude agent sdk"
     - "ai coding assistant"
+    - "claude code skills"
+    - "claude code hooks"
+    - "awesome claude code"
+    - "claude code tutorial"
+    - "claude code plugins"
   trending: true
   min_stars: 10
 
@@ -109,12 +119,36 @@ rss_feeds:
     - name: "Anthropic SDK TypeScript"
       url: "https://github.com/anthropics/anthropic-sdk-typescript/releases.atom"
       note: "TypeScript SDK 版本更新"
+    - name: "Claude Code Action Releases"
+      url: "https://github.com/anthropics/claude-code-action/releases.atom"
+      note: "Claude Code GitHub Action 版本更新"
+    - name: "Claude Agent SDK Python Releases"
+      url: "https://github.com/anthropics/claude-agent-sdk-python/releases.atom"
+      note: "Claude Agent SDK Python 版本更新"
     - name: "PyPI anthropic"
       url: "https://pypi.org/rss/project/anthropic/releases.xml"
       note: "anthropic PyPI 包发布"
     - name: "PyPI openai"
       url: "https://pypi.org/rss/project/openai/releases.xml"
       note: "openai PyPI 包发布（对照参考）"
+
+  # ★ 社区精选资源动态（awesome 列表、精选项目更新）
+  community_curated:
+    - name: "awesome-claude-code commits"
+      url: "https://github.com/hesreallyhim/awesome-claude-code/commits/main.atom"
+      note: "37k+ stars，社区最权威 Claude Code 资源目录更新"
+    - name: "awesome-claude-skills commits"
+      url: "https://github.com/ComposioHQ/awesome-claude-skills/commits/main.atom"
+      note: "52k+ stars，Claude Skills 精选目录更新"
+    - name: "everything-claude-code commits"
+      url: "https://github.com/affaan-m/everything-claude-code/commits/main.atom"
+      note: "146k+ stars，Agent harness 性能优化系统更新"
+    - name: "anthropics/skills commits"
+      url: "https://github.com/anthropics/skills/commits/main.atom"
+      note: "官方 Agent Skills 仓库更新"
+    - name: "learn-claude-code commits"
+      url: "https://github.com/shareAI-lab/learn-claude-code/commits/main.atom"
+      note: "50k+ stars，从零构建 Claude Code 架构教程更新"
 
   # Anthropic 官方内容（使用社区维护的 RSS，含真实发布时间）
   official:
@@ -159,6 +193,12 @@ rss_feeds:
       url: "https://www.deeplearning.ai/the-batch/feed/"
     - name: "AI News (smol.ai)"
       url: "https://buttondown.com/ainews/rss"
+    - name: "AI Coding Daily"
+      url: "https://aicodingdaily.substack.com/feed"
+      note: "专注 AI 编程工具的每日 newsletter"
+    - name: "Karo Zieminski (Claude tips)"
+      url: "https://karozieminski.substack.com/feed"
+      note: "Claude Code 实战技巧专栏"
 
   # 高质量技术博客
   high_quality_blogs:
@@ -178,6 +218,12 @@ rss_feeds:
       url: "https://jalammar.github.io/feed.xml"
     - name: "Sebastian Raschka"
       url: "https://magazine.sebastianraschka.com/feed"
+    - name: "Builder.io Blog"
+      url: "https://www.builder.io/blog/rss.xml"
+      note: "高质量前端+AI 技术博客"
+    - name: "The Advanced Guide to Claude Code"
+      url: "https://corpwaters.substack.com/feed"
+      note: "Claude Code 深度进阶指南"
 
   # 开发者社区博客
   developer_blogs:
@@ -279,3 +325,8 @@ site:
     - 提示工程
     - SDK更新
     - 研究论文
+    - Skills/Hooks
+    - MCP
+    - Agent编排
+    - 入门教程
+    - 开源项目
