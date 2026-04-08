@@ -1,1 +1,5 @@
-今日内容已更新，请查看下方详情。
+Claude Code 近两周（3/25-4/8）进入史上最密集迭代期，从 v2.1.84 一路飙升至 v2.1.96，共发布 12 个版本。三大里程碑：(1) /powerup 交互式教程系统上线（v2.1.90），这是官方首个内置学习工具，覆盖 Hooks、MCP、子 Agent 等全部进阶功能；(2) 默认 effort 从 medium 升至 high（v2.1.94），所有付费用户输出质量自动提升；(3) MCP 工具结果上限扩至 500K 字符（v2.1.91），解锁大负载数据场景。此外 CJK 文本乱码（U+FFFD）在 v2.1.94 修复，中文用户体验显著改善。
+
+定价方面，Anthropic 宣布 Claude Code 订阅不再覆盖 OpenClaw 等第三方 harness 用量，改为按量计费，依赖外部工具链的团队需重新评估成本。
+
+GitHub 生态持续爆发：everything-claude-code（146k stars）成为社区最大项目；YC CEO Garry Tan 公开完整配置 gstack（67k stars）；learn-claude-code（50k stars）从零剖析 Agent 架构原理；antigravity-awesome-skills 提供 1,370+ 可安装 Skills。社区正从「单兵工具」向「团队级 Agent 编排平台」快速演进。

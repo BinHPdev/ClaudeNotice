@@ -167,5 +167,6 @@ class RssScraper(BaseScraper):
             "high_quality_blogs": "blog",
             "developer_blogs": "blog",
             "ai_tools": "news",
+            "community_curated": "community",
         }
         return mapping.get(category, "news")
