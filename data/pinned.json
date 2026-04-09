@@ -8,7 +8,12 @@
     "pin_reason": "来自 Anthropic 官方工程博客，系统阐述 agentic coding harness 设计原则，是长时运行 AI 编程 Agent 架构的权威参考。",
     "quality_score": 9.0,
     "score": 0,
-    "tags": ["workflow", "最佳实践", "工具集成", "模型能力"],
+    "tags": [
+      "workflow",
+      "最佳实践",
+      "工具集成",
+      "模型能力"
+    ],
     "pinned_at": "2026-03-28T16:22:51.361958+00:00",
     "raw_id": "rss::Anthropic Engineering::https://www.anthropic.com/engineering/harness-design-long-running-apps",
     "author": "",
@@ -23,7 +28,11 @@
     "pin_reason": "Claude Code 权限管理重大新功能发布，auto mode 直接改变日常使用体验，具有长期参考价值。",
     "quality_score": 9.0,
     "score": 0,
-    "tags": ["新功能", "workflow", "最佳实践"],
+    "tags": [
+      "新功能",
+      "workflow",
+      "最佳实践"
+    ],
     "pinned_at": "2026-03-28T16:22:51.361996+00:00",
     "raw_id": "rss::Anthropic Engineering::https://www.anthropic.com/engineering/claude-code-auto-mode",
     "author": "",
@@ -38,7 +47,11 @@
     "pin_reason": "官方首个内置交互式教程系统，对新用户入门和老用户发现隐藏功能均有重要价值。",
     "quality_score": 9.0,
     "score": 0,
-    "tags": ["新功能", "入门教程", "提效技巧"],
+    "tags": [
+      "新功能",
+      "入门教程",
+      "提效技巧"
+    ],
     "pinned_at": "2026-04-08T00:00:00+00:00",
     "raw_id": "rss::Claude Code Releases::v2.1.90",
     "author": "",
@@ -53,7 +66,11 @@
     "pin_reason": "影响所有付费用户的默认行为变更 + CJK 乱码修复，中文用户必须了解。",
     "quality_score": 9.0,
     "score": 0,
-    "tags": ["新功能", "工具集成", "SDK更新"],
+    "tags": [
+      "新功能",
+      "工具集成",
+      "SDK更新"
+    ],
     "pinned_at": "2026-04-08T00:00:00+00:00",
     "raw_id": "rss::Claude Code Releases::v2.1.94",
     "author": "",
@@ -68,7 +85,12 @@
     "pin_reason": "146k stars，社区最具影响力的 Claude Code 优化项目，从入门到精通的必备参考。",
     "quality_score": 9.0,
     "score": 146000,
-    "tags": ["开源项目", "Agent编排", "最佳实践", "workflow"],
+    "tags": [
+      "开源项目",
+      "Agent编排",
+      "最佳实践",
+      "workflow"
+    ],
     "pinned_at": "2026-04-08T00:00:00+00:00",
     "raw_id": "github::affaan-m/everything-claude-code",
     "author": "affaan-m",
@@ -83,7 +105,11 @@
     "pin_reason": "37k+ stars，Claude Code 生态最权威的社区资源索引，每日更新。",
     "quality_score": 8.5,
     "score": 37400,
-    "tags": ["开源项目", "Skills/Hooks", "工具集成"],
+    "tags": [
+      "开源项目",
+      "Skills/Hooks",
+      "工具集成"
+    ],
     "pinned_at": "2026-04-08T00:00:00+00:00",
     "raw_id": "github::hesreallyhim/awesome-claude-code",
     "author": "hesreallyhim",
@@ -98,7 +124,12 @@
     "pin_reason": "67k stars，来自顶级科技领袖的实战配置，展示了 Claude Code 在非纯工程场景下的多角色应用模式。",
     "quality_score": 8.5,
     "score": 67000,
-    "tags": ["开源项目", "workflow", "最佳实践", "案例分享"],
+    "tags": [
+      "开源项目",
+      "workflow",
+      "最佳实践",
+      "案例分享"
+    ],
     "pinned_at": "2026-04-08T00:00:00+00:00",
     "raw_id": "github::garrytan/gstack",
     "author": "garrytan",
@@ -113,7 +144,11 @@
     "pin_reason": "50k stars，理解 Claude Code 工作原理的最佳教程项目，帮助从「会用」到「懂原理」。",
     "quality_score": 8.5,
     "score": 50000,
-    "tags": ["开源项目", "入门教程", "Agent编排"],
+    "tags": [
+      "开源项目",
+      "入门教程",
+      "Agent编排"
+    ],
     "pinned_at": "2026-04-08T00:00:00+00:00",
     "raw_id": "github::shareAI-lab/learn-claude-code",
     "author": "shareAI-lab",
@@ -128,10 +163,34 @@
     "pin_reason": "CLAUDE.md 是 Claude Code 持久化配置的核心机制，本文提供了权威的配置指南。",
     "quality_score": 8.5,
     "score": 0,
-    "tags": ["CLAUDE.md", "最佳实践", "workflow", "提效技巧"],
+    "tags": [
+      "CLAUDE.md",
+      "最佳实践",
+      "workflow",
+      "提效技巧"
+    ],
     "pinned_at": "2026-03-28T16:22:51.362026+00:00",
     "raw_id": "rss::dev.to #claudecode::https://dev.to/subprime2010/claudemd-the-config-file-that-makes-claude-code-agents-actually-remember-things-3a5p",
     "author": "brian austin",
+    "language": "en"
+  },
+  {
+    "title": "[AINews] The Biggest Claude Launch of All Time",
+    "url": "https://www.latent.space/p/ainews-the-biggest-claude-launch",
+    "source": "Latent Space",
+    "source_type": "blog",
+    "summary_zh": "Latent Space AINews 对史上最大规模 Claude 发布的深度报道，涵盖新模型能力与重要特性更新。作为 Claude Code 的底层模型，此次发布直接影响 AI 编程工具的能力边界。",
+    "pin_reason": "Latent Space 对重大 Claude 版本发布的权威解读，理解 Claude 能力演进的里程碑内容。",
+    "quality_score": 8.5,
+    "score": 0,
+    "tags": [
+      "新功能",
+      "模型能力",
+      "workflow"
+    ],
+    "pinned_at": "2026-03-28T16:22:51.362021+00:00",
+    "raw_id": "rss::Latent Space::https://www.latent.space/p/ainews-the-biggest-claude-launch",
+    "author": "",
     "language": "en"
   },
   {
@@ -143,7 +202,11 @@
     "pin_reason": "33k stars，最适合初中级用户的可视化学习资源。",
     "quality_score": 8.0,
     "score": 33000,
-    "tags": ["开源项目", "最佳实践", "入门教程"],
+    "tags": [
+      "开源项目",
+      "最佳实践",
+      "入门教程"
+    ],
     "pinned_at": "2026-04-08T00:00:00+00:00",
     "raw_id": "github::shanraisshan/claude-code-best-practice",
     "author": "shanraisshan",
@@ -158,24 +221,13 @@
     "pin_reason": "AI 实验室批量收购主流开发者工具链是行业结构性转变的里程碑事件，对 Claude Code 生态有长期影响。",
     "quality_score": 7.8,
     "score": 0,
-    "tags": ["工具集成", "新功能", "模型能力"],
+    "tags": [
+      "工具集成",
+      "新功能",
+      "模型能力"
+    ],
     "pinned_at": "2026-03-28T16:22:51.362036+00:00",
     "raw_id": "rss::Latent Space::https://www.latent.space/p/ainews-every-lab-serious-enough-about",
-    "author": "",
-    "language": "en"
-  },
-  {
-    "title": "[AINews] The Biggest Claude Launch of All Time",
-    "url": "https://www.latent.space/p/ainews-the-biggest-claude-launch",
-    "source": "Latent Space",
-    "source_type": "blog",
-    "summary_zh": "Latent Space AINews 对史上最大规模 Claude 发布的深度报道，涵盖新模型能力与重要特性更新。作为 Claude Code 的底层模型，此次发布直接影响 AI 编程工具的能力边界。",
-    "pin_reason": "Latent Space 对重大 Claude 版本发布的权威解读，理解 Claude 能力演进的里程碑内容。",
-    "quality_score": 8.5,
-    "score": 0,
-    "tags": ["新功能", "模型能力", "workflow"],
-    "pinned_at": "2026-03-28T16:22:51.362021+00:00",
-    "raw_id": "rss::Latent Space::https://www.latent.space/p/ainews-the-biggest-claude-launch",
     "author": "",
     "language": "en"
   }
