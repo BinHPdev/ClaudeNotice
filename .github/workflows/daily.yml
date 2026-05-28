@@ -68,14 +68,17 @@ jobs:
           git add docs/ data/processed/ data/seen_ids.json data/pinned.json
           git diff --cached --quiet || git commit -m "chore: daily update $(date -u +%Y-%m-%d)"
           # 5-28 事故：push 时 GitHub 连不上（75s 超时），整个 job 失败但 commit 已经在 runner 上了。
-          # 加 3 次重试，间隔 30s，覆盖瞬时网络抖动。
+          # 加 3 次重试，间隔 30s，覆盖瞬时网络抖动；失败时先 pull --rebase 处理 race
+          # （远端被人手动 push、或前次 rerun 留下分叉）。
           for attempt in 1 2 3; do
             if git push origin main; then
               echo "push 成功（第 $attempt 次尝试）"
               break
             fi
             if [ "$attempt" -lt 3 ]; then
-              echo "push 失败，等待 30s 后重试..."
+              echo "push 失败，尝试 pull --rebase 后重试（第 $attempt 次）..."
+              # 拒绝可能是 non-fast-forward 也可能是网络问题。rebase 失败就放弃这次尝试。
+              git pull --rebase origin main || git rebase --abort || true
               sleep 30
             else
               echo "push 重试 3 次仍失败"
