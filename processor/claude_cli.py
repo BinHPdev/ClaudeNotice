@@ -25,7 +25,11 @@ def call_claude(prompt: str, input_text: str = "", timeout: int = 30) -> Optiona
         if result.returncode == 0:
             return result.stdout.strip()
         else:
-            print(f"[Claude CLI] 错误: {result.stderr[:200]}")
+            # 之前只打 stderr，但 Claude CLI 失败时常把诊断信息写到 stdout（或全空），
+            # 导致日志里只看到 "[Claude CLI] 错误: "。把 returncode + stdout 也带上。
+            stderr_msg = (result.stderr or "").strip()[:300]
+            stdout_msg = (result.stdout or "").strip()[:300]
+            print(f"[Claude CLI] 错误 rc={result.returncode} stderr={stderr_msg!r} stdout={stdout_msg!r}")
             return None
     except subprocess.TimeoutExpired:
         print("[Claude CLI] 超时")
