@@ -213,6 +213,63 @@
     "language": "en"
   },
   {
+    "title": "LLM Research Papers: The 2026 List (January to May)",
+    "url": "https://magazine.sebastianraschka.com/p/llm-research-papers-2026-part1",
+    "source": "Sebastian Raschka",
+    "source_type": "blog",
+    "summary_zh": "Sebastian Raschka 整理的 2026 年（1-5 月）重要 LLM 研究论文清单，按主题精选并附注解。对追踪大模型前沿进展、了解推理/训练/架构等方向的最新研究极具参考价值。",
+    "pin_reason": "出自权威作者 Sebastian Raschka 的年度 LLM 论文精选合集，覆盖面广、注解专业，是长期可查阅的研究索引资源。",
+    "quality_score": 8.0,
+    "score": 0,
+    "tags": [
+      "研究论文",
+      "模型能力"
+    ],
+    "pinned_at": "2026-06-06T14:51:18.642397+00:00",
+    "raw_id": "rss::Sebastian Raschka::https://magazine.sebastianraschka.com/p/llm-research-papers-2026-part1",
+    "author": "Sebastian Raschka, PhD",
+    "language": "en"
+  },
+  {
+    "title": "Anthropic's Advanced Tool Use Platform: Programmatic Calling, Advisor Strategy, and the Future of Claude Agents",
+    "url": "https://dev.to/docdavkitty/anthropics-advanced-tool-use-platform-programmatic-calling-advisor-strategy-and-the-future-of-523d",
+    "source": "dev.to #anthropic",
+    "source_type": "blog",
+    "summary_zh": "Anthropic 将一系列 Agent 基础设施新特性从研究预览推向公测：Programmatic Tool Calling、Advisor Strategy、Tool Search、Files API 和 MCP Connector。核心解决「上下文膨胀」问题——通过 defer_loading 标记工具，仅预加载约 500 token 的轻量搜索工具，按需发现并加载工具定义，大幅降低多 MCP 服务器场景下的 token 开销。",
+    "pin_reason": "覆盖 Anthropic 多项 Agent 平台核心能力进入公测的里程碑式更新，对构建大规模 tool-use Agent 具有长期架构参考价值。",
+    "quality_score": 8.0,
+    "score": 0,
+    "tags": [
+      "新功能",
+      "MCP",
+      "SDK更新",
+      "最佳实践"
+    ],
+    "pinned_at": "2026-06-06T14:51:18.642429+00:00",
+    "raw_id": "rss::dev.to #anthropic::https://dev.to/docdavkitty/anthropics-advanced-tool-use-platform-programmatic-calling-advisor-strategy-and-the-future-of-523d",
+    "author": "DrMBL",
+    "language": "en"
+  },
+  {
+    "title": "Anthropic Launches Claude Opus 4.8 with Dynamic Workflows, 3x Cheaper Fast Mode, and Near-Mythos Alignment",
+    "url": "https://dev.to/docdavkitty/anthropic-launches-claude-opus-48-with-dynamic-workflows-3x-cheaper-fast-mode-and-near-mythos-4cec",
+    "source": "dev.to #anthropic",
+    "source_type": "blog",
+    "summary_zh": "Anthropic 于 2026 年 5 月 28 日发布旗舰模型 Claude Opus 4.8，距 4.7 仅 41 天。在 SWE-bench Verified（88.6%）、SWE-bench Pro（+4.9pp）等编程基准上稳步提升，主打动态工作流、快速模式降价 3 倍和更强对齐能力，且与 4.7 同价上线 Claude Code、API 与 Cowork。文章还重点提及 244 页系统卡的对齐细节。",
+    "pin_reason": "Claude Opus 4.8 旗舰模型发布是重大版本里程碑，对 Claude Code 用户具有长期参考价值。",
+    "quality_score": 8.0,
+    "score": 0,
+    "tags": [
+      "新功能",
+      "模型能力",
+      "最佳实践"
+    ],
+    "pinned_at": "2026-06-06T14:51:18.642438+00:00",
+    "raw_id": "rss::dev.to #anthropic::https://dev.to/docdavkitty/anthropic-launches-claude-opus-48-with-dynamic-workflows-3x-cheaper-fast-mode-and-near-mythos-4cec",
+    "author": "DrMBL",
+    "language": "en"
+  },
+  {
     "title": "[AINews] Every Lab serious enough about Developers has bought their own Devtools",
     "url": "https://www.latent.space/p/ainews-every-lab-serious-enough-about",
     "source": "Latent Space",
@@ -229,6 +286,26 @@
     "pinned_at": "2026-03-28T16:22:51.362036+00:00",
     "raw_id": "rss::Latent Space::https://www.latent.space/p/ainews-every-lab-serious-enough-about",
     "author": "",
+    "language": "en"
+  },
+  {
+    "title": "[GitHub] nanocoai/nanoclaw — A lightweight alternative to OpenClaw that runs in containers for security. Connects to WhatsApp, Te",
+    "url": "https://github.com/nanocoai/nanoclaw",
+    "source": "GitHub",
+    "source_type": "community",
+    "summary_zh": "nanoclaw 是一个基于 Anthropic Agents SDK 构建的轻量级 AI 个人助理框架，可在容器中安全运行，并接入 WhatsApp、Telegram、Slack、Discord、Gmail 等消息平台，支持记忆与定时任务。作为 OpenClaw 的轻量替代方案，它展示了如何用官方 Agents SDK 搭建可落地的多渠道智能体应用。",
+    "pin_reason": "近 3 万星的高人气开源项目，且直接构建于 Anthropic Agents SDK 之上，是多渠道智能体落地的标杆性参考工具，具备长期参考价值。",
+    "quality_score": 7.5,
+    "score": 29723,
+    "tags": [
+      "工具集成",
+      "GitHub热门",
+      "SDK更新",
+      "工作流"
+    ],
+    "pinned_at": "2026-06-06T14:51:18.642451+00:00",
+    "raw_id": "GitHub::1146738089",
+    "author": "nanocoai",
     "language": "en"
   }
 ]
