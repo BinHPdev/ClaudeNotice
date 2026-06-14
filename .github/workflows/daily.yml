@@ -87,9 +87,9 @@ jobs:
           done
 
       - name: 部署到 GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs
-          publish_branch: gh-pages
-          commit_message: "deploy: $(date -u +%Y-%m-%d)"
+          token: ${{ secrets.GITHUB_TOKEN }}
+          folder: docs
+          branch: gh-pages
+          commit-message: "deploy: $(date -u +%Y-%m-%d)"
