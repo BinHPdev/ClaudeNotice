@@ -194,6 +194,27 @@
     "language": "en"
   },
   {
+    "title": "How I Set Up Claude Code with 26 Production Subagents (CLAUDE.md, MCP, Hooks)",
+    "url": "https://dev.to/nongdyz_d9c3069b1acb2a08c/how-i-set-up-claude-code-with-26-production-subagents-claudemd-mcp-hooks-3jij",
+    "source": "dev.to #claudecode",
+    "source_type": "blog",
+    "summary_zh": "作者分享了如何为真实生产项目配置 Claude Code 的完整实战方案，包括用 CLAUDE.md 作为「契约」约束行为、26 个专职 subagents 分工协作、MCP 服务器集成以及两个关键 hooks（如阻止破坏性操作）。核心价值在于把 Claude Code 从「健忘的初级工程师」调教成「会规划、自我审查、写测试、拒绝危险操作的小型资深团队」。",
+    "pin_reason": "系统性整合 CLAUDE.md、subagents、MCP、hooks 四大要素的端到端生产级配置教程，具有长期参考价值与可复用方法论。",
+    "quality_score": 8.5,
+    "score": 0,
+    "tags": [
+      "CLAUDE.md",
+      "MCP",
+      "最佳实践",
+      "workflow",
+      "工具集成"
+    ],
+    "pinned_at": "2026-06-27T14:57:39.798543+00:00",
+    "raw_id": "rss::dev.to #claudecode::https://dev.to/nongdyz_d9c3069b1acb2a08c/how-i-set-up-claude-code-with-26-production-subagents-claudemd-mcp-hooks-3jij",
+    "author": "NongdyZ",
+    "language": "en"
+  },
+  {
     "title": "claude-code-best-practice — 可视化最佳实践指南（33k★）",
     "url": "https://github.com/shanraisshan/claude-code-best-practice",
     "source": "GitHub",
@@ -267,6 +288,64 @@
     "pinned_at": "2026-06-06T14:51:18.642438+00:00",
     "raw_id": "rss::dev.to #anthropic::https://dev.to/docdavkitty/anthropic-launches-claude-opus-48-with-dynamic-workflows-3x-cheaper-fast-mode-and-near-mythos-4cec",
     "author": "DrMBL",
+    "language": "en"
+  },
+  {
+    "title": "[GitHub] DeusData/codebase-memory-mcp — High-performance code intelligence MCP server. Indexes codebases into a persistent knowledge graph —",
+    "url": "https://github.com/DeusData/codebase-memory-mcp",
+    "source": "GitHub",
+    "source_type": "community",
+    "summary_zh": "一个高性能代码智能 MCP 服务器，用 C 编写，可将代码库索引为持久化知识图谱，支持 158 种语言、毫秒级查询，并宣称可节省 99% 的 token。原生支持 Claude Code、Cursor、Codex 等工具，单一静态二进制零依赖。16.6k 星的高热度项目，对优化 AI 编程上下文检索很有价值。",
+    "pin_reason": "16.6k 星的高星 MCP 工具，为 Claude Code 等提供持久化代码知识图谱与大幅 token 节省，具长期参考价值",
+    "quality_score": 8.0,
+    "score": 16605,
+    "tags": [
+      "MCP",
+      "工具集成",
+      "GitHub热门"
+    ],
+    "pinned_at": "2026-06-27T14:57:39.798565+00:00",
+    "raw_id": "GitHub::1166102148",
+    "author": "DeusData",
+    "language": "en"
+  },
+  {
+    "title": "[GitHub] samanhappy/mcphub — A unified hub for centrally managing and dynamically orchestrating multiple MCP servers/APIs into se",
+    "url": "https://github.com/samanhappy/mcphub",
+    "source": "GitHub",
+    "source_type": "community",
+    "summary_zh": "MCPHub 是一个开源的 MCP 服务器统一管理网关，可集中托管并动态编排多个 MCP Server/API，将其聚合为带灵活路由策略的独立端点。对于需要同时接入多个 MCP 服务的 Claude Code 用户，能显著简化配置与编排，是 MCP 生态中实用的基础设施工具。",
+    "pin_reason": "2.1k 星的成熟 MCP 网关工具，解决多 MCP Server 集中管理与编排痛点，对 Claude Code/MCP 生态有长期参考价值。",
+    "quality_score": 8.0,
+    "score": 2191,
+    "tags": [
+      "MCP",
+      "工具集成",
+      "GitHub热门"
+    ],
+    "pinned_at": "2026-06-27T14:57:39.798572+00:00",
+    "raw_id": "GitHub::957825149",
+    "author": "samanhappy",
+    "language": "en"
+  },
+  {
+    "title": "[GitHub] ComposioHQ/awesome-claude-plugins — A curated list of Plugins that let you extend Claude Code with custom commands, agents, hooks, and M",
+    "url": "https://github.com/ComposioHQ/awesome-claude-plugins",
+    "source": "GitHub",
+    "source_type": "community",
+    "summary_zh": "ComposioHQ 维护的 Claude Code 插件精选清单，收录可通过插件系统扩展 Claude Code 的自定义命令、Agent、Hooks 和 MCP 服务器。1775 星的高人气资源，是寻找和发现 Claude Code 生态插件的权威入口。",
+    "pin_reason": "高星权威的 Claude Code 插件生态导航清单，覆盖命令/Agent/Hooks/MCP 全维度，具有长期参考价值。",
+    "quality_score": 8.0,
+    "score": 1775,
+    "tags": [
+      "工具集成",
+      "MCP",
+      "GitHub热门",
+      "最佳实践"
+    ],
+    "pinned_at": "2026-06-27T14:57:39.798574+00:00",
+    "raw_id": "GitHub::1080989149",
+    "author": "ComposioHQ",
     "language": "en"
   },
   {
