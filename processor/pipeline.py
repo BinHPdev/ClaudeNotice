@@ -7,7 +7,7 @@ from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from typing import Optional
 from scrapers.base import Article
-from processor.claude_cli import analyze_article, generate_daily_summary
+from processor.claude_cli import STATS, analyze_article, generate_daily_summary
 
 
 DATA_DIR = Path("data")
@@ -15,6 +15,11 @@ RAW_DIR = DATA_DIR / "raw"
 PROCESSED_DIR = DATA_DIR / "processed"
 SEEN_IDS_FILE = DATA_DIR / "seen_ids.json"
 PINNED_FILE = DATA_DIR / "pinned.json"
+STATS_FILE = DATA_DIR / "last_run_stats.json"
+
+# Claude 调用成功率低于此值即视为"大面积降级"，CI 质量门禁据此把 job 标红。
+# 偶发的单条超时属正常，全面认证失效才是要抓的问题。
+HEALTH_MIN_OK_RATIO = 0.5
 
 
 class ProcessingPipeline:
@@ -68,7 +73,50 @@ class ProcessingPipeline:
 
         pinned_count = sum(1 for a in articles if a.is_pinned)
         print(f"=== 流水线完成 | 最终 {len(articles)} 条，{pinned_count} 条置顶 ===\n")
+
+        # 11. 记录分析健康度，并在大面积降级时告警
+        self._report_analysis_health()
+
         return articles
+
+    def _report_analysis_health(self) -> None:
+        """把 Claude 分析的成功率落盘 + 打印告警。
+
+        CI 的质量门禁读 data/last_run_stats.json 判断是否要把 job 标红。
+        没有这一步的话，AI 全挂时流水线仍然产出规则评分的内容并 exit 0，
+        从外部完全看不出退化（2026-05~07 就是这么过去的）。
+        """
+        stats = STATS.to_dict()
+        STATS_FILE.write_text(
+            json.dumps(stats, ensure_ascii=False, indent=2), encoding="utf-8"
+        )
+
+        if stats["total"] == 0:
+            print("[分析健康度] 本次没有发生 Claude 调用")
+            return
+
+        pct = stats["ok_ratio"] * 100
+        print(
+            f"[分析健康度] Claude 调用 {stats['ok']}/{stats['total']} 成功 ({pct:.0f}%)"
+        )
+
+        if stats["failed"]:
+            for reason, count in sorted(
+                stats["reasons"].items(), key=lambda kv: -kv[1]
+            ):
+                print(f"  - {reason}: {count} 次")
+
+        if stats["auth_failed"]:
+            print(
+                "  ⚠️  检测到认证失效。self-hosted runner 请配置 "
+                "CLAUDE_CODE_OAUTH_TOKEN（用 `claude setup-token` 生成）。"
+            )
+
+        if stats["ok_ratio"] < HEALTH_MIN_OK_RATIO:
+            print(
+                f"  ⚠️  成功率低于 {HEALTH_MIN_OK_RATIO:.0%}，"
+                f"本次内容基本由规则评分产生，摘要为正文截断。"
+            )
 
     def _deduplicate(self, articles: list[Article]) -> list[Article]:
         """基于 raw_id + URL + 标题相似度去重"""
