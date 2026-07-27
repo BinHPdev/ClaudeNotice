@@ -7,6 +7,8 @@ venv/
 
 # 数据（原始数据不提交，处理后的提交）
 data/raw/
+# 每次运行覆写，只给同一 job 内的质量门禁读，不需要进版本库
+data/last_run_stats.json
 
 # docs/ 是生成的网站，正常提交（GitHub Pages 需要）
 

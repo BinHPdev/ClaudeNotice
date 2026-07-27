@@ -16,6 +16,14 @@ jobs:
       pages: write
 
     timeout-minutes: 30
+
+    env:
+      # `claude setup-token` 生成的长期 token，走订阅额度，不产生按量 API 费用。
+      # runner 的 LaunchAgent 带 SessionCreate=true，跑在独立 security session 里，
+      # 读不到登录钥匙串中的 Claude Code-credentials —— 本机交互式登录态对定时任务
+      # 无效，必须走这个环境变量。（2026-05~07 静默降级两个月的根因）
+      CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+
     steps:
       - name: 检出代码
         uses: actions/checkout@v4
@@ -42,12 +50,25 @@ jobs:
             -r requirements.txt
 
       - name: Claude CLI 健康检查
-        # 5-28 事故：100 条全部 [Claude CLI] 错误: 但 stderr 为空，根因不明。
-        # 在分析前先打印 claude 路径/版本，下次失败能看出是没登录、找不到二进制还是别的。
+        # 5-28 事故根因已查明：runner 读不到钥匙串，CLI 始终 "Not logged in"。
+        # 当时的检查只跑 `claude --version` —— 未登录时版本号照样打印、照样退出 0，
+        # 所以健康检查全绿而 100 条分析全挂。改成真实发一次最小调用验证认证。
+        # 仍然 continue-on-error：认证挂了也让后面继续跑，至少产出规则评分的更新，
+        # 由末尾的质量门禁负责把 job 标红。
         continue-on-error: true
         run: |
           which claude || echo "claude not in PATH"
           claude --version || echo "claude --version failed (rc=$?)"
+          # auth status 是本地凭据态（不消耗额度），真实可用性以下面的调用为准
+          claude auth status || echo "claude auth status failed (rc=$?)"
+          source .venv/bin/activate
+          python3 -c "
+          from processor.claude_cli import healthcheck
+          ok, msg = healthcheck()
+          print(('✓ ' if ok else '✗ ') + msg)
+          if not ok:
+              print('::warning::Claude CLI 认证异常: ' + msg)
+          "
 
       - name: 运行爬虫 + 处理 + 生成网站
         timeout-minutes: 20
@@ -93,3 +114,8 @@ jobs:
           folder: docs
           branch: gh-pages
           commit-message: "deploy: $(date -u +%Y-%m-%d)"
+
+      - name: 分析质量门禁
+        # 刻意放在发布之后：内容照常上线，但 AI 分析大面积失败时把 job 标红，
+        # 让退化能被 GitHub 通知捕捉到，而不是像 5-28~7-26 那样静默两个月。
+        run: python3 scripts/quality_gate.py
