@@ -215,6 +215,47 @@
     "language": "en"
   },
   {
+    "title": "[GitHub] Fission-AI/OpenSpec — Spec-driven development (SDD) for AI coding assistants.",
+    "url": "https://github.com/Fission-AI/OpenSpec",
+    "source": "GitHub",
+    "source_type": "community",
+    "summary_zh": "OpenSpec 是一个面向 AI 编程助手的规格驱动开发（SDD）框架，用 TypeScript 编写，通过在编码前先建立可审查的规格文档来对齐人与 AI 的意图。它把 PRD、变更提案和规格作为上下文工程的核心载体，适配 Claude Code 等助手，解决 AI 编码中需求漂移和上下文缺失的问题。项目已获 6 万+ Stars，是当前 SDD 方向最受关注的开源工具之一。",
+    "pin_reason": "6 万+ Stars 的高星开源工具，代表了规格驱动开发这一 AI 编程主流范式，对构建可控的 Claude Code 工作流具有长期参考价值。",
+    "quality_score": 8.5,
+    "score": 62669,
+    "tags": [
+      "workflow",
+      "最佳实践",
+      "工具集成",
+      "GitHub热门",
+      "提示工程"
+    ],
+    "pinned_at": "2026-07-27T02:39:49.671340+00:00",
+    "raw_id": "GitHub::1032459340",
+    "author": "Fission-AI",
+    "language": "en"
+  },
+  {
+    "title": "[GitHub] Windy3f3f3f3f/claude-code-from-scratch — Build your own Claude Code from scratch.  🔍 Claude Code 开源了 50 万行代码，读不动？用 ~5000 行 TypeScript / Pytho",
+    "url": "https://github.com/Windy3f3f3f3f/claude-code-from-scratch",
+    "source": "GitHub",
+    "source_type": "community",
+    "summary_zh": "该开源项目用约 5000 行 TypeScript/Python 从零复现 Claude Code 的核心架构，通过 11 章分步教程拆解 coding agent 的关键设计（Agent 循环、工具调用、上下文管理等），替代直接阅读 50 万行原始代码。对想深入理解 AI 编程助手内部原理、或自建 coding agent 的开发者极具参考价值，已获 2465 stars。",
+    "pin_reason": "高星开源教程型项目，系统性拆解 Claude Code 核心架构，是理解 coding agent 原理的长期参考资料。",
+    "quality_score": 8.5,
+    "score": 2465,
+    "tags": [
+      "GitHub热门",
+      "案例分享",
+      "最佳实践",
+      "SDK更新"
+    ],
+    "pinned_at": "2026-07-27T02:39:49.671389+00:00",
+    "raw_id": "GitHub::1197227242",
+    "author": "Windy3f3f3f3f",
+    "language": "en"
+  },
+  {
     "title": "claude-code-best-practice — 可视化最佳实践指南（33k★）",
     "url": "https://github.com/shanraisshan/claude-code-best-practice",
     "source": "GitHub",
@@ -349,6 +390,26 @@
     "language": "en"
   },
   {
+    "title": "[GitHub] danny-avila/LibreChat — Enhanced ChatGPT Clone: Features Agents, MCP, Skills, DeepSeek, Anthropic, AWS, OpenAI, Responses AP",
+    "url": "https://github.com/danny-avila/LibreChat",
+    "source": "GitHub",
+    "source_type": "community",
+    "summary_zh": "LibreChat 是一个 41k+ star 的开源自托管 ChatGPT 替代方案，统一接入 Anthropic、OpenAI、Gemini、DeepSeek、Bedrock、OpenRouter 等主流模型，并内置 Agents、MCP、Skills、Artifacts、代码解释器与 OpenAPI Actions。对需要多模型对比、私有部署或搭建团队级 LLM 工作台的开发者，它提供了一套开箱即用且支持多用户鉴权的完整方案。",
+    "pin_reason": "41k star 的头部开源 LLM 前端，原生支持 MCP 与 Agents，是自托管 AI 工作台的长期参考基准。",
+    "quality_score": 8.0,
+    "score": 41308,
+    "tags": [
+      "工具集成",
+      "MCP",
+      "GitHub热门",
+      "workflow"
+    ],
+    "pinned_at": "2026-07-27T02:39:49.671400+00:00",
+    "raw_id": "GitHub::600596928",
+    "author": "danny-avila",
+    "language": "en"
+  },
+  {
     "title": "[AINews] Every Lab serious enough about Developers has bought their own Devtools",
     "url": "https://www.latent.space/p/ainews-every-lab-serious-enough-about",
     "source": "Latent Space",
@@ -385,6 +446,45 @@
     "pinned_at": "2026-06-06T14:51:18.642451+00:00",
     "raw_id": "GitHub::1146738089",
     "author": "nanocoai",
+    "language": "en"
+  },
+  {
+    "title": "[GitHub] zhukunpenglinyutong/jetbrains-cc-gui — Jetbrains Claude Code and Codex GUI Plugin",
+    "url": "https://github.com/zhukunpenglinyutong/jetbrains-cc-gui",
+    "source": "GitHub",
+    "source_type": "community",
+    "summary_zh": "该项目是一个 JetBrains IDE 插件，为 Claude Code 和 Codex 提供图形化界面，让开发者无需依赖终端即可在 IntelliJ、PyCharm 等 IDE 内使用这两款 AI 编程 CLI 工具。项目已获 4926 stars，反映出 JetBrains 用户对 Claude Code 原生 IDE 集成的强烈需求，是 VS Code 之外生态的重要补充。",
+    "pin_reason": "近 5000 星的高热度开源工具，填补了 JetBrains 系 IDE 中 Claude Code GUI 集成的空白，对 Java/Python/Kotlin 开发者具有长期参考价值。",
+    "quality_score": 7.5,
+    "score": 4926,
+    "tags": [
+      "工具集成",
+      "GitHub热门",
+      "提效技巧"
+    ],
+    "pinned_at": "2026-07-27T02:39:49.671409+00:00",
+    "raw_id": "GitHub::1100259232",
+    "author": "zhukunpenglinyutong",
+    "language": "en"
+  },
+  {
+    "title": "[GitHub] composio-community/awesome-claude-plugins — A curated list of Plugins that let you extend Claude Code with custom commands, agents, hooks, and M",
+    "url": "https://github.com/composio-community/awesome-claude-plugins",
+    "source": "GitHub",
+    "source_type": "community",
+    "summary_zh": "这是一个精选的 Claude Code 插件列表仓库，收录了可通过插件系统扩展 Claude Code 的自定义命令、Agent、Hooks 和 MCP 服务器。已获 1844 星、518 fork，是查找和发现现成 Claude Code 插件生态资源的入口型索引。",
+    "pin_reason": "高星的 Claude Code 插件生态权威索引，具有长期查阅和资源发现价值。",
+    "quality_score": 7.5,
+    "score": 1844,
+    "tags": [
+      "工具集成",
+      "MCP",
+      "GitHub热门",
+      "workflow"
+    ],
+    "pinned_at": "2026-07-27T02:39:49.671417+00:00",
+    "raw_id": "GitHub::1080989149",
+    "author": "composio-community",
     "language": "en"
   }
 ]

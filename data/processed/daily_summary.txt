@@ -1,1 +1,1 @@
-今日内容已更新，请查看下方详情。
+今日 Claude Code 生态延续"规范驱动 + 上下文治理"两条主线：OpenSpec、pad、wallfacer 等项目把 SDD 与项目管理推向自主工程平台，而 token-goat、mcp-execution、agentmap 则集中攻克 token 消耗与文件定位精度问题。教育与工具层同样活跃，claude-code-from-scratch 用约 5000 行代码复刻核心机制，awesome-claude-plugins、JetBrains GUI 插件持续降低接入门槛。Skill 生态走向垂直细分，公众号排版、摄像头视觉验证等场景化能力接连登上趋势榜。整体看，社区关注点正从"能否用"转向"如何用得更省、更准、更自动"。
