@@ -97,6 +97,27 @@
     "language": "en"
   },
   {
+    "title": "[GitHub] bojieli/ai-agent-book — 《深入理解 AI Agent：设计原理与工程实践》（李博杰 著）开源主仓库：全书正文、编译版 PDF 与按章配套代码",
+    "url": "https://github.com/bojieli/ai-agent-book",
+    "source": "GitHub",
+    "source_type": "community",
+    "summary_zh": "李博杰所著《深入理解 AI Agent：设计原理与工程实践》的开源主仓库，提供全书正文、编译版 PDF 及按章节配套的 Python 代码，系统覆盖 Agent 设计原理、上下文工程、Agent 记忆与 coding agent 等核心主题。22.8k Stars 表明其已成为中文社区最具影响力的 AI Agent 系统性学习资料之一，理论与可运行代码结合，适合作为构建 LLM 工作流与编程 Agent 的长期参考。",
+    "pin_reason": "22.8k Stars 的中文 AI Agent 权威系统性教程，书稿加分章配套代码，覆盖上下文工程与 coding agent，具有长期参考价值。",
+    "quality_score": 9.0,
+    "score": 22809,
+    "tags": [
+      "最佳实践",
+      "GitHub热门",
+      "workflow",
+      "案例分享",
+      "提示工程"
+    ],
+    "pinned_at": "2026-07-28T01:56:13.683369+00:00",
+    "raw_id": "GitHub::1053118194",
+    "author": "bojieli",
+    "language": "en"
+  },
+  {
     "title": "awesome-claude-code — 社区权威资源目录（37k★）",
     "url": "https://github.com/hesreallyhim/awesome-claude-code",
     "source": "GitHub",
@@ -407,6 +428,46 @@
     "pinned_at": "2026-07-27T02:39:49.671400+00:00",
     "raw_id": "GitHub::600596928",
     "author": "danny-avila",
+    "language": "en"
+  },
+  {
+    "title": "[GitHub] vercel/ai — The AI Toolkit for TypeScript. From the creators of Next.js, the AI SDK is a free open-source librar",
+    "url": "https://github.com/vercel/ai",
+    "source": "GitHub",
+    "source_type": "community",
+    "summary_zh": "Vercel AI SDK 是面向 TypeScript 的开源 AI 开发工具包，提供统一接口对接 Anthropic、OpenAI、Gemini 等多家模型供应商，支持流式输出、工具调用、Agent 构建和生成式 UI。25.8k star 的高热度项目，是 JS/TS 生态中构建 LLM 应用与 Agent 工作流的事实标准之一。",
+    "pin_reason": "TypeScript 生态构建 LLM 应用的主流基础设施，高星开源项目，具备长期参考价值。",
+    "quality_score": 8.0,
+    "score": 25844,
+    "tags": [
+      "工具集成",
+      "GitHub热门",
+      "SDK更新",
+      "workflow"
+    ],
+    "pinned_at": "2026-07-28T01:56:13.683404+00:00",
+    "raw_id": "GitHub::644461337",
+    "author": "vercel",
+    "language": "en"
+  },
+  {
+    "title": "[GitHub] AgentWrapper/agent-orchestrator — Agent IDE that enables you to manage fleets of coding agents. It comes with an agentic orchestrator ",
+    "url": "https://github.com/AgentWrapper/agent-orchestrator",
+    "source": "GitHub",
+    "source_type": "community",
+    "summary_zh": "AgentWrapper/agent-orchestrator 是一个 Go 编写的 Agent IDE，用于管理成规模的编码智能体「舰队」，内置编排器可自动规划任务、派生 agent，并自主处理 CI 修复、合并冲突与代码审查。项目集成 Claude Code 与 Codex CLI，依托 git worktrees 实现多 agent 并行隔离开发，8.6k stars 显示社区认可度高。对希望从单 agent 手工操作升级到多 agent 并行工作流的开发者有直接参考价值。",
+    "pin_reason": "8.6k star 的多 agent 编排开源工具，代表 Claude Code 从单会话走向 agent 舰队并行的关键实践方向，具有长期参考价值。",
+    "quality_score": 8.0,
+    "score": 8609,
+    "tags": [
+      "工具集成",
+      "workflow",
+      "GitHub热门",
+      "最佳实践"
+    ],
+    "pinned_at": "2026-07-28T01:56:13.683412+00:00",
+    "raw_id": "GitHub::1156994049",
+    "author": "AgentWrapper",
     "language": "en"
   },
   {
