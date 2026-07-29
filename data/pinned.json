@@ -277,6 +277,26 @@
     "language": "en"
   },
   {
+    "title": "Anthropic deleted 80% of Claude Code's system prompt. No regression.",
+    "url": "https://dev.to/thegatewayguy/anthropic-deleted-80-of-claude-codes-system-prompt-no-regression-1ieg",
+    "source": "dev.to #anthropic",
+    "source_type": "blog",
+    "summary_zh": "Anthropic 官方为 Claude Opus 5 / Fable 5 删除了 Claude Code 系统提示词的 80% 以上，在编码评测上没有任何可测量的性能退化。核心洞见是：为较弱模型设计的提示词习惯（冗长约束、冲突指令、过度规范）在新一代模型上不仅无效，反而会主动损害表现。对于维护 CLAUDE.md、Skills 和自定义提示词的开发者，这是一个明确的「该做减法」的信号。",
+    "pin_reason": "来自 Anthropic 官方的权威性提示工程范式转变，直接指导 CLAUDE.md 与系统提示词的精简方向，具有长期参考价值。",
+    "quality_score": 8.5,
+    "score": 0,
+    "tags": [
+      "提示工程",
+      "CLAUDE.md",
+      "最佳实践",
+      "模型能力"
+    ],
+    "pinned_at": "2026-07-29T01:56:24.972614+00:00",
+    "raw_id": "rss::dev.to #anthropic::https://dev.to/thegatewayguy/anthropic-deleted-80-of-claude-codes-system-prompt-no-regression-1ieg",
+    "author": "Andrew Kew",
+    "language": "en"
+  },
+  {
     "title": "claude-code-best-practice — 可视化最佳实践指南（33k★）",
     "url": "https://github.com/shanraisshan/claude-code-best-practice",
     "source": "GitHub",
