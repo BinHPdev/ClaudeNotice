@@ -491,6 +491,44 @@
     "language": "en"
   },
   {
+    "title": "What actually belongs in CLAUDE.md — and what to move to skills, hooks, or docs",
+    "url": "https://dev.to/rulestack/what-actually-belongs-in-claudemd-and-what-to-move-to-skills-hooks-or-docs-34id",
+    "source": "dev.to #claudecode",
+    "source_type": "blog",
+    "summary_zh": "文章探讨CLAUDE.md膨胀问题——它会被自动加载进上下文，每一行都是每次请求的成本，且指令越多约束力越弱。作者提出应区分哪些内容真正值得常驻上下文，哪些该迁移到skills、hooks或文档等其他载体，并给出四种存放方式的不同成本模型。",
+    "pin_reason": "系统性讲解CLAUDE.md的边界与替代方案（skills/hooks/docs），是长期适用的上下文管理权威指南",
+    "quality_score": 8.0,
+    "score": 0,
+    "tags": [
+      "CLAUDE.md",
+      "最佳实践",
+      "提效技巧"
+    ],
+    "pinned_at": "2026-07-30T01:51:17.701304+00:00",
+    "raw_id": "rss::dev.to #claudecode::https://dev.to/rulestack/what-actually-belongs-in-claudemd-and-what-to-move-to-skills-hooks-or-docs-34id",
+    "author": "Rulestack",
+    "language": "en"
+  },
+  {
+    "title": "MCP Goes Stateless: What the 2026-07-28 Spec Actually Changes",
+    "url": "https://dev.to/raxxostudios/mcp-goes-stateless-what-the-2026-07-28-spec-actually-changes-4722",
+    "source": "dev.to #claudecode",
+    "source_type": "blog",
+    "summary_zh": "MCP协议发布2026-07-28新规范，取消握手和会话ID机制，使其从有状态协议转变为无状态协议，请求可直接分发到负载均衡器后的任意服务器，无需共享会话存储。同时OAuth/OIDC认证得到加强，工具和提示列表支持缓存，Tasks纳入正式版本化扩展框架，主流SDK下载量较年初增长4倍。",
+    "pin_reason": "MCP协议重大版本变更（无状态化改造），影响所有基于MCP的工具集成架构，具有长期架构参考价值",
+    "quality_score": 8.0,
+    "score": 0,
+    "tags": [
+      "MCP",
+      "新功能",
+      "SDK更新"
+    ],
+    "pinned_at": "2026-07-30T01:51:17.701355+00:00",
+    "raw_id": "rss::dev.to #claudecode::https://dev.to/raxxostudios/mcp-goes-stateless-what-the-2026-07-28-spec-actually-changes-4722",
+    "author": "RAXXO Studios",
+    "language": "en"
+  },
+  {
     "title": "[AINews] Every Lab serious enough about Developers has bought their own Devtools",
     "url": "https://www.latent.space/p/ainews-every-lab-serious-enough-about",
     "source": "Latent Space",
@@ -546,26 +584,6 @@
     "pinned_at": "2026-07-27T02:39:49.671409+00:00",
     "raw_id": "GitHub::1100259232",
     "author": "zhukunpenglinyutong",
-    "language": "en"
-  },
-  {
-    "title": "[GitHub] composio-community/awesome-claude-plugins — A curated list of Plugins that let you extend Claude Code with custom commands, agents, hooks, and M",
-    "url": "https://github.com/composio-community/awesome-claude-plugins",
-    "source": "GitHub",
-    "source_type": "community",
-    "summary_zh": "这是一个精选的 Claude Code 插件列表仓库，收录了可通过插件系统扩展 Claude Code 的自定义命令、Agent、Hooks 和 MCP 服务器。已获 1844 星、518 fork，是查找和发现现成 Claude Code 插件生态资源的入口型索引。",
-    "pin_reason": "高星的 Claude Code 插件生态权威索引，具有长期查阅和资源发现价值。",
-    "quality_score": 7.5,
-    "score": 1844,
-    "tags": [
-      "工具集成",
-      "MCP",
-      "GitHub热门",
-      "workflow"
-    ],
-    "pinned_at": "2026-07-27T02:39:49.671417+00:00",
-    "raw_id": "GitHub::1080989149",
-    "author": "composio-community",
     "language": "en"
   }
 ]
