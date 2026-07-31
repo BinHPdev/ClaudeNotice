@@ -1,1 +1,1 @@
-今日速览：本期焦点是7月Frontier Lab智能体入侵事件的技术复盘，以及MCP无状态化新规范带来的架构变化。开发者社区持续输出Claude Code工程实践，涵盖CLAUDE.md精简、子智能体隐性失败、提示词与Agent能力边界等话题。研究侧，预训练语言覆盖度与LLM"图谋"行为的反向关系、CUDA内核自动生成等论文值得关注。此外，OpenAI通过两项设置调优大幅提升ARC-AGI-3成绩，显示基准优化仍有较大空间。
+今日 Claude Code 生态的焦点在企业级落地与模型性价比两条主线。Anthropic 与 Cognizant 扩大合作，将 Claude 推向更广泛的企业客户群；同时 OpenAI 发布 GPT-5.6，主打前沿智能与效率的融合，Simon Willison 也就其价格-性能边界的推进给出解读。工具链侧持续快速迭代，llm 0.32 连发两个候选版本并新增 llm-chat-completions-server 插件。研究与架构讨论则聚焦可审计的代码生成、SFT 对齐经验共享，以及 AI 智能体推动本体论与语义网的回归。
