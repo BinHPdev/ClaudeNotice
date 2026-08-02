@@ -2,10 +2,20 @@ name: Daily Claude Notice Update
 
 on:
   schedule:
-    # 每天 1 次自动运行（北京时间 08:00）
+    # 主跑：北京时间 08:00
     - cron: '0 0 * * *'
+    # 补跑：北京时间 11:00 / 15:00。当天已更新则秒退（见「今日是否已更新」步骤），
+    # 只有主跑失败时才真正干活 —— 网络抖动不再需要人工补跑。
+    - cron: '0 3 * * *'
+    - cron: '0 7 * * *'
   workflow_dispatch:
-    # 支持手动触发（GitHub Actions 页面点按钮）
+    # 支持手动触发（GitHub Actions 页面点按钮），手动触发时跳过补跑判定强制执行
+
+# 主跑被 GitHub 排队推迟时（实测常延后 1.5~2h）可能与补跑撞车。
+# 排队而非取消：让主跑先跑完，补跑随后启动并在判定步骤秒退。
+concurrency:
+  group: daily-update
+  cancel-in-progress: false
 
 jobs:
   update:
@@ -15,7 +25,8 @@ jobs:
       contents: write
       pages: write
 
-    timeout-minutes: 30
+    # 30 min 曾经偏紧（7-30 那次跑了 24 min），再叠加最长 5 min 的网络等待会溢出
+    timeout-minutes: 45
 
     env:
       # `claude setup-token` 生成的长期 token，走订阅额度，不产生按量 API 费用。
@@ -24,15 +35,93 @@ jobs:
       # 无效，必须走这个环境变量。（2026-05~07 静默降级两个月的根因）
       CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
 
+    # ⚠️ 本 workflow 刻意不使用任何 `uses:`（第三方 action）。
+    #
+    # 根因（6-06 / 6-27 / 7-21 / 7-25 / 8-02 五次失败，占总失败数的 5/6）：
+    # 带 `uses:` 时，runner 必须在「Prepare all required actions」阶段从
+    # codeload.github.com 下载 action tarball —— 这发生在所有 steps 之前，
+    # _work/_actions 不做跨 run 缓存，所以每天都要重新下载一次。
+    # 本机 DNS 走 Clash Verge Rev 的本地解析器（127.0.0.1，fake-ip 30.100.21.x），
+    # 代理热更新/重启时有几十秒解析空窗，恰好撞上定时任务窗口，报
+    # "nodename nor servname provided (codeload.github.com:443)"。
+    # runner 内置重试只有 3 次 / 共 60s，且此时一个 step 都还没跑，
+    # 任何 workflow 内的重试或等待都救不了。
+    #
+    # 因此：用 git 原生命令替代 actions/checkout，把网络重试挪进我们能控制的 step 里。
     steps:
+      - name: 等待网络就绪
+        # 最长等 5 分钟。DNS 空窗通常几十秒就恢复，比 runner 的 60s 硬上限宽容得多。
+        timeout-minutes: 6
+        run: |
+          for i in $(seq 1 30); do
+            if curl -sSf -o /dev/null --max-time 10 https://github.com; then
+              echo "网络就绪（第 $i 次探测）"
+              exit 0
+            fi
+            echo "github.com 不可达，10s 后重试（$i/30）..."
+            sleep 10
+          done
+          echo "::error::等待 5 分钟后 github.com 仍不可达，检查 Clash Verge 是否在运行"
+          exit 1
+
       - name: 检出代码
-        uses: actions/checkout@v4
-        with:
-          # 使用 deploy key 以便后面能 push
-          token: ${{ secrets.GITHUB_TOKEN }}
+        # 等价于 actions/checkout@v4，但零外部依赖。
+        # 凭据用 `git -c http.extraheader` 逐命令传入，不落盘到 .git/config。
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          AUTH="AUTHORIZATION: basic $(printf 'x-access-token:%s' "$GH_TOKEN" | base64 | tr -d '\n')"
+          REMOTE="https://github.com/${{ github.repository }}.git"
+
+          if [ ! -d .git ]; then
+            git init -q .
+            git remote add origin "$REMOTE"
+          else
+            git remote set-url origin "$REMOTE"
+          fi
+
+          # 不加 --depth：workspace 是常驻的，已有完整历史，增量 fetch 很便宜；
+          # 而且后面 push 失败时要 pull --rebase，浅克隆上做 rebase 不可靠。
+          for attempt in 1 2 3; do
+            if git -c http.extraheader="$AUTH" fetch --no-tags --prune \
+                 origin +refs/heads/main:refs/remotes/origin/main; then
+              break
+            fi
+            if [ "$attempt" = 3 ]; then
+              echo "::error::fetch 重试 3 次仍失败"
+              exit 1
+            fi
+            echo "fetch 失败，20s 后重试（第 $attempt 次）..."
+            sleep 20
+          done
+
+          git checkout -B main origin/main
+          git reset --hard origin/main
+          # 只清未跟踪文件，不带 -x：保留 .venv（下一步要复用）和 data/raw/
+          git clean -ffd
+
+      - name: 今日是否已更新
+        # 补跑判定：主跑成功后，当天的补跑在这里秒退，后续步骤全部跳过（job 仍为绿）。
+        id: guard
+        run: |
+          # 用北京时间而非 date -u：晚间手动触发时 UTC 日期会比本地早一天
+          today=$(TZ=Asia/Shanghai date +%Y-%m-%d)
+          echo "date=$today" >> "$GITHUB_OUTPUT"
+
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "手动触发，强制执行"
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          elif git log origin/main -20 --pretty=%s | grep -qx "chore: daily update $today"; then
+            echo "今天（$today）已完成更新，跳过本次补跑"
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "今天（$today）尚未更新，继续执行"
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: 设置 Python 虚拟环境
-        # 单独设置 5 分钟硬上限，避免 pip 卡住后吃掉整个 job 的 30 分钟
+        if: steps.guard.outputs.skip != 'true'
+        # 单独设置 5 分钟硬上限，避免 pip 卡住后吃掉整个 job 的时间预算
         timeout-minutes: 5
         run: |
           # 复用已有 venv 避免重复下载
@@ -50,6 +139,7 @@ jobs:
             -r requirements.txt
 
       - name: Claude CLI 健康检查
+        if: steps.guard.outputs.skip != 'true'
         # 5-28 事故根因已查明：runner 读不到钥匙串，CLI 始终 "Not logged in"。
         # 当时的检查只跑 `claude --version` —— 未登录时版本号照样打印、照样退出 0，
         # 所以健康检查全绿而 100 条分析全挂。改成真实发一次最小调用验证认证。
@@ -71,6 +161,7 @@ jobs:
           "
 
       - name: 运行爬虫 + 处理 + 生成网站
+        if: steps.guard.outputs.skip != 'true'
         timeout-minutes: 20
         env:
           REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
@@ -83,39 +174,49 @@ jobs:
           python3 main.py all
 
       - name: 提交并推送更新
+        if: steps.guard.outputs.skip != 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          AUTH="AUTHORIZATION: basic $(printf 'x-access-token:%s' "$GH_TOKEN" | base64 | tr -d '\n')"
+
           git config user.name  "ClaudeNotice Bot"
           git config user.email "bot@claudenotice.local"
           git add docs/ data/processed/ data/seen_ids.json data/pinned.json
-          git diff --cached --quiet || git commit -m "chore: daily update $(date -u +%Y-%m-%d)"
+          # commit message 必须与「今日是否已更新」的判定串完全一致，否则补跑会重复执行
+          git diff --cached --quiet || \
+            git commit -m "chore: daily update ${{ steps.guard.outputs.date }}"
+
           # 5-28 事故：push 时 GitHub 连不上（75s 超时），整个 job 失败但 commit 已经在 runner 上了。
           # 加 3 次重试，间隔 30s，覆盖瞬时网络抖动；失败时先 pull --rebase 处理 race
           # （远端被人手动 push、或前次 rerun 留下分叉）。
           for attempt in 1 2 3; do
-            if git push origin main; then
+            if git -c http.extraheader="$AUTH" push origin main; then
               echo "push 成功（第 $attempt 次尝试）"
               break
             fi
             if [ "$attempt" -lt 3 ]; then
               echo "push 失败，尝试 pull --rebase 后重试（第 $attempt 次）..."
               # 拒绝可能是 non-fast-forward 也可能是网络问题。rebase 失败就放弃这次尝试。
-              git pull --rebase origin main || git rebase --abort || true
+              git -c http.extraheader="$AUTH" pull --rebase origin main \
+                || git rebase --abort || true
               sleep 30
             else
-              echo "push 重试 3 次仍失败"
+              echo "::error::push 重试 3 次仍失败"
               exit 1
             fi
           done
 
-      - name: 部署到 GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          folder: docs
-          branch: gh-pages
-          commit-message: "deploy: $(date -u +%Y-%m-%d)"
+      # 注意：这里没有「部署到 GitHub Pages」步骤，是刻意删掉的，不是漏了。
+      # 站点的 Pages source 是 main 分支的 /docs 目录（build_type=legacy），
+      # 推送到 main 后由 GitHub 侧的 pages-build-deployment 自动发布。
+      # 原先的 JamesIves/github-pages-deploy-action 往 gh-pages 分支推，
+      # 而 gh-pages 根本不参与发布 —— 该 step 从来没起过作用（它在 gh-pages 上留下的
+      # commit message 是未展开的字面量 "deploy: $(date -u +%Y-%m-%d)"，即为佐证），
+      # 却让每次 run 多一个 codeload.github.com 下载依赖，并直接导致 6-27 那次失败。
 
       - name: 分析质量门禁
+        if: steps.guard.outputs.skip != 'true'
         # 刻意放在发布之后：内容照常上线，但 AI 分析大面积失败时把 job 标红，
         # 让退化能被 GitHub 通知捕捉到，而不是像 5-28~7-26 那样静默两个月。
         run: python3 scripts/quality_gate.py
