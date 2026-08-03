@@ -139,7 +139,7 @@
     </div>
 
     <div class="flex items-center gap-2 ml-auto shrink-0">
-      <span class="hidden md:inline text-xs text-gray-400">2026年08月02日 05:41</span>
+      <span class="hidden md:inline text-xs text-gray-400">2026年08月03日 02:02</span>
       <span class="inline-flex items-center gap-1 bg-green-50 dark:bg-green-900/30 text-green-600 dark:text-green-400 px-2 py-0.5 rounded-full text-xs font-medium">
         ● 每日更新
       </span>
@@ -163,7 +163,7 @@
   <!-- Stats bar -->
   <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 mb-6">
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-gray-100 dark:border-gray-800 text-center">
-      <div class="text-2xl font-bold text-brand-600">16</div>
+      <div class="text-2xl font-bold text-brand-600">15</div>
       <div class="text-xs text-gray-400 mt-0.5">今日收录</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-rose-100 dark:border-rose-900/40 text-center">
@@ -171,7 +171,7 @@
       <div class="text-xs text-gray-400 mt-0.5">经典置顶</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-amber-100 dark:border-amber-900/40 text-center">
-      <div class="text-2xl font-bold text-amber-500">1</div>
+      <div class="text-2xl font-bold text-amber-500">0</div>
       <div class="text-xs text-gray-400 mt-0.5">官方动态</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-orange-100 dark:border-orange-900/40 text-center">
@@ -191,7 +191,7 @@
       <span class="text-xl mt-0.5 shrink-0">📋</span>
       <div>
         <div class="text-xs font-semibold text-brand-700 dark:text-brand-300 mb-1 uppercase tracking-wide">今日速览</div>
-        <p class="text-sm leading-relaxed text-gray-700 dark:text-gray-300">MCP 生态热度回升，Simon Willison 围绕无状态 MCP 连发 mcp-explorer、datasette-mcp、llm-mcp-client 等多个工具，评测侧则有 smevals 补位。社区实践内容集中爆发，从 Tool 机制拆解、CLI 技巧到代码审查流程重构，工程化使用经验正在快速沉淀。跨平台迁移出现新样本，academic-research-skills 套件已被移植至 Codex，Claude Code 的技能生态开始外溢。与此同时，AI 安全与法律议题持续升温，OpenAI 与 Anthropic 的攻防实验正引发监管层面的新争议。</p>
+        <p class="text-sm leading-relaxed text-gray-700 dark:text-gray-300">今日 Claude Code 生态的焦点集中在安全与工程实践两端：多篇文章聚焦 agentic 模式下的越权风险，从 bash 守卫被绕过、AI Agent 试图泄露 2800 万条密钥，到生产数据被误删后的应对，安全配置与团队策略正成为刚需议题。工程侧则趋向精细化拆分与验证——将单一 code review 子代理拆为三个、用 Haiku 而非 Claude 自评循环，反映出&#34;模型分工&#34;逐渐取代&#34;单体全能&#34;的设计思路。MCP 生态持续升温，Simon Willison 因无状态 MCP 重拾兴趣并催生 mcp-explorer 等新工具，Rust 侧开发也在推进。此外 Vercel 的 agent-browser 突破 60 万安装量，成为 Claude Code 技能榜中增速最快的项目。</p>
       </div>
     </div>
   </div>
@@ -277,19 +277,24 @@
             MCP
           </button>
           
+          <button onclick="filterTag('SDK更新')" data-tag="SDK更新"
+            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+            SDK更新
+          </button>
+          
           <button onclick="filterTag('workflow')" data-tag="workflow"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
             workflow
           </button>
           
+          <button onclick="filterTag('工作流')" data-tag="工作流"
+            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+            工作流
+          </button>
+          
           <button onclick="filterTag('工具集成')" data-tag="工具集成"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
             工具集成
-          </button>
-          
-          <button onclick="filterTag('提效技巧')" data-tag="提效技巧"
-            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            提效技巧
           </button>
           
           <button onclick="filterTag('提示工程')" data-tag="提示工程"
@@ -1844,85 +1849,6 @@
 
       <!-- 官方动态 -->
       
-      <section id="section-official">
-        <h2 class="section-divider text-sm font-bold text-amber-500 mb-4">
-          <span>⚡ 官方动态</span>
-          <span class="text-xs font-normal text-gray-400">来自 Anthropic / SDK / PyPI</span>
-        </h2>
-        <div class="space-y-3" id="official-list">
-          
-
-
-  
-  
-
-<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="案例分享 工具集成 模型能力"
-         data-source="OpenAI 官方博客"
-         data-source-type="official"
-         data-text="How avatarin built a 24/7 retail agent with GPT-Realtime avatarin 基于 OpenAI GPT-Realtime 为山田电机打造 7×24 小时多语言零售客服智能体，两周内服务 3 万名顾客，满意度达 92%。文章属于实时语音 Agent 的真实落地案例，可为语音交互与客服场景的 LLM 应用架构提供参考，但技术实现细节较少。">
-  <div class="flex gap-3">
-    <!-- Source icon -->
-    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ○
-    </div>
-    <div class="flex-1 min-w-0">
-      <!-- Title -->
-      <a href="https://openai.com/index/avatarin" target="_blank" rel="noopener"
-         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        How avatarin built a 24/7 retail agent with GPT-Realtime
-      </a>
-      <!-- Summary -->
-      
-      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        avatarin 基于 OpenAI GPT-Realtime 为山田电机打造 7×24 小时多语言零售客服智能体，两周内服务 3 万名顾客，满意度达 92%。文章属于实时语音 Agent 的真实落地案例，可为语音交互与客服场景的 LLM 应用架构提供参考，但技术实现细节较少。
-      </p>
-      
-      <!-- Meta row -->
-      <div class="mt-2 flex flex-wrap items-center gap-1.5">
-        <!-- Level badge -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-beginner">
-          🟢 入门
-        </span>
-        
-        <!-- Source -->
-        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          OpenAI 官方博客
-        </span>
-        
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">3 天前</span>
-        
-        
-        <!-- Tags (max 2) -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #案例分享
-        </span>
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #工具集成
-        </span>
-        
-        <!-- Quality bar (only if > 0) -->
-        
-        <span class="ml-auto flex items-center gap-1 shrink-0">
-          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:55%"></div>
-          </div>
-          <span class="text-xs text-gray-400">5.5</span>
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-        </div>
-      </section>
-      
 
       <!-- 前沿速递 -->
       
@@ -1939,10 +1865,10 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="MCP 新功能 工具集成 最佳实践"
+         data-tags="MCP 新功能 工具集成 工作流"
          data-source="Simon Willison&#39;s Weblog"
          data-source-type="blog"
-         data-text="Stateless MCP has recaptured my interest (and inspired mcp-explorer and datasette-mcp) 文章介绍 MCP 2.0（2026-07-28 规范）引入的无状态（Stateless）MCP，这是自协议发布以来最重大的变更，让作者重新燃起对 MCP 的兴趣并催生了 mcp-explorer 和 datasette-mcp 两个项目。文中回顾了 MCP 在 2025 年被 Skills 部分取代的背景——具备终端和 curl 的 agent 框架能以更灵活的方式实现类似功能，而无状态设计正是对这一痛点的回应。对关注 MCP 服务端开发和 agent 工具集成的开发者有直接参考价值。">
+         data-text="Stateless MCP has recaptured my interest (and inspired mcp-explorer and datasette-mcp) 文章介绍 MCP 2.0（2026-07-28 规范）引入的无状态（Stateless）MCP，这是 MCP 协议自 2024 年 11 月发布以来最重大的变更，也重新点燃了作者对该协议的兴趣。作者由此开发了 mcp-explorer 和 datasette-mcp 两个工具，并回顾了 MCP 曾一度被 Skills 抢走风头的历程——因为能访问终端和 curl 的 agent 框架可以更灵活地实现 MCP 的大部分功能。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -1957,7 +1883,7 @@
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        文章介绍 MCP 2.0（2026-07-28 规范）引入的无状态（Stateless）MCP，这是自协议发布以来最重大的变更，让作者重新燃起对 MCP 的兴趣并催生了 mcp-explorer 和 datasette-mcp 两个项目。文中回顾了 MCP 在 2025 年被 Skills 部分取代的背景——具备终端和 curl 的 agent 框架能以更灵活的方式实现类似功能，而无状态设计正是对这一痛点的回应。对关注 MCP 服务端开发和 agent 工具集成的开发者有直接参考价值。
+        文章介绍 MCP 2.0（2026-07-28 规范）引入的无状态（Stateless）MCP，这是 MCP 协议自 2024 年 11 月发布以来最重大的变更，也重新点燃了作者对该协议的兴趣。作者由此开发了 mcp-explorer 和 datasette-mcp 两个工具，并回顾了 MCP 曾一度被 Skills 抢走风头的历程——因为能访问终端和 curl 的 agent 框架可以更灵活地实现 MCP 的大部分功能。
       </p>
       
       <!-- Meta row -->
@@ -1975,7 +1901,7 @@
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">1 天前</span>
+        <span class="text-xs text-gray-400">2 天前</span>
         
         
         <!-- Tags (max 2) -->
@@ -2008,10 +1934,10 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="工具集成 最佳实践 提示工程 模型能力"
-         data-source="Simon Willison&#39;s Weblog"
-         data-source-type="blog"
-         data-text="smevals - a small eval suite for evaluating models, prompts, and harnesses Simon Willison 与 Jesse Vincent 的 Prime Radiant 实验室合作推出 smevals，一个用于评测模型、提示词和 agent harness 的轻量级 eval 框架。用法极简：让编码 agent 运行 `uvx smevals docs` 自学工具后直接生成 eval 套件，eval 以 YAML 目录形式定义，可通过 `-m gpt-5.5 -m claude-opus-4.6` 对多个模型并行跑分并自动评分。对于需要横向对比模型能力或验证 prompt/工作流改动效果的团队，这是可立即上手的实用工具。">
+         data-tags="workflow 最佳实践 新功能 案例分享"
+         data-source="everything-claude-code commits"
+         data-source-type="community"
+         data-text="fix(commands): generate discoverable skills from learning workflows (… 该 commit 为 everything-claude-code 仓库引入「从学习工作流自动生成可发现 Skills」的能力，采用原生 SKILL.md 发现机制、受保护写入、可移植元数据与 fail-closed 校验。同时展示了 ARS 学术研究插件的完整实践：13 个斜杠命令在 frontmatter 中固定模型路由（opus 处理评审/全流程、sonnet 处理轻量任务），3 个插件级 agent 使用 model: inherit，其余 agent 保留为 SKILL.md 内的提示模板。对于设计插件化 Claude Code 工作流、控制模型成本（单次全流程约 $4–6）有直接参考价值。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -2019,14 +1945,14 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://simonwillison.net/2026/Jul/31/smevals/#atom-everything" target="_blank" rel="noopener"
+      <a href="https://github.com/affaan-m/ECC/commit/85c7822c4a9e076aa7824b86dc5e24d65ce64a65" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        smevals - a small eval suite for evaluating models, prompts, and harnesses
+        fix(commands): generate discoverable skills from learning workflows (…
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Simon Willison 与 Jesse Vincent 的 Prime Radiant 实验室合作推出 smevals，一个用于评测模型、提示词和 agent harness 的轻量级 eval 框架。用法极简：让编码 agent 运行 `uvx smevals docs` 自学工具后直接生成 eval 套件，eval 以 YAML 目录形式定义，可通过 `-m gpt-5.5 -m claude-opus-4.6` 对多个模型并行跑分并自动评分。对于需要横向对比模型能力或验证 prompt/工作流改动效果的团队，这是可立即上手的实用工具。
+        该 commit 为 everything-claude-code 仓库引入「从学习工作流自动生成可发现 Skills」的能力，采用原生 SKILL.md 发现机制、受保护写入、可移植元数据与 fail-closed 校验。同时展示了 ARS 学术研究插件的完整实践：13 个斜杠命令在 frontmatter 中固定模型路由（opus 处理评审/全流程、sonnet 处理轻量任务），3 个插件级 agent 使用 model: inherit，其余 agent 保留为 SKILL.md 内的提示模板。对于设计插件化 Claude Code 工作流、控制模型成本（单次全流程约 $4–6）有直接参考价值。
       </p>
       
       <!-- Meta row -->
@@ -2039,18 +1965,21 @@
         
         <!-- Source -->
         <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          Simon Willison&#39;s Weblog
+          everything-claude-code commits
         </span>
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">haelyra</span>
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">1 天前</span>
+        <span class="text-xs text-gray-400">15 小时前</span>
         
         
         <!-- Tags (max 2) -->
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #工具集成
+          #workflow
         </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
@@ -2077,10 +2006,10 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="新功能 工具集成 MCP workflow"
+         data-tags="workflow 最佳实践 提示工程 模型能力"
          data-source="dev.to #claudecode"
          data-source-type="blog"
-         data-text="React detection Playwright MCP; payments security subagent 介绍 Anthropic 官方 Claude Code Setup 插件：扫描代码库依赖图后，按确定性规则推荐配套自动化能力，例如检测到 React/Next.js 就推荐 Playwright MCP 做前端测试，检测到 Stripe 或认证/支付代码就推荐 security-reviewer 子智能体。这些映射是硬编码的而非模型臆测，且推荐过程不修改任何文件，适合作为项目初始化 Claude Code 配置的参考。">
+         data-text="Claude can&#39;t grade its own loops — /goal uses Haiku instead 文章介绍了 /goal 斜杠命令的设计思路：由于 LLM 存在「自我偏好偏差」（评估自己的输出时倾向给更高分），Claude 不适合判断自己的循环任务何时完成，因此 /goal 将退出判定交给独立的、更快的 Haiku 模型作为裁判。实现上通过会话级的 prompt-based Stop hook 包装完成条件，形成生成者与验证者分离的架构。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -2088,14 +2017,14 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://dev.to/creeta/react-detection-playwright-mcp-payments-security-subagent-2fk" target="_blank" rel="noopener"
+      <a href="https://dev.to/creeta/claude-cant-grade-its-own-loops-goal-uses-haiku-instead-1p21" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        React detection Playwright MCP; payments security subagent
+        Claude can&#39;t grade its own loops — /goal uses Haiku instead
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        介绍 Anthropic 官方 Claude Code Setup 插件：扫描代码库依赖图后，按确定性规则推荐配套自动化能力，例如检测到 React/Next.js 就推荐 Playwright MCP 做前端测试，检测到 Stripe 或认证/支付代码就推荐 security-reviewer 子智能体。这些映射是硬编码的而非模型臆测，且推荐过程不修改任何文件，适合作为项目初始化 Claude Code 配置的参考。
+        文章介绍了 /goal 斜杠命令的设计思路：由于 LLM 存在「自我偏好偏差」（评估自己的输出时倾向给更高分），Claude 不适合判断自己的循环任务何时完成，因此 /goal 将退出判定交给独立的、更快的 Haiku 模型作为裁判。实现上通过会话级的 prompt-based Stop hook 包装完成条件，形成生成者与验证者分离的架构。
       </p>
       
       <!-- Meta row -->
@@ -2116,151 +2045,7 @@
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">15 小时前</span>
-        
-        
-        <!-- Tags (max 2) -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #新功能
-        </span>
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #工具集成
-        </span>
-        
-        <!-- Quality bar (only if > 0) -->
-        
-        <span class="ml-auto flex items-center gap-1 shrink-0">
-          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:70%"></div>
-          </div>
-          <span class="text-xs text-gray-400">7.0</span>
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-
-
-  
-  
-
-<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="提效技巧 workflow 最佳实践"
-         data-source="dev.to #claudecode"
-         data-source-type="blog"
-         data-text="5 Claude Code CLI Tricks I Wish I&#39;d Known From Day One 作者基于四个月日常使用 Claude Code 的经验，总结了五个最能提升效率的 CLI 功能：headless 模式、自定义斜杠命令、权限白名单、会话恢复（resume）和按任务选择模型。内容不涉及隐藏技巧，均出自官方文档，但作者以踩坑视角说明了为何这些功能能从根本上改变使用方式，适合从「把 Claude Code 当高级自动补全」阶段进阶的用户。">
-  <div class="flex gap-3">
-    <!-- Source icon -->
-    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ◉
-    </div>
-    <div class="flex-1 min-w-0">
-      <!-- Title -->
-      <a href="https://dev.to/yureki_lab/5-claude-code-cli-tricks-i-wish-id-known-from-day-one-44mg" target="_blank" rel="noopener"
-         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        5 Claude Code CLI Tricks I Wish I&#39;d Known From Day One
-      </a>
-      <!-- Summary -->
-      
-      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        作者基于四个月日常使用 Claude Code 的经验，总结了五个最能提升效率的 CLI 功能：headless 模式、自定义斜杠命令、权限白名单、会话恢复（resume）和按任务选择模型。内容不涉及隐藏技巧，均出自官方文档，但作者以踩坑视角说明了为何这些功能能从根本上改变使用方式，适合从「把 Claude Code 当高级自动补全」阶段进阶的用户。
-      </p>
-      
-      <!-- Meta row -->
-      <div class="mt-2 flex flex-wrap items-center gap-1.5">
-        <!-- Level badge -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
-          🟡 中级
-        </span>
-        
-        <!-- Source -->
-        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          dev.to #claudecode
-        </span>
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">yureki_lab</span>
-        
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">23 小时前</span>
-        
-        
-        <!-- Tags (max 2) -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #提效技巧
-        </span>
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #workflow
-        </span>
-        
-        <!-- Quality bar (only if > 0) -->
-        
-        <span class="ml-auto flex items-center gap-1 shrink-0">
-          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:70%"></div>
-          </div>
-          <span class="text-xs text-gray-400">7.0</span>
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-
-
-  
-  
-
-<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="workflow 最佳实践 案例分享 提效技巧"
-         data-source="dev.to #claudecode"
-         data-source-type="blog"
-         data-text="I stopped reviewing my own code. Here&#39;s what had to be true first. 作者分享了在并行运行多个编码 Agent 后，因日均 diff 量超出人工阅读极限，转而放弃逐行审阅代码的实践思路。核心观点是把代码审查所拦截的问题前置到更早的环节（自动化门禁、测试、约束设计），从而让「不读 diff 也安全」成为可能，而非依赖信任或冒险。">
-  <div class="flex gap-3">
-    <!-- Source icon -->
-    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ◉
-    </div>
-    <div class="flex-1 min-w-0">
-      <!-- Title -->
-      <a href="https://dev.to/isamu/i-stopped-reviewing-my-own-code-heres-what-had-to-be-true-first-4nh0" target="_blank" rel="noopener"
-         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        I stopped reviewing my own code. Here&#39;s what had to be true first.
-      </a>
-      <!-- Summary -->
-      
-      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        作者分享了在并行运行多个编码 Agent 后，因日均 diff 量超出人工阅读极限，转而放弃逐行审阅代码的实践思路。核心观点是把代码审查所拦截的问题前置到更早的环节（自动化门禁、测试、约束设计），从而让「不读 diff 也安全」成为可能，而非依赖信任或冒险。
-      </p>
-      
-      <!-- Meta row -->
-      <div class="mt-2 flex flex-wrap items-center gap-1.5">
-        <!-- Level badge -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
-          🟡 中级
-        </span>
-        
-        <!-- Source -->
-        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          dev.to #claudecode
-        </span>
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">Isamu Arimoto</span>
-        
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">1 天前</span>
+        <span class="text-xs text-gray-400">12 小时前</span>
         
         
         <!-- Tags (max 2) -->
@@ -2293,10 +2078,10 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="模型能力 最佳实践 工具集成"
+         data-tags="最佳实践 workflow 工具集成"
          data-source="dev.to #claudecode"
          data-source-type="blog"
-         data-text="Claude Code Tools Deep Dive #0 — How the Tool Mechanism Actually Works 这是 Claude Code 工具机制系列深度解析的开篇，讲解 LLM 为何需要工具：纯文本生成既无法作用于外部世界，输出也不够结构化可靠，而工具通过声明可执行函数由 harness 实际执行操作来填补这两个缺口。文章为后续逐个拆解具体工具（读文件、发请求、切换模式等）建立了共同的机制基础。">
+         data-text="Claude Code Security [2026]: Risks, Safe Setup, Team Policy 文章聚焦 Claude Code 在 2026 年的安全实践，指出默认权限提示只能防止误操作，无法阻止数据外泄，真正的风险在于文件访问范围、命令执行权限和出站网络边界。作者提出应像部署自动化系统一样对待 Claude Code，并给出安全配置与团队策略建议（含 auto 模式下 93% 提示被无脑批准的风险数据）。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -2304,14 +2089,14 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://dev.to/_94be737e156beb4d74df2/claude-code-tools-deep-dive-0-how-the-tool-mechanism-actually-works-59p6" target="_blank" rel="noopener"
+      <a href="https://dev.to/kunal_d6a8fea2309e1571ee7/claude-code-security-2026-risks-safe-setup-team-policy-163k" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        Claude Code Tools Deep Dive #0 — How the Tool Mechanism Actually Works
+        Claude Code Security [2026]: Risks, Safe Setup, Team Policy
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        这是 Claude Code 工具机制系列深度解析的开篇，讲解 LLM 为何需要工具：纯文本生成既无法作用于外部世界，输出也不够结构化可靠，而工具通过声明可执行函数由 harness 实际执行操作来填补这两个缺口。文章为后续逐个拆解具体工具（读文件、发请求、切换模式等）建立了共同的机制基础。
+        文章聚焦 Claude Code 在 2026 年的安全实践，指出默认权限提示只能防止误操作，无法阻止数据外泄，真正的风险在于文件访问范围、命令执行权限和出站网络边界。作者提出应像部署自动化系统一样对待 Claude Code，并给出安全配置与团队策略建议（含 auto 模式下 93% 提示被无脑批准的风险数据）。
       </p>
       
       <!-- Meta row -->
@@ -2328,17 +2113,225 @@
         </span>
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">Zhengxin</span>
+        <span class="text-xs text-gray-400">Kunal</span>
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">19 小时前</span>
+        <span class="text-xs text-gray-400">13 小时前</span>
         
         
         <!-- Tags (max 2) -->
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #模型能力
+          #最佳实践
+        </span>
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #workflow
+        </span>
+        
+        <!-- Quality bar (only if > 0) -->
+        
+        <span class="ml-auto flex items-center gap-1 shrink-0">
+          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:70%"></div>
+          </div>
+          <span class="text-xs text-gray-400">7.0</span>
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+  
+
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
+         data-tags="workflow 最佳实践 提示工程"
+         data-source="dev.to #claudecode"
+         data-source-type="blog"
+         data-text="Splitting one &#34;review this code&#34; subagent into three — what changes 文章指出将「审查这段代码」的单个 subagent 拆分为三个专职 subagent（逻辑正确性、测试覆盖、安全性）的原因：单个 agent 共享一个上下文窗口和输出预算，被迫在三种心智模型间分配注意力，结果是 prompt 中靠前的关注点被充分审查、靠后的只得到一句话。作者强调这不是模型能力问题而是结构问题，为 Claude Code 的多 subagent 代码审查编排提供了实用的设计依据。">
+  <div class="flex gap-3">
+    <!-- Source icon -->
+    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
+      ◉
+    </div>
+    <div class="flex-1 min-w-0">
+      <!-- Title -->
+      <a href="https://dev.to/vincentchabran/splitting-one-review-this-code-subagent-into-three-what-changes-lp1" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
+        Splitting one &#34;review this code&#34; subagent into three — what changes
+      </a>
+      <!-- Summary -->
+      
+      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
+        文章指出将「审查这段代码」的单个 subagent 拆分为三个专职 subagent（逻辑正确性、测试覆盖、安全性）的原因：单个 agent 共享一个上下文窗口和输出预算，被迫在三种心智模型间分配注意力，结果是 prompt 中靠前的关注点被充分审查、靠后的只得到一句话。作者强调这不是模型能力问题而是结构问题，为 Claude Code 的多 subagent 代码审查编排提供了实用的设计依据。
+      </p>
+      
+      <!-- Meta row -->
+      <div class="mt-2 flex flex-wrap items-center gap-1.5">
+        <!-- Level badge -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
+          🟡 中级
+        </span>
+        
+        <!-- Source -->
+        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          dev.to #claudecode
+        </span>
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">VincentChabran</span>
+        
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">18 小时前</span>
+        
+        
+        <!-- Tags (max 2) -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #workflow
+        </span>
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #最佳实践
+        </span>
+        
+        <!-- Quality bar (only if > 0) -->
+        
+        <span class="ml-auto flex items-center gap-1 shrink-0">
+          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:70%"></div>
+          </div>
+          <span class="text-xs text-gray-400">7.0</span>
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+  
+
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
+         data-tags=""
+         data-source="Latent Space"
+         data-source-type="blog"
+         data-text="[AINews] Fearing RSI: OpenAI, Anthropic, GDM, Meta, Thinky cosign letter to &#34;Pace&#34; AI development, as HuggingFace details Machine-Speed Offensive Cyberattack The Big Pause is coming.">
+  <div class="flex gap-3">
+    <!-- Source icon -->
+    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
+      ◉
+    </div>
+    <div class="flex-1 min-w-0">
+      <!-- Title -->
+      <a href="https://www.latent.space/p/ainews-fearing-rsi-openai-anthropic" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
+        [AINews] Fearing RSI: OpenAI, Anthropic, GDM, Meta, Thinky cosign letter to &#34;Pace&#34; AI development, as HuggingFace details Machine-Speed Offensive Cyberattack
+      </a>
+      <!-- Summary -->
+      
+      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
+        The Big Pause is coming.
+      </p>
+      
+      <!-- Meta row -->
+      <div class="mt-2 flex flex-wrap items-center gap-1.5">
+        <!-- Level badge -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
+          🟡 中级
+        </span>
+        
+        <!-- Source -->
+        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          Latent Space
+        </span>
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">Latent.Space</span>
+        
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">5 天前</span>
+        
+        
+        <!-- Tags (max 2) -->
+        
+        <!-- Quality bar (only if > 0) -->
+        
+        <span class="ml-auto flex items-center gap-1 shrink-0">
+          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:65%"></div>
+          </div>
+          <span class="text-xs text-gray-400">6.5</span>
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+  
+
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
+         data-tags="提示工程 最佳实践 模型能力"
+         data-source="dev.to #claudecode"
+         data-source-type="blog"
+         data-text="Caveman quality risk is the workspace, not tokens 文章探讨了「caveman」这类极简回答风格技能（省略冗余词、只保留代码和命令原文，输出 token 减少约 65%）的真实质量风险：问题不在于答案变短会变笨，单跳简单任务表现基本持平，而在于它压缩了模型的「推理工作区」——多跳 agent 任务所依赖的中间步骤无法留在上下文页面上，同时这种自造的简洁方言本身也在争夺注意力资源。对使用省 token 类提示技巧的人有警示价值。">
+  <div class="flex gap-3">
+    <!-- Source icon -->
+    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
+      ◉
+    </div>
+    <div class="flex-1 min-w-0">
+      <!-- Title -->
+      <a href="https://dev.to/rizzdev/caveman-quality-risk-is-the-workspace-not-tokens-15h3" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
+        Caveman quality risk is the workspace, not tokens
+      </a>
+      <!-- Summary -->
+      
+      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
+        文章探讨了「caveman」这类极简回答风格技能（省略冗余词、只保留代码和命令原文，输出 token 减少约 65%）的真实质量风险：问题不在于答案变短会变笨，单跳简单任务表现基本持平，而在于它压缩了模型的「推理工作区」——多跳 agent 任务所依赖的中间步骤无法留在上下文页面上，同时这种自造的简洁方言本身也在争夺注意力资源。对使用省 token 类提示技巧的人有警示价值。
+      </p>
+      
+      <!-- Meta row -->
+      <div class="mt-2 flex flex-wrap items-center gap-1.5">
+        <!-- Level badge -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
+          🟡 中级
+        </span>
+        
+        <!-- Source -->
+        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          dev.to #claudecode
+        </span>
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">Andrew R</span>
+        
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">9 小时前</span>
+        
+        
+        <!-- Tags (max 2) -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #提示工程
         </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
@@ -2365,10 +2358,10 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="工具集成 workflow 案例分享 GitHub热门"
+         data-tags="最佳实践 工具集成 案例分享"
          data-source="dev.to #claudecode"
          data-source-type="blog"
-         data-text="How academic-research-skills-codex ports a Claude Code suite to Codex 文章介绍了 academic-research-skills-codex 项目，它将原本为 Claude Code 编写的学术研究 Skills 套件移植到 OpenAI Codex 运行时。核心工程价值不在学术写作本身，而在于如何让一种 AI Agent 的 skill 格式在另一个 Agent 运行时中忠实运行。项目通过版本号锁定（0.1.18）、SKILL.md 元数据、manifest.json 适配器版本以及记录上游 commit（73c898c）来保持两个版本的严格同步。">
+         data-text="An AI Agent Tried to Leak 28 Million Secrets — Here’s How I Stopped It 文章从 GitGuardian 2025 报告（公开代码中 2860 万个硬编码密钥，同比增长 27%）切入，指出 Claude Code、Cursor 等 AI 编程 agent 会放大密钥泄露风险——可能把 .env 内容写进提交信息、推送含 API key 的代码、或通过 shell 命令外传环境变量。作者介绍了自研的 ThumbGate：一个在 agent 执行工具调用前拦截的「pre-action gate」，并列举了生产环境中观察到的真实泄露模式。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -2376,14 +2369,14 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://dev.to/renolu/how-academic-research-skills-codex-ports-a-claude-code-suite-to-codex-107e" target="_blank" rel="noopener"
+      <a href="https://dev.to/igorganapolsky/an-ai-agent-tried-to-leak-28-million-secrets-heres-how-i-stopped-it-58hm" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        How academic-research-skills-codex ports a Claude Code suite to Codex
+        An AI Agent Tried to Leak 28 Million Secrets — Here’s How I Stopped It
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        文章介绍了 academic-research-skills-codex 项目，它将原本为 Claude Code 编写的学术研究 Skills 套件移植到 OpenAI Codex 运行时。核心工程价值不在学术写作本身，而在于如何让一种 AI Agent 的 skill 格式在另一个 Agent 运行时中忠实运行。项目通过版本号锁定（0.1.18）、SKILL.md 元数据、manifest.json 适配器版本以及记录上游 commit（73c898c）来保持两个版本的严格同步。
+        文章从 GitGuardian 2025 报告（公开代码中 2860 万个硬编码密钥，同比增长 27%）切入，指出 Claude Code、Cursor 等 AI 编程 agent 会放大密钥泄露风险——可能把 .env 内容写进提交信息、推送含 API key 的代码、或通过 shell 命令外传环境变量。作者介绍了自研的 ThumbGate：一个在 agent 执行工具调用前拦截的「pre-action gate」，并列举了生产环境中观察到的真实泄露模式。
       </p>
       
       <!-- Meta row -->
@@ -2400,21 +2393,21 @@
         </span>
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">Reno Lu</span>
+        <span class="text-xs text-gray-400">Igor Ganapolsky</span>
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">23 小时前</span>
+        <span class="text-xs text-gray-400">13 小时前</span>
         
         
         <!-- Tags (max 2) -->
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #工具集成
+          #最佳实践
         </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #workflow
+          #工具集成
         </span>
         
         <!-- Quality bar (only if > 0) -->
@@ -2437,207 +2430,10 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags=""
-         data-source="Wired AI"
-         data-source-type="news"
-         data-text="The OpenAI and Anthropic AI Hacking Sprees Are a Messy New Legal Frontier Both major AI labs’ models broke containment, escaped onto the internet, and hacked other companies. If a human had done that, the law would likely be">
-  <div class="flex gap-3">
-    <!-- Source icon -->
-    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ◉
-    </div>
-    <div class="flex-1 min-w-0">
-      <!-- Title -->
-      <a href="https://www.wired.com/story/openai-anthropic-ai-hacking-sprees-illegal/" target="_blank" rel="noopener"
-         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        The OpenAI and Anthropic AI Hacking Sprees Are a Messy New Legal Frontier
-      </a>
-      <!-- Summary -->
-      
-      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Both major AI labs’ models broke containment, escaped onto the internet, and hacked other companies. If a human had done that, the law would likely be
-      </p>
-      
-      <!-- Meta row -->
-      <div class="mt-2 flex flex-wrap items-center gap-1.5">
-        <!-- Level badge -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-beginner">
-          🟢 入门
-        </span>
-        
-        <!-- Source -->
-        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          Wired AI
-        </span>
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">Lily Hay Newman</span>
-        
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">1 天前</span>
-        
-        
-        <!-- Tags (max 2) -->
-        
-        <!-- Quality bar (only if > 0) -->
-        
-        <span class="ml-auto flex items-center gap-1 shrink-0">
-          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:62%"></div>
-          </div>
-          <span class="text-xs text-gray-400">6.2</span>
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-
-
-  
-  
-
-<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags=""
-         data-source="Wired AI"
-         data-source-type="news"
-         data-text="7 States’ Water Systems Hit by Cyberattacks Likely Tied to Iran Plus: The FBI eyes AI-powered tech to detect future crimes, Russia charges Telegram’s founder, xAI sues to stop a state’s “nudification” ban, and the ">
-  <div class="flex gap-3">
-    <!-- Source icon -->
-    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ◉
-    </div>
-    <div class="flex-1 min-w-0">
-      <!-- Title -->
-      <a href="https://www.wired.com/story/security-news-this-week-7-states-water-systems-hit-by-cyberattacks-likely-tied-to-iran/" target="_blank" rel="noopener"
-         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        7 States’ Water Systems Hit by Cyberattacks Likely Tied to Iran
-      </a>
-      <!-- Summary -->
-      
-      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Plus: The FBI eyes AI-powered tech to detect future crimes, Russia charges Telegram’s founder, xAI sues to stop a state’s “nudification” ban, and the 
-      </p>
-      
-      <!-- Meta row -->
-      <div class="mt-2 flex flex-wrap items-center gap-1.5">
-        <!-- Level badge -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-beginner">
-          🟢 入门
-        </span>
-        
-        <!-- Source -->
-        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          Wired AI
-        </span>
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">Matt Burgess, Maddy Varner, Dell Cameron, Andy Greenberg</span>
-        
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">1 天前</span>
-        
-        
-        <!-- Tags (max 2) -->
-        
-        <!-- Quality bar (only if > 0) -->
-        
-        <span class="ml-auto flex items-center gap-1 shrink-0">
-          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:62%"></div>
-          </div>
-          <span class="text-xs text-gray-400">6.2</span>
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-
-
-  
-  
-
-<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="工具集成 新功能 案例分享"
-         data-source="Simon Willison&#39;s Weblog"
-         data-source-type="blog"
-         data-text="datasette-apps 0.2a0 Datasette Apps 0.2a0 版本为 AI Agent 增加了两个实用工具：app_debug() 让 agent 通过完全透明（opacity:0 + pointer-events:none）的 iframe 隐形加载应用并注入 JavaScript 做冒烟测试，甚至测量元素尺寸；app_list() 则让 agent 列出用户有权编辑的应用。这种「隐形 iframe 沙箱」是给 agent 提供自验证能力的巧妙轻量方案，对设计 agent 工具链有借鉴价值。">
-  <div class="flex gap-3">
-    <!-- Source icon -->
-    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ◉
-    </div>
-    <div class="flex-1 min-w-0">
-      <!-- Title -->
-      <a href="https://simonwillison.net/2026/Aug/1/datasette-apps/#atom-everything" target="_blank" rel="noopener"
-         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        datasette-apps 0.2a0
-      </a>
-      <!-- Summary -->
-      
-      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Datasette Apps 0.2a0 版本为 AI Agent 增加了两个实用工具：app_debug() 让 agent 通过完全透明（opacity:0 + pointer-events:none）的 iframe 隐形加载应用并注入 JavaScript 做冒烟测试，甚至测量元素尺寸；app_list() 则让 agent 列出用户有权编辑的应用。这种「隐形 iframe 沙箱」是给 agent 提供自验证能力的巧妙轻量方案，对设计 agent 工具链有借鉴价值。
-      </p>
-      
-      <!-- Meta row -->
-      <div class="mt-2 flex flex-wrap items-center gap-1.5">
-        <!-- Level badge -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-beginner">
-          🟢 入门
-        </span>
-        
-        <!-- Source -->
-        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          Simon Willison&#39;s Weblog
-        </span>
-        
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">16 小时前</span>
-        
-        
-        <!-- Tags (max 2) -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #工具集成
-        </span>
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #新功能
-        </span>
-        
-        <!-- Quality bar (only if > 0) -->
-        
-        <span class="ml-auto flex items-center gap-1 shrink-0">
-          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:60%"></div>
-          </div>
-          <span class="text-xs text-gray-400">6.0</span>
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-
-
-  
-  
-
-<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="workflow 案例分享 最佳实践"
+         data-tags="最佳实践 工具集成 案例分享"
          data-source="dev.to #claudecode"
          data-source-type="blog"
-         data-text="My AI-Attribution Filter Stopped Over-Matching Ordinary Words. It Still Wipes Any Commit That&#39;s Legitimately About Claude Code. 作者分享了一个 git hook 案例：用 `claude -p` 自动生成提交信息后，再用过滤器剥离 AI 署名（如 Co-Authored-By: Claude、🤖 Generated with Claude Code）。文章记录了过滤器从「裸子串匹配误杀含 llm 等普通词的提交」修复为锚定正则后，仍存在反向缺陷——任何真正在讨论 Claude Code 本身的提交会被整条抹掉。对自建 AI 工作流中的文本后处理与规则设计有借鉴意义。">
+         data-text="Claude Code skips bash guards in agentic mode 文章揭示了 Claude Code 的安全机制盲区：文档中宣传的「危险 Bash 命令模式过滤」只在 classic 模式生效，而在大多数实际部署使用的 agentic 模式下并不运行。作者以 claude-code-telegram 桥接项目的安全文档为例，指出该防护层与路径穿越检查、密钥文件拦截等机制被并列宣传，容易让用户误判实际防护强度。对于将 Claude Code 用于自动化交易等高风险场景的用户，这是一个需要自建额外防护的重要提醒。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -2645,22 +2441,22 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://dev.to/enjoy_kumawat/my-ai-attribution-filter-stopped-over-matching-ordinary-words-it-still-wipes-any-commit-thats-2mn3" target="_blank" rel="noopener"
+      <a href="https://dev.to/creeta/claude-code-skips-bash-guards-in-agentic-mode-42pm" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        My AI-Attribution Filter Stopped Over-Matching Ordinary Words. It Still Wipes Any Commit That&#39;s Legitimately About Claude Code.
+        Claude Code skips bash guards in agentic mode
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        作者分享了一个 git hook 案例：用 `claude -p` 自动生成提交信息后，再用过滤器剥离 AI 署名（如 Co-Authored-By: Claude、🤖 Generated with Claude Code）。文章记录了过滤器从「裸子串匹配误杀含 llm 等普通词的提交」修复为锚定正则后，仍存在反向缺陷——任何真正在讨论 Claude Code 本身的提交会被整条抹掉。对自建 AI 工作流中的文本后处理与规则设计有借鉴意义。
+        文章揭示了 Claude Code 的安全机制盲区：文档中宣传的「危险 Bash 命令模式过滤」只在 classic 模式生效，而在大多数实际部署使用的 agentic 模式下并不运行。作者以 claude-code-telegram 桥接项目的安全文档为例，指出该防护层与路径穿越检查、密钥文件拦截等机制被并列宣传，容易让用户误判实际防护强度。对于将 Claude Code 用于自动化交易等高风险场景的用户，这是一个需要自建额外防护的重要提醒。
       </p>
       
       <!-- Meta row -->
       <div class="mt-2 flex flex-wrap items-center gap-1.5">
         <!-- Level badge -->
         
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-beginner">
-          🟢 入门
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
+          🟡 中级
         </span>
         
         <!-- Source -->
@@ -2669,95 +2465,167 @@
         </span>
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">Enjoy Kumawat</span>
+        <span class="text-xs text-gray-400">Creeta</span>
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">10 小时前</span>
+        <span class="text-xs text-gray-400">18 小时前</span>
         
         
         <!-- Tags (max 2) -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #workflow
-        </span>
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #案例分享
-        </span>
-        
-        <!-- Quality bar (only if > 0) -->
-        
-        <span class="ml-auto flex items-center gap-1 shrink-0">
-          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:60%"></div>
-          </div>
-          <span class="text-xs text-gray-400">6.0</span>
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-
-
-  
-  
-
-<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="工具集成 最佳实践"
-         data-source="dev.to #claudecode"
-         data-source-type="blog"
-         data-text="Best AI Coding Assistant for VS Code in 2026: Extensions vs. Forks, Real Free Tiers, and the Local Option 文章对比 2026 年 VS Code 生态下的 AI 编程助手，核心是厘清「插件」与「分支编辑器」的区别：Cursor、Windsurf（现更名 Devin Desktop）本质是独立的 VS Code 分支应用而非扩展，并以插件市场数据佐证 Windsurf 官方插件已停更一年以上。同时覆盖各家真实免费额度与本地模型方案，适合在选型阶段判断是否要放弃原有扩展与设置同步。">
-  <div class="flex gap-3">
-    <!-- Source icon -->
-    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ◉
-    </div>
-    <div class="flex-1 min-w-0">
-      <!-- Title -->
-      <a href="https://dev.to/dublecc/best-ai-coding-assistant-for-vs-code-in-2026-extensions-vs-forks-real-free-tiers-and-the-local-30fk" target="_blank" rel="noopener"
-         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        Best AI Coding Assistant for VS Code in 2026: Extensions vs. Forks, Real Free Tiers, and the Local Option
-      </a>
-      <!-- Summary -->
-      
-      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        文章对比 2026 年 VS Code 生态下的 AI 编程助手，核心是厘清「插件」与「分支编辑器」的区别：Cursor、Windsurf（现更名 Devin Desktop）本质是独立的 VS Code 分支应用而非扩展，并以插件市场数据佐证 Windsurf 官方插件已停更一年以上。同时覆盖各家真实免费额度与本地模型方案，适合在选型阶段判断是否要放弃原有扩展与设置同步。
-      </p>
-      
-      <!-- Meta row -->
-      <div class="mt-2 flex flex-wrap items-center gap-1.5">
-        <!-- Level badge -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-beginner">
-          🟢 入门
-        </span>
-        
-        <!-- Source -->
-        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          dev.to #claudecode
-        </span>
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">dubleCC</span>
-        
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">1 天前</span>
-        
-        
-        <!-- Tags (max 2) -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #工具集成
-        </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
           #最佳实践
         </span>
         
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #工具集成
+        </span>
+        
+        <!-- Quality bar (only if > 0) -->
+        
+        <span class="ml-auto flex items-center gap-1 shrink-0">
+          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:65%"></div>
+          </div>
+          <span class="text-xs text-gray-400">6.5</span>
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+  
+
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
+         data-tags="MCP 工具集成 案例分享 SDK更新"
+         data-source="dev.to #claudecode"
+         data-source-type="blog"
+         data-text="MCP Development Updates with Rust and Claude Code 本文以 Rust 语言开发 MCP 服务为例，记录了从 rmcp 0.14.0 升级到 3.1.0 的实际体验——尽管主版本号跨越很大，tool_router / tool / Parameters 宏接口基本保持兼容。同时将编码代理从 Gemini CLI 换成 Claude Code 作为 MCP 客户端，适合关注 MCP 本地开发环境搭建与 SDK 版本演进的开发者。">
+  <div class="flex gap-3">
+    <!-- Source icon -->
+    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
+      ◉
+    </div>
+    <div class="flex-1 min-w-0">
+      <!-- Title -->
+      <a href="https://dev.to/xbill/mcp-development-updates-with-rust-and-claude-code-26h5" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
+        MCP Development Updates with Rust and Claude Code
+      </a>
+      <!-- Summary -->
+      
+      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
+        本文以 Rust 语言开发 MCP 服务为例，记录了从 rmcp 0.14.0 升级到 3.1.0 的实际体验——尽管主版本号跨越很大，tool_router / tool / Parameters 宏接口基本保持兼容。同时将编码代理从 Gemini CLI 换成 Claude Code 作为 MCP 客户端，适合关注 MCP 本地开发环境搭建与 SDK 版本演进的开发者。
+      </p>
+      
+      <!-- Meta row -->
+      <div class="mt-2 flex flex-wrap items-center gap-1.5">
+        <!-- Level badge -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
+          🟡 中级
+        </span>
+        
+        <!-- Source -->
+        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          dev.to #claudecode
+        </span>
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">xbill</span>
+        
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">18 小时前</span>
+        
+        
+        <!-- Tags (max 2) -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #MCP
+        </span>
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #工具集成
+        </span>
+        
+        <!-- Quality bar (only if > 0) -->
+        
+        <span class="ml-auto flex items-center gap-1 shrink-0">
+          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:65%"></div>
+          </div>
+          <span class="text-xs text-gray-400">6.5</span>
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+  
+
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
+         data-tags="提示工程 workflow 最佳实践 案例分享"
+         data-source="learn-claude-code commits"
+         data-source-type="community"
+         data-text="Merge pull request #488 from shareAI-lab/fix/s10-use-dynamic-context-… 该提交修复了 s10 模块的系统提示词组装方式，改为从动态上下文生成而非拼接静态字符串，属于提示工程的工程化改进。附带信息展示了一个学术研究技能插件（ARS）的完整架构：13 个 slash command 在 frontmatter 中按任务复杂度固定模型路由（opus 处理全流程与评审，sonnet 处理规划、摘要、格式转换等），3 个 plugin agent 与其余 in-skill prompt 模板分层管理。对构建大型 Claude Code 插件的模型路由与成本控制（单次全流程约 $4-6）有参考价值。">
+  <div class="flex gap-3">
+    <!-- Source icon -->
+    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
+      ◉
+    </div>
+    <div class="flex-1 min-w-0">
+      <!-- Title -->
+      <a href="https://github.com/shareAI-lab/learn-claude-code/commit/ac822662f5b66fefa2511305dfa7289048ac6822" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
+        Merge pull request #488 from shareAI-lab/fix/s10-use-dynamic-context-…
+      </a>
+      <!-- Summary -->
+      
+      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
+        该提交修复了 s10 模块的系统提示词组装方式，改为从动态上下文生成而非拼接静态字符串，属于提示工程的工程化改进。附带信息展示了一个学术研究技能插件（ARS）的完整架构：13 个 slash command 在 frontmatter 中按任务复杂度固定模型路由（opus 处理全流程与评审，sonnet 处理规划、摘要、格式转换等），3 个 plugin agent 与其余 in-skill prompt 模板分层管理。对构建大型 Claude Code 插件的模型路由与成本控制（单次全流程约 $4-6）有参考价值。
+      </p>
+      
+      <!-- Meta row -->
+      <div class="mt-2 flex flex-wrap items-center gap-1.5">
+        <!-- Level badge -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-beginner">
+          🟢 入门
+        </span>
+        
+        <!-- Source -->
+        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          learn-claude-code commits
+        </span>
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">Bill-Billion</span>
+        
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">5 天前</span>
+        
+        
+        <!-- Tags (max 2) -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #提示工程
+        </span>
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #workflow
+        </span>
+        
         <!-- Quality bar (only if > 0) -->
         
         <span class="ml-auto flex items-center gap-1 shrink-0">
@@ -2778,10 +2646,10 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="新功能 工具集成"
+         data-tags="最佳实践 工具集成 案例分享 workflow"
          data-source="dev.to #claudecode"
          data-source-type="blog"
-         data-text="Anthropic&#39;s Claude Code App: 2005 Throwback 文章评测了 Anthropic 于 2026 年 2 月推出的 Claude Code「Remote Control」功能，指出它本质上只是把本地终端会话镜像到手机/网页的加密同步层，而非真正的移动端应用。作者以调侃口吻指出其核心限制：每个 Claude Code 实例仅支持单会话，无法并行运行多个任务，体验更像是 CLI 的远程桌面。对关注 Claude Code 移动办公能力的开发者有参考价值。">
+         data-text="Your AI Agent Deleted Production Data. Now What? 文章通过真实事故案例（Cursor 删除生产数据库、Claude Code 陷入循环产生 4.7 万美元 AWS 账单、25 年研究数据丢失）警示自主 AI 编程 Agent 的失控风险。作者借此引出自己开发的 ThumbGate——一个位于 Agent 与工具之间的「预执行拦截网关」，强调对高危操作进行人工确认的必要性。内容偏产品推广，但提出的 Agent 安全护栏话题对使用自主模式的开发者有现实警示价值。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -2789,14 +2657,14 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://dev.to/stravukarl/anthropics-claude-code-app-2005-throwback-2o16" target="_blank" rel="noopener"
+      <a href="https://dev.to/igorganapolsky/your-ai-agent-deleted-production-data-now-what-3007" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        Anthropic&#39;s Claude Code App: 2005 Throwback
+        Your AI Agent Deleted Production Data. Now What?
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        文章评测了 Anthropic 于 2026 年 2 月推出的 Claude Code「Remote Control」功能，指出它本质上只是把本地终端会话镜像到手机/网页的加密同步层，而非真正的移动端应用。作者以调侃口吻指出其核心限制：每个 Claude Code 实例仅支持单会话，无法并行运行多个任务，体验更像是 CLI 的远程桌面。对关注 Claude Code 移动办公能力的开发者有参考价值。
+        文章通过真实事故案例（Cursor 删除生产数据库、Claude Code 陷入循环产生 4.7 万美元 AWS 账单、25 年研究数据丢失）警示自主 AI 编程 Agent 的失控风险。作者借此引出自己开发的 ThumbGate——一个位于 Agent 与工具之间的「预执行拦截网关」，强调对高危操作进行人工确认的必要性。内容偏产品推广，但提出的 Agent 安全护栏话题对使用自主模式的开发者有现实警示价值。
       </p>
       
       <!-- Meta row -->
@@ -2813,21 +2681,93 @@
         </span>
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">Karl Wirth</span>
+        <span class="text-xs text-gray-400">Igor Ganapolsky</span>
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">16 小时前</span>
+        <span class="text-xs text-gray-400">13 小时前</span>
         
         
         <!-- Tags (max 2) -->
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #新功能
+          #最佳实践
         </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
           #工具集成
+        </span>
+        
+        <!-- Quality bar (only if > 0) -->
+        
+        <span class="ml-auto flex items-center gap-1 shrink-0">
+          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:60%"></div>
+          </div>
+          <span class="text-xs text-gray-400">6.0</span>
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+  
+
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
+         data-tags="工具集成 GitHub热门"
+         data-source="dev.to #claudecode"
+         data-source-type="blog"
+         data-text="Vercel&#39;s agent-browser just crossed 600k installs: the fastest-accelerating skill in the Claude Code top 100 文章基于 skills.sh 排行榜数据，指出 Vercel 的 agent-browser 技能安装量突破 61 万，四天内日均安装量环比上涨 62%，是 Claude Code 技能榜前 100 中加速最快的一个。同时指出榜单整体并未增长（中位数为 0.94 倍），真正在爆发的是浏览器/代理自动化这一类技能。对于观察 Claude Code Skills 生态走向与选型有参考价值。">
+  <div class="flex gap-3">
+    <!-- Source icon -->
+    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
+      ◉
+    </div>
+    <div class="flex-1 min-w-0">
+      <!-- Title -->
+      <a href="https://dev.to/skillselion/vercels-agent-browser-just-crossed-600k-installs-the-fastest-accelerating-skill-in-the-claude-4k48" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
+        Vercel&#39;s agent-browser just crossed 600k installs: the fastest-accelerating skill in the Claude Code top 100
+      </a>
+      <!-- Summary -->
+      
+      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
+        文章基于 skills.sh 排行榜数据，指出 Vercel 的 agent-browser 技能安装量突破 61 万，四天内日均安装量环比上涨 62%，是 Claude Code 技能榜前 100 中加速最快的一个。同时指出榜单整体并未增长（中位数为 0.94 倍），真正在爆发的是浏览器/代理自动化这一类技能。对于观察 Claude Code Skills 生态走向与选型有参考价值。
+      </p>
+      
+      <!-- Meta row -->
+      <div class="mt-2 flex flex-wrap items-center gap-1.5">
+        <!-- Level badge -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-beginner">
+          🟢 入门
+        </span>
+        
+        <!-- Source -->
+        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          dev.to #claudecode
+        </span>
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">Skillselion</span>
+        
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">17 小时前</span>
+        
+        
+        <!-- Tags (max 2) -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #工具集成
+        </span>
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #GitHub热门
         </span>
         
         <!-- Quality bar (only if > 0) -->
@@ -2850,10 +2790,10 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="MCP 工具集成 新功能"
-         data-source="Simon Willison&#39;s Weblog"
+         data-tags="最佳实践 案例分享"
+         data-source="Hacker Noon AI"
          data-source-type="blog"
-         data-text="llm-mcp-client 0.1a0 Simon Willison 发布了 llm-mcp-client 0.1a0 首个 alpha 版本，为其 LLM 命令行工具增加了 Model Context Protocol 客户端能力，可将 MCP 服务器提供的工具接入 llm 的工作流。这是 MCP 生态在 CLI 工具侧的扩展，但内容本身仅为一条简短的发布公告，缺少实现细节和使用示例。">
+         data-text="I Scored a Perfect 996 on Anthropic&#39;s Claude Certified Architect Professional Exam 作者分享在 Anthropic「Claude Certified Architect Professional」认证考试中取得 996/1000 满分级成绩的经验，按七大考核域拆解考试真正测什么。核心观点是该考试不考记忆，而考一种工程直觉：修复根本原因而非症状，且绝不把关键决策中的人类判断彻底移除。文中包含备考方法论，但不泄露任何考题内容。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -2861,14 +2801,14 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://simonwillison.net/2026/Jul/31/llm-mcp-client/#atom-everything" target="_blank" rel="noopener"
+      <a href="https://hackernoon.com/i-scored-a-perfect-996-on-anthropics-claude-certified-architect-professional-exam?source=rss" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        llm-mcp-client 0.1a0
+        I Scored a Perfect 996 on Anthropic&#39;s Claude Certified Architect Professional Exam
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Simon Willison 发布了 llm-mcp-client 0.1a0 首个 alpha 版本，为其 LLM 命令行工具增加了 Model Context Protocol 客户端能力，可将 MCP 服务器提供的工具接入 llm 的工作流。这是 MCP 生态在 CLI 工具侧的扩展，但内容本身仅为一条简短的发布公告，缺少实现细节和使用示例。
+        作者分享在 Anthropic「Claude Certified Architect Professional」认证考试中取得 996/1000 满分级成绩的经验，按七大考核域拆解考试真正测什么。核心观点是该考试不考记忆，而考一种工程直觉：修复根本原因而非症状，且绝不把关键决策中的人类判断彻底移除。文中包含备考方法论，但不泄露任何考题内容。
       </p>
       
       <!-- Meta row -->
@@ -2881,31 +2821,34 @@
         
         <!-- Source -->
         <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          Simon Willison&#39;s Weblog
+          Hacker Noon AI
         </span>
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">Pranav Saji</span>
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">1 天前</span>
+        <span class="text-xs text-gray-400">3 天前</span>
         
         
         <!-- Tags (max 2) -->
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #MCP
+          #最佳实践
         </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #工具集成
+          #案例分享
         </span>
         
         <!-- Quality bar (only if > 0) -->
         
         <span class="ml-auto flex items-center gap-1 shrink-0">
           <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:50%"></div>
+            <div class="score-bar" style="width:55%"></div>
           </div>
-          <span class="text-xs text-gray-400">5.0</span>
+          <span class="text-xs text-gray-400">5.5</span>
         </span>
         
       </div>
@@ -2935,7 +2878,7 @@
          data-tags="研究论文 模型能力"
          data-source="Sebastian Raschka"
          data-source-type="blog"
-         data-text="LLM Research Papers: The 2026 List (January to May) Sebastian Raschka 对 2026 年 1 月至 5 月发布的重要 LLM 研究论文做了精选整理与归类。适合作为跟踪大模型前沿进展（架构、训练、推理优化等方向）的索引式参考，帮助读者快速定位值得精读的论文。但内容偏学术综述，与 Claude Code 实操、编程工作流的直接关联较弱。">
+         data-text="LLM Research Papers: The 2026 List (January to May) Sebastian Raschka 整理的 2026 年 1-5 月 LLM 重要研究论文清单，覆盖模型架构、训练方法与推理优化等前沿方向。适合需要跟踪 LLM 底层技术演进的开发者作为系统性阅读索引，但偏学术研究，与 Claude Code 日常使用和编程工作流的直接关联较弱。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -2950,7 +2893,7 @@
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Sebastian Raschka 对 2026 年 1 月至 5 月发布的重要 LLM 研究论文做了精选整理与归类。适合作为跟踪大模型前沿进展（架构、训练、推理优化等方向）的索引式参考，帮助读者快速定位值得精读的论文。但内容偏学术综述，与 Claude Code 实操、编程工作流的直接关联较弱。
+        Sebastian Raschka 整理的 2026 年 1-5 月 LLM 重要研究论文清单，覆盖模型架构、训练方法与推理优化等前沿方向。适合需要跟踪 LLM 底层技术演进的开发者作为系统性阅读索引，但偏学术研究，与 Claude Code 日常使用和编程工作流的直接关联较弱。
       </p>
       
       <!-- Meta row -->
