@@ -180,12 +180,25 @@ jobs:
         run: |
           AUTH="AUTHORIZATION: basic $(printf 'x-access-token:%s' "$GH_TOKEN" | base64 | tr -d '\n')"
 
+          # author 与 committer 刻意分开，两者各有用途：
+          #
+          # committer = ClaudeNotice Bot —— 保留「这条提交是自动跑出来的」这一事实标识。
+          #   历史里能一眼区分 daily 自动提交和手动改动（判断"今天到底跑没跑"就靠它）。
+          #
+          # author = 我的 noreply 地址 —— GitHub 贡献图按 author 邮箱归属，而原先
+          #   author 也是 bot@claudenotice.local：这是个编造的本地域名，不属于任何
+          #   GitHub 账号、也无法验证，所以历次 daily update 全都不计入绿格子。
+          #   用 <用户ID>+<用户名>@users.noreply.github.com 而非真实邮箱：
+          #   本仓库是 public，noreply 不受邮箱隐私设置影响，也不把真实邮箱写进公开历史。
+          #   （注意：已有历史提交不会追溯生效，除非重写 author 并 force-push —— 不值得）
           git config user.name  "ClaudeNotice Bot"
           git config user.email "bot@claudenotice.local"
           git add docs/ data/processed/ data/seen_ids.json data/pinned.json
           # commit message 必须与「今日是否已更新」的判定串完全一致，否则补跑会重复执行
           git diff --cached --quiet || \
-            git commit -m "chore: daily update ${{ steps.guard.outputs.date }}"
+            git commit \
+              --author="Bin Deng <219093083+BinHPdev@users.noreply.github.com>" \
+              -m "chore: daily update ${{ steps.guard.outputs.date }}"
 
           # 5-28 事故：push 时 GitHub 连不上（75s 超时），整个 job 失败但 commit 已经在 runner 上了。
           # 加 3 次重试，间隔 30s，覆盖瞬时网络抖动；失败时先 pull --rebase 处理 race
