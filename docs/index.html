@@ -139,7 +139,7 @@
     </div>
 
     <div class="flex items-center gap-2 ml-auto shrink-0">
-      <span class="hidden md:inline text-xs text-gray-400">2026年08月04日 01:43</span>
+      <span class="hidden md:inline text-xs text-gray-400">2026年08月05日 01:51</span>
       <span class="inline-flex items-center gap-1 bg-green-50 dark:bg-green-900/30 text-green-600 dark:text-green-400 px-2 py-0.5 rounded-full text-xs font-medium">
         ● 每日更新
       </span>
@@ -163,7 +163,7 @@
   <!-- Stats bar -->
   <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 mb-6">
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-gray-100 dark:border-gray-800 text-center">
-      <div class="text-2xl font-bold text-brand-600">10</div>
+      <div class="text-2xl font-bold text-brand-600">16</div>
       <div class="text-xs text-gray-400 mt-0.5">今日收录</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-rose-100 dark:border-rose-900/40 text-center">
@@ -171,15 +171,15 @@
       <div class="text-xs text-gray-400 mt-0.5">经典置顶</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-amber-100 dark:border-amber-900/40 text-center">
-      <div class="text-2xl font-bold text-amber-500">2</div>
+      <div class="text-2xl font-bold text-amber-500">1</div>
       <div class="text-xs text-gray-400 mt-0.5">官方动态</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-orange-100 dark:border-orange-900/40 text-center">
-      <div class="text-2xl font-bold text-orange-500">8</div>
+      <div class="text-2xl font-bold text-orange-500">14</div>
       <div class="text-xs text-gray-400 mt-0.5">前沿速递</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-blue-100 dark:border-blue-900/40 text-center">
-      <div class="text-2xl font-bold text-blue-500">0</div>
+      <div class="text-2xl font-bold text-blue-500">1</div>
       <div class="text-xs text-gray-400 mt-0.5">成熟实践</div>
     </div>
   </div>
@@ -191,7 +191,7 @@
       <span class="text-xl mt-0.5 shrink-0">📋</span>
       <div>
         <div class="text-xs font-semibold text-brand-700 dark:text-brand-300 mb-1 uppercase tracking-wide">今日速览</div>
-        <p class="text-sm leading-relaxed text-gray-700 dark:text-gray-300">2026年8月4日，Claude Code 生态持续快速迭代：Agent SDK Python 和 Claude Code 本体分别更新至 v0.2.129 与 v2.1.221，社区工具链（如 everything-claude-code、awesome-claude-code）同步跟进安全加固与资源沉淀。与此同时，业界对 AI 代理自主性的讨论升温，Simon Willison 等评论者围绕开发工具开源、人机协作边界展开思辨，OpenClaw 与 Ollama 的结合也指向智能体系统向更自主、可扩展方向演进。值得注意的是，包括 Sam Altman 在内的业内人士开始呼吁为 AI 发展&#34;踩刹车&#34;，反映出行业在提速与审慎之间的张力正在加剧。整体来看，工具迭代提速与治理反思并行，是今日的主线趋势。</p>
+        <p class="text-sm leading-relaxed text-gray-700 dark:text-gray-300">Claude Code 生态今日持续活跃：v2.1.222 版本迭代与 llm-anthropic 0.26 更新齐头并进，工具链在推理追踪、服务端工具调用等能力上加速演进。与此同时，MCP 协议指南、Megakernel 推理优化等技术议题热度不减，显示行业正从&#34;能用&#34;转向&#34;精调&#34;。值得关注的是，Anthropic 的红队测试报告与&#34;ChatGPT 提示词成为呈堂证供&#34;等安全合规话题引发广泛讨论，AI 治理与责任边界正成为绕不开的焦点。整体趋势：工程能力持续下沉到生产环境，而伦理与安全审视同步升级。</p>
       </div>
     </div>
   </div>
@@ -267,9 +267,9 @@
             全部
           </button>
           
-          <button onclick="filterTag('GitHub热门')" data-tag="GitHub热门"
+          <button onclick="filterTag('MCP')" data-tag="MCP"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            GitHub热门
+            MCP
           </button>
           
           <button onclick="filterTag('SDK更新')" data-tag="SDK更新"
@@ -287,16 +287,6 @@
             工具集成
           </button>
           
-          <button onclick="filterTag('提效技巧')" data-tag="提效技巧"
-            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            提效技巧
-          </button>
-          
-          <button onclick="filterTag('提示工程')" data-tag="提示工程"
-            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            提示工程
-          </button>
-          
           <button onclick="filterTag('新功能')" data-tag="新功能"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
             新功能
@@ -310,6 +300,11 @@
           <button onclick="filterTag('案例分享')" data-tag="案例分享"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
             案例分享
+          </button>
+          
+          <button onclick="filterTag('模型能力')" data-tag="模型能力"
+            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+            模型能力
           </button>
           
           <button onclick="filterTag('研究论文')" data-tag="研究论文"
@@ -1852,82 +1847,10 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="SDK更新 最佳实践"
-         data-source="Claude Agent SDK Python Releases"
-         data-source-type="official"
-         data-text="v0.2.129 Claude Agent SDK Python v0.2.129 引入了对 skills 参数中技能名称的严格校验，禁止括号、通配符、前导斜杠等非法字符，避免因规则永远无法匹配而静默失效；同时修复了一个安全漏洞——未校验的技能名称可能被注入到 CLI 的 --allowedTools 参数中，造成额外权限被注入的风险。这是一次涉及破坏性变更和安全加固的版本更新，SDK 使用者需相应调整 skills 参数写法（如用 &#34;all&#34; 替代通配符写法）。">
-  <div class="flex gap-3">
-    <!-- Source icon -->
-    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ◉
-    </div>
-    <div class="flex-1 min-w-0">
-      <!-- Title -->
-      <a href="https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.129" target="_blank" rel="noopener"
-         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        v0.2.129
-      </a>
-      <!-- Summary -->
-      
-      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Claude Agent SDK Python v0.2.129 引入了对 skills 参数中技能名称的严格校验，禁止括号、通配符、前导斜杠等非法字符，避免因规则永远无法匹配而静默失效；同时修复了一个安全漏洞——未校验的技能名称可能被注入到 CLI 的 --allowedTools 参数中，造成额外权限被注入的风险。这是一次涉及破坏性变更和安全加固的版本更新，SDK 使用者需相应调整 skills 参数写法（如用 &#34;all&#34; 替代通配符写法）。
-      </p>
-      
-      <!-- Meta row -->
-      <div class="mt-2 flex flex-wrap items-center gap-1.5">
-        <!-- Level badge -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
-          🟡 中级
-        </span>
-        
-        <!-- Source -->
-        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          Claude Agent SDK Python Releases
-        </span>
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">github-actions[bot]</span>
-        
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">9 小时前</span>
-        
-        
-        <!-- Tags (max 2) -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #SDK更新
-        </span>
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #最佳实践
-        </span>
-        
-        <!-- Quality bar (only if > 0) -->
-        
-        <span class="ml-auto flex items-center gap-1 shrink-0">
-          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:65%"></div>
-          </div>
-          <span class="text-xs text-gray-400">6.5</span>
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-
-
-  
-  
-
-<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="新功能 工具集成 提示工程"
+         data-tags="新功能 工具集成"
          data-source="Claude Code Releases"
          data-source-type="official"
-         data-text="v2.1.221 本次更新为VSCode插件新增Focus视图，可折叠工具活动记录并显示实时运行指示，减少界面干扰；在Linux/WSL沙盒环境中新增凭证文件mask模式，仅暴露必要片段以提升安全性；同时claude-api技能新增prompt-audit子命令，用于审计针对旧模型编写的提示词和工具描述是否过时。">
+         data-text="v2.1.222 本次更新修复了 Claude Code 多个安全与稳定性问题，包括 worktree 隔离会话可能执行破坏性 git 命令的漏洞、后台代理任务中权限校验被绕过的问题，以及代理环境下连接检测挂起、误报连接中断等网络相关缺陷。整体提升了多会话隔离安全性和企业级使用体验。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -1935,22 +1858,22 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.221" target="_blank" rel="noopener"
+      <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.222" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        v2.1.221
+        v2.1.222
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        本次更新为VSCode插件新增Focus视图，可折叠工具活动记录并显示实时运行指示，减少界面干扰；在Linux/WSL沙盒环境中新增凭证文件mask模式，仅暴露必要片段以提升安全性；同时claude-api技能新增prompt-audit子命令，用于审计针对旧模型编写的提示词和工具描述是否过时。
+        本次更新修复了 Claude Code 多个安全与稳定性问题，包括 worktree 隔离会话可能执行破坏性 git 命令的漏洞、后台代理任务中权限校验被绕过的问题，以及代理环境下连接检测挂起、误报连接中断等网络相关缺陷。整体提升了多会话隔离安全性和企业级使用体验。
       </p>
       
       <!-- Meta row -->
       <div class="mt-2 flex flex-wrap items-center gap-1.5">
         <!-- Level badge -->
         
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
-          🟡 中级
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-beginner">
+          🟢 入门
         </span>
         
         <!-- Source -->
@@ -1963,7 +1886,7 @@
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">9 小时前</span>
+        <span class="text-xs text-gray-400">11 小时前</span>
         
         
         <!-- Tags (max 2) -->
@@ -1980,9 +1903,9 @@
         
         <span class="ml-auto flex items-center gap-1 shrink-0">
           <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:65%"></div>
+            <div class="score-bar" style="width:55%"></div>
           </div>
-          <span class="text-xs text-gray-400">6.5</span>
+          <span class="text-xs text-gray-400">5.5</span>
         </span>
         
       </div>
@@ -2009,10 +1932,10 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags=""
+         data-tags="新功能 工具集成 模型能力 SDK更新"
          data-source="Simon Willison&#39;s Weblog"
          data-source-type="blog"
-         data-text="Quoting Steve Yegge Gas Town was intended to be reusable, but I only ever wound up using it to build itself. Gas Town fell apart at the seams with Opus 4.7. Up through 4.">
+         data-text="New release of LLM adds support for reasoning traces, OpenAI Responses, server-side tools, and smarter logging Simon Willison发布LLM 0.32版本，这是该项目自发布以来最重要的更新，新增推理过程可视化、OpenAI Responses API支持、服务端工具调用及重新设计的SQLite日志系统。同时配套更新了llm-anthropic插件，并支持GPT-5.6等新模型，对使用LLM CLI进行AI编程和工作流集成的开发者有直接实用价值。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -2020,14 +1943,14 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://simonwillison.net/2026/Aug/4/steve-yegge/#atom-everything" target="_blank" rel="noopener"
+      <a href="https://simonwillison.net/2026/Aug/4/new-release-of-llm/#atom-everything" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        Quoting Steve Yegge
+        New release of LLM adds support for reasoning traces, OpenAI Responses, server-side tools, and smarter logging
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Gas Town was intended to be reusable, but I only ever wound up using it to build itself. Gas Town fell apart at the seams with Opus 4.7. Up through 4.
+        Simon Willison发布LLM 0.32版本，这是该项目自发布以来最重要的更新，新增推理过程可视化、OpenAI Responses API支持、服务端工具调用及重新设计的SQLite日志系统。同时配套更新了llm-anthropic插件，并支持GPT-5.6等新模型，对使用LLM CLI进行AI编程和工作流集成的开发者有直接实用价值。
       </p>
       
       <!-- Meta row -->
@@ -2050,6 +1973,155 @@
         
         <!-- Tags (max 2) -->
         
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #新功能
+        </span>
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #工具集成
+        </span>
+        
+        <!-- Quality bar (only if > 0) -->
+        
+        <span class="ml-auto flex items-center gap-1 shrink-0">
+          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:70%"></div>
+          </div>
+          <span class="text-xs text-gray-400">7.0</span>
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+  
+
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
+         data-tags="新功能 工具集成 模型能力 MCP"
+         data-source="Simon Willison&#39;s Weblog"
+         data-source-type="blog"
+         data-text="llm-anthropic 0.26 llm-anthropic 0.26 发布，新增对 Claude Fable/Sonnet/Opus 5 系列模型的支持，并通过 LLM 0.32 提供 WebSearch、WebFetch、CodeExecution、AnthropicMCP 等服务端工具接入。同时简化了扩展思考参数为 thinking/thinking_effort，推理与工具调用结果现以类型化事件流式输出。">
+  <div class="flex gap-3">
+    <!-- Source icon -->
+    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
+      ◉
+    </div>
+    <div class="flex-1 min-w-0">
+      <!-- Title -->
+      <a href="https://simonwillison.net/2026/Aug/4/llm-anthropic/#atom-everything" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
+        llm-anthropic 0.26
+      </a>
+      <!-- Summary -->
+      
+      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
+        llm-anthropic 0.26 发布，新增对 Claude Fable/Sonnet/Opus 5 系列模型的支持，并通过 LLM 0.32 提供 WebSearch、WebFetch、CodeExecution、AnthropicMCP 等服务端工具接入。同时简化了扩展思考参数为 thinking/thinking_effort，推理与工具调用结果现以类型化事件流式输出。
+      </p>
+      
+      <!-- Meta row -->
+      <div class="mt-2 flex flex-wrap items-center gap-1.5">
+        <!-- Level badge -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
+          🟡 中级
+        </span>
+        
+        <!-- Source -->
+        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          Simon Willison&#39;s Weblog
+        </span>
+        
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">11 小时前</span>
+        
+        
+        <!-- Tags (max 2) -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #新功能
+        </span>
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #工具集成
+        </span>
+        
+        <!-- Quality bar (only if > 0) -->
+        
+        <span class="ml-auto flex items-center gap-1 shrink-0">
+          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:65%"></div>
+          </div>
+          <span class="text-xs text-gray-400">6.5</span>
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+  
+
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
+         data-tags="工具集成 模型能力 案例分享"
+         data-source="Latent Space"
+         data-source-type="blog"
+         data-text="Unpacking ChatGPT Work: the Agent for a Billion Users 文章对ChatGPT Work（面向企业/团队的Agent产品）进行了逆向拆解，分析了其Memory、Proactivity、Scheduling、Browser Use、Plugins、Skills和Tools等核心模块的实现方式。虽然主题聚焦于ChatGPT而非Claude Code，但对理解通用AI Agent的架构设计（如技能系统、工具调用、任务调度）具有参考价值，可为Agent工作流设计提供借鉴思路。">
+  <div class="flex gap-3">
+    <!-- Source icon -->
+    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
+      ◉
+    </div>
+    <div class="flex-1 min-w-0">
+      <!-- Title -->
+      <a href="https://www.latent.space/p/unpacking-chatgpt-work" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
+        Unpacking ChatGPT Work: the Agent for a Billion Users
+      </a>
+      <!-- Summary -->
+      
+      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
+        文章对ChatGPT Work（面向企业/团队的Agent产品）进行了逆向拆解，分析了其Memory、Proactivity、Scheduling、Browser Use、Plugins、Skills和Tools等核心模块的实现方式。虽然主题聚焦于ChatGPT而非Claude Code，但对理解通用AI Agent的架构设计（如技能系统、工具调用、任务调度）具有参考价值，可为Agent工作流设计提供借鉴思路。
+      </p>
+      
+      <!-- Meta row -->
+      <div class="mt-2 flex flex-wrap items-center gap-1.5">
+        <!-- Level badge -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
+          🟡 中级
+        </span>
+        
+        <!-- Source -->
+        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          Latent Space
+        </span>
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">Shlok Khemani</span>
+        
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">15 小时前</span>
+        
+        
+        <!-- Tags (max 2) -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #工具集成
+        </span>
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #模型能力
+        </span>
+        
         <!-- Quality bar (only if > 0) -->
         
         <span class="ml-auto flex items-center gap-1 shrink-0">
@@ -2071,9 +2143,9 @@
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
          data-tags=""
-         data-source="Simon Willison&#39;s Weblog"
+         data-source="Latent Space"
          data-source-type="blog"
-         data-text="Devtools must be open source (exe.dev) My comment on Devtools must be open source (exe.dev) — Hacker News. One of the arguments for open source software for end-users has always been the fr">
+         data-text="[AINews] Megakernels are so dead and so back A quiet day lets us highlight a Cursor launch and an engineering debate">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -2081,14 +2153,14 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://simonwillison.net/2026/Aug/3/devtools-must-be-open-source-exedev/#atom-everything" target="_blank" rel="noopener"
+      <a href="https://www.latent.space/p/ainews-megakernels-are-so-dead-and" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        Devtools must be open source (exe.dev)
+        [AINews] Megakernels are so dead and so back
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        My comment on Devtools must be open source (exe.dev) — Hacker News. One of the arguments for open source software for end-users has always been the fr
+        A quiet day lets us highlight a Cursor launch and an engineering debate
       </p>
       
       <!-- Meta row -->
@@ -2101,12 +2173,12 @@
         
         <!-- Source -->
         <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          Simon Willison&#39;s Weblog
+          Latent Space
         </span>
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">18 小时前</span>
+        <span class="text-xs text-gray-400">8 小时前</span>
         
         
         <!-- Tags (max 2) -->
@@ -2132,9 +2204,9 @@
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
          data-tags=""
-         data-source="TechCrunch AI"
-         data-source-type="news"
-         data-text="Sam Altman isn’t the only one who wants to pump the brakes on AI After years of pushing full speed ahead on AI, OpenAI CEO Sam Altman says maybe it’s time for the AI industry to “pace” itself. The comments came just">
+         data-source="Karo Zieminski (Claude tips)"
+         data-source-type="blog"
+         data-text="AI for Crime Junkies: When ChatGPT Prompts Become Evidence Inside the operation that assigned every victim a &#34;kill value.&#34; Updated daily, with ChatGPT&#39;s help.">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -2142,14 +2214,406 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://techcrunch.com/video/sam-altman-isnt-the-only-one-who-wants-to-pump-the-brakes-on-ai/" target="_blank" rel="noopener"
+      <a href="https://karozieminski.substack.com/p/pig-butchering-ai-scam-compounds" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        Sam Altman isn’t the only one who wants to pump the brakes on AI
+        AI for Crime Junkies: When ChatGPT Prompts Become Evidence
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        After years of pushing full speed ahead on AI, OpenAI CEO Sam Altman says maybe it’s time for the AI industry to “pace” itself. The comments came just
+        Inside the operation that assigned every victim a &#34;kill value.&#34; Updated daily, with ChatGPT&#39;s help.
+      </p>
+      
+      <!-- Meta row -->
+      <div class="mt-2 flex flex-wrap items-center gap-1.5">
+        <!-- Level badge -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
+          🟡 中级
+        </span>
+        
+        <!-- Source -->
+        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          Karo Zieminski (Claude tips)
+        </span>
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">Karo (Product with Attitude)</span>
+        
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">22 小时前</span>
+        
+        
+        <!-- Tags (max 2) -->
+        
+        <!-- Quality bar (only if > 0) -->
+        
+        <span class="ml-auto flex items-center gap-1 shrink-0">
+          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:65%"></div>
+          </div>
+          <span class="text-xs text-gray-400">6.5</span>
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+  
+
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
+         data-tags=""
+         data-source="dev.to #aitools"
+         data-source-type="blog"
+         data-text="Building Custom AI Models for Natural Language Generation with PyTorch Part 2: Advanced Techniques Introduction to Advanced Techniques in Natural Language Generation In the first part of this series, we explored the fundamentals of building custom A">
+  <div class="flex gap-3">
+    <!-- Source icon -->
+    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
+      ◉
+    </div>
+    <div class="flex-1 min-w-0">
+      <!-- Title -->
+      <a href="https://dev.to/vijay_vinoth_8e7abfd3f5b5/building-custom-ai-models-for-natural-language-generation-with-pytorch-part-2-advanced-techniques-106o" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
+        Building Custom AI Models for Natural Language Generation with PyTorch Part 2: Advanced Techniques
+      </a>
+      <!-- Summary -->
+      
+      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
+        Introduction to Advanced Techniques in Natural Language Generation In the first part of this series, we explored the fundamentals of building custom A
+      </p>
+      
+      <!-- Meta row -->
+      <div class="mt-2 flex flex-wrap items-center gap-1.5">
+        <!-- Level badge -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
+          🟡 中级
+        </span>
+        
+        <!-- Source -->
+        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          dev.to #aitools
+        </span>
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">Vijay Vinoth</span>
+        
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">1 天前</span>
+        
+        
+        <!-- Tags (max 2) -->
+        
+        <!-- Quality bar (only if > 0) -->
+        
+        <span class="ml-auto flex items-center gap-1 shrink-0">
+          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:65%"></div>
+          </div>
+          <span class="text-xs text-gray-400">6.5</span>
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+  
+
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
+         data-tags=""
+         data-source="dev.to #anthropic"
+         data-source-type="blog"
+         data-text="The J-Space: How I Learned To Read An LLM&#39;s Mind Last week, Anthropic published a paper on a discovery they made regarding Claude&#39;s internal reasoning they call the J-space . It seems to be the steps">
+  <div class="flex gap-3">
+    <!-- Source icon -->
+    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
+      ◉
+    </div>
+    <div class="flex-1 min-w-0">
+      <!-- Title -->
+      <a href="https://dev.to/maiasalti/the-j-space-how-i-learned-to-read-an-llms-mind-4foj" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
+        The J-Space: How I Learned To Read An LLM&#39;s Mind
+      </a>
+      <!-- Summary -->
+      
+      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
+        Last week, Anthropic published a paper on a discovery they made regarding Claude&#39;s internal reasoning they call the J-space . It seems to be the steps
+      </p>
+      
+      <!-- Meta row -->
+      <div class="mt-2 flex flex-wrap items-center gap-1.5">
+        <!-- Level badge -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
+          🟡 中级
+        </span>
+        
+        <!-- Source -->
+        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          dev.to #anthropic
+        </span>
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">Maia Salti</span>
+        
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">1 天前</span>
+        
+        
+        <!-- Tags (max 2) -->
+        
+        <!-- Quality bar (only if > 0) -->
+        
+        <span class="ml-auto flex items-center gap-1 shrink-0">
+          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:65%"></div>
+          </div>
+          <span class="text-xs text-gray-400">6.5</span>
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+  
+
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
+         data-tags=""
+         data-source="dev.to #anthropic"
+         data-source-type="blog"
+         data-text="What is MCP (Model Context Protocol)? Complete 2026 Guide What is MCP (Model Context Protocol)? Complete 2026 Guide TL;DR — Model Context Protocol (MCP) is an open JSON-RPC 2.0 specification, introduced by An">
+  <div class="flex gap-3">
+    <!-- Source icon -->
+    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
+      ◉
+    </div>
+    <div class="flex-1 min-w-0">
+      <!-- Title -->
+      <a href="https://dev.to/napster_rj/what-is-mcp-model-context-protocol-complete-2026-guide-1c2" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
+        What is MCP (Model Context Protocol)? Complete 2026 Guide
+      </a>
+      <!-- Summary -->
+      
+      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
+        What is MCP (Model Context Protocol)? Complete 2026 Guide TL;DR — Model Context Protocol (MCP) is an open JSON-RPC 2.0 specification, introduced by An
+      </p>
+      
+      <!-- Meta row -->
+      <div class="mt-2 flex flex-wrap items-center gap-1.5">
+        <!-- Level badge -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
+          🟡 中级
+        </span>
+        
+        <!-- Source -->
+        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          dev.to #anthropic
+        </span>
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">Rahul J</span>
+        
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">2 天前</span>
+        
+        
+        <!-- Tags (max 2) -->
+        
+        <!-- Quality bar (only if > 0) -->
+        
+        <span class="ml-auto flex items-center gap-1 shrink-0">
+          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:65%"></div>
+          </div>
+          <span class="text-xs text-gray-400">6.5</span>
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+  
+
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
+         data-tags=""
+         data-source="dev.to #anthropic"
+         data-source-type="blog"
+         data-text="Anthropic’s Claude Breached 3 Firms in AI Test Overview of the Incident In late July 2024 Anthropic published a candid blog post admitting that three of its Claude models— Opus 4.7 , Mythos 5 , and">
+  <div class="flex gap-3">
+    <!-- Source icon -->
+    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
+      ◉
+    </div>
+    <div class="flex-1 min-w-0">
+      <!-- Title -->
+      <a href="https://dev.to/luckytaorem/anthropics-claude-breached-3-firms-in-ai-test-4a21" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
+        Anthropic’s Claude Breached 3 Firms in AI Test
+      </a>
+      <!-- Summary -->
+      
+      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
+        Overview of the Incident In late July 2024 Anthropic published a candid blog post admitting that three of its Claude models— Opus 4.7 , Mythos 5 , and
+      </p>
+      
+      <!-- Meta row -->
+      <div class="mt-2 flex flex-wrap items-center gap-1.5">
+        <!-- Level badge -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
+          🟡 中级
+        </span>
+        
+        <!-- Source -->
+        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          dev.to #anthropic
+        </span>
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">LuckyTaorem</span>
+        
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">2 天前</span>
+        
+        
+        <!-- Tags (max 2) -->
+        
+        <!-- Quality bar (only if > 0) -->
+        
+        <span class="ml-auto flex items-center gap-1 shrink-0">
+          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:65%"></div>
+          </div>
+          <span class="text-xs text-gray-400">6.5</span>
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+  
+
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
+         data-tags="workflow 研究论文 模型能力"
+         data-source="arXiv cs.LG"
+         data-source-type="research"
+         data-text="Learning Compositional Meta-Routing for Agentic Workflows: An Executable Benchmark 该论文提出了一个可执行的智能体工作流基准测试和预算感知的元路由器，用于决定任务应采用直接回答、分解、检索、执行代码、委托专家还是验证等操作组合。相比以往仅孤立选择模型端点或工具的路由方法，该工作在数据分析、冻结语料研究和文档处理等场景中提供了机器可验证的结果评估，对设计更智能的Agent工作流编排具有参考价值。">
+  <div class="flex gap-3">
+    <!-- Source icon -->
+    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
+      📄
+    </div>
+    <div class="flex-1 min-w-0">
+      <!-- Title -->
+      <a href="https://arxiv.org/abs/2608.00106" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
+        Learning Compositional Meta-Routing for Agentic Workflows: An Executable Benchmark
+      </a>
+      <!-- Summary -->
+      
+      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
+        该论文提出了一个可执行的智能体工作流基准测试和预算感知的元路由器，用于决定任务应采用直接回答、分解、检索、执行代码、委托专家还是验证等操作组合。相比以往仅孤立选择模型端点或工具的路由方法，该工作在数据分析、冻结语料研究和文档处理等场景中提供了机器可验证的结果评估，对设计更智能的Agent工作流编排具有参考价值。
+      </p>
+      
+      <!-- Meta row -->
+      <div class="mt-2 flex flex-wrap items-center gap-1.5">
+        <!-- Level badge -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
+          🟡 中级
+        </span>
+        
+        <!-- Source -->
+        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          arXiv cs.LG
+        </span>
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">Natan Vidra, Alina Kapanova, Arun Kanhai, Spurthi Setty</span>
+        
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">1 天前</span>
+        
+        
+        <!-- Tags (max 2) -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #workflow
+        </span>
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #研究论文
+        </span>
+        
+        <!-- Quality bar (only if > 0) -->
+        
+        <span class="ml-auto flex items-center gap-1 shrink-0">
+          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:65%"></div>
+          </div>
+          <span class="text-xs text-gray-400">6.5</span>
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+  
+
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
+         data-tags=""
+         data-source="The Verge AI"
+         data-source-type="news"
+         data-text="OpenAI drags Apple’s lawsuit into the court of public opinion Apple&#39;s legal battle against OpenAI just got messier now that the ChatGPT-maker has publicly aired receipts to counter Apple&#39;s version of events. In a">
+  <div class="flex gap-3">
+    <!-- Source icon -->
+    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
+      ◉
+    </div>
+    <div class="flex-1 min-w-0">
+      <!-- Title -->
+      <a href="https://www.theverge.com/ai-artificial-intelligence/974914/openai-blog-response-apple-lawsuit-messages" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
+        OpenAI drags Apple’s lawsuit into the court of public opinion
+      </a>
+      <!-- Summary -->
+      
+      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
+        Apple&#39;s legal battle against OpenAI just got messier now that the ChatGPT-maker has publicly aired receipts to counter Apple&#39;s version of events. In a
       </p>
       
       <!-- Meta row -->
@@ -2162,15 +2626,15 @@
         
         <!-- Source -->
         <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          TechCrunch AI
+          The Verge AI
         </span>
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">Theresa Loconsolo</span>
+        <span class="text-xs text-gray-400">Jess Weatherbed</span>
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">3 天前</span>
+        <span class="text-xs text-gray-400">22 小时前</span>
         
         
         <!-- Tags (max 2) -->
@@ -2196,13 +2660,9 @@
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
          data-tags=""
-         data-source="everything-claude-code commits"
-         data-source-type="community"
-         data-text="fix(aura): reject history-free agents by default (#2652) fix(aura): reject history-free agents by default (#2652)
-
-* fix(aura): reject history-free agents by default
-
-* fix(aura): keep invalid responses fail">
+         data-source="The Verge AI"
+         data-source-type="news"
+         data-text="‘Not healthy’ LLM use is more common than you think Hank Green, a popular YouTuber and science communicator, said he is stepping back from production amid intense criticism over his use of AI. Green des">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -2210,18 +2670,14 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://github.com/affaan-m/ECC/commit/f782bd616ecdf4ccb8d956319255e711725ba4ac" target="_blank" rel="noopener"
+      <a href="https://www.theverge.com/ai-artificial-intelligence/975180/llm-ai-chatbot-use-not-healthy" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        fix(aura): reject history-free agents by default (#2652)
+        ‘Not healthy’ LLM use is more common than you think
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        fix(aura): reject history-free agents by default (#2652)
-
-* fix(aura): reject history-free agents by default
-
-* fix(aura): keep invalid responses fail
+        Hank Green, a popular YouTuber and science communicator, said he is stepping back from production amid intense criticism over his use of AI. Green des
       </p>
       
       <!-- Meta row -->
@@ -2234,15 +2690,15 @@
         
         <!-- Source -->
         <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          everything-claude-code commits
+          The Verge AI
         </span>
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">haelyra</span>
+        <span class="text-xs text-gray-400">Robert Hart</span>
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">1 天前</span>
+        <span class="text-xs text-gray-400">16 小时前</span>
         
         
         <!-- Tags (max 2) -->
@@ -2251,9 +2707,9 @@
         
         <span class="ml-auto flex items-center gap-1 shrink-0">
           <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:60%"></div>
+            <div class="score-bar" style="width:62%"></div>
           </div>
-          <span class="text-xs text-gray-400">6.0</span>
+          <span class="text-xs text-gray-400">6.2</span>
         </span>
         
       </div>
@@ -2267,10 +2723,10 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="最佳实践 提效技巧"
-         data-source="Simon Willison&#39;s Weblog"
+         data-tags="工具集成 案例分享 最佳实践"
+         data-source="dev.to #aitools"
          data-source-type="blog"
-         data-text="Don&#39;t be a meat proxy 文章提出「肉体代理人」（meat proxy）这一概念，批评那些不加理解、直接转发AI输出内容给他人的行为。作者强调使用AI生成内容后应阅读、理解、验证并用自己的话重新表达，这才是人在AI协作流程中应创造的价值。">
+         data-text="Claude Code: Superpowers for Product Managers 文章面向产品经理介绍 Claude Code 作为本地 AI 智能体，相比网页版 ChatGPT/Claude，能够直接访问代码库、读写本地文件、执行命令并使用自定义子智能体，帮助非工程角色进行原型开发和技术探索。文章通过对比表格清晰展示了本地代理与云端聊天工具的差异，并提及获取只读代码访问权限的方法。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -2278,14 +2734,14 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://simonwillison.net/2026/Aug/3/dont-be-a-meat-proxy/#atom-everything" target="_blank" rel="noopener"
+      <a href="https://dev.to/stravukarl/claude-code-superpowers-for-product-managers-p63" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        Don&#39;t be a meat proxy
+        Claude Code: Superpowers for Product Managers
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        文章提出「肉体代理人」（meat proxy）这一概念，批评那些不加理解、直接转发AI输出内容给他人的行为。作者强调使用AI生成内容后应阅读、理解、验证并用自己的话重新表达，这才是人在AI协作流程中应创造的价值。
+        文章面向产品经理介绍 Claude Code 作为本地 AI 智能体，相比网页版 ChatGPT/Claude，能够直接访问代码库、读写本地文件、执行命令并使用自定义子智能体，帮助非工程角色进行原型开发和技术探索。文章通过对比表格清晰展示了本地代理与云端聊天工具的差异，并提及获取只读代码访问权限的方法。
       </p>
       
       <!-- Meta row -->
@@ -2298,244 +2754,106 @@
         
         <!-- Source -->
         <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          Simon Willison&#39;s Weblog
+          dev.to #aitools
         </span>
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">Karl Wirth</span>
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">9 小时前</span>
+        <span class="text-xs text-gray-400">18 小时前</span>
         
         
         <!-- Tags (max 2) -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #工具集成
+        </span>
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #案例分享
+        </span>
+        
+        <!-- Quality bar (only if > 0) -->
+        
+        <span class="ml-auto flex items-center gap-1 shrink-0">
+          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:55%"></div>
+          </div>
+          <span class="text-xs text-gray-400">5.5</span>
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+  
+
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
+         data-tags="新功能 最佳实践 workflow"
+         data-source="dev.to #anthropic"
+         data-source-type="blog"
+         data-text="что это claude Cowork — с июля beta-сессия может продолжаться после закрытия ноутбука. Как сохранить контроль над файлами и… 文章介绍了Claude Cowork功能的更新：7月起该功能支持网页和移动端，远程beta会话可在关闭笔记本电脑后继续运行，文件和会话状态保存在账户中。作者提醒用户在使用这种可持续运行的多步任务模式前，需明确任务负责人、可操作文件范围及结果验收标准，以避免因习惯性对话式交互而误将未确认结果当作已接受结果。">
+  <div class="flex gap-3">
+    <!-- Source icon -->
+    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
+      ◉
+    </div>
+    <div class="flex-1 min-w-0">
+      <!-- Title -->
+      <a href="https://dev.to/provod-ai/chto-eto-claude-cowork-s-iiulia-beta-siessiia-mozhiet-prodolzhatsia-poslie-zakrytiia-noutbuka-kak-2e5p" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
+        что это claude Cowork — с июля beta-сессия может продолжаться после закрытия ноутбука. Как сохранить контроль над файлами и…
+      </a>
+      <!-- Summary -->
+      
+      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
+        文章介绍了Claude Cowork功能的更新：7月起该功能支持网页和移动端，远程beta会话可在关闭笔记本电脑后继续运行，文件和会话状态保存在账户中。作者提醒用户在使用这种可持续运行的多步任务模式前，需明确任务负责人、可操作文件范围及结果验收标准，以避免因习惯性对话式交互而误将未确认结果当作已接受结果。
+      </p>
+      
+      <!-- Meta row -->
+      <div class="mt-2 flex flex-wrap items-center gap-1.5">
+        <!-- Level badge -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-beginner">
+          🟢 入门
+        </span>
+        
+        <!-- Source -->
+        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          dev.to #anthropic
+        </span>
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">Promptra Team</span>
+        
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">1 天前</span>
+        
+        
+        <!-- Tags (max 2) -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #新功能
+        </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
           #最佳实践
         </span>
         
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #提效技巧
-        </span>
-        
         <!-- Quality bar (only if > 0) -->
         
         <span class="ml-auto flex items-center gap-1 shrink-0">
           <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:60%"></div>
+            <div class="score-bar" style="width:55%"></div>
           </div>
-          <span class="text-xs text-gray-400">6.0</span>
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-
-
-  
-  
-
-<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="提示工程 workflow 案例分享"
-         data-source="Simon Willison&#39;s Weblog"
-         data-source-type="blog"
-         data-text="Quoting David Crawshaw&#39;s prompt 文章引用了 David Crawshaw 的一条提示词，用于设置夜间 cron 任务，让 AI 代理自动拉取上游变更、变基本地修改、验证功能正常后替换当前版本。这展示了将编码代理嵌入自动化运维流程的一种实用思路。">
-  <div class="flex gap-3">
-    <!-- Source icon -->
-    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ◉
-    </div>
-    <div class="flex-1 min-w-0">
-      <!-- Title -->
-      <a href="https://simonwillison.net/2026/Aug/3/david-crawshaw/#atom-everything" target="_blank" rel="noopener"
-         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        Quoting David Crawshaw&#39;s prompt
-      </a>
-      <!-- Summary -->
-      
-      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        文章引用了 David Crawshaw 的一条提示词，用于设置夜间 cron 任务，让 AI 代理自动拉取上游变更、变基本地修改、验证功能正常后替换当前版本。这展示了将编码代理嵌入自动化运维流程的一种实用思路。
-      </p>
-      
-      <!-- Meta row -->
-      <div class="mt-2 flex flex-wrap items-center gap-1.5">
-        <!-- Level badge -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-beginner">
-          🟢 入门
-        </span>
-        
-        <!-- Source -->
-        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          Simon Willison&#39;s Weblog
-        </span>
-        
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">17 小时前</span>
-        
-        
-        <!-- Tags (max 2) -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #提示工程
-        </span>
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #workflow
-        </span>
-        
-        <!-- Quality bar (only if > 0) -->
-        
-        <span class="ml-auto flex items-center gap-1 shrink-0">
-          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:60%"></div>
-          </div>
-          <span class="text-xs text-gray-400">6.0</span>
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-
-
-  
-  
-
-<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="研究论文 工具集成 workflow"
-         data-source="arXiv cs.AI"
-         data-source-type="research"
-         data-text="OpenClaw and Ollama in Agentic AI: Toward Fully Autonomous and Scalable AI Agent Systems 该论文提出了一个分层的Agentic AI架构，将LLM推理、编排与执行层分离，并以OpenClaw与Ollama为例分析了一个全栈自主智能体系统的实现。对理解AI Agent系统的架构设计（记忆、规划、持续执行）具有一定参考价值，但偏理论探讨，实操性有限。">
-  <div class="flex gap-3">
-    <!-- Source icon -->
-    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      📄
-    </div>
-    <div class="flex-1 min-w-0">
-      <!-- Title -->
-      <a href="https://arxiv.org/abs/2607.28629" target="_blank" rel="noopener"
-         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        OpenClaw and Ollama in Agentic AI: Toward Fully Autonomous and Scalable AI Agent Systems
-      </a>
-      <!-- Summary -->
-      
-      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        该论文提出了一个分层的Agentic AI架构，将LLM推理、编排与执行层分离，并以OpenClaw与Ollama为例分析了一个全栈自主智能体系统的实现。对理解AI Agent系统的架构设计（记忆、规划、持续执行）具有一定参考价值，但偏理论探讨，实操性有限。
-      </p>
-      
-      <!-- Meta row -->
-      <div class="mt-2 flex flex-wrap items-center gap-1.5">
-        <!-- Level badge -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-beginner">
-          🟢 入门
-        </span>
-        
-        <!-- Source -->
-        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          arXiv cs.AI
-        </span>
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">Konstantinos I. Roumeliotis, Ranjan Sapkota</span>
-        
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">1 天前</span>
-        
-        
-        <!-- Tags (max 2) -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #研究论文
-        </span>
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #工具集成
-        </span>
-        
-        <!-- Quality bar (only if > 0) -->
-        
-        <span class="ml-auto flex items-center gap-1 shrink-0">
-          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:60%"></div>
-          </div>
-          <span class="text-xs text-gray-400">6.0</span>
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-
-
-  
-  
-
-<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="工具集成 GitHub热门 workflow"
-         data-source="awesome-claude-code commits"
-         data-source-type="community"
-         data-text="Add resource: Claude Code Harness (#2424) 该资源介绍了Claude Code Harness，属于Agent编排（Agent Orchestration）类别的工具，可帮助开发者更高效地组织和调度Claude Code的多任务/多代理工作流。内容为awesome-claude-code资源列表的一次新增收录，来源于社区提交。">
-  <div class="flex gap-3">
-    <!-- Source icon -->
-    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ◉
-    </div>
-    <div class="flex-1 min-w-0">
-      <!-- Title -->
-      <a href="https://github.com/hesreallyhim/awesome-claude-code/commit/8fc2634fb991a01cf7d6e9c581c9fd78600e544f" target="_blank" rel="noopener"
-         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        Add resource: Claude Code Harness (#2424)
-      </a>
-      <!-- Summary -->
-      
-      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        该资源介绍了Claude Code Harness，属于Agent编排（Agent Orchestration）类别的工具，可帮助开发者更高效地组织和调度Claude Code的多任务/多代理工作流。内容为awesome-claude-code资源列表的一次新增收录，来源于社区提交。
-      </p>
-      
-      <!-- Meta row -->
-      <div class="mt-2 flex flex-wrap items-center gap-1.5">
-        <!-- Level badge -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-beginner">
-          🟢 入门
-        </span>
-        
-        <!-- Source -->
-        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          awesome-claude-code commits
-        </span>
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">github-actions</span>
-        
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">10 小时前</span>
-        
-        
-        <!-- Tags (max 2) -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #工具集成
-        </span>
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #GitHub热门
-        </span>
-        
-        <!-- Quality bar (only if > 0) -->
-        
-        <span class="ml-auto flex items-center gap-1 shrink-0">
-          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:50%"></div>
-          </div>
-          <span class="text-xs text-gray-400">5.0</span>
+          <span class="text-xs text-gray-400">5.5</span>
         </span>
         
       </div>
@@ -2548,6 +2866,88 @@
       
 
       <!-- 成熟实践 -->
+      
+      <section id="section-stable">
+        <h2 class="section-divider text-sm font-bold text-blue-500 mb-4">
+          <span>📚 成熟实践</span>
+          <span class="text-xs font-normal text-gray-400">经验证的最佳方法</span>
+        </h2>
+        <div class="space-y-3" id="stable-list">
+          
+
+
+  
+  
+
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
+         data-tags="研究论文 模型能力"
+         data-source="Sebastian Raschka"
+         data-source-type="blog"
+         data-text="LLM Research Papers: The 2026 List (January to May) 本文是Sebastian Raschka整理的2026年1-5月LLM研究论文精选清单，汇总了这段时期内值得关注的重要研究成果。对于希望跟进LLM前沿研究动态、了解模型能力演进方向的读者具有较高参考价值。">
+  <div class="flex gap-3">
+    <!-- Source icon -->
+    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
+      ◉
+    </div>
+    <div class="flex-1 min-w-0">
+      <!-- Title -->
+      <a href="https://magazine.sebastianraschka.com/p/llm-research-papers-2026-part1" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
+        LLM Research Papers: The 2026 List (January to May)
+      </a>
+      <!-- Summary -->
+      
+      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
+        本文是Sebastian Raschka整理的2026年1-5月LLM研究论文精选清单，汇总了这段时期内值得关注的重要研究成果。对于希望跟进LLM前沿研究动态、了解模型能力演进方向的读者具有较高参考价值。
+      </p>
+      
+      <!-- Meta row -->
+      <div class="mt-2 flex flex-wrap items-center gap-1.5">
+        <!-- Level badge -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
+          🟡 中级
+        </span>
+        
+        <!-- Source -->
+        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          Sebastian Raschka
+        </span>
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">Sebastian Raschka, PhD</span>
+        
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">06月06日</span>
+        
+        
+        <!-- Tags (max 2) -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #研究论文
+        </span>
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #模型能力
+        </span>
+        
+        <!-- Quality bar (only if > 0) -->
+        
+        <span class="ml-auto flex items-center gap-1 shrink-0">
+          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:65%"></div>
+          </div>
+          <span class="text-xs text-gray-400">6.5</span>
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+        </div>
+      </section>
       
 
       <!-- No results -->
