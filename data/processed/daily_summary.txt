@@ -1,1 +1,1 @@
-今日速览：Claude Code 迎来重要产品调整，Auto 模式正式成为 Pro、Max 和 Team 计划的默认设置，标志着 Anthropic 在自动化模型调度上的进一步押注。与此同时，"Token 启示录"话题持续发酵，企业正积极寻求控制快速膨胀的 AI 支出，成本优化成为行业焦点。社区层面，everything-claude-code 项目持续迭代，修复了 memory-vault 的设备号比对问题；竞品阵营中 Codex 与 GPT-5.6 Sol Ultra 联手打造的《Moonlight & Mayhem》浣熊抢劫游戏也引发关注，展现了 AI 编程工具在创意领域的较量。
+Anthropic 将 Claude Code 的自动模式设为默认开启，标志着 agent 化编码正从可选功能走向基础形态。与之呼应，社区侧的多智能体协作讨论（Zawinski 多智能体定律）与推理工程实践正持续升温，工具链层面也有 Claude Code Action v1.0.187 发布及 plan-canvas 会话投递修复等稳定性更新。生态资源同步扩充，新增《A Field Guide to Claude Fable 5》收录。另一面，AI 安全测试本身正被质疑为新的风险来源，而 GitHub Models 的退场则提醒着这一赛道的洗牌仍在继续。
