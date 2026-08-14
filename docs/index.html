@@ -139,7 +139,7 @@
     </div>
 
     <div class="flex items-center gap-2 ml-auto shrink-0">
-      <span class="hidden md:inline text-xs text-gray-400">2026年08月13日 01:44</span>
+      <span class="hidden md:inline text-xs text-gray-400">2026年08月14日 04:51</span>
       <span class="inline-flex items-center gap-1 bg-green-50 dark:bg-green-900/30 text-green-600 dark:text-green-400 px-2 py-0.5 rounded-full text-xs font-medium">
         ● 每日更新
       </span>
@@ -163,7 +163,7 @@
   <!-- Stats bar -->
   <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 mb-6">
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-gray-100 dark:border-gray-800 text-center">
-      <div class="text-2xl font-bold text-brand-600">10</div>
+      <div class="text-2xl font-bold text-brand-600">11</div>
       <div class="text-xs text-gray-400 mt-0.5">今日收录</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-rose-100 dark:border-rose-900/40 text-center">
@@ -171,11 +171,11 @@
       <div class="text-xs text-gray-400 mt-0.5">经典置顶</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-amber-100 dark:border-amber-900/40 text-center">
-      <div class="text-2xl font-bold text-amber-500">5</div>
+      <div class="text-2xl font-bold text-amber-500">7</div>
       <div class="text-xs text-gray-400 mt-0.5">官方动态</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-orange-100 dark:border-orange-900/40 text-center">
-      <div class="text-2xl font-bold text-orange-500">4</div>
+      <div class="text-2xl font-bold text-orange-500">3</div>
       <div class="text-xs text-gray-400 mt-0.5">前沿速递</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-blue-100 dark:border-blue-900/40 text-center">
@@ -191,7 +191,7 @@
       <span class="text-xl mt-0.5 shrink-0">📋</span>
       <div>
         <div class="text-xs font-semibold text-brand-700 dark:text-brand-300 mb-1 uppercase tracking-wide">今日速览</div>
-        <p class="text-sm leading-relaxed text-gray-700 dark:text-gray-300">今日 Claude Code 生态延续高频迭代节奏，Claude Code 发布 v2.1.229，Claude Agent SDK Python 更新至 v0.2.137，Anthropic Python SDK 同步升级至 v0.119.0。行业层面，AI 正从&#34;辅助&#34;走向&#34;执行&#34;——Grok 推出可直接派活的 AI&#34;队友&#34;，OpenAI 则通过企业实践案例展示 AI 在工程与运营全链路的落地路径。安全议题同样受关注，MIT Technology Review 指出 Hugging Face 遭遇的攻击并非史无前例，供应链风险值得警惕。此外 Simon Willison 就自然语言文本的无损转换问题提出思考，为 AI 工具设计提供了理论视角。</p>
+        <p class="text-sm leading-relaxed text-gray-700 dark:text-gray-300">今日 Claude Code 生态更新以稳步迭代为主：Claude Code 发布 v2.1.232，Python 与 TypeScript SDK 同步升级至 v0.122.0 和 v0.117.0，官方 skills 仓库为 claude-api 技能新增 prompt-audit 子命令，社区教程项目 learn-claude-code 则将 agent harness 课程整合为 19 讲。研究侧，Anthropic 前沿红队发布多智能体系统的模式与问题分析，直指多 agent 协作日渐凸显的可靠性挑战。竞品方面，OpenAI 集中释放 GPT-5.6 开发者指南与最高 14 倍提速的 Ultrafast 预览，性能竞赛持续升温。此外，MIT Technology Review 强调科学 AI 需要推理而非仅靠数据，HuggingFace 复现 2200 篇 ICML 论文的实验也为可复现性讨论提供了新素材。</p>
       </div>
     </div>
   </div>
@@ -267,9 +267,9 @@
             全部
           </button>
           
-          <button onclick="filterTag('MCP')" data-tag="MCP"
+          <button onclick="filterTag('GitHub热门')" data-tag="GitHub热门"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            MCP
+            GitHub热门
           </button>
           
           <button onclick="filterTag('SDK更新')" data-tag="SDK更新"
@@ -310,6 +310,11 @@
           <button onclick="filterTag('模型能力')" data-tag="模型能力"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
             模型能力
+          </button>
+          
+          <button onclick="filterTag('研究论文')" data-tag="研究论文"
+            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+            研究论文
           </button>
           
         </div>
@@ -1847,25 +1852,25 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="SDK更新 新功能 工具集成"
-         data-source="Claude Agent SDK Python Releases"
+         data-tags="研究论文 workflow 最佳实践"
+         data-source="Anthropic Research"
          data-source-type="official"
-         data-text="v0.2.137 Claude Agent SDK Python v0.2.137 版本更新，新增 ConversationResetMessage 数据类，使应用能够检测 /clear 等操作导致的会话重置事件。同时为 UserMessage 和 ResultMessage 增加 origin 字段，用于区分人工提交、后台任务通知、定时触发等不同的回合来源。注意 Message 联合类型扩展会影响使用 assert_never 穷尽匹配的代码。">
+         data-text="Aug 13, 2026Frontier Red TeamPatterns and problems in emerging multiagent systems Anthropic 前沿红队团队分析了新兴多智能体（multiagent）系统中出现的典型模式与问题，涉及 agent 之间的协作结构与失效风险。对于设计 Claude Code 子智能体编排、workflow 并行方案的开发者有参考价值，可帮助规避多 agent 架构中的常见陷阱。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ◉
+      ◆
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.137" target="_blank" rel="noopener"
+      <a href="https://www.anthropic.com/research/multiagent-systems" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        v0.2.137
+        Aug 13, 2026Frontier Red TeamPatterns and problems in emerging multiagent systems
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Claude Agent SDK Python v0.2.137 版本更新，新增 ConversationResetMessage 数据类，使应用能够检测 /clear 等操作导致的会话重置事件。同时为 UserMessage 和 ResultMessage 增加 origin 字段，用于区分人工提交、后台任务通知、定时触发等不同的回合来源。注意 Message 联合类型扩展会影响使用 assert_never 穷尽匹配的代码。
+        Anthropic 前沿红队团队分析了新兴多智能体（multiagent）系统中出现的典型模式与问题，涉及 agent 之间的协作结构与失效风险。对于设计 Claude Code 子智能体编排、workflow 并行方案的开发者有参考价值，可帮助规避多 agent 架构中的常见陷阱。
       </p>
       
       <!-- Meta row -->
@@ -1878,25 +1883,232 @@
         
         <!-- Source -->
         <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          Claude Agent SDK Python Releases
+          Anthropic Research
         </span>
         
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">github-actions[bot]</span>
-        
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">12 小时前</span>
+        <span class="text-xs text-gray-400">1 天前</span>
         
         
         <!-- Tags (max 2) -->
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #SDK更新
+          #研究论文
         </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #workflow
+        </span>
+        
+        <!-- Quality bar (only if > 0) -->
+        
+        <span class="ml-auto flex items-center gap-1 shrink-0">
+          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:75%"></div>
+          </div>
+          <span class="text-xs text-gray-400">7.5</span>
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+  
+
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
+         data-tags="最佳实践 模型能力 workflow SDK更新"
+         data-source="OpenAI 官方博客"
+         data-source-type="official"
+         data-text="The builder’s guide to GPT‑5.6 OpenAI 官方发布的 GPT-5.6 开发者指南，面向创业公司讲解如何构建更快、更具成本效益的 AI Agent。核心内容包括更智能的模型选择策略（按任务复杂度路由到合适的模型档位）以及 Responses API 的新能力。对做 LLM 工作流和 Agent 编排的开发者有直接参考价值。">
+  <div class="flex gap-3">
+    <!-- Source icon -->
+    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
+      ○
+    </div>
+    <div class="flex-1 min-w-0">
+      <!-- Title -->
+      <a href="https://openai.com/index/builders-guide-to-gpt-5-6" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
+        The builder’s guide to GPT‑5.6
+      </a>
+      <!-- Summary -->
+      
+      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
+        OpenAI 官方发布的 GPT-5.6 开发者指南，面向创业公司讲解如何构建更快、更具成本效益的 AI Agent。核心内容包括更智能的模型选择策略（按任务复杂度路由到合适的模型档位）以及 Responses API 的新能力。对做 LLM 工作流和 Agent 编排的开发者有直接参考价值。
+      </p>
+      
+      <!-- Meta row -->
+      <div class="mt-2 flex flex-wrap items-center gap-1.5">
+        <!-- Level badge -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
+          🟡 中级
+        </span>
+        
+        <!-- Source -->
+        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          OpenAI 官方博客
+        </span>
+        
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">1 天前</span>
+        
+        
+        <!-- Tags (max 2) -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #最佳实践
+        </span>
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #模型能力
+        </span>
+        
+        <!-- Quality bar (only if > 0) -->
+        
+        <span class="ml-auto flex items-center gap-1 shrink-0">
+          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:75%"></div>
+          </div>
+          <span class="text-xs text-gray-400">7.5</span>
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+  
+
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
+         data-tags="新功能 workflow SDK更新"
+         data-source="Claude Code Releases"
+         data-source-type="official"
+         data-text="v2.1.232 Claude Code v2.1.232 版本更新，默认开启子代理 fork 模式（继承完整对话与提示缓存），非队友代理在交互会话中默认后台运行。新增 @ 提及其他 Claude 会话并通过 SendMessage 直接通信、同机会话名称唯一化、以及「对话框过期」与「跨会话消息接收」的 /config 配置项和密钥脱敏功能。">
+  <div class="flex gap-3">
+    <!-- Source icon -->
+    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
+      ⚡
+    </div>
+    <div class="flex-1 min-w-0">
+      <!-- Title -->
+      <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.232" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
+        v2.1.232
+      </a>
+      <!-- Summary -->
+      
+      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
+        Claude Code v2.1.232 版本更新，默认开启子代理 fork 模式（继承完整对话与提示缓存），非队友代理在交互会话中默认后台运行。新增 @ 提及其他 Claude 会话并通过 SendMessage 直接通信、同机会话名称唯一化、以及「对话框过期」与「跨会话消息接收」的 /config 配置项和密钥脱敏功能。
+      </p>
+      
+      <!-- Meta row -->
+      <div class="mt-2 flex flex-wrap items-center gap-1.5">
+        <!-- Level badge -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
+          🟡 中级
+        </span>
+        
+        <!-- Source -->
+        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          Claude Code Releases
+        </span>
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">ashwin-ant</span>
+        
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">13 小时前</span>
+        
+        
+        <!-- Tags (max 2) -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
           #新功能
+        </span>
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #workflow
+        </span>
+        
+        <!-- Quality bar (only if > 0) -->
+        
+        <span class="ml-auto flex items-center gap-1 shrink-0">
+          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:70%"></div>
+          </div>
+          <span class="text-xs text-gray-400">7.0</span>
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+  
+
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
+         data-tags="新功能 模型能力 工具集成"
+         data-source="OpenAI 官方博客"
+         data-source-type="official"
+         data-text="Previewing Ultrafast mode: GPT-5.6 Sol at up to 14X the speed OpenAI 推出 Ultrafast API 服务层预览，由 Cerebras 芯片驱动运行 GPT-5.6 Sol，推理速度提升最高达 14 倍，输出可达每秒 750 tokens。对需要低延迟的 AI 编程工具、实时代码补全和 Agent 工作流具有直接影响，超高吞吐可显著改善交互式编码体验。">
+  <div class="flex gap-3">
+    <!-- Source icon -->
+    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
+      ○
+    </div>
+    <div class="flex-1 min-w-0">
+      <!-- Title -->
+      <a href="https://openai.com/index/previewing-ultrafast" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
+        Previewing Ultrafast mode: GPT-5.6 Sol at up to 14X the speed
+      </a>
+      <!-- Summary -->
+      
+      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
+        OpenAI 推出 Ultrafast API 服务层预览，由 Cerebras 芯片驱动运行 GPT-5.6 Sol，推理速度提升最高达 14 倍，输出可达每秒 750 tokens。对需要低延迟的 AI 编程工具、实时代码补全和 Agent 工作流具有直接影响，超高吞吐可显著改善交互式编码体验。
+      </p>
+      
+      <!-- Meta row -->
+      <div class="mt-2 flex flex-wrap items-center gap-1.5">
+        <!-- Level badge -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
+          🟡 中级
+        </span>
+        
+        <!-- Source -->
+        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          OpenAI 官方博客
+        </span>
+        
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">1 天前</span>
+        
+        
+        <!-- Tags (max 2) -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #新功能
+        </span>
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #模型能力
         </span>
         
         <!-- Quality bar (only if > 0) -->
@@ -1919,25 +2131,25 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="新功能 工具集成 SDK更新"
-         data-source="Claude Code Releases"
+         data-tags="SDK更新 工具集成 新功能"
+         data-source="Anthropic SDK Python"
          data-source-type="official"
-         data-text="v2.1.229 Claude Code v2.1.229 版本更新日志，主要涉及 Remote Control 会话恢复（--continue）、自托管 runner 的服务端 hook 支持、以及插件市场支持本地命令源（link 模式，无需重启即可生效）。同时修复了流式长响应显示异常和重复打印等问题，并为 Vertex/Bedrock 上游增加 SSE 心跳以防长时思考时断连。">
+         data-text="v0.122.0 Anthropic Python SDK v0.122.0 版本更新日志，新增 dream 创建的 output_behavior 参数（可新建记忆存储或原地更新输入存储），并在 Bedrock 集成上暴露 beta.messages.parse、stream 和 tool_runner。同时修复了异步客户端 SigV4 签名阻塞事件循环、copy() 后 token 交换绑定丢失、空 API Key 环境变量处理等问题。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ⚡
+      ◆
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.229" target="_blank" rel="noopener"
+      <a href="https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.122.0" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        v2.1.229
+        v0.122.0
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Claude Code v2.1.229 版本更新日志，主要涉及 Remote Control 会话恢复（--continue）、自托管 runner 的服务端 hook 支持、以及插件市场支持本地命令源（link 模式，无需重启即可生效）。同时修复了流式长响应显示异常和重复打印等问题，并为 Vertex/Bedrock 上游增加 SSE 心跳以防长时思考时断连。
+        Anthropic Python SDK v0.122.0 版本更新日志，新增 dream 创建的 output_behavior 参数（可新建记忆存储或原地更新输入存储），并在 Bedrock 集成上暴露 beta.messages.parse、stream 和 tool_runner。同时修复了异步客户端 SigV4 签名阻塞事件循环、copy() 后 token 交换绑定丢失、空 API Key 环境变量处理等问题。
       </p>
       
       <!-- Meta row -->
@@ -1950,21 +2162,21 @@
         
         <!-- Source -->
         <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          Claude Code Releases
+          Anthropic SDK Python
         </span>
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">ashwin-ant</span>
+        <span class="text-xs text-gray-400">stainless-app[bot]</span>
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">12 小时前</span>
+        <span class="text-xs text-gray-400">18 小时前</span>
         
         
         <!-- Tags (max 2) -->
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #新功能
+          #SDK更新
         </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
@@ -1991,79 +2203,10 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="案例分享 workflow"
-         data-source="OpenAI 官方博客"
+         data-tags="SDK更新 工具集成"
+         data-source="Anthropic SDK TypeScript"
          data-source-type="official"
-         data-text="From assistance to execution: How enterprises put AI to work OpenAI 官方研究报告，分析企业如何从「AI 辅助」走向「AI 执行」，重点讲述 ChatGPT 与 Codex 在企业中的 agentic AI 落地方式。对理解 AI 编程工具在真实组织中的采用路径和领先企业的做法有参考价值，但偏行业趋势报告而非具体技术实践。">
-  <div class="flex gap-3">
-    <!-- Source icon -->
-    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ○
-    </div>
-    <div class="flex-1 min-w-0">
-      <!-- Title -->
-      <a href="https://openai.com/index/how-enterprises-put-ai-to-work" target="_blank" rel="noopener"
-         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        From assistance to execution: How enterprises put AI to work
-      </a>
-      <!-- Summary -->
-      
-      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        OpenAI 官方研究报告，分析企业如何从「AI 辅助」走向「AI 执行」，重点讲述 ChatGPT 与 Codex 在企业中的 agentic AI 落地方式。对理解 AI 编程工具在真实组织中的采用路径和领先企业的做法有参考价值，但偏行业趋势报告而非具体技术实践。
-      </p>
-      
-      <!-- Meta row -->
-      <div class="mt-2 flex flex-wrap items-center gap-1.5">
-        <!-- Level badge -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-beginner">
-          🟢 入门
-        </span>
-        
-        <!-- Source -->
-        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          OpenAI 官方博客
-        </span>
-        
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">1 天前</span>
-        
-        
-        <!-- Tags (max 2) -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #案例分享
-        </span>
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #workflow
-        </span>
-        
-        <!-- Quality bar (only if > 0) -->
-        
-        <span class="ml-auto flex items-center gap-1 shrink-0">
-          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:60%"></div>
-          </div>
-          <span class="text-xs text-gray-400">6.0</span>
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-
-
-  
-  
-
-<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="SDK更新 新功能"
-         data-source="Anthropic SDK Python"
-         data-source-type="official"
-         data-text="v0.119.0 Anthropic Python SDK v0.119.0 版本更新，新增了 &#39;model_context_window_exceeded&#39; 停止原因（stop reason），便于开发者在代码中识别并处理上下文窗口溢出的情况。同时修复了 agent toolset 在 read/edit 操作中处理二进制文件的问题。属于常规增量更新，对使用 SDK 构建 Agent 应用的开发者有实际参考价值。">
+         data-text="sdk: v0.117.0 Anthropic TypeScript SDK v0.117.0 版本更新，新增 dream 创建的 output_behavior 参数（可新建记忆存储或原地更新输入存储），并补充了 client 模型列表。修复项包括非流式长请求的单请求超时、流式 message_delta 字段累积、tool-runner 的容器 ID 透传，以及工具路径解析与 skill 归档成员对齐其他 SDK。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -2071,14 +2214,14 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.119.0" target="_blank" rel="noopener"
+      <a href="https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/sdk-v0.117.0" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        v0.119.0
+        sdk: v0.117.0
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Anthropic Python SDK v0.119.0 版本更新，新增了 &#39;model_context_window_exceeded&#39; 停止原因（stop reason），便于开发者在代码中识别并处理上下文窗口溢出的情况。同时修复了 agent toolset 在 read/edit 操作中处理二进制文件的问题。属于常规增量更新，对使用 SDK 构建 Agent 应用的开发者有实际参考价值。
+        Anthropic TypeScript SDK v0.117.0 版本更新，新增 dream 创建的 output_behavior 参数（可新建记忆存储或原地更新输入存储），并补充了 client 模型列表。修复项包括非流式长请求的单请求超时、流式 message_delta 字段累积、tool-runner 的容器 ID 透传，以及工具路径解析与 skill 归档成员对齐其他 SDK。
       </p>
       
       <!-- Meta row -->
@@ -2091,7 +2234,7 @@
         
         <!-- Source -->
         <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          Anthropic SDK Python
+          Anthropic SDK TypeScript
         </span>
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
@@ -2099,7 +2242,7 @@
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">07月23日</span>
+        <span class="text-xs text-gray-400">16 小时前</span>
         
         
         <!-- Tags (max 2) -->
@@ -2109,7 +2252,7 @@
         </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #新功能
+          #工具集成
         </span>
         
         <!-- Quality bar (only if > 0) -->
@@ -2132,25 +2275,25 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="案例分享 工具集成 workflow"
-         data-source="OpenAI 官方博客"
+         data-tags="研究论文 案例分享 workflow"
+         data-source="HuggingFace Blog"
          data-source-type="official"
-         data-text="How RingCentral builds AI-native work from engineering to ops RingCentral 分享了将 ChatGPT Work 与 Codex 引入工程和运营全流程的企业级落地案例，用于加速 AI 产品开发并集中化运营情报。对关注 AI 编程助手在真实组织中如何规模化部署的读者有参考价值，但内容偏客户故事，技术细节和可复用技巧有限。">
+         data-text="What We Learned by Reproducing 2,200 papers from ICML 文章分享了大规模复现 ICML 2,200 篇论文的经验，聚焦研究可复现性中的常见障碍（环境依赖、代码缺失、结果偏差）与工程化复现流程。对构建自动化论文复现/代码执行工作流有参考价值，但与 Claude Code 本身关联较弱。注：本次提供的正文为无关的插件配置文本，摘要主要基于标题推断，建议补全原文后再评估。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ○
+      🤗
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://openai.com/index/ringcentral" target="_blank" rel="noopener"
+      <a href="https://huggingface.co/blog/icml-2026-open-reproductions" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        How RingCentral builds AI-native work from engineering to ops
+        What We Learned by Reproducing 2,200 papers from ICML
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        RingCentral 分享了将 ChatGPT Work 与 Codex 引入工程和运营全流程的企业级落地案例，用于加速 AI 产品开发并集中化运营情报。对关注 AI 编程助手在真实组织中如何规模化部署的读者有参考价值，但内容偏客户故事，技术细节和可复用技巧有限。
+        文章分享了大规模复现 ICML 2,200 篇论文的经验，聚焦研究可复现性中的常见障碍（环境依赖、代码缺失、结果偏差）与工程化复现流程。对构建自动化论文复现/代码执行工作流有参考价值，但与 Claude Code 本身关联较弱。注：本次提供的正文为无关的插件配置文本，摘要主要基于标题推断，建议补全原文后再评估。
       </p>
       
       <!-- Meta row -->
@@ -2163,7 +2306,7 @@
         
         <!-- Source -->
         <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          OpenAI 官方博客
+          HuggingFace Blog
         </span>
         
         
@@ -2174,11 +2317,11 @@
         <!-- Tags (max 2) -->
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #案例分享
+          #研究论文
         </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #工具集成
+          #案例分享
         </span>
         
         <!-- Quality bar (only if > 0) -->
@@ -2214,10 +2357,10 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="最佳实践 workflow 提示工程"
-         data-source="Simon Willison&#39;s Weblog"
-         data-source-type="blog"
-         data-text="There are no lossless transformations of natural-language text Simon Willison 推荐了 Sophie Alpert 关于工程师使用 AI 辅助写作的内部政策，核心原则是：你必须为文档中的每一个想法和句子负责，不能以「这是 AI 写的，忽略它吧」来推脱。文章还指出自然语言文本不存在无损变换——让 LLM 扩写或压缩你的文字必然改变原意。对使用 AI 生成技术文档、PR 描述和设计文档的团队有直接的规范参考价值。">
+         data-tags="提示工程 新功能 最佳实践 workflow"
+         data-source="anthropics/skills commits"
+         data-source-type="community"
+         data-text="Update claude-api skill: prompt-audit subcommand (#1557) Anthropic 官方 skills 仓库为 claude-api skill 新增 prompt-audit 子命令：以非交互方式盘点提示词表面、为每条指令标注时间、对照「过时模式表」扫描，并输出发现报告与建议 diff。适合在模型迁移（model-migration）前后审计既有提示词，识别针对旧模型编写的过时写法。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -2225,14 +2368,14 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://simonwillison.net/2026/Aug/11/there-are-no-lossless-transformations-of-natural-language-text/" target="_blank" rel="noopener"
+      <a href="https://github.com/anthropics/skills/commit/f6656c1256d5a8adfa37db9110046ef20bac644c" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        There are no lossless transformations of natural-language text
+        Update claude-api skill: prompt-audit subcommand (#1557)
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Simon Willison 推荐了 Sophie Alpert 关于工程师使用 AI 辅助写作的内部政策，核心原则是：你必须为文档中的每一个想法和句子负责，不能以「这是 AI 写的，忽略它吧」来推脱。文章还指出自然语言文本不存在无损变换——让 LLM 扩写或压缩你的文字必然改变原意。对使用 AI 生成技术文档、PR 描述和设计文档的团队有直接的规范参考价值。
+        Anthropic 官方 skills 仓库为 claude-api skill 新增 prompt-audit 子命令：以非交互方式盘点提示词表面、为每条指令标注时间、对照「过时模式表」扫描，并输出发现报告与建议 diff。适合在模型迁移（model-migration）前后审计既有提示词，识别针对旧模型编写的过时写法。
       </p>
       
       <!-- Meta row -->
@@ -2245,91 +2388,25 @@
         
         <!-- Source -->
         <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          Simon Willison&#39;s Weblog
+          anthropics/skills commits
         </span>
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">cj-ant</span>
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">1 天前</span>
+        <span class="text-xs text-gray-400">18 小时前</span>
         
         
         <!-- Tags (max 2) -->
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #最佳实践
+          #提示工程
         </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #workflow
-        </span>
-        
-        <!-- Quality bar (only if > 0) -->
-        
-        <span class="ml-auto flex items-center gap-1 shrink-0">
-          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:70%"></div>
-          </div>
-          <span class="text-xs text-gray-400">7.0</span>
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-
-
-  
-  
-
-<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="模型能力 工具集成 MCP"
-         data-source="Simon Willison&#39;s Weblog"
-         data-source-type="blog"
-         data-text="Introducing Muse Glimmer Meta 重返开源权重阵营，发布 30B 参数、Apache 2.0 许可的 Muse Glimmer 模型，定位为可本地运行的智能体模型。官方强调其在 DeepSearch QA、MCP-Atlas、𝛕-Bench、SWE-Bench 等端到端任务基准上的表现，以及可靠的函数/工具调用和长链多步推理能力。对关注本地化 AI 编程与智能体工作流的开发者有参考价值。">
-  <div class="flex gap-3">
-    <!-- Source icon -->
-    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ◉
-    </div>
-    <div class="flex-1 min-w-0">
-      <!-- Title -->
-      <a href="https://simonwillison.net/2026/Aug/10/introducing-muse-glimmer/" target="_blank" rel="noopener"
-         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        Introducing Muse Glimmer
-      </a>
-      <!-- Summary -->
-      
-      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Meta 重返开源权重阵营，发布 30B 参数、Apache 2.0 许可的 Muse Glimmer 模型，定位为可本地运行的智能体模型。官方强调其在 DeepSearch QA、MCP-Atlas、𝛕-Bench、SWE-Bench 等端到端任务基准上的表现，以及可靠的函数/工具调用和长链多步推理能力。对关注本地化 AI 编程与智能体工作流的开发者有参考价值。
-      </p>
-      
-      <!-- Meta row -->
-      <div class="mt-2 flex flex-wrap items-center gap-1.5">
-        <!-- Level badge -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
-          🟡 中级
-        </span>
-        
-        <!-- Source -->
-        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          Simon Willison&#39;s Weblog
-        </span>
-        
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">2 天前</span>
-        
-        
-        <!-- Tags (max 2) -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #模型能力
-        </span>
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #工具集成
+          #新功能
         </span>
         
         <!-- Quality bar (only if > 0) -->
@@ -2353,9 +2430,9 @@
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
          data-tags=""
-         data-source="The Verge AI"
+         data-source="MIT Technology Review AI"
          data-source-type="news"
-         data-text="Grok is now an AI ‘teammate’ you can assign work SpaceXAI has introduced Grok Bot, an always-on AI agent service designed to behave like independent &#34;AI teammates&#34; that can do your work for you. The ">
+         data-text="AI for science needs reasoning, not just data Every few decades, someone announces that science has reached its end. In 1903, the revered physicist Albert Michelson wrote that the “facts of physic">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -2363,14 +2440,14 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://www.theverge.com/ai-artificial-intelligence/978666/spacexai-grok-bot-ai-agent-beta-launch" target="_blank" rel="noopener"
+      <a href="https://www.technologyreview.com/2026/08/10/1141384/ai-agents-for-science/" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        Grok is now an AI ‘teammate’ you can assign work
+        AI for science needs reasoning, not just data
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        SpaceXAI has introduced Grok Bot, an always-on AI agent service designed to behave like independent &#34;AI teammates&#34; that can do your work for you. The 
+        Every few decades, someone announces that science has reached its end. In 1903, the revered physicist Albert Michelson wrote that the “facts of physic
       </p>
       
       <!-- Meta row -->
@@ -2383,15 +2460,15 @@
         
         <!-- Source -->
         <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          The Verge AI
+          MIT Technology Review AI
         </span>
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">Jess Weatherbed</span>
+        <span class="text-xs text-gray-400">Eric Schmidt, Suhas Mahesh</span>
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">21 小时前</span>
+        <span class="text-xs text-gray-400">4 天前</span>
         
         
         <!-- Tags (max 2) -->
@@ -2416,10 +2493,10 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="最佳实践 案例分享"
-         data-source="Simon Willison&#39;s Weblog"
-         data-source-type="blog"
-         data-text="Quoting Florian Herrengt 引用 Florian Herrengt 的观点，描述过度依赖 AI 编码后的团队困境：无人理解系统数据流向，遇到 bug 只能反复让 AI 修，而 AI 自信输出的内容无人能验证真假。核心警示是 AI 加速产出的同时会累积「认知债务」，项目层层堆叠后失去可维护性。对使用 Claude Code 的团队是一则关于保持代码理解力的反面提醒。">
+         data-tags="最佳实践 workflow GitHub热门"
+         data-source="learn-claude-code commits"
+         data-source-type="community"
+         data-text="Merge pull request #512 from shareAI-lab/feat/course-v22-refresh learn-claude-code 项目合并 PR #512，将课程重构为 17 节以 harness（智能体编排框架）为核心的课程体系。这是社区热门 Claude Code 学习教程的一次重大版本更新，反映了从零散技巧向系统化工程能力培养的转变。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -2427,14 +2504,14 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://simonwillison.net/2026/Aug/12/florian-herrengt/" target="_blank" rel="noopener"
+      <a href="https://github.com/shareAI-lab/learn-claude-code/commit/eb4307f4e495d2ed22699e1e5682eb55f8076ade" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        Quoting Florian Herrengt
+        Merge pull request #512 from shareAI-lab/feat/course-v22-refresh
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        引用 Florian Herrengt 的观点，描述过度依赖 AI 编码后的团队困境：无人理解系统数据流向，遇到 bug 只能反复让 AI 修，而 AI 自信输出的内容无人能验证真假。核心警示是 AI 加速产出的同时会累积「认知债务」，项目层层堆叠后失去可维护性。对使用 Claude Code 的团队是一则关于保持代码理解力的反面提醒。
+        learn-claude-code 项目合并 PR #512，将课程重构为 17 节以 harness（智能体编排框架）为核心的课程体系。这是社区热门 Claude Code 学习教程的一次重大版本更新，反映了从零散技巧向系统化工程能力培养的转变。
       </p>
       
       <!-- Meta row -->
@@ -2447,12 +2524,15 @@
         
         <!-- Source -->
         <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          Simon Willison&#39;s Weblog
+          learn-claude-code commits
         </span>
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">Bill-Billion</span>
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">18 小时前</span>
+        <span class="text-xs text-gray-400">2 天前</span>
         
         
         <!-- Tags (max 2) -->
@@ -2462,7 +2542,7 @@
         </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #案例分享
+          #workflow
         </span>
         
         <!-- Quality bar (only if > 0) -->
@@ -2498,10 +2578,10 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags=""
-         data-source="MIT Technology Review AI"
-         data-source-type="news"
-         data-text="OpenAI called the Hugging Face attack unprecedented. But we’ve been here before. This story originally appeared in The Algorithm, our weekly newsletter on AI. To get stories like this in your inbox first, sign up here. Reading Open">
+         data-tags="workflow 最佳实践"
+         data-source="learn-claude-code commits"
+         data-source-type="community"
+         data-text="Consolidate agent harness course into 19 lessons 该提交将 agent harness（智能体运行框架）教程整合为 19 节课的完整课程结构，属于 learn-claude-code 仓库的课程内容重组。对系统学习 Claude Code 智能体框架搭建的开发者有一定参考价值，但作为单条 commit 信息量有限，缺少具体课程内容细节。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -2509,14 +2589,14 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://www.technologyreview.com/2026/07/27/1140836/openai-hugging-face-attack-precedent/" target="_blank" rel="noopener"
+      <a href="https://github.com/shareAI-lab/learn-claude-code/commit/b36dbcd84f3884e07d98e92e73e8dcc1ba9d3bd5" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        OpenAI called the Hugging Face attack unprecedented. But we’ve been here before.
+        Consolidate agent harness course into 19 lessons
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        This story originally appeared in The Algorithm, our weekly newsletter on AI. To get stories like this in your inbox first, sign up here. Reading Open
+        该提交将 agent harness（智能体运行框架）教程整合为 19 节课的完整课程结构，属于 learn-claude-code 仓库的课程内容重组。对系统学习 Claude Code 智能体框架搭建的开发者有一定参考价值，但作为单条 commit 信息量有限，缺少具体课程内容细节。
       </p>
       
       <!-- Meta row -->
@@ -2529,26 +2609,34 @@
         
         <!-- Source -->
         <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          MIT Technology Review AI
+          learn-claude-code commits
         </span>
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">Will Douglas Heaven</span>
+        <span class="text-xs text-gray-400">Bill-Billion</span>
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">07月27日</span>
+        <span class="text-xs text-gray-400">08月03日</span>
         
         
         <!-- Tags (max 2) -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #workflow
+        </span>
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #最佳实践
+        </span>
         
         <!-- Quality bar (only if > 0) -->
         
         <span class="ml-auto flex items-center gap-1 shrink-0">
           <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:62%"></div>
+            <div class="score-bar" style="width:50%"></div>
           </div>
-          <span class="text-xs text-gray-400">6.2</span>
+          <span class="text-xs text-gray-400">5.0</span>
         </span>
         
       </div>
