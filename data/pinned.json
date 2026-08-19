@@ -316,6 +316,26 @@
     "language": "en"
   },
   {
+    "title": "We cut our CLAUDE.md from 548KB to 34KB: what loads when, measured — and the commit gate that keeps it small",
+    "url": "https://dev.to/rulestack/we-cut-our-claudemd-from-548kb-to-34kb-what-loads-when-measured-and-the-commit-gate-that-keeps-1kpk",
+    "source": "dev.to #claudecode",
+    "source_type": "blog",
+    "summary_zh": "作者分享了将 CLAUDE.md 从 548KB 压缩到 34KB 的实战案例，通过实测数据说明每次会话（含子代理）加载全量文件会在任务开始前就写入约 15 万 token 的缓存开销。文章不仅讲解了拆分机制的原理与迁移前后的具体数值，还复盘了两次踩坑（一次被自建的 commit 门禁拦下，一次流入了生产行为），并提出用提交门禁持续约束文件体积。",
+    "pin_reason": "带真实测量数据的 CLAUDE.md 上下文瘦身案例，并给出可复用的 commit 门禁机制，对长期维护大型 CLAUDE.md 的团队具有持续参考价值。",
+    "quality_score": 8.5,
+    "score": 0,
+    "tags": [
+      "CLAUDE.md",
+      "最佳实践",
+      "提效技巧",
+      "案例分享"
+    ],
+    "pinned_at": "2026-08-19T00:47:50.946787+00:00",
+    "raw_id": "rss::dev.to #claudecode::https://dev.to/rulestack/we-cut-our-claudemd-from-548kb-to-34kb-what-loads-when-measured-and-the-commit-gate-that-keeps-1kpk",
+    "author": "Rulestack",
+    "language": "en"
+  },
+  {
     "title": "claude-code-best-practice — 可视化最佳实践指南（33k★）",
     "url": "https://github.com/shanraisshan/claude-code-best-practice",
     "source": "GitHub",
@@ -565,25 +585,6 @@
     ],
     "pinned_at": "2026-08-01T02:04:16.773759+00:00",
     "raw_id": "rss::Simon Willison's Weblog::https://simonwillison.net/2026/Jul/31/smevals/#atom-everything",
-    "author": "",
-    "language": "en"
-  },
-  {
-    "title": "[AINews] Every Lab serious enough about Developers has bought their own Devtools",
-    "url": "https://www.latent.space/p/ainews-every-lab-serious-enough-about",
-    "source": "Latent Space",
-    "source_type": "blog",
-    "summary_zh": "报道主要 AI 实验室相继收购开发者工具公司的趋势：OpenAI 收购 Astral（Python 工具链），Anthropic 收购 Bun（JS 运行时），Google DeepMind 收购 Antigravity 团队。AI 巨头正将开发者工具能力内化为核心战略资产。",
-    "pin_reason": "AI 实验室批量收购主流开发者工具链是行业结构性转变的里程碑事件，对 Claude Code 生态有长期影响。",
-    "quality_score": 7.8,
-    "score": 0,
-    "tags": [
-      "工具集成",
-      "新功能",
-      "模型能力"
-    ],
-    "pinned_at": "2026-03-28T16:22:51.362036+00:00",
-    "raw_id": "rss::Latent Space::https://www.latent.space/p/ainews-every-lab-serious-enough-about",
     "author": "",
     "language": "en"
   }
