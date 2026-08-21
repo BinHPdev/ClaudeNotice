@@ -139,7 +139,7 @@
     </div>
 
     <div class="flex items-center gap-2 ml-auto shrink-0">
-      <span class="hidden md:inline text-xs text-gray-400">2026年08月20日 00:47</span>
+      <span class="hidden md:inline text-xs text-gray-400">2026年08月21日 01:03</span>
       <span class="inline-flex items-center gap-1 bg-green-50 dark:bg-green-900/30 text-green-600 dark:text-green-400 px-2 py-0.5 rounded-full text-xs font-medium">
         ● 每日更新
       </span>
@@ -163,7 +163,7 @@
   <!-- Stats bar -->
   <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 mb-6">
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-gray-100 dark:border-gray-800 text-center">
-      <div class="text-2xl font-bold text-brand-600">20</div>
+      <div class="text-2xl font-bold text-brand-600">11</div>
       <div class="text-xs text-gray-400 mt-0.5">今日收录</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-rose-100 dark:border-rose-900/40 text-center">
@@ -171,11 +171,11 @@
       <div class="text-xs text-gray-400 mt-0.5">经典置顶</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-amber-100 dark:border-amber-900/40 text-center">
-      <div class="text-2xl font-bold text-amber-500">8</div>
+      <div class="text-2xl font-bold text-amber-500">5</div>
       <div class="text-xs text-gray-400 mt-0.5">官方动态</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-orange-100 dark:border-orange-900/40 text-center">
-      <div class="text-2xl font-bold text-orange-500">12</div>
+      <div class="text-2xl font-bold text-orange-500">6</div>
       <div class="text-xs text-gray-400 mt-0.5">前沿速递</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-blue-100 dark:border-blue-900/40 text-center">
@@ -191,7 +191,7 @@
       <span class="text-xl mt-0.5 shrink-0">📋</span>
       <div>
         <div class="text-xs font-semibold text-brand-700 dark:text-brand-300 mb-1 uppercase tracking-wide">今日速览</div>
-        <p class="text-sm leading-relaxed text-gray-700 dark:text-gray-300">今日 Claude Code 生态以工程可靠性为主线：arXiv 集中出现智能体运行时治理、动作边界控制与内存有界工具降级等研究，反映业界正从&#34;能力扩张&#34;转向&#34;可控与可验证&#34;。工具链侧节奏密集，Claude Code 发布 v2.1.236，官方 TypeScript SDK 连推 v0.118.0 与 v0.119.0、Python SDK 更新至 v0.124.0，Bedrock SDK 同步至 v0.33.0。社区实践持续深化，everything-claude-code 合入多模态 taste-driven 技能，Simon Willison 则关注不可信代码沙箱与代码行数背后的概念完整性。此外，Anthropic CEO 将 AI 反弹定性为&#34;根本上的信任危机&#34;，与本日治理类研究形成呼应。</p>
+        <p class="text-sm leading-relaxed text-gray-700 dark:text-gray-300">今日 Claude Code 生态迎来多项版本更新，Claude Code 连续发布 v2.1.237 与 v2.1.238，Claude Code Action 更新至 v1.0.196，Anthropic Python SDK 则正式迈入 1.0.0 稳定版里程碑。学术界对智能体系统的关注持续升温，多篇论文聚焦多智能体并发控制、自演化智能体的动态图建模视角，以及面向投资管理的智能体能力评测基准 FinSkillBench。工具与协作层面同样活跃，Slack 推出协作式 vibe-coding 频道，Mojo 语言宣布开源。整体来看，SDK 走向成熟稳定、智能体研究深入系统设计层面、AI 编程协作场景加速扩张，构成今日三条主线。</p>
       </div>
     </div>
   </div>
@@ -267,16 +267,6 @@
             全部
           </button>
           
-          <button onclick="filterTag('GitHub热门')" data-tag="GitHub热门"
-            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            GitHub热门
-          </button>
-          
-          <button onclick="filterTag('MCP')" data-tag="MCP"
-            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            MCP
-          </button>
-          
           <button onclick="filterTag('SDK更新')" data-tag="SDK更新"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
             SDK更新
@@ -287,9 +277,19 @@
             workflow
           </button>
           
+          <button onclick="filterTag('工作流')" data-tag="工作流"
+            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+            工作流
+          </button>
+          
           <button onclick="filterTag('工具集成')" data-tag="工具集成"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
             工具集成
+          </button>
+          
+          <button onclick="filterTag('提效技巧')" data-tag="提效技巧"
+            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+            提效技巧
           </button>
           
           <button onclick="filterTag('新功能')" data-tag="新功能"
@@ -300,11 +300,6 @@
           <button onclick="filterTag('最佳实践')" data-tag="最佳实践"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
             最佳实践
-          </button>
-          
-          <button onclick="filterTag('案例分享')" data-tag="案例分享"
-            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            案例分享
           </button>
           
           <button onclick="filterTag('模型能力')" data-tag="模型能力"
@@ -1852,10 +1847,10 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="SDK更新 新功能 工具集成"
-         data-source="Anthropic SDK TypeScript"
+         data-tags="SDK更新 新功能"
+         data-source="Anthropic SDK Python"
          data-source-type="official"
-         data-text="sdk: v0.119.0 Anthropic TypeScript SDK v0.119.0 发布，Files API 与 Skills API 正式进入 GA 阶段，并新增 computer use 和 browser use 工具集。对使用 TS SDK 构建 Agent 应用的开发者而言，意味着文件管理与 Skills 能力可用于生产环境，同时具备了浏览器与计算机操作的自动化能力。">
+         data-text="v1.0.0 Anthropic Python SDK 发布 1.0.0 正式版，核心变更是升级到 httpx2 并伴随少量破坏性改动，需参照 MIGRATION.md 迁移。同时修复了 beta 版 parse/stream/tool_runner 辅助方法对 output_format 的误报警告，并将示例更新为使用 adaptive thinking。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -1863,14 +1858,14 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/sdk-v0.119.0" target="_blank" rel="noopener"
+      <a href="https://github.com/anthropics/anthropic-sdk-python/releases/tag/v1.0.0" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        sdk: v0.119.0
+        v1.0.0
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Anthropic TypeScript SDK v0.119.0 发布，Files API 与 Skills API 正式进入 GA 阶段，并新增 computer use 和 browser use 工具集。对使用 TS SDK 构建 Agent 应用的开发者而言，意味着文件管理与 Skills 能力可用于生产环境，同时具备了浏览器与计算机操作的自动化能力。
+        Anthropic Python SDK 发布 1.0.0 正式版，核心变更是升级到 httpx2 并伴随少量破坏性改动，需参照 MIGRATION.md 迁移。同时修复了 beta 版 parse/stream/tool_runner 辅助方法对 output_format 的误报警告，并将示例更新为使用 adaptive thinking。
       </p>
       
       <!-- Meta row -->
@@ -1883,7 +1878,7 @@
         
         <!-- Source -->
         <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          Anthropic SDK TypeScript
+          Anthropic SDK Python
         </span>
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
@@ -1891,7 +1886,7 @@
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">15 小时前</span>
+        <span class="text-xs text-gray-400">13 小时前</span>
         
         
         <!-- Tags (max 2) -->
@@ -1924,82 +1919,10 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="SDK更新 新功能 工具集成"
-         data-source="Anthropic SDK TypeScript"
-         data-source-type="official"
-         data-text="bedrock-sdk: v0.33.0 Anthropic Bedrock SDK (TypeScript) 发布 v0.33.0，Files API 和 Skills API 正式进入 GA 阶段，并新增 computer use 与 browser use 工具集支持。对在 AWS Bedrock 上构建 Agent 应用的开发者是关键版本节点，意味着 Skills 机制可用于生产环境。">
-  <div class="flex gap-3">
-    <!-- Source icon -->
-    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ◆
-    </div>
-    <div class="flex-1 min-w-0">
-      <!-- Title -->
-      <a href="https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/bedrock-sdk-v0.33.0" target="_blank" rel="noopener"
-         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        bedrock-sdk: v0.33.0
-      </a>
-      <!-- Summary -->
-      
-      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Anthropic Bedrock SDK (TypeScript) 发布 v0.33.0，Files API 和 Skills API 正式进入 GA 阶段，并新增 computer use 与 browser use 工具集支持。对在 AWS Bedrock 上构建 Agent 应用的开发者是关键版本节点，意味着 Skills 机制可用于生产环境。
-      </p>
-      
-      <!-- Meta row -->
-      <div class="mt-2 flex flex-wrap items-center gap-1.5">
-        <!-- Level badge -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
-          🟡 中级
-        </span>
-        
-        <!-- Source -->
-        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          Anthropic SDK TypeScript
-        </span>
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">stainless-app[bot]</span>
-        
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">15 小时前</span>
-        
-        
-        <!-- Tags (max 2) -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #SDK更新
-        </span>
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #新功能
-        </span>
-        
-        <!-- Quality bar (only if > 0) -->
-        
-        <span class="ml-auto flex items-center gap-1 shrink-0">
-          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:65%"></div>
-          </div>
-          <span class="text-xs text-gray-400">6.5</span>
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-
-
-  
-  
-
-<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="新功能 工具集成 MCP workflow"
+         data-tags="新功能 提效技巧"
          data-source="Claude Code Releases"
          data-source-type="official"
-         data-text="v2.1.236 Claude Code v2.1.236 版本更新：新增 ANTHROPIC_DEFAULT_MODEL 环境变量用于设定新会话的默认模型（可被 /model 手动切换覆盖并持久化），跨会话 SendMessage 新增 notify_when_idle 一次性空闲通知机制（免轮询，支持 macOS/Linux）。同时强化了 macOS 沙箱的通配符读取拒绝规则优先级（如 **/.env 无法通过重命名绕过），并修复了目录被删除后剪贴板复制、后台会话与本地 MCP 日志失效等问题。">
+         data-text="v2.1.237 Claude Code v2.1.237 版本更新，修复了使用 LLM 网关或自定义 base URL 时的 prompt 缓存问题。新增内置「Concise」输出风格，Claude 会直接给出结果、省略前言和过程叙述，但工作质量不变，可在 /config 的 Output style 中选择。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -2007,14 +1930,14 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.236" target="_blank" rel="noopener"
+      <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.237" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        v2.1.236
+        v2.1.237
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Claude Code v2.1.236 版本更新：新增 ANTHROPIC_DEFAULT_MODEL 环境变量用于设定新会话的默认模型（可被 /model 手动切换覆盖并持久化），跨会话 SendMessage 新增 notify_when_idle 一次性空闲通知机制（免轮询，支持 macOS/Linux）。同时强化了 macOS 沙箱的通配符读取拒绝规则优先级（如 **/.env 无法通过重命名绕过），并修复了目录被删除后剪贴板复制、后台会话与本地 MCP 日志失效等问题。
+        Claude Code v2.1.237 版本更新，修复了使用 LLM 网关或自定义 base URL 时的 prompt 缓存问题。新增内置「Concise」输出风格，Claude 会直接给出结果、省略前言和过程叙述，但工作质量不变，可在 /config 的 Output style 中选择。
       </p>
       
       <!-- Meta row -->
@@ -2023,6 +1946,150 @@
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
           🟡 中级
+        </span>
+        
+        <!-- Source -->
+        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          Claude Code Releases
+        </span>
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">ashwin-ant</span>
+        
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">1 天前</span>
+        
+        
+        <!-- Tags (max 2) -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #新功能
+        </span>
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #提效技巧
+        </span>
+        
+        <!-- Quality bar (only if > 0) -->
+        
+        <span class="ml-auto flex items-center gap-1 shrink-0">
+          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:65%"></div>
+          </div>
+          <span class="text-xs text-gray-400">6.5</span>
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+  
+
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
+         data-tags="SDK更新 工具集成"
+         data-source="PyPI anthropic"
+         data-source-type="official"
+         data-text="1.0.0 Anthropic 官方 Python SDK 发布 1.0.0 正式版，标志着 Claude API 的 Python 客户端进入稳定阶段。对于用 Python 构建 LLM 应用、Agent 工作流或集成 Claude 能力的开发者，这是基础依赖库的重要里程碑。">
+  <div class="flex gap-3">
+    <!-- Source icon -->
+    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
+      🐍
+    </div>
+    <div class="flex-1 min-w-0">
+      <!-- Title -->
+      <a href="https://pypi.org/project/anthropic/1.0.0/" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
+        1.0.0
+      </a>
+      <!-- Summary -->
+      
+      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
+        Anthropic 官方 Python SDK 发布 1.0.0 正式版，标志着 Claude API 的 Python 客户端进入稳定阶段。对于用 Python 构建 LLM 应用、Agent 工作流或集成 Claude 能力的开发者，这是基础依赖库的重要里程碑。
+      </p>
+      
+      <!-- Meta row -->
+      <div class="mt-2 flex flex-wrap items-center gap-1.5">
+        <!-- Level badge -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-beginner">
+          🟢 入门
+        </span>
+        
+        <!-- Source -->
+        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          PyPI anthropic
+        </span>
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">support@anthropic.com</span>
+        
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">13 小时前</span>
+        
+        
+        <!-- Tags (max 2) -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #SDK更新
+        </span>
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #工具集成
+        </span>
+        
+        <!-- Quality bar (only if > 0) -->
+        
+        <span class="ml-auto flex items-center gap-1 shrink-0">
+          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:60%"></div>
+          </div>
+          <span class="text-xs text-gray-400">6.0</span>
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+  
+
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
+         data-tags="新功能 工具集成 工作流"
+         data-source="Claude Code Releases"
+         data-source-type="official"
+         data-text="v2.1.238 Claude Code v2.1.238 版本更新，新增 keybindingFlavor 设置（可选 readline 模式让 Ctrl+W 按空格删除，贴近 Bash 习惯）。插件市场支持 headersHelper 动态生成 HTTP 请求头（如短时效 token），用于私有 catalog 和同源归档拉取，且仅在安装/更新时执行并需用户确认。self-hosted-runner 新增 --defer-shutdown-max-min 优雅关停参数及代理鉴权相关选项。">
+  <div class="flex gap-3">
+    <!-- Source icon -->
+    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
+      ⚡
+    </div>
+    <div class="flex-1 min-w-0">
+      <!-- Title -->
+      <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.238" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
+        v2.1.238
+      </a>
+      <!-- Summary -->
+      
+      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
+        Claude Code v2.1.238 版本更新，新增 keybindingFlavor 设置（可选 readline 模式让 Ctrl+W 按空格删除，贴近 Bash 习惯）。插件市场支持 headersHelper 动态生成 HTTP 请求头（如短时效 token），用于私有 catalog 和同源归档拉取，且仅在安装/更新时执行并需用户确认。self-hosted-runner 新增 --defer-shutdown-max-min 优雅关停参数及代理鉴权相关选项。
+      </p>
+      
+      <!-- Meta row -->
+      <div class="mt-2 flex flex-wrap items-center gap-1.5">
+        <!-- Level badge -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-beginner">
+          🟢 入门
         </span>
         
         <!-- Source -->
@@ -2052,219 +2119,6 @@
         
         <span class="ml-auto flex items-center gap-1 shrink-0">
           <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:65%"></div>
-          </div>
-          <span class="text-xs text-gray-400">6.5</span>
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-
-
-  
-  
-
-<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="SDK更新 新功能 工具集成"
-         data-source="Anthropic SDK Python"
-         data-source-type="official"
-         data-text="v0.124.0 Anthropic Python SDK v0.124.0 发布，Files API 和 Skills API 正式进入 GA（正式可用）阶段，同时新增 computer use 与 browser use 工具集。对于构建 Agent 工作流的开发者而言，Skills 转 GA 意味着可在生产环境依赖该能力，browser use 工具集则扩展了自动化操作场景。">
-  <div class="flex gap-3">
-    <!-- Source icon -->
-    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ◆
-    </div>
-    <div class="flex-1 min-w-0">
-      <!-- Title -->
-      <a href="https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.124.0" target="_blank" rel="noopener"
-         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        v0.124.0
-      </a>
-      <!-- Summary -->
-      
-      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Anthropic Python SDK v0.124.0 发布，Files API 和 Skills API 正式进入 GA（正式可用）阶段，同时新增 computer use 与 browser use 工具集。对于构建 Agent 工作流的开发者而言，Skills 转 GA 意味着可在生产环境依赖该能力，browser use 工具集则扩展了自动化操作场景。
-      </p>
-      
-      <!-- Meta row -->
-      <div class="mt-2 flex flex-wrap items-center gap-1.5">
-        <!-- Level badge -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
-          🟡 中级
-        </span>
-        
-        <!-- Source -->
-        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          Anthropic SDK Python
-        </span>
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">stainless-app[bot]</span>
-        
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">15 小时前</span>
-        
-        
-        <!-- Tags (max 2) -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #SDK更新
-        </span>
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #新功能
-        </span>
-        
-        <!-- Quality bar (only if > 0) -->
-        
-        <span class="ml-auto flex items-center gap-1 shrink-0">
-          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:65%"></div>
-          </div>
-          <span class="text-xs text-gray-400">6.5</span>
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-
-
-  
-  
-
-<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="模型能力 最佳实践 工具集成"
-         data-source="HuggingFace Blog"
-         data-source-type="official"
-         data-text="Multi-Vector (Late Interaction) Embedding Models with Sentence Transformers 文章介绍了如何在 Sentence Transformers 中训练和使用多向量（后期交互，late interaction）嵌入模型，如 ColBERT 风格架构，涵盖模型加载、推理、训练与评估流程。相比单向量嵌入，后期交互模型以更高存储成本换取显著的检索精度提升，适合构建高质量 RAG 检索管线。对需要优化 LLM 应用检索质量的工程实践有直接参考价值。">
-  <div class="flex gap-3">
-    <!-- Source icon -->
-    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      🤗
-    </div>
-    <div class="flex-1 min-w-0">
-      <!-- Title -->
-      <a href="https://huggingface.co/blog/multi-vector-encoder" target="_blank" rel="noopener"
-         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        Multi-Vector (Late Interaction) Embedding Models with Sentence Transformers
-      </a>
-      <!-- Summary -->
-      
-      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        文章介绍了如何在 Sentence Transformers 中训练和使用多向量（后期交互，late interaction）嵌入模型，如 ColBERT 风格架构，涵盖模型加载、推理、训练与评估流程。相比单向量嵌入，后期交互模型以更高存储成本换取显著的检索精度提升，适合构建高质量 RAG 检索管线。对需要优化 LLM 应用检索质量的工程实践有直接参考价值。
-      </p>
-      
-      <!-- Meta row -->
-      <div class="mt-2 flex flex-wrap items-center gap-1.5">
-        <!-- Level badge -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
-          🟡 中级
-        </span>
-        
-        <!-- Source -->
-        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          HuggingFace Blog
-        </span>
-        
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">2 天前</span>
-        
-        
-        <!-- Tags (max 2) -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #模型能力
-        </span>
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #最佳实践
-        </span>
-        
-        <!-- Quality bar (only if > 0) -->
-        
-        <span class="ml-auto flex items-center gap-1 shrink-0">
-          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:65%"></div>
-          </div>
-          <span class="text-xs text-gray-400">6.5</span>
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-
-
-  
-  
-
-<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="SDK更新 新功能 工具集成"
-         data-source="Anthropic SDK Python"
-         data-source-type="official"
-         data-text="v0.123.0 Anthropic Python SDK v0.123.0 版本更新，新增 files 与 memory stores 相关 API、skill 与用户档案更新，以及从响应头读取 workspace ID 的辅助方法。修复包括移除不支持的 mid_conv_system 内容块、避免通过子进程计算平台请求头、导出自定义状态异常，以及 session-runner 在 lease TTL 内重试工具结果发送。">
-  <div class="flex gap-3">
-    <!-- Source icon -->
-    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ◆
-    </div>
-    <div class="flex-1 min-w-0">
-      <!-- Title -->
-      <a href="https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.123.0" target="_blank" rel="noopener"
-         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        v0.123.0
-      </a>
-      <!-- Summary -->
-      
-      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Anthropic Python SDK v0.123.0 版本更新，新增 files 与 memory stores 相关 API、skill 与用户档案更新，以及从响应头读取 workspace ID 的辅助方法。修复包括移除不支持的 mid_conv_system 内容块、避免通过子进程计算平台请求头、导出自定义状态异常，以及 session-runner 在 lease TTL 内重试工具结果发送。
-      </p>
-      
-      <!-- Meta row -->
-      <div class="mt-2 flex flex-wrap items-center gap-1.5">
-        <!-- Level badge -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-beginner">
-          🟢 入门
-        </span>
-        
-        <!-- Source -->
-        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          Anthropic SDK Python
-        </span>
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">stainless-app[bot]</span>
-        
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">19 小时前</span>
-        
-        
-        <!-- Tags (max 2) -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #SDK更新
-        </span>
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #新功能
-        </span>
-        
-        <!-- Quality bar (only if > 0) -->
-        
-        <span class="ml-auto flex items-center gap-1 shrink-0">
-          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
             <div class="score-bar" style="width:60%"></div>
           </div>
           <span class="text-xs text-gray-400">6.0</span>
@@ -2281,25 +2135,25 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="SDK更新 新功能"
-         data-source="Anthropic SDK TypeScript"
+         data-tags="新功能 工具集成 SDK更新"
+         data-source="Claude Code Action Releases"
          data-source-type="official"
-         data-text="sdk: v0.118.0 Anthropic TypeScript SDK v0.118.0 版本发布说明，新增 files 与 memory stores 相关 API、skill 与用户配置更新，并提供从响应头获取 workspace ID 的辅助方法。同时修复了 session-runner 的工具结果重试逻辑，移除了不支持的 mid_conv_system 内容块。属于常规迭代更新，对使用该 SDK 构建 Agent 应用的开发者有参考价值。">
+         data-text="v1.0.196 Claude Code Action v1.0.196 补丁版本，主要修复三处问题：统一公开评论输出中的密钥脱敏逻辑、从 Claude 子进程环境中剥离未使用的 ALL_INPUTS 变量、通过 GraphQL __typename 正确识别机器人账号以过滤评论。对在 GitHub CI 中使用 Claude Code Action 的团队有安全加固价值。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ◆
+      ◉
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/sdk-v0.118.0" target="_blank" rel="noopener"
+      <a href="https://github.com/anthropics/claude-code-action/releases/tag/v1.0.196" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        sdk: v0.118.0
+        v1.0.196
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Anthropic TypeScript SDK v0.118.0 版本发布说明，新增 files 与 memory stores 相关 API、skill 与用户配置更新，并提供从响应头获取 workspace ID 的辅助方法。同时修复了 session-runner 的工具结果重试逻辑，移除了不支持的 mid_conv_system 内容块。属于常规迭代更新，对使用该 SDK 构建 Agent 应用的开发者有参考价值。
+        Claude Code Action v1.0.196 补丁版本，主要修复三处问题：统一公开评论输出中的密钥脱敏逻辑、从 Claude 子进程环境中剥离未使用的 ALL_INPUTS 变量、通过 GraphQL __typename 正确识别机器人账号以过滤评论。对在 GitHub CI 中使用 Claude Code Action 的团队有安全加固价值。
       </p>
       
       <!-- Meta row -->
@@ -2312,80 +2166,11 @@
         
         <!-- Source -->
         <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          Anthropic SDK TypeScript
+          Claude Code Action Releases
         </span>
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">stainless-app[bot]</span>
-        
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">19 小时前</span>
-        
-        
-        <!-- Tags (max 2) -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #SDK更新
-        </span>
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #新功能
-        </span>
-        
-        <!-- Quality bar (only if > 0) -->
-        
-        <span class="ml-auto flex items-center gap-1 shrink-0">
-          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:55%"></div>
-          </div>
-          <span class="text-xs text-gray-400">5.5</span>
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-
-
-  
-  
-
-<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="工具集成 新功能 模型能力"
-         data-source="OpenAI 官方博客"
-         data-source-type="official"
-         data-text="Replit expands access to software creation with GPT-5.6 Luna Replit 推出由 GPT-5.6 Luna 驱动的 Free Mode，让用户无需担心 token 成本即可将想法转化为可运行的软件。这体现了 AI 编程工具在降低使用门槛方面的趋势，对关注 AI 辅助开发工具生态的开发者有参考价值。">
-  <div class="flex gap-3">
-    <!-- Source icon -->
-    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ○
-    </div>
-    <div class="flex-1 min-w-0">
-      <!-- Title -->
-      <a href="https://openai.com/index/replit" target="_blank" rel="noopener"
-         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        Replit expands access to software creation with GPT-5.6 Luna
-      </a>
-      <!-- Summary -->
-      
-      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Replit 推出由 GPT-5.6 Luna 驱动的 Free Mode，让用户无需担心 token 成本即可将想法转化为可运行的软件。这体现了 AI 编程工具在降低使用门槛方面的趋势，对关注 AI 辅助开发工具生态的开发者有参考价值。
-      </p>
-      
-      <!-- Meta row -->
-      <div class="mt-2 flex flex-wrap items-center gap-1.5">
-        <!-- Level badge -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-beginner">
-          🟢 入门
-        </span>
-        
-        <!-- Source -->
-        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          OpenAI 官方博客
-        </span>
+        <span class="text-xs text-gray-400">github-actions[bot]</span>
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
@@ -2395,20 +2180,20 @@
         <!-- Tags (max 2) -->
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #工具集成
+          #新功能
         </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #新功能
+          #工具集成
         </span>
         
         <!-- Quality bar (only if > 0) -->
         
         <span class="ml-auto flex items-center gap-1 shrink-0">
           <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:55%"></div>
+            <div class="score-bar" style="width:50%"></div>
           </div>
-          <span class="text-xs text-gray-400">5.5</span>
+          <span class="text-xs text-gray-400">5.0</span>
         </span>
         
       </div>
@@ -2436,10 +2221,10 @@
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
          data-tags=""
-         data-source="arXiv cs.AI"
+         data-source="arXiv cs.LG"
          data-source-type="research"
-         data-text="GxP-Agent: Process-DAG Topology for Reliable Clinical Trial Programming with LLM Agents arXiv:2608.16890v1 Announce Type: new 
-Abstract: Clinical trial programming -- transforming study protocols into analysis-ready datasets under CDISC s">
+         data-text="Study-Strategy Clusters from EdNet Logs Track Engagement, Not Mastery arXiv:2608.16963v1 Announce Type: new 
+Abstract: Learning analytics often treats unsupervised clusters of intelligent tutoring system (ITS) logs as le">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -2447,15 +2232,15 @@ Abstract: Clinical trial programming -- transforming study protocols into analys
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://arxiv.org/abs/2608.16890" target="_blank" rel="noopener"
+      <a href="https://arxiv.org/abs/2608.16963" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        GxP-Agent: Process-DAG Topology for Reliable Clinical Trial Programming with LLM Agents
+        Study-Strategy Clusters from EdNet Logs Track Engagement, Not Mastery
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        arXiv:2608.16890v1 Announce Type: new 
-Abstract: Clinical trial programming -- transforming study protocols into analysis-ready datasets under CDISC s
+        arXiv:2608.16963v1 Announce Type: new 
+Abstract: Learning analytics often treats unsupervised clusters of intelligent tutoring system (ITS) logs as le
       </p>
       
       <!-- Meta row -->
@@ -2468,11 +2253,11 @@ Abstract: Clinical trial programming -- transforming study protocols into analys
         
         <!-- Source -->
         <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          arXiv cs.AI
+          arXiv cs.LG
         </span>
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">Jaime Yan</span>
+        <span class="text-xs text-gray-400">Qingchuan Lyu, Yingxin Li, Albert Yang</span>
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
@@ -2501,11 +2286,10 @@ Abstract: Clinical trial programming -- transforming study protocols into analys
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags=""
+         data-tags="研究论文 workflow 最佳实践"
          data-source="arXiv cs.AI"
          data-source-type="research"
-         data-text="Memory Is Communication: The Frontier Between Remembering and Signaling arXiv:2608.17053v1 Announce Type: new 
-Abstract: A bounded agent may obtain information for a decision from its own past, from peers, or from both sou">
+         data-text="Position: Multi-Agent Systems Should Prioritize Concurrency Control 该立场论文提出，LLM 多智能体系统（MAS）可靠性随智能体数量增加而下降的根本原因是并发控制问题：多个智能体并发读写共享状态，而漫长的推理窗口放大了脏读、更新丢失和结果不一致的风险。作者主张将协调失败重新映射为经典并发异常，并呼吁 MAS 框架引入冲突检测、隔离保证和结构化共享资源访问作为一等设计要素。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -2513,15 +2297,14 @@ Abstract: A bounded agent may obtain information for a decision from its own pas
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://arxiv.org/abs/2608.17053" target="_blank" rel="noopener"
+      <a href="https://arxiv.org/abs/2608.18092" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        Memory Is Communication: The Frontier Between Remembering and Signaling
+        Position: Multi-Agent Systems Should Prioritize Concurrency Control
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        arXiv:2608.17053v1 Announce Type: new 
-Abstract: A bounded agent may obtain information for a decision from its own past, from peers, or from both sou
+        该立场论文提出，LLM 多智能体系统（MAS）可靠性随智能体数量增加而下降的根本原因是并发控制问题：多个智能体并发读写共享状态，而漫长的推理窗口放大了脏读、更新丢失和结果不一致的风险。作者主张将协调失败重新映射为经典并发异常，并呼吁 MAS 框架引入冲突检测、隔离保证和结构化共享资源访问作为一等设计要素。
       </p>
       
       <!-- Meta row -->
@@ -2538,71 +2321,7 @@ Abstract: A bounded agent may obtain information for a decision from its own pas
         </span>
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">Yashar Talebirad, Eden Redman, Ali Parsaee, Osmar R. Zaiane</span>
-        
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">1 天前</span>
-        
-        
-        <!-- Tags (max 2) -->
-        
-        <!-- Quality bar (only if > 0) -->
-        
-        <span class="ml-auto flex items-center gap-1 shrink-0">
-          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:75%"></div>
-          </div>
-          <span class="text-xs text-gray-400">7.5</span>
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-
-
-  
-  
-
-<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="研究论文 最佳实践 工具集成 MCP"
-         data-source="arXiv cs.AI"
-         data-source-type="research"
-         data-text="Runtime Governance for Agentic AI: Action-Boundary Control with Trusted Provenance and Fail-Closed Execution 论文提出 Aegis 运行时治理系统，将 LLM 输出视为「行动提案」，在工具真正执行前由可信决策层校验策略、服务端解析来源出处，并在不确定时默认拒绝（fail-closed），关键操作还需类似「元老院」的法定多数授权。对使用 Claude Code、MCP 等能改文件、发消息、起任务的 Agent 工具链而言，这提供了一套比提示词约束更硬的权限边界设计思路。">
-  <div class="flex gap-3">
-    <!-- Source icon -->
-    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      📄
-    </div>
-    <div class="flex-1 min-w-0">
-      <!-- Title -->
-      <a href="https://arxiv.org/abs/2608.16891" target="_blank" rel="noopener"
-         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        Runtime Governance for Agentic AI: Action-Boundary Control with Trusted Provenance and Fail-Closed Execution
-      </a>
-      <!-- Summary -->
-      
-      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        论文提出 Aegis 运行时治理系统，将 LLM 输出视为「行动提案」，在工具真正执行前由可信决策层校验策略、服务端解析来源出处，并在不确定时默认拒绝（fail-closed），关键操作还需类似「元老院」的法定多数授权。对使用 Claude Code、MCP 等能改文件、发消息、起任务的 Agent 工具链而言，这提供了一套比提示词约束更硬的权限边界设计思路。
-      </p>
-      
-      <!-- Meta row -->
-      <div class="mt-2 flex flex-wrap items-center gap-1.5">
-        <!-- Level badge -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
-          🟡 中级
-        </span>
-        
-        <!-- Source -->
-        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          arXiv cs.AI
-        </span>
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">Adam Mazzocchetti</span>
+        <span class="text-xs text-gray-400">Xin Yang, Letian Li, Zimo Ji, Terry Jingchen Zhang, Wenyuan Jiang</span>
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
@@ -2616,7 +2335,7 @@ Abstract: A bounded agent may obtain information for a decision from its own pas
         </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #最佳实践
+          #workflow
         </span>
         
         <!-- Quality bar (only if > 0) -->
@@ -2639,154 +2358,10 @@ Abstract: A bounded agent may obtain information for a decision from its own pas
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="workflow 工具集成 最佳实践 案例分享"
-         data-source="everything-claude-code commits"
-         data-source-type="community"
-         data-text="Merge pull request #2824 from affaan-m/agent/tasteforge-multimodal-20… 该提交为 everything-claude-code 仓库新增 TasteForge 多模态工作流技能，并展示了一套完整的学术研究插件（ARS）配置：13 个斜杠命令在 frontmatter 中固定模型路由（复杂推理用 Opus、常规任务用 Sonnet），配合 3 个插件级 agent 分工协作。核心参考价值在于其模型路由与成本控制思路（单次完整流水线约 $4-6），可作为 Claude Code 插件化 skill/command/agent 三层架构的实践样板。">
-  <div class="flex gap-3">
-    <!-- Source icon -->
-    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ◉
-    </div>
-    <div class="flex-1 min-w-0">
-      <!-- Title -->
-      <a href="https://github.com/affaan-m/ECC/commit/d8409a4b0813771235555e32e3d8046a73988bfa" target="_blank" rel="noopener"
-         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        Merge pull request #2824 from affaan-m/agent/tasteforge-multimodal-20…
-      </a>
-      <!-- Summary -->
-      
-      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        该提交为 everything-claude-code 仓库新增 TasteForge 多模态工作流技能，并展示了一套完整的学术研究插件（ARS）配置：13 个斜杠命令在 frontmatter 中固定模型路由（复杂推理用 Opus、常规任务用 Sonnet），配合 3 个插件级 agent 分工协作。核心参考价值在于其模型路由与成本控制思路（单次完整流水线约 $4-6），可作为 Claude Code 插件化 skill/command/agent 三层架构的实践样板。
-      </p>
-      
-      <!-- Meta row -->
-      <div class="mt-2 flex flex-wrap items-center gap-1.5">
-        <!-- Level badge -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
-          🟡 中级
-        </span>
-        
-        <!-- Source -->
-        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          everything-claude-code commits
-        </span>
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">affaan-m</span>
-        
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">9 小时前</span>
-        
-        
-        <!-- Tags (max 2) -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #workflow
-        </span>
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #工具集成
-        </span>
-        
-        <!-- Quality bar (only if > 0) -->
-        
-        <span class="ml-auto flex items-center gap-1 shrink-0">
-          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:65%"></div>
-          </div>
-          <span class="text-xs text-gray-400">6.5</span>
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-
-
-  
-  
-
-<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="新功能 workflow 最佳实践 GitHub热门"
-         data-source="everything-claude-code commits"
-         data-source-type="community"
-         data-text="feat(skills): add tasteforge-video skill for repeatable taste-driven … 该提交为 everything-claude-code 仓库新增 tasteforge-video Skill，将「品味驱动」的视频制作流程标准化：品味访谈、风格包校验、离线蒸馏、确定性节奏应用到本地素材、EDL/FCPXML 导出与生成素材溯源审计。设计上强调 fail-closed 安全边界（Fal 等第三方生成需单独显式授权），并配有 frontmatter/触发词、边界、manifest 与 npm 打包可发现性的契约测试。对如何编写可复用、可测试且默认安全的 Claude Code Skill 有参考价值。">
-  <div class="flex gap-3">
-    <!-- Source icon -->
-    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ◉
-    </div>
-    <div class="flex-1 min-w-0">
-      <!-- Title -->
-      <a href="https://github.com/affaan-m/ECC/commit/9c450046beb9de48e48fbb71b8b91931802485f8" target="_blank" rel="noopener"
-         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        feat(skills): add tasteforge-video skill for repeatable taste-driven …
-      </a>
-      <!-- Summary -->
-      
-      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        该提交为 everything-claude-code 仓库新增 tasteforge-video Skill，将「品味驱动」的视频制作流程标准化：品味访谈、风格包校验、离线蒸馏、确定性节奏应用到本地素材、EDL/FCPXML 导出与生成素材溯源审计。设计上强调 fail-closed 安全边界（Fal 等第三方生成需单独显式授权），并配有 frontmatter/触发词、边界、manifest 与 npm 打包可发现性的契约测试。对如何编写可复用、可测试且默认安全的 Claude Code Skill 有参考价值。
-      </p>
-      
-      <!-- Meta row -->
-      <div class="mt-2 flex flex-wrap items-center gap-1.5">
-        <!-- Level badge -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
-          🟡 中级
-        </span>
-        
-        <!-- Source -->
-        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          everything-claude-code commits
-        </span>
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">affaan-m</span>
-        
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">1 天前</span>
-        
-        
-        <!-- Tags (max 2) -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #新功能
-        </span>
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #workflow
-        </span>
-        
-        <!-- Quality bar (only if > 0) -->
-        
-        <span class="ml-auto flex items-center gap-1 shrink-0">
-          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:65%"></div>
-          </div>
-          <span class="text-xs text-gray-400">6.5</span>
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-
-
-  
-  
-
-<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="模型能力 研究论文 最佳实践"
+         data-tags="研究论文 模型能力 workflow"
          data-source="arXiv cs.AI"
          data-source-type="research"
-         data-text="The Price of Thinking: Reasoning Effort as a Model-Specific API Contract 论文将「推理力度（reasoning effort）」视为 API 合约中的一个可计价条款，通过 30 道 AIME 2026 题目、每题 5 次调用的配对实验，对比 Sonnet 5 显式设置 high effort 与省略该参数的差异。结果显示显式高推理每次调用平均多花约 0.0103 美元，而准确率提升仅 +0.0133 且置信区间跨零，即成本明确上升、收益不显著。对调参与成本控制有直接参考价值。">
+         data-text="FinSkillBench: Evaluating AI Agents and Domain Skills for Investment Management FinSkillBench 是一个面向投资管理领域的智能体评测基准，覆盖组合构建、风险管理和基本面分析三大方向，包含 12 个子任务、2603 个任务样本，每个样本提供时点数据、隐藏答案和专用验证器。研究通过对比「无技能／精选技能包」等条件，量化领域技能（skills）对 LLM 智能体完成高风险专业任务的实际增益。对关注 Agent Skills 机制与可审计结构化输出的开发者有参考价值。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -2794,14 +2369,14 @@ Abstract: A bounded agent may obtain information for a decision from its own pas
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://arxiv.org/abs/2608.16956" target="_blank" rel="noopener"
+      <a href="https://arxiv.org/abs/2608.18099" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        The Price of Thinking: Reasoning Effort as a Model-Specific API Contract
+        FinSkillBench: Evaluating AI Agents and Domain Skills for Investment Management
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        论文将「推理力度（reasoning effort）」视为 API 合约中的一个可计价条款，通过 30 道 AIME 2026 题目、每题 5 次调用的配对实验，对比 Sonnet 5 显式设置 high effort 与省略该参数的差异。结果显示显式高推理每次调用平均多花约 0.0103 美元，而准确率提升仅 +0.0133 且置信区间跨零，即成本明确上升、收益不显著。对调参与成本控制有直接参考价值。
+        FinSkillBench 是一个面向投资管理领域的智能体评测基准，覆盖组合构建、风险管理和基本面分析三大方向，包含 12 个子任务、2603 个任务样本，每个样本提供时点数据、隐藏答案和专用验证器。研究通过对比「无技能／精选技能包」等条件，量化领域技能（skills）对 LLM 智能体完成高风险专业任务的实际增益。对关注 Agent Skills 机制与可审计结构化输出的开发者有参考价值。
       </p>
       
       <!-- Meta row -->
@@ -2818,7 +2393,7 @@ Abstract: A bounded agent may obtain information for a decision from its own pas
         </span>
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">Yeabin Moon</span>
+        <span class="text-xs text-gray-400">Jermyn Zhen Yong Bek, Zhuang Qiang Bok, Zhongtian Sun</span>
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
@@ -2826,223 +2401,13 @@ Abstract: A bounded agent may obtain information for a decision from its own pas
         
         
         <!-- Tags (max 2) -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #研究论文
+        </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
           #模型能力
-        </span>
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #研究论文
-        </span>
-        
-        <!-- Quality bar (only if > 0) -->
-        
-        <span class="ml-auto flex items-center gap-1 shrink-0">
-          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:65%"></div>
-          </div>
-          <span class="text-xs text-gray-400">6.5</span>
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-
-
-  
-  
-
-<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="研究论文 workflow 案例分享"
-         data-source="arXiv cs.AI"
-         data-source-type="research"
-         data-text="KernelArc: A Multi-Agent Framework for GPU Kernel Optimization KernelArc 提出一个多智能体框架，用于跨异构工作负载的 GPU kernel 自动优化：策略专精的 agent 并行运行，通过「仅结论」共享内存、确定性 benchmark 守卫和只读跨 agent 状态协作，并在停滞时触发新方案起草。对构建多智能体编码/性能优化工作流有参考价值，其协作机制设计（避免上下文污染、用基准测试做客观裁判）可迁移到通用 AI 编程 agent 编排。">
-  <div class="flex gap-3">
-    <!-- Source icon -->
-    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      📄
-    </div>
-    <div class="flex-1 min-w-0">
-      <!-- Title -->
-      <a href="https://arxiv.org/abs/2608.17071" target="_blank" rel="noopener"
-         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        KernelArc: A Multi-Agent Framework for GPU Kernel Optimization
-      </a>
-      <!-- Summary -->
-      
-      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        KernelArc 提出一个多智能体框架，用于跨异构工作负载的 GPU kernel 自动优化：策略专精的 agent 并行运行，通过「仅结论」共享内存、确定性 benchmark 守卫和只读跨 agent 状态协作，并在停滞时触发新方案起草。对构建多智能体编码/性能优化工作流有参考价值，其协作机制设计（避免上下文污染、用基准测试做客观裁判）可迁移到通用 AI 编程 agent 编排。
-      </p>
-      
-      <!-- Meta row -->
-      <div class="mt-2 flex flex-wrap items-center gap-1.5">
-        <!-- Level badge -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
-          🟡 中级
-        </span>
-        
-        <!-- Source -->
-        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          arXiv cs.AI
-        </span>
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">Joyjit Kundu, Ben Stoffelen, Kaili Wang, Peter Vrancx, Ludovic Denoyer</span>
-        
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">1 天前</span>
-        
-        
-        <!-- Tags (max 2) -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #研究论文
-        </span>
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #workflow
-        </span>
-        
-        <!-- Quality bar (only if > 0) -->
-        
-        <span class="ml-auto flex items-center gap-1 shrink-0">
-          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:65%"></div>
-          </div>
-          <span class="text-xs text-gray-400">6.5</span>
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-
-
-  
-  
-
-<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="案例分享 工具集成 workflow"
-         data-source="Simon Willison&#39;s Weblog"
-         data-source-type="blog"
-         data-text="smolmachines / smolvm as a sandbox for untrusted Python &amp; JavaScript Simon Willison 用 Claude Code for web 让 Claude Fable 5 实测 smolmachines/smolvm 能否作为运行不可信 Python/JavaScript 的快速安全沙箱（限制 RAM、CPU 时间、无网络、仅访问指定文件）。过程中发现 Claude Code for web 环境本身跑在 Firecracker 虚拟机里，无法嵌套运行 smol machines，这是一个关于 AI 代理沙箱执行环境限制的真实案例。">
-  <div class="flex gap-3">
-    <!-- Source icon -->
-    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ◉
-    </div>
-    <div class="flex-1 min-w-0">
-      <!-- Title -->
-      <a href="https://simonwillison.net/2026/Aug/19/smolmachines-untrusted-sandbox/" target="_blank" rel="noopener"
-         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        smolmachines / smolvm as a sandbox for untrusted Python &amp; JavaScript
-      </a>
-      <!-- Summary -->
-      
-      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Simon Willison 用 Claude Code for web 让 Claude Fable 5 实测 smolmachines/smolvm 能否作为运行不可信 Python/JavaScript 的快速安全沙箱（限制 RAM、CPU 时间、无网络、仅访问指定文件）。过程中发现 Claude Code for web 环境本身跑在 Firecracker 虚拟机里，无法嵌套运行 smol machines，这是一个关于 AI 代理沙箱执行环境限制的真实案例。
-      </p>
-      
-      <!-- Meta row -->
-      <div class="mt-2 flex flex-wrap items-center gap-1.5">
-        <!-- Level badge -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
-          🟡 中级
-        </span>
-        
-        <!-- Source -->
-        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          Simon Willison&#39;s Weblog
-        </span>
-        
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">9 小时前</span>
-        
-        
-        <!-- Tags (max 2) -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #案例分享
-        </span>
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #工具集成
-        </span>
-        
-        <!-- Quality bar (only if > 0) -->
-        
-        <span class="ml-auto flex items-center gap-1 shrink-0">
-          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:65%"></div>
-          </div>
-          <span class="text-xs text-gray-400">6.5</span>
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-
-
-  
-  
-
-<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="最佳实践 案例分享 workflow"
-         data-source="Simon Willison&#39;s Weblog"
-         data-source-type="blog"
-         data-text="Conceptual integrity and counting lines of code Simon Willison 在 Talking Postgres 播客中讨论 AI 如何改变软件开发，核心论点是：在编码代理时代，代码行数作为生产力指标并非完全无意义——人类工程师每天产出几百行可用生产代码存在硬上限，而 AI 打破了这一限制。同时强调「概念完整性」（conceptual integrity）在 AI 辅助开发中的重要性。">
-  <div class="flex gap-3">
-    <!-- Source icon -->
-    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ◉
-    </div>
-    <div class="flex-1 min-w-0">
-      <!-- Title -->
-      <a href="https://simonwillison.net/2026/Aug/19/conceptual-integrity-and-counting-lines-of-code/" target="_blank" rel="noopener"
-         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        Conceptual integrity and counting lines of code
-      </a>
-      <!-- Summary -->
-      
-      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Simon Willison 在 Talking Postgres 播客中讨论 AI 如何改变软件开发，核心论点是：在编码代理时代，代码行数作为生产力指标并非完全无意义——人类工程师每天产出几百行可用生产代码存在硬上限，而 AI 打破了这一限制。同时强调「概念完整性」（conceptual integrity）在 AI 辅助开发中的重要性。
-      </p>
-      
-      <!-- Meta row -->
-      <div class="mt-2 flex flex-wrap items-center gap-1.5">
-        <!-- Level badge -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
-          🟡 中级
-        </span>
-        
-        <!-- Source -->
-        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          Simon Willison&#39;s Weblog
-        </span>
-        
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">10 小时前</span>
-        
-        
-        <!-- Tags (max 2) -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #最佳实践
-        </span>
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #案例分享
         </span>
         
         <!-- Quality bar (only if > 0) -->
@@ -3066,9 +2431,9 @@ Abstract: A bounded agent may obtain information for a decision from its own pas
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
          data-tags=""
-         data-source="TechCrunch AI"
-         data-source-type="news"
-         data-text="Anthropic CEO says AI backlash is ‘fundamentally a crisis of trust’ Dario Amodei is pushing back against the idea that he&#39;s been painting an overly pessimistic picture of AI.">
+         data-source="Simon Willison&#39;s Weblog"
+         data-source-type="blog"
+         data-text="Mojo🔥 is now open source Mojo🔥 is now open source The Mojo programming language has been promising an open source release since May 2023 . Last week they shipped their 1.0 and">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -3076,35 +2441,32 @@ Abstract: A bounded agent may obtain information for a decision from its own pas
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://techcrunch.com/2026/08/16/anthropic-ceo-says-ai-backlash-is-fundamentally-a-crisis-of-trust/" target="_blank" rel="noopener"
+      <a href="https://simonwillison.net/2026/Aug/18/mojo-is-now-open-source/" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        Anthropic CEO says AI backlash is ‘fundamentally a crisis of trust’
+        Mojo🔥 is now open source
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Dario Amodei is pushing back against the idea that he&#39;s been painting an overly pessimistic picture of AI.
+        Mojo🔥 is now open source The Mojo programming language has been promising an open source release since May 2023 . Last week they shipped their 1.0 and
       </p>
       
       <!-- Meta row -->
       <div class="mt-2 flex flex-wrap items-center gap-1.5">
         <!-- Level badge -->
         
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-beginner">
-          🟢 入门
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
+          🟡 中级
         </span>
         
         <!-- Source -->
         <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          TechCrunch AI
+          Simon Willison&#39;s Weblog
         </span>
         
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">Anthony Ha</span>
-        
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">3 天前</span>
+        <span class="text-xs text-gray-400">2 天前</span>
         
         
         <!-- Tags (max 2) -->
@@ -3113,9 +2475,9 @@ Abstract: A bounded agent may obtain information for a decision from its own pas
         
         <span class="ml-auto flex items-center gap-1 shrink-0">
           <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:62%"></div>
+            <div class="score-bar" style="width:65%"></div>
           </div>
-          <span class="text-xs text-gray-400">6.2</span>
+          <span class="text-xs text-gray-400">6.5</span>
         </span>
         
       </div>
@@ -3129,10 +2491,10 @@ Abstract: A bounded agent may obtain information for a decision from its own pas
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="研究论文 工具集成 workflow"
+         data-tags="研究论文 workflow 模型能力"
          data-source="arXiv cs.AI"
          data-source-type="research"
-         data-text="SkillEffect: Checked Lowering for Memory-Bounded Agent Tools 论文提出 SkillEffect，一个针对 Agent Skills 的「受检降级」运行时：当模型把技能指导转成调用现有工具接口的代码时，语义正确的程序仍可能一次性加载全部输入而超出单次工具调用的内存上限。它通过独立检查器在授予执行权限前，从提交的程序和不可变输入重建每个降级方案，并校验源关系、有界实现与输出后置条件，从而为 Agent 工具执行提供内存有界保证。">
+         data-text="Self-Evolving Agents as Dynamic Graph Transformation: A Survey and New Perspective 该综述提出用「动态图变换」这一统一视角来理解基于 LLM 的自进化智能体，把记忆、工具、技能、工作流与多智能体协作等状态建模为随反馈和环境变化的图拓扑演化。它填补了现有图-智能体综述与自进化智能体综述之间的空白，对设计具备持久记忆和自我改进能力的 Agent 工作流有理论参考价值。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -3140,14 +2502,14 @@ Abstract: A bounded agent may obtain information for a decision from its own pas
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://arxiv.org/abs/2608.17007" target="_blank" rel="noopener"
+      <a href="https://arxiv.org/abs/2608.18104" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        SkillEffect: Checked Lowering for Memory-Bounded Agent Tools
+        Self-Evolving Agents as Dynamic Graph Transformation: A Survey and New Perspective
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        论文提出 SkillEffect，一个针对 Agent Skills 的「受检降级」运行时：当模型把技能指导转成调用现有工具接口的代码时，语义正确的程序仍可能一次性加载全部输入而超出单次工具调用的内存上限。它通过独立检查器在授予执行权限前，从提交的程序和不可变输入重建每个降级方案，并校验源关系、有界实现与输出后置条件，从而为 Agent 工具执行提供内存有界保证。
+        该综述提出用「动态图变换」这一统一视角来理解基于 LLM 的自进化智能体，把记忆、工具、技能、工作流与多智能体协作等状态建模为随反馈和环境变化的图拓扑演化。它填补了现有图-智能体综述与自进化智能体综述之间的空白，对设计具备持久记忆和自我改进能力的 Agent 工作流有理论参考价值。
       </p>
       
       <!-- Meta row -->
@@ -3164,7 +2526,7 @@ Abstract: A bounded agent may obtain information for a decision from its own pas
         </span>
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">Yinuo Wang, Yiyu Shi</span>
+        <span class="text-xs text-gray-400">Yuanyuan Xu, Wenjie Zhang, Yin Chen, Xuemin Lin, Ying Zhang</span>
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
@@ -3178,7 +2540,7 @@ Abstract: A bounded agent may obtain information for a decision from its own pas
         </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #工具集成
+          #workflow
         </span>
         
         <!-- Quality bar (only if > 0) -->
@@ -3201,10 +2563,10 @@ Abstract: A bounded agent may obtain information for a decision from its own pas
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="最佳实践 工具集成"
-         data-source="Simon Willison&#39;s Weblog"
-         data-source-type="blog"
-         data-text="Quoting Jeremy Morrell Simon Willison 引用 Jeremy Morrell 的观点：LLM 大幅降低了编写扩展的成本，现代沙箱原语则降低了部署成本并提供安全边界，二者结合让「可扩展软件」在 Web 上迎来新机会。核心思路是把应用做成稳固可控的内核，由 LLM 为用户按需填补缺失功能，实现安全的个性化扩展。这是一条产品架构层面的理念性观点，对设计 AI 原生应用有启发但缺乏具体实操细节。">
+         data-tags="工具集成 新功能 workflow"
+         data-source="The Verge AI"
+         data-source-type="news"
+         data-text="Slack is launching collaborative vibe-coding channels Slack 推出 Slack Code 功能，在工作区内提供项目专属的「协作氛围编程」频道，团队可与 AI 编码代理在同一处协作，无需在多个工具间切换。该功能还支持代码变更对比和 HTML 输出预览，属于 AI 编程工具向团队协作场景的集成延伸。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -3212,14 +2574,14 @@ Abstract: A bounded agent may obtain information for a decision from its own pas
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://simonwillison.net/2026/Aug/19/jeremy-morrell/" target="_blank" rel="noopener"
+      <a href="https://www.theverge.com/tech/982628/slack-code-vibe-coding-channels-launch" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        Quoting Jeremy Morrell
+        Slack is launching collaborative vibe-coding channels
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Simon Willison 引用 Jeremy Morrell 的观点：LLM 大幅降低了编写扩展的成本，现代沙箱原语则降低了部署成本并提供安全边界，二者结合让「可扩展软件」在 Web 上迎来新机会。核心思路是把应用做成稳固可控的内核，由 LLM 为用户按需填补缺失功能，实现安全的个性化扩展。这是一条产品架构层面的理念性观点，对设计 AI 原生应用有启发但缺乏具体实操细节。
+        Slack 推出 Slack Code 功能，在工作区内提供项目专属的「协作氛围编程」频道，团队可与 AI 编码代理在同一处协作，无需在多个工具间切换。该功能还支持代码变更对比和 HTML 输出预览，属于 AI 编程工具向团队协作场景的集成延伸。
       </p>
       
       <!-- Meta row -->
@@ -3232,22 +2594,25 @@ Abstract: A bounded agent may obtain information for a decision from its own pas
         
         <!-- Source -->
         <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          Simon Willison&#39;s Weblog
+          The Verge AI
         </span>
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">Jess Weatherbed</span>
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">9 小时前</span>
+        <span class="text-xs text-gray-400">21 小时前</span>
         
         
         <!-- Tags (max 2) -->
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #最佳实践
+          #工具集成
         </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #工具集成
+          #新功能
         </span>
         
         <!-- Quality bar (only if > 0) -->
