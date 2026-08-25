@@ -336,6 +336,26 @@
     "language": "en"
   },
   {
+    "title": "[GitHub] VoltAgent/awesome-agent-skills — A curated collection of 1000+ agent skills from official dev teams and the community, compatible wit",
+    "url": "https://github.com/VoltAgent/awesome-agent-skills",
+    "source": "GitHub",
+    "source_type": "community",
+    "summary_zh": "VoltAgent/awesome-agent-skills 是一个汇集了 1000+ Agent Skills 的精选清单，涵盖官方开发团队与社区贡献，兼容 Claude Code、Codex、Gemini CLI、Cursor 等主流 AI 编程工具。项目已获 31.8k Stars，可作为查找和复用现成技能包的一站式索引，显著降低自建 Skill 的成本。",
+    "pin_reason": "3万+ Star 的跨工具 Agent Skills 权威索引，是查找与复用 Claude Code 技能生态的长期参考入口。",
+    "quality_score": 8.5,
+    "score": 31870,
+    "tags": [
+      "GitHub热门",
+      "工具集成",
+      "最佳实践",
+      "workflow"
+    ],
+    "pinned_at": "2026-08-25T00:48:04.922834+00:00",
+    "raw_id": "GitHub::1084853233",
+    "author": "VoltAgent",
+    "language": "en"
+  },
+  {
     "title": "claude-code-best-practice — 可视化最佳实践指南（33k★）",
     "url": "https://github.com/shanraisshan/claude-code-best-practice",
     "source": "GitHub",
@@ -565,27 +585,6 @@
     "pinned_at": "2026-07-30T01:51:17.701355+00:00",
     "raw_id": "rss::dev.to #claudecode::https://dev.to/raxxostudios/mcp-goes-stateless-what-the-2026-07-28-spec-actually-changes-4722",
     "author": "RAXXO Studios",
-    "language": "en"
-  },
-  {
-    "title": "smevals - a small eval suite for evaluating models, prompts, and harnesses",
-    "url": "https://simonwillison.net/2026/Jul/31/smevals/#atom-everything",
-    "source": "Simon Willison's Weblog",
-    "source_type": "blog",
-    "summary_zh": "Simon Willison 与 Jesse Vincent 的 Prime Radiant 实验室合作推出 smevals，一个用于评估模型、提示词和 agent harness 的轻量级 eval 框架。工具的核心用法非常贴合 AI 编程工作流：让编码 agent 执行 `uvx smevals docs` 自学工具，再让它帮你构建 eval 套件，最终以 YAML 目录形式定义评测并跨多个模型（如 gpt-5.5、claude-opus-4.6）并行运行打分。对于需要客观比较不同模型/提示/工具链效果的团队，这填补了轻量级自建评测的空白。",
-    "pin_reason": "由权威作者发布的开源评测框架，为「如何客观衡量模型、提示词与 agent harness 的效果」提供了可复用的标准化方法，具备长期参考价值。",
-    "quality_score": 8.0,
-    "score": 0,
-    "tags": [
-      "工具集成",
-      "最佳实践",
-      "workflow",
-      "模型能力",
-      "提示工程"
-    ],
-    "pinned_at": "2026-08-01T02:04:16.773759+00:00",
-    "raw_id": "rss::Simon Willison's Weblog::https://simonwillison.net/2026/Jul/31/smevals/#atom-everything",
-    "author": "",
     "language": "en"
   }
 ]
