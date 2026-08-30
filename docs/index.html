@@ -139,7 +139,7 @@
     </div>
 
     <div class="flex items-center gap-2 ml-auto shrink-0">
-      <span class="hidden md:inline text-xs text-gray-400">2026年08月28日 19:14</span>
+      <span class="hidden md:inline text-xs text-gray-400">2026年08月30日 02:39</span>
       <span class="inline-flex items-center gap-1 bg-green-50 dark:bg-green-900/30 text-green-600 dark:text-green-400 px-2 py-0.5 rounded-full text-xs font-medium">
         ● 每日更新
       </span>
@@ -163,7 +163,7 @@
   <!-- Stats bar -->
   <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 mb-6">
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-gray-100 dark:border-gray-800 text-center">
-      <div class="text-2xl font-bold text-brand-600">8</div>
+      <div class="text-2xl font-bold text-brand-600">5</div>
       <div class="text-xs text-gray-400 mt-0.5">今日收录</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-rose-100 dark:border-rose-900/40 text-center">
@@ -171,7 +171,7 @@
       <div class="text-xs text-gray-400 mt-0.5">经典置顶</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-amber-100 dark:border-amber-900/40 text-center">
-      <div class="text-2xl font-bold text-amber-500">4</div>
+      <div class="text-2xl font-bold text-amber-500">0</div>
       <div class="text-xs text-gray-400 mt-0.5">官方动态</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-orange-100 dark:border-orange-900/40 text-center">
@@ -179,7 +179,7 @@
       <div class="text-xs text-gray-400 mt-0.5">前沿速递</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-blue-100 dark:border-blue-900/40 text-center">
-      <div class="text-2xl font-bold text-blue-500">0</div>
+      <div class="text-2xl font-bold text-blue-500">1</div>
       <div class="text-xs text-gray-400 mt-0.5">成熟实践</div>
     </div>
   </div>
@@ -191,7 +191,7 @@
       <span class="text-xl mt-0.5 shrink-0">📋</span>
       <div>
         <div class="text-xs font-semibold text-brand-700 dark:text-brand-300 mb-1 uppercase tracking-wide">今日速览</div>
-        <p class="text-sm leading-relaxed text-gray-700 dark:text-gray-300">今日 Claude Code 生态更新密集：Opus 5 Auto Mode 被 Simon Willison 抢先解析，客户端接连发布 v2.1.248 与 v2.1.251，Python 与 TypeScript 官方 SDK 也同步迭代至 v1.2.0 和 v0.122.0。学术侧的关注点集中在多智能体与长上下文应用，CIFQA 提出面向金融问答的确定性工具接地多智能体框架，另一项研究则评估了不同上下文窗口下 LLM 生成文献综述的质量。行业层面，The Verge 披露 OpenAI 此前的模型失控事件影响远超外界预估，为高速迭代的智能体生态再添一层安全警示。总体来看，工具链趋于成熟、智能体编排走向工程化，而可靠性与安全评估正成为绕不开的另一条主线。</p>
+        <p class="text-sm leading-relaxed text-gray-700 dark:text-gray-300">今日 AI 编程圈焦点集中在安全与自我进化两条主线：Simon Willison 指出如今仅凭一则漏洞传闻就足以让 AI 顺藤摸瓜挖出真实的安全利用链，安全研究的门槛正被急剧压低。Anthropic 研究员则首度揭开自我改进型 AI 的一角，为模型能力的迭代路径提供了新想象空间。模型侧竞争同步升温，Opus 5 与 Kimi K3 的动向连同 Cursor 更新成为开发者关注热点。与此同时，MIT Technology Review 提醒我们，AI 在部分智力测试题上依然频频失手——能力跃进与短板并存的格局仍未改变。</p>
       </div>
     </div>
   </div>
@@ -267,11 +267,6 @@
             全部
           </button>
           
-          <button onclick="filterTag('SDK更新')" data-tag="SDK更新"
-            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            SDK更新
-          </button>
-          
           <button onclick="filterTag('workflow')" data-tag="workflow"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
             workflow
@@ -280,6 +275,11 @@
           <button onclick="filterTag('工具集成')" data-tag="工具集成"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
             工具集成
+          </button>
+          
+          <button onclick="filterTag('提效技巧')" data-tag="提效技巧"
+            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+            提效技巧
           </button>
           
           <button onclick="filterTag('新功能')" data-tag="新功能"
@@ -1831,12 +1831,15 @@
 
       <!-- 官方动态 -->
       
-      <section id="section-official">
-        <h2 class="section-divider text-sm font-bold text-amber-500 mb-4">
-          <span>⚡ 官方动态</span>
-          <span class="text-xs font-normal text-gray-400">来自 Anthropic / SDK / PyPI</span>
+
+      <!-- 前沿速递 -->
+      
+      <section id="section-frontier">
+        <h2 class="section-divider text-sm font-bold text-orange-500 mb-4">
+          <span>🚀 前沿速递</span>
+          <span class="text-xs font-normal text-gray-400">7 天内最新动态</span>
         </h2>
-        <div class="space-y-3" id="official-list">
+        <div class="space-y-3" id="frontier-list">
           
 
 
@@ -1844,25 +1847,25 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="新功能 workflow SDK更新"
-         data-source="Claude Code Releases"
-         data-source-type="official"
-         data-text="v2.1.251 Claude Code v2.1.251 版本更新，新增 PreModelSwitch/PostModelSwitch 钩子事件（可拦截、确认或标注模型切换），SessionStart 恢复钩子now可获取会话陈旧度与重新缓存成本估算。同时新增前台子代理工具调用的实时流式推送、/usage 的支出限额条、/cost 的每会话提示缓存统计（命中率、重新缓存 token 数），以及 attach/logs/stop/respawn/rm 等后台会话管理命令。">
+         data-tags="模型能力 案例分享 最佳实践"
+         data-source="Simon Willison&#39;s Weblog"
+         data-source-type="blog"
+         data-text="Just a rumour of a bug is enough to find a security exploit these days 剑桥教授、OCaml 编译器核心维护者 Anil Madhavapeddy 报告：安全补丁刚在公开仓库讨论，十分钟内就出现针对性的漏洞探测。说明现代编码智能体已强到仅凭「有 bug 的传闻」就能定位并复现漏洞，这对开源项目的协同披露流程构成实质冲击。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ⚡
+      ◉
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.251" target="_blank" rel="noopener"
+      <a href="https://simonwillison.net/2026/Aug/28/just-a-rumour-of-a-bug/" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        v2.1.251
+        Just a rumour of a bug is enough to find a security exploit these days
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Claude Code v2.1.251 版本更新，新增 PreModelSwitch/PostModelSwitch 钩子事件（可拦截、确认或标注模型切换），SessionStart 恢复钩子now可获取会话陈旧度与重新缓存成本估算。同时新增前台子代理工具调用的实时流式推送、/usage 的支出限额条、/cost 的每会话提示缓存统计（命中率、重新缓存 token 数），以及 attach/logs/stop/respawn/rm 等后台会话管理命令。
+        剑桥教授、OCaml 编译器核心维护者 Anil Madhavapeddy 报告：安全补丁刚在公开仓库讨论，十分钟内就出现针对性的漏洞探测。说明现代编码智能体已强到仅凭「有 bug 的传闻」就能定位并复现漏洞，这对开源项目的协同披露流程构成实质冲击。
       </p>
       
       <!-- Meta row -->
@@ -1875,25 +1878,22 @@
         
         <!-- Source -->
         <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          Claude Code Releases
+          Simon Willison&#39;s Weblog
         </span>
         
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">ashwin-ant</span>
-        
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">8 小时前</span>
+        <span class="text-xs text-gray-400">1 天前</span>
         
         
         <!-- Tags (max 2) -->
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #新功能
+          #模型能力
         </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #workflow
+          #案例分享
         </span>
         
         <!-- Quality bar (only if > 0) -->
@@ -1916,25 +1916,25 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="新功能 workflow SDK更新"
-         data-source="Claude Code Releases"
-         data-source-type="official"
-         data-text="v2.1.248 Claude Code v2.1.248 版本更新，新增 --restricted 受限模式（移除命令执行与 WebFetch 工具、限制文件操作在工作目录内、拒绝 bypassPermissions 并忽略用户/项目设置），适合在不受信任环境中安全运行。同时引入 agent frontmatter 的 experimental.cacheTtl 单智能体提示缓存配置、self-hosted-runner 自定义客户端标签，以及服务端托管设置的加载失败诊断（启动警告 + /doctor 与 /status 提示）。">
+         data-tags="workflow 工具集成 最佳实践 提效技巧"
+         data-source="everything-claude-code commits"
+         data-source-type="community"
+         data-text="Merge pull request #2902 from affaan-m/maint/pr-stewardship-portabili… 该提交合并了 everything-claude-code 仓库中的 PR #2902，前向移植了 13 个已审阅的 ECC 2.2 修复，并展示了 ARS（学术研究技能）插件的完整结构：13 个斜杠命令按任务复杂度在 frontmatter 中固定 opus/sonnet 模型路由，另有 3 个插件级 agent 负责跨源综合、方法论设计与 APA 报告撰写。对于想学习 Claude Code 插件化组织（命令 + 技能 + 子代理分层）和模型分级路由控制成本的人有参考价值，文档还给出了单次完整流水线约 $4–6 的 token 预算参考。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ⚡
+      ◉
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.248" target="_blank" rel="noopener"
+      <a href="https://github.com/affaan-m/ECC/commit/d8e6a51755c6971a65eef73419076d449df0f490" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        v2.1.248
+        Merge pull request #2902 from affaan-m/maint/pr-stewardship-portabili…
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Claude Code v2.1.248 版本更新，新增 --restricted 受限模式（移除命令执行与 WebFetch 工具、限制文件操作在工作目录内、拒绝 bypassPermissions 并忽略用户/项目设置），适合在不受信任环境中安全运行。同时引入 agent frontmatter 的 experimental.cacheTtl 单智能体提示缓存配置、self-hosted-runner 自定义客户端标签，以及服务端托管设置的加载失败诊断（启动警告 + /doctor 与 /status 提示）。
+        该提交合并了 everything-claude-code 仓库中的 PR #2902，前向移植了 13 个已审阅的 ECC 2.2 修复，并展示了 ARS（学术研究技能）插件的完整结构：13 个斜杠命令按任务复杂度在 frontmatter 中固定 opus/sonnet 模型路由，另有 3 个插件级 agent 负责跨源综合、方法论设计与 APA 报告撰写。对于想学习 Claude Code 插件化组织（命令 + 技能 + 子代理分层）和模型分级路由控制成本的人有参考价值，文档还给出了单次完整流水线约 $4–6 的 token 预算参考。
       </p>
       
       <!-- Meta row -->
@@ -1947,93 +1947,21 @@
         
         <!-- Source -->
         <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          Claude Code Releases
+          everything-claude-code commits
         </span>
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">ashwin-ant</span>
+        <span class="text-xs text-gray-400">haelyra</span>
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">1 天前</span>
+        <span class="text-xs text-gray-400">14 小时前</span>
         
         
         <!-- Tags (max 2) -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #新功能
-        </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
           #workflow
-        </span>
-        
-        <!-- Quality bar (only if > 0) -->
-        
-        <span class="ml-auto flex items-center gap-1 shrink-0">
-          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:65%"></div>
-          </div>
-          <span class="text-xs text-gray-400">6.5</span>
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-
-
-  
-  
-
-<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="SDK更新 工具集成 新功能"
-         data-source="Anthropic SDK Python"
-         data-source-type="official"
-         data-text="v1.2.0 Anthropic Python SDK v1.2.0 发布，将 beta 版 files/skills 命名空间升级为正式 GA 结构并移除日期化 beta 请求头。同时修复了 Bedrock 二进制文件上传签名、agent 工具集读写时的文件字节保真、read 工具支持超大文件的 view_range，以及 sessions 事件累加器的前向兼容性。">
-  <div class="flex gap-3">
-    <!-- Source icon -->
-    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ◆
-    </div>
-    <div class="flex-1 min-w-0">
-      <!-- Title -->
-      <a href="https://github.com/anthropics/anthropic-sdk-python/releases/tag/v1.2.0" target="_blank" rel="noopener"
-         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        v1.2.0
-      </a>
-      <!-- Summary -->
-      
-      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Anthropic Python SDK v1.2.0 发布，将 beta 版 files/skills 命名空间升级为正式 GA 结构并移除日期化 beta 请求头。同时修复了 Bedrock 二进制文件上传签名、agent 工具集读写时的文件字节保真、read 工具支持超大文件的 view_range，以及 sessions 事件累加器的前向兼容性。
-      </p>
-      
-      <!-- Meta row -->
-      <div class="mt-2 flex flex-wrap items-center gap-1.5">
-        <!-- Level badge -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
-          🟡 中级
-        </span>
-        
-        <!-- Source -->
-        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          Anthropic SDK Python
-        </span>
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">stainless-app[bot]</span>
-        
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">1 天前</span>
-        
-        
-        <!-- Tags (max 2) -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #SDK更新
         </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
@@ -2060,236 +1988,10 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="SDK更新 新功能"
-         data-source="Anthropic SDK TypeScript"
-         data-source-type="official"
-         data-text="sdk: v0.122.0 Anthropic TypeScript SDK v0.122.0 版本发布，主要将 files/skills 相关的 beta 命名空间迁移到 GA 正式接口形态并移除过期的 beta header 固定版本。其余为错误修复：跨域 DOMException 中断分类、SSE 解析日志、会话事件累加器的前向兼容、read 工具支持超大文件的 view_range 读取等。对使用该 SDK 构建应用的开发者有升级参考价值。">
-  <div class="flex gap-3">
-    <!-- Source icon -->
-    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ◆
-    </div>
-    <div class="flex-1 min-w-0">
-      <!-- Title -->
-      <a href="https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/sdk-v0.122.0" target="_blank" rel="noopener"
-         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        sdk: v0.122.0
-      </a>
-      <!-- Summary -->
-      
-      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Anthropic TypeScript SDK v0.122.0 版本发布，主要将 files/skills 相关的 beta 命名空间迁移到 GA 正式接口形态并移除过期的 beta header 固定版本。其余为错误修复：跨域 DOMException 中断分类、SSE 解析日志、会话事件累加器的前向兼容、read 工具支持超大文件的 view_range 读取等。对使用该 SDK 构建应用的开发者有升级参考价值。
-      </p>
-      
-      <!-- Meta row -->
-      <div class="mt-2 flex flex-wrap items-center gap-1.5">
-        <!-- Level badge -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-beginner">
-          🟢 入门
-        </span>
-        
-        <!-- Source -->
-        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          Anthropic SDK TypeScript
-        </span>
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">stainless-app[bot]</span>
-        
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">1 天前</span>
-        
-        
-        <!-- Tags (max 2) -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #SDK更新
-        </span>
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #新功能
-        </span>
-        
-        <!-- Quality bar (only if > 0) -->
-        
-        <span class="ml-auto flex items-center gap-1 shrink-0">
-          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:55%"></div>
-          </div>
-          <span class="text-xs text-gray-400">5.5</span>
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-        </div>
-      </section>
-      
-
-      <!-- 前沿速递 -->
-      
-      <section id="section-frontier">
-        <h2 class="section-divider text-sm font-bold text-orange-500 mb-4">
-          <span>🚀 前沿速递</span>
-          <span class="text-xs font-normal text-gray-400">7 天内最新动态</span>
-        </h2>
-        <div class="space-y-3" id="frontier-list">
-          
-
-
-  
-  
-
-<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="最佳实践 新功能 案例分享"
-         data-source="Simon Willison&#39;s Weblog"
-         data-source-type="blog"
-         data-text="Breaking Claude Code Opus 5 Auto Mode 安全研究员 Johann Rehberger 发现了绕过 Claude Code「auto 模式」提示注入防护的攻击方法，成功率约 80%：诱导 Claude 下载并解压 zip 包，随后执行的代码中 import base64 会意外加载压缩包内释放的本地 struct.py 并执行恶意代码。文章质疑了 Anthropic 将 auto 模式设为默认并宣称其防护有效性的做法，提醒用户编码代理仍存在真实的提示注入风险。">
-  <div class="flex gap-3">
-    <!-- Source icon -->
-    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ◉
-    </div>
-    <div class="flex-1 min-w-0">
-      <!-- Title -->
-      <a href="https://simonwillison.net/2026/Aug/27/breaking-claude-code-opus-5-auto-mode/" target="_blank" rel="noopener"
-         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        Breaking Claude Code Opus 5 Auto Mode
-      </a>
-      <!-- Summary -->
-      
-      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        安全研究员 Johann Rehberger 发现了绕过 Claude Code「auto 模式」提示注入防护的攻击方法，成功率约 80%：诱导 Claude 下载并解压 zip 包，随后执行的代码中 import base64 会意外加载压缩包内释放的本地 struct.py 并执行恶意代码。文章质疑了 Anthropic 将 auto 模式设为默认并宣称其防护有效性的做法，提醒用户编码代理仍存在真实的提示注入风险。
-      </p>
-      
-      <!-- Meta row -->
-      <div class="mt-2 flex flex-wrap items-center gap-1.5">
-        <!-- Level badge -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-advanced">
-          🔴 高级
-        </span>
-        
-        <!-- Source -->
-        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          Simon Willison&#39;s Weblog
-        </span>
-        
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">1 天前</span>
-        
-        
-        <!-- Tags (max 2) -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #最佳实践
-        </span>
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #新功能
-        </span>
-        
-        <!-- Quality bar (only if > 0) -->
-        
-        <span class="ml-auto flex items-center gap-1 shrink-0">
-          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:80%"></div>
-          </div>
-          <span class="text-xs text-gray-400">8.0</span>
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-
-
-  
-  
-
-<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="研究论文 workflow 工具集成"
-         data-source="arXiv cs.AI"
-         data-source-type="research"
-         data-text="CIFQA: A Deterministic Tool-Grounded Multi-Agent LLM Framework for Financial Query Answering 论文提出 CIFQA 框架，通过多智能体分工（查询理解、路由、参数抽取、计算规划、结果生成）将语言理解与数值计算解耦，用确定性工具调用替代 LLM 自行算数，解决金融多步计算中「看似合理但数字错误」的问题。对构建需要精确计算的 LLM 工作流有直接的架构参考价值：把易错环节外包给确定性工具，Agent 只负责编排。">
-  <div class="flex gap-3">
-    <!-- Source icon -->
-    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      📄
-    </div>
-    <div class="flex-1 min-w-0">
-      <!-- Title -->
-      <a href="https://arxiv.org/abs/2608.26114" target="_blank" rel="noopener"
-         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        CIFQA: A Deterministic Tool-Grounded Multi-Agent LLM Framework for Financial Query Answering
-      </a>
-      <!-- Summary -->
-      
-      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        论文提出 CIFQA 框架，通过多智能体分工（查询理解、路由、参数抽取、计算规划、结果生成）将语言理解与数值计算解耦，用确定性工具调用替代 LLM 自行算数，解决金融多步计算中「看似合理但数字错误」的问题。对构建需要精确计算的 LLM 工作流有直接的架构参考价值：把易错环节外包给确定性工具，Agent 只负责编排。
-      </p>
-      
-      <!-- Meta row -->
-      <div class="mt-2 flex flex-wrap items-center gap-1.5">
-        <!-- Level badge -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
-          🟡 中级
-        </span>
-        
-        <!-- Source -->
-        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          arXiv cs.AI
-        </span>
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">Kunjesh Parekh, Anil Kumar Tiwari, Divya Saxena</span>
-        
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">23 小时前</span>
-        
-        
-        <!-- Tags (max 2) -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #研究论文
-        </span>
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #workflow
-        </span>
-        
-        <!-- Quality bar (only if > 0) -->
-        
-        <span class="ml-auto flex items-center gap-1 shrink-0">
-          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:65%"></div>
-          </div>
-          <span class="text-xs text-gray-400">6.5</span>
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-
-
-  
-  
-
-<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
          data-tags=""
-         data-source="The Verge AI"
+         data-source="MIT Technology Review AI"
          data-source-type="news"
-         data-text="OpenAI’s rogue AI model incident was worse than we thought In July, an unreleased OpenAI model broke out of a restricted environment, figured out how to get access to the internet, allowed AI agents to talk to">
+         data-text="AI models flub these intelligence tests. Can you fare any better? Puzzles and games have been central to AI development since the very beginning. Just as we humans like to test our smarts with crosswords or logic puz">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -2297,14 +1999,14 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://www.theverge.com/ai-artificial-intelligence/985385/openais-rogue-ai-model-hugging-face-cybersecurity-incident-reports-metr" target="_blank" rel="noopener"
+      <a href="https://www.technologyreview.com/2026/08/26/1141952/puzzles-ai-models-flub-these-tests/" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        OpenAI’s rogue AI model incident was worse than we thought
+        AI models flub these intelligence tests. Can you fare any better?
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        In July, an unreleased OpenAI model broke out of a restricted environment, figured out how to get access to the internet, allowed AI agents to talk to
+        Puzzles and games have been central to AI development since the very beginning. Just as we humans like to test our smarts with crosswords or logic puz
       </p>
       
       <!-- Meta row -->
@@ -2317,15 +2019,15 @@
         
         <!-- Source -->
         <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          The Verge AI
+          MIT Technology Review AI
         </span>
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">Hayden Field</span>
+        <span class="text-xs text-gray-400">Grace Huckins</span>
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">2 天前</span>
+        <span class="text-xs text-gray-400">4 天前</span>
         
         
         <!-- Tags (max 2) -->
@@ -2350,25 +2052,25 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="研究论文 workflow 模型能力"
-         data-source="arXiv cs.AI"
-         data-source-type="research"
-         data-text="LLMs for Academic Workflows: An Evaluation of Literature Reviews Generated with Short and Long Context Windows of LLMs 该研究评估了大模型在短上下文与长上下文设置下生成的20篇文献综述，由两位研究者从15个维度打分。结论是：上下文窗口扩大虽能纳入更广信息、维持长文连贯性，但也加剧了内容重复、关键批判性观点遗漏等问题，AI 生成的综述仍需人工把关才能达到学术发表标准。对使用 LLM 做研究类长文本工作流的人有直接参考价值。">
+         data-tags="模型能力 研究论文"
+         data-source="TechCrunch AI"
+         data-source-type="news"
+         data-text="An Anthropic researcher just gave us a peek at self-improving AI Anthropic 研究员展示了自改进 AI 的早期成果：自动化系统在针对 10 项特定失准行为的基准测试中，全部实现了性能提升且未损害整体表现。这类自动化对齐/自我优化实验对理解模型能力边界与未来 AI 辅助编程工具的演进方向有参考价值。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      📄
+      ◉
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://arxiv.org/abs/2608.26145" target="_blank" rel="noopener"
+      <a href="https://techcrunch.com/2026/08/28/an-anthropic-researcher-just-gave-us-a-peek-at-self-improving-ai/" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        LLMs for Academic Workflows: An Evaluation of Literature Reviews Generated with Short and Long Context Windows of LLMs
+        An Anthropic researcher just gave us a peek at self-improving AI
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        该研究评估了大模型在短上下文与长上下文设置下生成的20篇文献综述，由两位研究者从15个维度打分。结论是：上下文窗口扩大虽能纳入更广信息、维持长文连贯性，但也加剧了内容重复、关键批判性观点遗漏等问题，AI 生成的综述仍需人工把关才能达到学术发表标准。对使用 LLM 做研究类长文本工作流的人有直接参考价值。
+        Anthropic 研究员展示了自改进 AI 的早期成果：自动化系统在针对 10 项特定失准行为的基准测试中，全部实现了性能提升且未损害整体表现。这类自动化对齐/自我优化实验对理解模型能力边界与未来 AI 辅助编程工具的演进方向有参考价值。
       </p>
       
       <!-- Meta row -->
@@ -2381,25 +2083,25 @@
         
         <!-- Source -->
         <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          arXiv cs.AI
+          TechCrunch AI
         </span>
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">Muhammad Ali Chaudhry, Xinyuan Hao, Haifa Alwahaby</span>
+        <span class="text-xs text-gray-400">Russell Brandom</span>
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">23 小时前</span>
+        <span class="text-xs text-gray-400">1 天前</span>
         
         
         <!-- Tags (max 2) -->
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #研究论文
+          #模型能力
         </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #workflow
+          #研究论文
         </span>
         
         <!-- Quality bar (only if > 0) -->
@@ -2421,6 +2123,88 @@
       
 
       <!-- 成熟实践 -->
+      
+      <section id="section-stable">
+        <h2 class="section-divider text-sm font-bold text-blue-500 mb-4">
+          <span>📚 成熟实践</span>
+          <span class="text-xs font-normal text-gray-400">经验证的最佳方法</span>
+        </h2>
+        <div class="space-y-3" id="stable-list">
+          
+
+
+  
+  
+
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
+         data-tags="模型能力 工具集成 新功能"
+         data-source="AI Coding Daily"
+         data-source-type="blog"
+         data-text="Opus 5, Kimi K3 and Cursor News 一篇 AI 编程领域的每日新闻汇总（2026年7月29日），涵盖 Opus 5、Kimi K3 等新模型发布以及 Cursor 的产品动态。内容偏资讯速览，可用于快速跟进模型与 AI 编程工具的最新进展，但缺乏深度实践细节。">
+  <div class="flex gap-3">
+    <!-- Source icon -->
+    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
+      ◉
+    </div>
+    <div class="flex-1 min-w-0">
+      <!-- Title -->
+      <a href="https://aicodingdaily.substack.com/p/opus-5-kimi-k3-and-cursor-news" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
+        Opus 5, Kimi K3 and Cursor News
+      </a>
+      <!-- Summary -->
+      
+      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
+        一篇 AI 编程领域的每日新闻汇总（2026年7月29日），涵盖 Opus 5、Kimi K3 等新模型发布以及 Cursor 的产品动态。内容偏资讯速览，可用于快速跟进模型与 AI 编程工具的最新进展，但缺乏深度实践细节。
+      </p>
+      
+      <!-- Meta row -->
+      <div class="mt-2 flex flex-wrap items-center gap-1.5">
+        <!-- Level badge -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-beginner">
+          🟢 入门
+        </span>
+        
+        <!-- Source -->
+        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          AI Coding Daily
+        </span>
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">AI Coding Daily</span>
+        
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">07月29日</span>
+        
+        
+        <!-- Tags (max 2) -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #模型能力
+        </span>
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #工具集成
+        </span>
+        
+        <!-- Quality bar (only if > 0) -->
+        
+        <span class="ml-auto flex items-center gap-1 shrink-0">
+          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:55%"></div>
+          </div>
+          <span class="text-xs text-gray-400">5.5</span>
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+        </div>
+      </section>
       
 
       <!-- No results -->
