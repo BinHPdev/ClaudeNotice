@@ -139,7 +139,7 @@
     </div>
 
     <div class="flex items-center gap-2 ml-auto shrink-0">
-      <span class="hidden md:inline text-xs text-gray-400">2026年08月30日 02:39</span>
+      <span class="hidden md:inline text-xs text-gray-400">2026年08月31日 02:34</span>
       <span class="inline-flex items-center gap-1 bg-green-50 dark:bg-green-900/30 text-green-600 dark:text-green-400 px-2 py-0.5 rounded-full text-xs font-medium">
         ● 每日更新
       </span>
@@ -175,11 +175,11 @@
       <div class="text-xs text-gray-400 mt-0.5">官方动态</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-orange-100 dark:border-orange-900/40 text-center">
-      <div class="text-2xl font-bold text-orange-500">4</div>
+      <div class="text-2xl font-bold text-orange-500">5</div>
       <div class="text-xs text-gray-400 mt-0.5">前沿速递</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-blue-100 dark:border-blue-900/40 text-center">
-      <div class="text-2xl font-bold text-blue-500">1</div>
+      <div class="text-2xl font-bold text-blue-500">0</div>
       <div class="text-xs text-gray-400 mt-0.5">成熟实践</div>
     </div>
   </div>
@@ -191,7 +191,7 @@
       <span class="text-xl mt-0.5 shrink-0">📋</span>
       <div>
         <div class="text-xs font-semibold text-brand-700 dark:text-brand-300 mb-1 uppercase tracking-wide">今日速览</div>
-        <p class="text-sm leading-relaxed text-gray-700 dark:text-gray-300">今日 AI 编程圈焦点集中在安全与自我进化两条主线：Simon Willison 指出如今仅凭一则漏洞传闻就足以让 AI 顺藤摸瓜挖出真实的安全利用链，安全研究的门槛正被急剧压低。Anthropic 研究员则首度揭开自我改进型 AI 的一角，为模型能力的迭代路径提供了新想象空间。模型侧竞争同步升温，Opus 5 与 Kimi K3 的动向连同 Cursor 更新成为开发者关注热点。与此同时，MIT Technology Review 提醒我们，AI 在部分智力测试题上依然频频失手——能力跃进与短板并存的格局仍未改变。</p>
+        <p class="text-sm leading-relaxed text-gray-700 dark:text-gray-300">今日 AI 生态的焦点集中在版权与授权边界：索尼音乐、华纳对 Anthropic 提起诉讼，指控其大规模侵犯知识产权，而 OpenAI 切断 Cursor 访问的事件则再次凸显模型供应链的脆弱性。安全议题同步升温，业界开始强调 AI Agent 的授权必须精确绑定到真正执行的那一个动作，避免审批与实际行为脱节。工程侧，everything-claude-code 在安装流程中引入强制显式 hook 决策，正是这一&#34;不留模糊地带&#34;理念的落地实践。此外，RAG 应用的一线开发经验分享持续为开发者提供实用参考。</p>
       </div>
     </div>
   </div>
@@ -277,16 +277,6 @@
             工具集成
           </button>
           
-          <button onclick="filterTag('提效技巧')" data-tag="提效技巧"
-            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            提效技巧
-          </button>
-          
-          <button onclick="filterTag('新功能')" data-tag="新功能"
-            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            新功能
-          </button>
-          
           <button onclick="filterTag('最佳实践')" data-tag="最佳实践"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
             最佳实践
@@ -295,16 +285,6 @@
           <button onclick="filterTag('案例分享')" data-tag="案例分享"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
             案例分享
-          </button>
-          
-          <button onclick="filterTag('模型能力')" data-tag="模型能力"
-            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            模型能力
-          </button>
-          
-          <button onclick="filterTag('研究论文')" data-tag="研究论文"
-            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            研究论文
           </button>
           
         </div>
@@ -1847,10 +1827,10 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="模型能力 案例分享 最佳实践"
-         data-source="Simon Willison&#39;s Weblog"
+         data-tags="最佳实践 workflow 工具集成"
+         data-source="Hacker Noon AI"
          data-source-type="blog"
-         data-text="Just a rumour of a bug is enough to find a security exploit these days 剑桥教授、OCaml 编译器核心维护者 Anil Madhavapeddy 报告：安全补丁刚在公开仓库讨论，十分钟内就出现针对性的漏洞探测。说明现代编码智能体已强到仅凭「有 bug 的传闻」就能定位并复现漏洞，这对开源项目的协同披露流程构成实质冲击。">
+         data-text="Why AI Agent Approvals Must Bind to the Exact Action That Executes 文章探讨 AI Agent 权限审批的安全设计原则：审批必须绑定到实际执行的那个「规范化动作」本身，而非模糊的意图描述。提出一次性审批、原子化消费和执行回执三种机制，用于防止审批漂移（approved 与 executed 不一致）和重放攻击。对构建带工具调用/自动化执行能力的 Agent 系统有直接的架构参考价值。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -1858,14 +1838,14 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://simonwillison.net/2026/Aug/28/just-a-rumour-of-a-bug/" target="_blank" rel="noopener"
+      <a href="https://hackernoon.com/why-ai-agent-approvals-must-bind-to-the-exact-action-that-executes?source=rss" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        Just a rumour of a bug is enough to find a security exploit these days
+        Why AI Agent Approvals Must Bind to the Exact Action That Executes
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        剑桥教授、OCaml 编译器核心维护者 Anil Madhavapeddy 报告：安全补丁刚在公开仓库讨论，十分钟内就出现针对性的漏洞探测。说明现代编码智能体已强到仅凭「有 bug 的传闻」就能定位并复现漏洞，这对开源项目的协同披露流程构成实质冲击。
+        文章探讨 AI Agent 权限审批的安全设计原则：审批必须绑定到实际执行的那个「规范化动作」本身，而非模糊的意图描述。提出一次性审批、原子化消费和执行回执三种机制，用于防止审批漂移（approved 与 executed 不一致）和重放攻击。对构建带工具调用/自动化执行能力的 Agent 系统有直接的架构参考价值。
       </p>
       
       <!-- Meta row -->
@@ -1878,94 +1858,25 @@
         
         <!-- Source -->
         <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          Simon Willison&#39;s Weblog
+          Hacker Noon AI
         </span>
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">Abraham Esther</span>
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">1 天前</span>
+        <span class="text-xs text-gray-400">3 天前</span>
         
         
         <!-- Tags (max 2) -->
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #模型能力
+          #最佳实践
         </span>
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #案例分享
-        </span>
-        
-        <!-- Quality bar (only if > 0) -->
-        
-        <span class="ml-auto flex items-center gap-1 shrink-0">
-          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:70%"></div>
-          </div>
-          <span class="text-xs text-gray-400">7.0</span>
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-
-
-  
-  
-
-<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="workflow 工具集成 最佳实践 提效技巧"
-         data-source="everything-claude-code commits"
-         data-source-type="community"
-         data-text="Merge pull request #2902 from affaan-m/maint/pr-stewardship-portabili… 该提交合并了 everything-claude-code 仓库中的 PR #2902，前向移植了 13 个已审阅的 ECC 2.2 修复，并展示了 ARS（学术研究技能）插件的完整结构：13 个斜杠命令按任务复杂度在 frontmatter 中固定 opus/sonnet 模型路由，另有 3 个插件级 agent 负责跨源综合、方法论设计与 APA 报告撰写。对于想学习 Claude Code 插件化组织（命令 + 技能 + 子代理分层）和模型分级路由控制成本的人有参考价值，文档还给出了单次完整流水线约 $4–6 的 token 预算参考。">
-  <div class="flex gap-3">
-    <!-- Source icon -->
-    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ◉
-    </div>
-    <div class="flex-1 min-w-0">
-      <!-- Title -->
-      <a href="https://github.com/affaan-m/ECC/commit/d8e6a51755c6971a65eef73419076d449df0f490" target="_blank" rel="noopener"
-         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        Merge pull request #2902 from affaan-m/maint/pr-stewardship-portabili…
-      </a>
-      <!-- Summary -->
-      
-      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        该提交合并了 everything-claude-code 仓库中的 PR #2902，前向移植了 13 个已审阅的 ECC 2.2 修复，并展示了 ARS（学术研究技能）插件的完整结构：13 个斜杠命令按任务复杂度在 frontmatter 中固定 opus/sonnet 模型路由，另有 3 个插件级 agent 负责跨源综合、方法论设计与 APA 报告撰写。对于想学习 Claude Code 插件化组织（命令 + 技能 + 子代理分层）和模型分级路由控制成本的人有参考价值，文档还给出了单次完整流水线约 $4–6 的 token 预算参考。
-      </p>
-      
-      <!-- Meta row -->
-      <div class="mt-2 flex flex-wrap items-center gap-1.5">
-        <!-- Level badge -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
-          🟡 中级
-        </span>
-        
-        <!-- Source -->
-        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          everything-claude-code commits
-        </span>
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">haelyra</span>
-        
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">14 小时前</span>
-        
-        
-        <!-- Tags (max 2) -->
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
           #workflow
-        </span>
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #工具集成
         </span>
         
         <!-- Quality bar (only if > 0) -->
@@ -1989,9 +1900,9 @@
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
          data-tags=""
-         data-source="MIT Technology Review AI"
+         data-source="TechCrunch AI"
          data-source-type="news"
-         data-text="AI models flub these intelligence tests. Can you fare any better? Puzzles and games have been central to AI development since the very beginning. Just as we humans like to test our smarts with crosswords or logic puz">
+         data-text="Sony Music, Warner sue Anthropic, alleging a “brazen campaign” of intellectual property theft This latest lawsuit is particularly broad and homes in on accusations of illegal piracy.">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -1999,14 +1910,14 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://www.technologyreview.com/2026/08/26/1141952/puzzles-ai-models-flub-these-tests/" target="_blank" rel="noopener"
+      <a href="https://techcrunch.com/2026/08/29/sony-music-warner-sue-anthropic-alleging-a-brazen-campaign-of-intellectual-property-theft/" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        AI models flub these intelligence tests. Can you fare any better?
+        Sony Music, Warner sue Anthropic, alleging a “brazen campaign” of intellectual property theft
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Puzzles and games have been central to AI development since the very beginning. Just as we humans like to test our smarts with crosswords or logic puz
+        This latest lawsuit is particularly broad and homes in on accusations of illegal piracy.
       </p>
       
       <!-- Meta row -->
@@ -2019,15 +1930,15 @@
         
         <!-- Source -->
         <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          MIT Technology Review AI
+          TechCrunch AI
         </span>
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">Grace Huckins</span>
+        <span class="text-xs text-gray-400">Kirsten Korosec</span>
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">4 天前</span>
+        <span class="text-xs text-gray-400">1 天前</span>
         
         
         <!-- Tags (max 2) -->
@@ -2052,10 +1963,10 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="模型能力 研究论文"
-         data-source="TechCrunch AI"
-         data-source-type="news"
-         data-text="An Anthropic researcher just gave us a peek at self-improving AI Anthropic 研究员展示了自改进 AI 的早期成果：自动化系统在针对 10 项特定失准行为的基准测试中，全部实现了性能提升且未损害整体表现。这类自动化对齐/自我优化实验对理解模型能力边界与未来 AI 辅助编程工具的演进方向有参考价值。">
+         data-tags="工具集成 最佳实践 workflow"
+         data-source="everything-claude-code commits"
+         data-source-type="community"
+         data-text="feat(install): require an explicit hook decision at the apply layer 该 commit 为 everything-claude-code 安装器的 apply 层增加了强制性的 hook 授权决策：任何路径（包括直接调用 install-apply）在计划实例化 hook 运行时前，都必须披露六类 hook 能力组并由调用方显式选择 --enable-hooks 或 --no-hooks。这体现了 Claude Code 插件/hook 生态中安全与知情同意的工程实践，即把权限门禁下沉到执行层而非仅在向导交互层。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -2063,14 +1974,14 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://techcrunch.com/2026/08/28/an-anthropic-researcher-just-gave-us-a-peek-at-self-improving-ai/" target="_blank" rel="noopener"
+      <a href="https://github.com/affaan-m/ECC/commit/6aaa41e02847b153086fb72c68f0652b569280ec" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        An Anthropic researcher just gave us a peek at self-improving AI
+        feat(install): require an explicit hook decision at the apply layer
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Anthropic 研究员展示了自改进 AI 的早期成果：自动化系统在针对 10 项特定失准行为的基准测试中，全部实现了性能提升且未损害整体表现。这类自动化对齐/自我优化实验对理解模型能力边界与未来 AI 辅助编程工具的演进方向有参考价值。
+        该 commit 为 everything-claude-code 安装器的 apply 层增加了强制性的 hook 授权决策：任何路径（包括直接调用 install-apply）在计划实例化 hook 运行时前，都必须披露六类 hook 能力组并由调用方显式选择 --enable-hooks 或 --no-hooks。这体现了 Claude Code 插件/hook 生态中安全与知情同意的工程实践，即把权限门禁下沉到执行层而非仅在向导交互层。
       </p>
       
       <!-- Meta row -->
@@ -2083,25 +1994,25 @@
         
         <!-- Source -->
         <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          TechCrunch AI
+          everything-claude-code commits
         </span>
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">Russell Brandom</span>
+        <span class="text-xs text-gray-400">haelyra</span>
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">1 天前</span>
+        <span class="text-xs text-gray-400">15 小时前</span>
         
         
         <!-- Tags (max 2) -->
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #模型能力
+          #工具集成
         </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #研究论文
+          #最佳实践
         </span>
         
         <!-- Quality bar (only if > 0) -->
@@ -2118,29 +2029,16 @@
   </div>
 </article>
 
-        </div>
-      </section>
-      
-
-      <!-- 成熟实践 -->
-      
-      <section id="section-stable">
-        <h2 class="section-divider text-sm font-bold text-blue-500 mb-4">
-          <span>📚 成熟实践</span>
-          <span class="text-xs font-normal text-gray-400">经验证的最佳方法</span>
-        </h2>
-        <div class="space-y-3" id="stable-list">
-          
 
 
   
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="模型能力 工具集成 新功能"
-         data-source="AI Coding Daily"
+         data-tags="最佳实践 workflow 案例分享"
+         data-source="Hacker Noon AI"
          data-source-type="blog"
-         data-text="Opus 5, Kimi K3 and Cursor News 一篇 AI 编程领域的每日新闻汇总（2026年7月29日），涵盖 Opus 5、Kimi K3 等新模型发布以及 Cursor 的产品动态。内容偏资讯速览，可用于快速跟进模型与 AI 编程工具的最新进展，但缺乏深度实践细节。">
+         data-text="What Building My First RAG Application Taught Me 作者分享首次构建 RAG 应用的经验教训：做出一个 demo 很容易，但要做到可靠则需要在分块、检索、排序、上下文组装、评估和失败处理等环节持续打磨。属于 LLM 工程实践类的入门级踩坑总结，对刚开始搭建检索增强系统的开发者有参考价值。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -2148,14 +2046,14 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://aicodingdaily.substack.com/p/opus-5-kimi-k3-and-cursor-news" target="_blank" rel="noopener"
+      <a href="https://hackernoon.com/what-building-my-first-rag-application-taught-me?source=rss" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        Opus 5, Kimi K3 and Cursor News
+        What Building My First RAG Application Taught Me
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        一篇 AI 编程领域的每日新闻汇总（2026年7月29日），涵盖 Opus 5、Kimi K3 等新模型发布以及 Cursor 的产品动态。内容偏资讯速览，可用于快速跟进模型与 AI 编程工具的最新进展，但缺乏深度实践细节。
+        作者分享首次构建 RAG 应用的经验教训：做出一个 demo 很容易，但要做到可靠则需要在分块、检索、排序、上下文组装、评估和失败处理等环节持续打磨。属于 LLM 工程实践类的入门级踩坑总结，对刚开始搭建检索增强系统的开发者有参考价值。
       </p>
       
       <!-- Meta row -->
@@ -2168,25 +2066,25 @@
         
         <!-- Source -->
         <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          AI Coding Daily
+          Hacker Noon AI
         </span>
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">AI Coding Daily</span>
+        <span class="text-xs text-gray-400">Patila Ismailova</span>
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">07月29日</span>
+        <span class="text-xs text-gray-400">4 天前</span>
         
         
         <!-- Tags (max 2) -->
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #模型能力
+          #最佳实践
         </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #工具集成
+          #workflow
         </span>
         
         <!-- Quality bar (only if > 0) -->
@@ -2203,8 +2101,80 @@
   </div>
 </article>
 
+
+
+  
+  
+
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
+         data-tags="工具集成 案例分享"
+         data-source="Latent Space"
+         data-source-type="blog"
+         data-text="[AINews] OpenAI shuts off Cursor OpenAI 切断了 Cursor 对其模型的访问，报道将此归因于 Elon Musk 与 Sam Altman 之间冲突的连锁后果。该事件涉及 AI 编程工具的模型供应链风险，对依赖第三方模型 API 的编码工具用户有参考意义。">
+  <div class="flex gap-3">
+    <!-- Source icon -->
+    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
+      ◉
+    </div>
+    <div class="flex-1 min-w-0">
+      <!-- Title -->
+      <a href="https://www.latent.space/p/ainews-openai-shuts-off-cursor" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
+        [AINews] OpenAI shuts off Cursor
+      </a>
+      <!-- Summary -->
+      
+      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
+        OpenAI 切断了 Cursor 对其模型的访问，报道将此归因于 Elon Musk 与 Sam Altman 之间冲突的连锁后果。该事件涉及 AI 编程工具的模型供应链风险，对依赖第三方模型 API 的编码工具用户有参考意义。
+      </p>
+      
+      <!-- Meta row -->
+      <div class="mt-2 flex flex-wrap items-center gap-1.5">
+        <!-- Level badge -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-beginner">
+          🟢 入门
+        </span>
+        
+        <!-- Source -->
+        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          Latent Space
+        </span>
+        
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">2 天前</span>
+        
+        
+        <!-- Tags (max 2) -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #工具集成
+        </span>
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #案例分享
+        </span>
+        
+        <!-- Quality bar (only if > 0) -->
+        
+        <span class="ml-auto flex items-center gap-1 shrink-0">
+          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:50%"></div>
+          </div>
+          <span class="text-xs text-gray-400">5.0</span>
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
         </div>
       </section>
+      
+
+      <!-- 成熟实践 -->
       
 
       <!-- No results -->
