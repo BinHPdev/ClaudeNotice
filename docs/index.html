@@ -139,7 +139,7 @@
     </div>
 
     <div class="flex items-center gap-2 ml-auto shrink-0">
-      <span class="hidden md:inline text-xs text-gray-400">2026年08月31日 02:34</span>
+      <span class="hidden md:inline text-xs text-gray-400">2026年09月01日 02:50</span>
       <span class="inline-flex items-center gap-1 bg-green-50 dark:bg-green-900/30 text-green-600 dark:text-green-400 px-2 py-0.5 rounded-full text-xs font-medium">
         ● 每日更新
       </span>
@@ -163,7 +163,7 @@
   <!-- Stats bar -->
   <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 mb-6">
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-gray-100 dark:border-gray-800 text-center">
-      <div class="text-2xl font-bold text-brand-600">5</div>
+      <div class="text-2xl font-bold text-brand-600">2</div>
       <div class="text-xs text-gray-400 mt-0.5">今日收录</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-rose-100 dark:border-rose-900/40 text-center">
@@ -171,11 +171,11 @@
       <div class="text-xs text-gray-400 mt-0.5">经典置顶</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-amber-100 dark:border-amber-900/40 text-center">
-      <div class="text-2xl font-bold text-amber-500">0</div>
+      <div class="text-2xl font-bold text-amber-500">1</div>
       <div class="text-xs text-gray-400 mt-0.5">官方动态</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-orange-100 dark:border-orange-900/40 text-center">
-      <div class="text-2xl font-bold text-orange-500">5</div>
+      <div class="text-2xl font-bold text-orange-500">1</div>
       <div class="text-xs text-gray-400 mt-0.5">前沿速递</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-blue-100 dark:border-blue-900/40 text-center">
@@ -191,7 +191,7 @@
       <span class="text-xl mt-0.5 shrink-0">📋</span>
       <div>
         <div class="text-xs font-semibold text-brand-700 dark:text-brand-300 mb-1 uppercase tracking-wide">今日速览</div>
-        <p class="text-sm leading-relaxed text-gray-700 dark:text-gray-300">今日 AI 生态的焦点集中在版权与授权边界：索尼音乐、华纳对 Anthropic 提起诉讼，指控其大规模侵犯知识产权，而 OpenAI 切断 Cursor 访问的事件则再次凸显模型供应链的脆弱性。安全议题同步升温，业界开始强调 AI Agent 的授权必须精确绑定到真正执行的那一个动作，避免审批与实际行为脱节。工程侧，everything-claude-code 在安装流程中引入强制显式 hook 决策，正是这一&#34;不留模糊地带&#34;理念的落地实践。此外，RAG 应用的一线开发经验分享持续为开发者提供实用参考。</p>
+        <p class="text-sm leading-relaxed text-gray-700 dark:text-gray-300">今日 Claude Code 生态动态相对平静，主要看点集中在工具链的常规迭代与外部行业观察两条线上。Anthropic 官方 Python SDK 发布 v1.1.0 版本，延续了稳定的小步快跑更新节奏，开发者可关注其接口变更与兼容性说明。行业侧，The Verge 报道音乐人自发追查 AI 造假与投机者，反映出内容真实性与 AI 溯源问题正持续升温。整体来看，工具成熟度提升与 AI 内容治理压力并行，构成当前生态的两大主线。</p>
       </div>
     </div>
   </div>
@@ -267,9 +267,9 @@
             全部
           </button>
           
-          <button onclick="filterTag('workflow')" data-tag="workflow"
+          <button onclick="filterTag('SDK更新')" data-tag="SDK更新"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            workflow
+            SDK更新
           </button>
           
           <button onclick="filterTag('工具集成')" data-tag="工具集成"
@@ -277,14 +277,9 @@
             工具集成
           </button>
           
-          <button onclick="filterTag('最佳实践')" data-tag="最佳实践"
+          <button onclick="filterTag('新功能')" data-tag="新功能"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            最佳实践
-          </button>
-          
-          <button onclick="filterTag('案例分享')" data-tag="案例分享"
-            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            案例分享
+            新功能
           </button>
           
         </div>
@@ -1811,15 +1806,12 @@
 
       <!-- 官方动态 -->
       
-
-      <!-- 前沿速递 -->
-      
-      <section id="section-frontier">
-        <h2 class="section-divider text-sm font-bold text-orange-500 mb-4">
-          <span>🚀 前沿速递</span>
-          <span class="text-xs font-normal text-gray-400">7 天内最新动态</span>
+      <section id="section-official">
+        <h2 class="section-divider text-sm font-bold text-amber-500 mb-4">
+          <span>⚡ 官方动态</span>
+          <span class="text-xs font-normal text-gray-400">来自 Anthropic / SDK / PyPI</span>
         </h2>
-        <div class="space-y-3" id="frontier-list">
+        <div class="space-y-3" id="official-list">
           
 
 
@@ -1827,97 +1819,25 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="最佳实践 workflow 工具集成"
-         data-source="Hacker Noon AI"
-         data-source-type="blog"
-         data-text="Why AI Agent Approvals Must Bind to the Exact Action That Executes 文章探讨 AI Agent 权限审批的安全设计原则：审批必须绑定到实际执行的那个「规范化动作」本身，而非模糊的意图描述。提出一次性审批、原子化消费和执行回执三种机制，用于防止审批漂移（approved 与 executed 不一致）和重放攻击。对构建带工具调用/自动化执行能力的 Agent 系统有直接的架构参考价值。">
+         data-tags="SDK更新 新功能 工具集成"
+         data-source="Anthropic SDK Python"
+         data-source-type="official"
+         data-text="v1.1.0 Anthropic Python SDK v1.1.0 版本发布，新增 thinking 显示模式（beta）、补充 anthropic-beta 参数值，并支持 Organization API 端点。同时修复了工具运行器在 pause_turn 时中断的问题，对使用 SDK 构建 Agent 工作流的开发者有直接影响。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ◉
+      ◆
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://hackernoon.com/why-ai-agent-approvals-must-bind-to-the-exact-action-that-executes?source=rss" target="_blank" rel="noopener"
+      <a href="https://github.com/anthropics/anthropic-sdk-python/releases/tag/v1.1.0" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        Why AI Agent Approvals Must Bind to the Exact Action That Executes
+        v1.1.0
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        文章探讨 AI Agent 权限审批的安全设计原则：审批必须绑定到实际执行的那个「规范化动作」本身，而非模糊的意图描述。提出一次性审批、原子化消费和执行回执三种机制，用于防止审批漂移（approved 与 executed 不一致）和重放攻击。对构建带工具调用/自动化执行能力的 Agent 系统有直接的架构参考价值。
-      </p>
-      
-      <!-- Meta row -->
-      <div class="mt-2 flex flex-wrap items-center gap-1.5">
-        <!-- Level badge -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
-          🟡 中级
-        </span>
-        
-        <!-- Source -->
-        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          Hacker Noon AI
-        </span>
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">Abraham Esther</span>
-        
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">3 天前</span>
-        
-        
-        <!-- Tags (max 2) -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #最佳实践
-        </span>
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #workflow
-        </span>
-        
-        <!-- Quality bar (only if > 0) -->
-        
-        <span class="ml-auto flex items-center gap-1 shrink-0">
-          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:65%"></div>
-          </div>
-          <span class="text-xs text-gray-400">6.5</span>
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-
-
-  
-  
-
-<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags=""
-         data-source="TechCrunch AI"
-         data-source-type="news"
-         data-text="Sony Music, Warner sue Anthropic, alleging a “brazen campaign” of intellectual property theft This latest lawsuit is particularly broad and homes in on accusations of illegal piracy.">
-  <div class="flex gap-3">
-    <!-- Source icon -->
-    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ◉
-    </div>
-    <div class="flex-1 min-w-0">
-      <!-- Title -->
-      <a href="https://techcrunch.com/2026/08/29/sony-music-warner-sue-anthropic-alleging-a-brazen-campaign-of-intellectual-property-theft/" target="_blank" rel="noopener"
-         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        Sony Music, Warner sue Anthropic, alleging a “brazen campaign” of intellectual property theft
-      </a>
-      <!-- Summary -->
-      
-      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        This latest lawsuit is particularly broad and homes in on accusations of illegal piracy.
+        Anthropic Python SDK v1.1.0 版本发布，新增 thinking 显示模式（beta）、补充 anthropic-beta 参数值，并支持 Organization API 端点。同时修复了工具运行器在 pause_turn 时中断的问题，对使用 SDK 构建 Agent 工作流的开发者有直接影响。
       </p>
       
       <!-- Meta row -->
@@ -1930,89 +1850,25 @@
         
         <!-- Source -->
         <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          TechCrunch AI
+          Anthropic SDK Python
         </span>
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">Kirsten Korosec</span>
+        <span class="text-xs text-gray-400">stainless-app[bot]</span>
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">1 天前</span>
-        
-        
-        <!-- Tags (max 2) -->
-        
-        <!-- Quality bar (only if > 0) -->
-        
-        <span class="ml-auto flex items-center gap-1 shrink-0">
-          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:62%"></div>
-          </div>
-          <span class="text-xs text-gray-400">6.2</span>
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-
-
-  
-  
-
-<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="工具集成 最佳实践 workflow"
-         data-source="everything-claude-code commits"
-         data-source-type="community"
-         data-text="feat(install): require an explicit hook decision at the apply layer 该 commit 为 everything-claude-code 安装器的 apply 层增加了强制性的 hook 授权决策：任何路径（包括直接调用 install-apply）在计划实例化 hook 运行时前，都必须披露六类 hook 能力组并由调用方显式选择 --enable-hooks 或 --no-hooks。这体现了 Claude Code 插件/hook 生态中安全与知情同意的工程实践，即把权限门禁下沉到执行层而非仅在向导交互层。">
-  <div class="flex gap-3">
-    <!-- Source icon -->
-    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ◉
-    </div>
-    <div class="flex-1 min-w-0">
-      <!-- Title -->
-      <a href="https://github.com/affaan-m/ECC/commit/6aaa41e02847b153086fb72c68f0652b569280ec" target="_blank" rel="noopener"
-         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        feat(install): require an explicit hook decision at the apply layer
-      </a>
-      <!-- Summary -->
-      
-      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        该 commit 为 everything-claude-code 安装器的 apply 层增加了强制性的 hook 授权决策：任何路径（包括直接调用 install-apply）在计划实例化 hook 运行时前，都必须披露六类 hook 能力组并由调用方显式选择 --enable-hooks 或 --no-hooks。这体现了 Claude Code 插件/hook 生态中安全与知情同意的工程实践，即把权限门禁下沉到执行层而非仅在向导交互层。
-      </p>
-      
-      <!-- Meta row -->
-      <div class="mt-2 flex flex-wrap items-center gap-1.5">
-        <!-- Level badge -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-beginner">
-          🟢 入门
-        </span>
-        
-        <!-- Source -->
-        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          everything-claude-code commits
-        </span>
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">haelyra</span>
-        
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">15 小时前</span>
+        <span class="text-xs text-gray-400">5 天前</span>
         
         
         <!-- Tags (max 2) -->
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #工具集成
+          #SDK更新
         </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #最佳实践
+          #新功能
         </span>
         
         <!-- Quality bar (only if > 0) -->
@@ -2029,16 +1885,29 @@
   </div>
 </article>
 
+        </div>
+      </section>
+      
+
+      <!-- 前沿速递 -->
+      
+      <section id="section-frontier">
+        <h2 class="section-divider text-sm font-bold text-orange-500 mb-4">
+          <span>🚀 前沿速递</span>
+          <span class="text-xs font-normal text-gray-400">7 天内最新动态</span>
+        </h2>
+        <div class="space-y-3" id="frontier-list">
+          
 
 
   
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="最佳实践 workflow 案例分享"
-         data-source="Hacker Noon AI"
-         data-source-type="blog"
-         data-text="What Building My First RAG Application Taught Me 作者分享首次构建 RAG 应用的经验教训：做出一个 demo 很容易，但要做到可靠则需要在分块、检索、排序、上下文组装、评估和失败处理等环节持续打磨。属于 LLM 工程实践类的入门级踩坑总结，对刚开始搭建检索增强系统的开发者有参考价值。">
+         data-tags=""
+         data-source="The Verge AI"
+         data-source-type="news"
+         data-text="Musicians-turned-detectives are hunting for AI grifters As audio-focused generative tools and platforms have gotten more sophisticated, the internet has become increasingly filled with AI-generated music wh">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -2046,14 +1915,14 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://hackernoon.com/what-building-my-first-rag-application-taught-me?source=rss" target="_blank" rel="noopener"
+      <a href="https://www.theverge.com/entertainment/985866/h4rris-nihil-young-edm-suno-ai" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        What Building My First RAG Application Taught Me
+        Musicians-turned-detectives are hunting for AI grifters
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        作者分享首次构建 RAG 应用的经验教训：做出一个 demo 很容易，但要做到可靠则需要在分块、检索、排序、上下文组装、评估和失败处理等环节持续打磨。属于 LLM 工程实践类的入门级踩坑总结，对刚开始搭建检索增强系统的开发者有参考价值。
+        As audio-focused generative tools and platforms have gotten more sophisticated, the internet has become increasingly filled with AI-generated music wh
       </p>
       
       <!-- Meta row -->
@@ -2066,80 +1935,11 @@
         
         <!-- Source -->
         <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          Hacker Noon AI
+          The Verge AI
         </span>
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">Patila Ismailova</span>
-        
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">4 天前</span>
-        
-        
-        <!-- Tags (max 2) -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #最佳实践
-        </span>
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #workflow
-        </span>
-        
-        <!-- Quality bar (only if > 0) -->
-        
-        <span class="ml-auto flex items-center gap-1 shrink-0">
-          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:55%"></div>
-          </div>
-          <span class="text-xs text-gray-400">5.5</span>
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-
-
-  
-  
-
-<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="工具集成 案例分享"
-         data-source="Latent Space"
-         data-source-type="blog"
-         data-text="[AINews] OpenAI shuts off Cursor OpenAI 切断了 Cursor 对其模型的访问，报道将此归因于 Elon Musk 与 Sam Altman 之间冲突的连锁后果。该事件涉及 AI 编程工具的模型供应链风险，对依赖第三方模型 API 的编码工具用户有参考意义。">
-  <div class="flex gap-3">
-    <!-- Source icon -->
-    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ◉
-    </div>
-    <div class="flex-1 min-w-0">
-      <!-- Title -->
-      <a href="https://www.latent.space/p/ainews-openai-shuts-off-cursor" target="_blank" rel="noopener"
-         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        [AINews] OpenAI shuts off Cursor
-      </a>
-      <!-- Summary -->
-      
-      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        OpenAI 切断了 Cursor 对其模型的访问，报道将此归因于 Elon Musk 与 Sam Altman 之间冲突的连锁后果。该事件涉及 AI 编程工具的模型供应链风险，对依赖第三方模型 API 的编码工具用户有参考意义。
-      </p>
-      
-      <!-- Meta row -->
-      <div class="mt-2 flex flex-wrap items-center gap-1.5">
-        <!-- Level badge -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-beginner">
-          🟢 入门
-        </span>
-        
-        <!-- Source -->
-        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          Latent Space
-        </span>
+        <span class="text-xs text-gray-400">Charles Pulliam-Moore</span>
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
@@ -2148,21 +1948,13 @@
         
         <!-- Tags (max 2) -->
         
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #工具集成
-        </span>
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #案例分享
-        </span>
-        
         <!-- Quality bar (only if > 0) -->
         
         <span class="ml-auto flex items-center gap-1 shrink-0">
           <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:50%"></div>
+            <div class="score-bar" style="width:62%"></div>
           </div>
-          <span class="text-xs text-gray-400">5.0</span>
+          <span class="text-xs text-gray-400">6.2</span>
         </span>
         
       </div>
