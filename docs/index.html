@@ -139,7 +139,7 @@
     </div>
 
     <div class="flex items-center gap-2 ml-auto shrink-0">
-      <span class="hidden md:inline text-xs text-gray-400">2026年09月01日 02:50</span>
+      <span class="hidden md:inline text-xs text-gray-400">2026年09月02日 02:11</span>
       <span class="inline-flex items-center gap-1 bg-green-50 dark:bg-green-900/30 text-green-600 dark:text-green-400 px-2 py-0.5 rounded-full text-xs font-medium">
         ● 每日更新
       </span>
@@ -163,7 +163,7 @@
   <!-- Stats bar -->
   <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 mb-6">
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-gray-100 dark:border-gray-800 text-center">
-      <div class="text-2xl font-bold text-brand-600">2</div>
+      <div class="text-2xl font-bold text-brand-600">8</div>
       <div class="text-xs text-gray-400 mt-0.5">今日收录</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-rose-100 dark:border-rose-900/40 text-center">
@@ -171,11 +171,11 @@
       <div class="text-xs text-gray-400 mt-0.5">经典置顶</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-amber-100 dark:border-amber-900/40 text-center">
-      <div class="text-2xl font-bold text-amber-500">1</div>
+      <div class="text-2xl font-bold text-amber-500">5</div>
       <div class="text-xs text-gray-400 mt-0.5">官方动态</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-orange-100 dark:border-orange-900/40 text-center">
-      <div class="text-2xl font-bold text-orange-500">1</div>
+      <div class="text-2xl font-bold text-orange-500">3</div>
       <div class="text-xs text-gray-400 mt-0.5">前沿速递</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-blue-100 dark:border-blue-900/40 text-center">
@@ -191,7 +191,7 @@
       <span class="text-xl mt-0.5 shrink-0">📋</span>
       <div>
         <div class="text-xs font-semibold text-brand-700 dark:text-brand-300 mb-1 uppercase tracking-wide">今日速览</div>
-        <p class="text-sm leading-relaxed text-gray-700 dark:text-gray-300">今日 Claude Code 生态动态相对平静，主要看点集中在工具链的常规迭代与外部行业观察两条线上。Anthropic 官方 Python SDK 发布 v1.1.0 版本，延续了稳定的小步快跑更新节奏，开发者可关注其接口变更与兼容性说明。行业侧，The Verge 报道音乐人自发追查 AI 造假与投机者，反映出内容真实性与 AI 溯源问题正持续升温。整体来看，工具成熟度提升与 AI 内容治理压力并行，构成当前生态的两大主线。</p>
+        <p class="text-sm leading-relaxed text-gray-700 dark:text-gray-300">Anthropic 今日正式发布 Claude Fable 5.1，官方称其在智能体工作负载上成本最多降低 45%，限制也更为宽松，配套的 claude-api skill、Python SDK v1.3.0 与 TypeScript SDK v0.123.0 已同步适配新模型及 Managed Agent 能力。Claude Code 亦迭代至 v2.1.257，延续高频更新节奏。与此同时，OpenAI 发布&#34;Path to Astra&#34;阐述前沿能力与安全防护路线，并探讨 AI 原生企业如何将工作流转化为运营能力。整体来看，模型降价与智能体基础设施完善正成为本周 AI 编程领域的核心趋势。</p>
       </div>
     </div>
   </div>
@@ -272,6 +272,11 @@
             SDK更新
           </button>
           
+          <button onclick="filterTag('workflow')" data-tag="workflow"
+            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+            workflow
+          </button>
+          
           <button onclick="filterTag('工具集成')" data-tag="工具集成"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
             工具集成
@@ -280,6 +285,21 @@
           <button onclick="filterTag('新功能')" data-tag="新功能"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
             新功能
+          </button>
+          
+          <button onclick="filterTag('最佳实践')" data-tag="最佳实践"
+            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+            最佳实践
+          </button>
+          
+          <button onclick="filterTag('案例分享')" data-tag="案例分享"
+            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+            案例分享
+          </button>
+          
+          <button onclick="filterTag('模型能力')" data-tag="模型能力"
+            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+            模型能力
           </button>
           
         </div>
@@ -1819,10 +1839,151 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="SDK更新 新功能 工具集成"
+         data-tags="新功能 模型能力 SDK更新"
+         data-source="Claude Code Releases"
+         data-source-type="official"
+         data-text="v2.1.257 Claude Code v2.1.257 版本发布，引入 Claude Fable 5.1 作为默认 Fable 模型（1M 上下文，$10/$50 每百万 token，缓存读取 $0.25）。新增时间格式与时区设置、auto 模式下的 Containment Escape 安全规则（阻止云元数据凭证获取与跨租户访问的自动批准）、CLAUDE_CODE_SUBAGENT_MODEL_FORCE 环境变量强制统一子代理模型，以及 /effort 会话级 effort 切换和 /doctor 沙箱过期警告。">
+  <div class="flex gap-3">
+    <!-- Source icon -->
+    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
+      ⚡
+    </div>
+    <div class="flex-1 min-w-0">
+      <!-- Title -->
+      <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.257" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
+        v2.1.257
+      </a>
+      <!-- Summary -->
+      
+      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
+        Claude Code v2.1.257 版本发布，引入 Claude Fable 5.1 作为默认 Fable 模型（1M 上下文，$10/$50 每百万 token，缓存读取 $0.25）。新增时间格式与时区设置、auto 模式下的 Containment Escape 安全规则（阻止云元数据凭证获取与跨租户访问的自动批准）、CLAUDE_CODE_SUBAGENT_MODEL_FORCE 环境变量强制统一子代理模型，以及 /effort 会话级 effort 切换和 /doctor 沙箱过期警告。
+      </p>
+      
+      <!-- Meta row -->
+      <div class="mt-2 flex flex-wrap items-center gap-1.5">
+        <!-- Level badge -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
+          🟡 中级
+        </span>
+        
+        <!-- Source -->
+        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          Claude Code Releases
+        </span>
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">ashwin-ant</span>
+        
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">16 小时前</span>
+        
+        
+        <!-- Tags (max 2) -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #新功能
+        </span>
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #模型能力
+        </span>
+        
+        <!-- Quality bar (only if > 0) -->
+        
+        <span class="ml-auto flex items-center gap-1 shrink-0">
+          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:75%"></div>
+          </div>
+          <span class="text-xs text-gray-400">7.5</span>
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+  
+
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
+         data-tags="模型能力 新功能"
+         data-source="OpenAI 官方博客"
+         data-source-type="official"
+         data-text="Path to Astra: critical capabilities and frontier safeguards OpenAI 发布 Astra 模型，这是首个在 Preparedness Framework 下达到「Critical」网络安全能力阈值的模型，并为此配备了更强的发布安全防护措施。文章揭示了前沿模型能力跃升与安全治理之间的权衡，对关注 AI 编程/安全能力边界的开发者具有参考意义，但与 Claude Code 具体使用实践关联较弱。">
+  <div class="flex gap-3">
+    <!-- Source icon -->
+    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
+      ○
+    </div>
+    <div class="flex-1 min-w-0">
+      <!-- Title -->
+      <a href="https://openai.com/index/path-to-astra" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
+        Path to Astra: critical capabilities and frontier safeguards
+      </a>
+      <!-- Summary -->
+      
+      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
+        OpenAI 发布 Astra 模型，这是首个在 Preparedness Framework 下达到「Critical」网络安全能力阈值的模型，并为此配备了更强的发布安全防护措施。文章揭示了前沿模型能力跃升与安全治理之间的权衡，对关注 AI 编程/安全能力边界的开发者具有参考意义，但与 Claude Code 具体使用实践关联较弱。
+      </p>
+      
+      <!-- Meta row -->
+      <div class="mt-2 flex flex-wrap items-center gap-1.5">
+        <!-- Level badge -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-beginner">
+          🟢 入门
+        </span>
+        
+        <!-- Source -->
+        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          OpenAI 官方博客
+        </span>
+        
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">21 小时前</span>
+        
+        
+        <!-- Tags (max 2) -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #模型能力
+        </span>
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #新功能
+        </span>
+        
+        <!-- Quality bar (only if > 0) -->
+        
+        <span class="ml-auto flex items-center gap-1 shrink-0">
+          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:60%"></div>
+          </div>
+          <span class="text-xs text-gray-400">6.0</span>
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+  
+
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
+         data-tags="SDK更新 新功能"
          data-source="Anthropic SDK Python"
          data-source-type="official"
-         data-text="v1.1.0 Anthropic Python SDK v1.1.0 版本发布，新增 thinking 显示模式（beta）、补充 anthropic-beta 参数值，并支持 Organization API 端点。同时修复了工具运行器在 pause_turn 时中断的问题，对使用 SDK 构建 Agent 工作流的开发者有直接影响。">
+         data-text="v1.3.0 Anthropic Python SDK v1.3.0 发布，新增 beta 用户画像字段（external_user_onboarded_at、access_type）、组织合规设置、memory-store 与 toolset schema 更新。修复了 AWS Bedrock 区域 base_url 解析、批处理 GA 响应封装缺少 results、multipart 文件名推导等问题。属于常规增量更新，对使用 Python SDK 的开发者有升级参考价值。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -1830,14 +1991,14 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://github.com/anthropics/anthropic-sdk-python/releases/tag/v1.1.0" target="_blank" rel="noopener"
+      <a href="https://github.com/anthropics/anthropic-sdk-python/releases/tag/v1.3.0" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        v1.1.0
+        v1.3.0
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Anthropic Python SDK v1.1.0 版本发布，新增 thinking 显示模式（beta）、补充 anthropic-beta 参数值，并支持 Organization API 端点。同时修复了工具运行器在 pause_turn 时中断的问题，对使用 SDK 构建 Agent 工作流的开发者有直接影响。
+        Anthropic Python SDK v1.3.0 发布，新增 beta 用户画像字段（external_user_onboarded_at、access_type）、组织合规设置、memory-store 与 toolset schema 更新。修复了 AWS Bedrock 区域 base_url 解析、批处理 GA 响应封装缺少 results、multipart 文件名推导等问题。属于常规增量更新，对使用 Python SDK 的开发者有升级参考价值。
       </p>
       
       <!-- Meta row -->
@@ -1858,7 +2019,7 @@
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">5 天前</span>
+        <span class="text-xs text-gray-400">16 小时前</span>
         
         
         <!-- Tags (max 2) -->
@@ -1875,9 +2036,150 @@
         
         <span class="ml-auto flex items-center gap-1 shrink-0">
           <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:60%"></div>
+            <div class="score-bar" style="width:55%"></div>
           </div>
-          <span class="text-xs text-gray-400">6.0</span>
+          <span class="text-xs text-gray-400">5.5</span>
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+  
+
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
+         data-tags="案例分享 workflow 工具集成"
+         data-source="OpenAI 官方博客"
+         data-source-type="official"
+         data-text="How AI-native companies turn workflows into operating capability OpenAI 官方博客介绍 Basis、Clay 和 Exa Labs 三家 AI 原生公司如何利用 AI 智能体改进用户入职、客户管理和开发者集成流程，将工作流转化为企业运营能力。文章面向企业决策者，提供了可借鉴的 agent 落地案例，但内容偏营销性质、技术细节有限。">
+  <div class="flex gap-3">
+    <!-- Source icon -->
+    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
+      ○
+    </div>
+    <div class="flex-1 min-w-0">
+      <!-- Title -->
+      <a href="https://openai.com/index/ai-native-company-workflows" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
+        How AI-native companies turn workflows into operating capability
+      </a>
+      <!-- Summary -->
+      
+      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
+        OpenAI 官方博客介绍 Basis、Clay 和 Exa Labs 三家 AI 原生公司如何利用 AI 智能体改进用户入职、客户管理和开发者集成流程，将工作流转化为企业运营能力。文章面向企业决策者，提供了可借鉴的 agent 落地案例，但内容偏营销性质、技术细节有限。
+      </p>
+      
+      <!-- Meta row -->
+      <div class="mt-2 flex flex-wrap items-center gap-1.5">
+        <!-- Level badge -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-beginner">
+          🟢 入门
+        </span>
+        
+        <!-- Source -->
+        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          OpenAI 官方博客
+        </span>
+        
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">17 小时前</span>
+        
+        
+        <!-- Tags (max 2) -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #案例分享
+        </span>
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #workflow
+        </span>
+        
+        <!-- Quality bar (only if > 0) -->
+        
+        <span class="ml-auto flex items-center gap-1 shrink-0">
+          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:55%"></div>
+          </div>
+          <span class="text-xs text-gray-400">5.5</span>
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+  
+
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
+         data-tags="SDK更新 新功能"
+         data-source="Anthropic SDK TypeScript"
+         data-source-type="official"
+         data-text="sdk: v0.123.0 Anthropic TypeScript SDK 发布 v0.123.0，主要为 API 侧同步更新：beta 用户档案新增 external_user_onboarded_at 字段并以 access_type 取代 relationship，同时更新组织合规设置、memory-store 与 toolset schema。修复了凭证文件访问逻辑误入非 Node 打包产物的问题，并在 changelog 中说明 beta files/skills 走向 GA 的接口变化。对使用 SDK 构建 Agent 的开发者是一次常规但需留意破坏性字段变更的版本更新。">
+  <div class="flex gap-3">
+    <!-- Source icon -->
+    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
+      ◆
+    </div>
+    <div class="flex-1 min-w-0">
+      <!-- Title -->
+      <a href="https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/sdk-v0.123.0" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
+        sdk: v0.123.0
+      </a>
+      <!-- Summary -->
+      
+      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
+        Anthropic TypeScript SDK 发布 v0.123.0，主要为 API 侧同步更新：beta 用户档案新增 external_user_onboarded_at 字段并以 access_type 取代 relationship，同时更新组织合规设置、memory-store 与 toolset schema。修复了凭证文件访问逻辑误入非 Node 打包产物的问题，并在 changelog 中说明 beta files/skills 走向 GA 的接口变化。对使用 SDK 构建 Agent 的开发者是一次常规但需留意破坏性字段变更的版本更新。
+      </p>
+      
+      <!-- Meta row -->
+      <div class="mt-2 flex flex-wrap items-center gap-1.5">
+        <!-- Level badge -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-beginner">
+          🟢 入门
+        </span>
+        
+        <!-- Source -->
+        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          Anthropic SDK TypeScript
+        </span>
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">stainless-app[bot]</span>
+        
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">16 小时前</span>
+        
+        
+        <!-- Tags (max 2) -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #SDK更新
+        </span>
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #新功能
+        </span>
+        
+        <!-- Quality bar (only if > 0) -->
+        
+        <span class="ml-auto flex items-center gap-1 shrink-0">
+          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:50%"></div>
+          </div>
+          <span class="text-xs text-gray-400">5.0</span>
         </span>
         
       </div>
@@ -1904,10 +2206,10 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags=""
-         data-source="The Verge AI"
-         data-source-type="news"
-         data-text="Musicians-turned-detectives are hunting for AI grifters As audio-focused generative tools and platforms have gotten more sophisticated, the internet has become increasingly filled with AI-generated music wh">
+         data-tags="SDK更新 新功能 模型能力 最佳实践"
+         data-source="anthropics/skills commits"
+         data-source-type="community"
+         data-text="Update claude-api skill: Claude Fable 5.1 / Mythos 5.1, Managed Agent… Anthropic 官方 skills 仓库更新 claude-api skill，同步 Claude Fable 5.1 / Mythos 5.1 模型信息，并扩充 Managed Agents 文档：自托管沙箱可挂载记忆存储、web_search/web_fetch 支持域名白名单与地理位置配置。新增 cost-optimize 子命令及 shared/cost-optimization.md 成本优化指南，并补充 Admin API 参考，对使用 Claude API 构建 Agent 的开发者有直接参考价值。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -1915,14 +2217,158 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://www.theverge.com/entertainment/985866/h4rris-nihil-young-edm-suno-ai" target="_blank" rel="noopener"
+      <a href="https://github.com/anthropics/skills/commit/53048666b05b4799081517d00e09e0a2dd688678" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        Musicians-turned-detectives are hunting for AI grifters
+        Update claude-api skill: Claude Fable 5.1 / Mythos 5.1, Managed Agent…
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        As audio-focused generative tools and platforms have gotten more sophisticated, the internet has become increasingly filled with AI-generated music wh
+        Anthropic 官方 skills 仓库更新 claude-api skill，同步 Claude Fable 5.1 / Mythos 5.1 模型信息，并扩充 Managed Agents 文档：自托管沙箱可挂载记忆存储、web_search/web_fetch 支持域名白名单与地理位置配置。新增 cost-optimize 子命令及 shared/cost-optimization.md 成本优化指南，并补充 Admin API 参考，对使用 Claude API 构建 Agent 的开发者有直接参考价值。
+      </p>
+      
+      <!-- Meta row -->
+      <div class="mt-2 flex flex-wrap items-center gap-1.5">
+        <!-- Level badge -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
+          🟡 中级
+        </span>
+        
+        <!-- Source -->
+        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          anthropics/skills commits
+        </span>
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">rlancemartin</span>
+        
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">15 小时前</span>
+        
+        
+        <!-- Tags (max 2) -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #SDK更新
+        </span>
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #新功能
+        </span>
+        
+        <!-- Quality bar (only if > 0) -->
+        
+        <span class="ml-auto flex items-center gap-1 shrink-0">
+          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:75%"></div>
+          </div>
+          <span class="text-xs text-gray-400">7.5</span>
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+  
+
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
+         data-tags="新功能 模型能力 SDK更新"
+         data-source="The Verge AI"
+         data-source-type="news"
+         data-text="Anthropic launches Claude Fable 5.1 and says it&amp;#8217;s up to 45 percent cheaper for agentic work Anthropic 发布 Claude Fable 5.1 与 Mythos 5.1 两款新模型，宣称性能优于 Fable 5，同时常规定价降低约 25%，复杂智能体（agentic）任务成本最高可降低 45%。新模型还回应了客户对数据保留策略和过度安全限制的批评，对使用 Claude Code 及构建 agent 工作流的开发者而言意味着更低成本与更少误拦截。">
+  <div class="flex gap-3">
+    <!-- Source icon -->
+    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
+      ◉
+    </div>
+    <div class="flex-1 min-w-0">
+      <!-- Title -->
+      <a href="https://www.theverge.com/ai-artificial-intelligence/987830/anthropic-claude-fable-mythos-5-1" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
+        Anthropic launches Claude Fable 5.1 and says it&amp;#8217;s up to 45 percent cheaper for agentic work
+      </a>
+      <!-- Summary -->
+      
+      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
+        Anthropic 发布 Claude Fable 5.1 与 Mythos 5.1 两款新模型，宣称性能优于 Fable 5，同时常规定价降低约 25%，复杂智能体（agentic）任务成本最高可降低 45%。新模型还回应了客户对数据保留策略和过度安全限制的批评，对使用 Claude Code 及构建 agent 工作流的开发者而言意味着更低成本与更少误拦截。
+      </p>
+      
+      <!-- Meta row -->
+      <div class="mt-2 flex flex-wrap items-center gap-1.5">
+        <!-- Level badge -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
+          🟡 中级
+        </span>
+        
+        <!-- Source -->
+        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          The Verge AI
+        </span>
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">Stevie Bonifield</span>
+        
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">12 小时前</span>
+        
+        
+        <!-- Tags (max 2) -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #新功能
+        </span>
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #模型能力
+        </span>
+        
+        <!-- Quality bar (only if > 0) -->
+        
+        <span class="ml-auto flex items-center gap-1 shrink-0">
+          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:70%"></div>
+          </div>
+          <span class="text-xs text-gray-400">7.0</span>
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+  
+
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
+         data-tags="模型能力 新功能"
+         data-source="TechCrunch AI"
+         data-source-type="news"
+         data-text="Anthropic’s new Fable release is cheaper, less restrictive Anthropic 发布 Fable 5.1 模型，重点降低 token 使用成本，并减少安全护栏导致的误报拒答问题。对于使用 Claude Code 等 AI 编程工具的开发者，意味着更低的调用成本和更少的无谓拦截，提升日常工作流的流畅度。原文信息量较少，仅为简讯级别。">
+  <div class="flex gap-3">
+    <!-- Source icon -->
+    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
+      ◉
+    </div>
+    <div class="flex-1 min-w-0">
+      <!-- Title -->
+      <a href="https://techcrunch.com/2026/09/01/anthropics-new-fable-release-is-cheaper-less-restrictive/" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
+        Anthropic’s new Fable release is cheaper, less restrictive
+      </a>
+      <!-- Summary -->
+      
+      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
+        Anthropic 发布 Fable 5.1 模型，重点降低 token 使用成本，并减少安全护栏导致的误报拒答问题。对于使用 Claude Code 等 AI 编程工具的开发者，意味着更低的调用成本和更少的无谓拦截，提升日常工作流的流畅度。原文信息量较少，仅为简讯级别。
       </p>
       
       <!-- Meta row -->
@@ -1935,26 +2381,34 @@
         
         <!-- Source -->
         <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          The Verge AI
+          TechCrunch AI
         </span>
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">Charles Pulliam-Moore</span>
+        <span class="text-xs text-gray-400">Russell Brandom</span>
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">2 天前</span>
+        <span class="text-xs text-gray-400">14 小时前</span>
         
         
         <!-- Tags (max 2) -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #模型能力
+        </span>
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #新功能
+        </span>
         
         <!-- Quality bar (only if > 0) -->
         
         <span class="ml-auto flex items-center gap-1 shrink-0">
           <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:62%"></div>
+            <div class="score-bar" style="width:55%"></div>
           </div>
-          <span class="text-xs text-gray-400">6.2</span>
+          <span class="text-xs text-gray-400">5.5</span>
         </span>
         
       </div>
