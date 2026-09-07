@@ -139,7 +139,7 @@
     </div>
 
     <div class="flex items-center gap-2 ml-auto shrink-0">
-      <span class="hidden md:inline text-xs text-gray-400">2026年09月06日 02:06</span>
+      <span class="hidden md:inline text-xs text-gray-400">2026年09月07日 02:03</span>
       <span class="inline-flex items-center gap-1 bg-green-50 dark:bg-green-900/30 text-green-600 dark:text-green-400 px-2 py-0.5 rounded-full text-xs font-medium">
         ● 每日更新
       </span>
@@ -191,7 +191,7 @@
       <span class="text-xl mt-0.5 shrink-0">📋</span>
       <div>
         <div class="text-xs font-semibold text-brand-700 dark:text-brand-300 mb-1 uppercase tracking-wide">今日速览</div>
-        <p class="text-sm leading-relaxed text-gray-700 dark:text-gray-300">今日 AI 领域被 OpenAI 单一事件主导：GPT-6 Astra 正式发布，被官方称为&#34;新一代智能&#34;，也是 OpenAI 迄今规模最大的模型发布。Latent Space 与 The Verge 均给予头条关注，后者更援引 OpenAI 说法称该模型&#34;已进入 AGI 时代&#34;。三方信源高度集中，反映出本轮发布在能力宣称上的激进程度已超出以往任何一次迭代。接下来值得关注的是实际能力验证、开发者工具链适配节奏，以及竞争对手的回应。</p>
+        <p class="text-sm leading-relaxed text-gray-700 dark:text-gray-300">今日 Claude Code 生态关注点集中在前沿实验室的研究节奏与本地开发者实践两端。OpenAI 官方发文披露内部研究加速的组织方式与工作流，为观察大模型团队的迭代效率提供了第一手视角。Simon Willison 则贡献了两篇动手实录：一是用 Pelican 对比网格横向评测 Astra 的表现，二是在 macOS 上将 Blender 接入编码智能体的探索。整体来看，模型能力评测的可视化比较与智能体跨工具链落地，正成为社区当下的两条主线。</p>
       </div>
     </div>
   </div>
@@ -267,14 +267,24 @@
             全部
           </button>
           
+          <button onclick="filterTag('workflow')" data-tag="workflow"
+            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+            workflow
+          </button>
+          
           <button onclick="filterTag('工具集成')" data-tag="工具集成"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
             工具集成
           </button>
           
-          <button onclick="filterTag('新功能')" data-tag="新功能"
+          <button onclick="filterTag('提效技巧')" data-tag="提效技巧"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            新功能
+            提效技巧
+          </button>
+          
+          <button onclick="filterTag('案例分享')" data-tag="案例分享"
+            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+            案例分享
           </button>
           
           <button onclick="filterTag('模型能力')" data-tag="模型能力"
@@ -1819,10 +1829,10 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="模型能力 新功能"
+         data-tags="案例分享 workflow 模型能力"
          data-source="OpenAI 官方博客"
          data-source-type="official"
-         data-text="GPT-6 Astra: A new generation of intelligence OpenAI 发布新一代旗舰模型 GPT-6 Astra，宣称在计算机操作、编程、网络安全和科学推理等方面达到业界领先水平，同时强调对齐能力的提升。对使用 AI 编程工具的开发者而言，这类基础模型升级直接影响代码生成质量与 Agent 类工作流的上限。需注意公告本身信息密度较低，仅为概览性介绍，缺少基准测试细节与实际可用性说明。">
+         data-text="Research acceleration: The view inside OpenAI OpenAI 官方分享内部使用编程 Agent 加速 AI 研究的一手数据，涵盖 Agent 采用率、实验迭代速度、任务复杂度提升等指标。对理解编程 Agent 在真实高强度研发场景中的实际收益和落地方式具有参考价值，可用于评估自身 AI 编程工作流的成熟度。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -1830,14 +1840,14 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://openai.com/index/gpt-6-astra" target="_blank" rel="noopener"
+      <a href="https://openai.com/index/research-acceleration-view-inside-openai" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        GPT-6 Astra: A new generation of intelligence
+        Research acceleration: The view inside OpenAI
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        OpenAI 发布新一代旗舰模型 GPT-6 Astra，宣称在计算机操作、编程、网络安全和科学推理等方面达到业界领先水平，同时强调对齐能力的提升。对使用 AI 编程工具的开发者而言，这类基础模型升级直接影响代码生成质量与 Agent 类工作流的上限。需注意公告本身信息密度较低，仅为概览性介绍，缺少基准测试细节与实际可用性说明。
+        OpenAI 官方分享内部使用编程 Agent 加速 AI 研究的一手数据，涵盖 Agent 采用率、实验迭代速度、任务复杂度提升等指标。对理解编程 Agent 在真实高强度研发场景中的实际收益和落地方式具有参考价值，可用于评估自身 AI 编程工作流的成熟度。
       </p>
       
       <!-- Meta row -->
@@ -1855,26 +1865,26 @@
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">2 天前</span>
+        <span class="text-xs text-gray-400">1 天前</span>
         
         
         <!-- Tags (max 2) -->
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #模型能力
+          #案例分享
         </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #新功能
+          #workflow
         </span>
         
         <!-- Quality bar (only if > 0) -->
         
         <span class="ml-auto flex items-center gap-1 shrink-0">
           <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:65%"></div>
+            <div class="score-bar" style="width:75%"></div>
           </div>
-          <span class="text-xs text-gray-400">6.5</span>
+          <span class="text-xs text-gray-400">7.5</span>
         </span>
         
       </div>
@@ -1901,10 +1911,10 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="模型能力 新功能 工具集成"
-         data-source="Latent Space"
+         data-tags="模型能力 案例分享"
+         data-source="Simon Willison&#39;s Weblog"
          data-source-type="blog"
-         data-text="[AINews] GPT-6 Astra: OpenAI’s biggest LLM launch of all time OpenAI 发布新一代前沿模型 GPT-6 Astra，在计算机操作（computer use）和编程能力上刷新 SOTA。单 token 价格上涨约 2.5 倍，但因效率提升，实际单任务成本大幅降低；代价是推理过程的可监控性下降。对选择编程 Agent 底层模型与成本核算有直接参考价值。">
+         data-text="The Pelican comparison grid for Astra is pretty interesting Simon Willison 用他标志性的「鹈鹕骑自行车 SVG」测试对比了 GPT-6 Astra 在 low/medium/high/xhigh/max 五档推理强度下的表现，并与 GPT-5.6 的 Sol、Terra、Luna 横向对比。结论是 Astra 即便在最低推理档也优于前代最佳档位，max 档表现相当出色。这是一篇轻量的模型能力横评，可作为判断新模型代际提升幅度和推理档位性价比的直观参考。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -1912,27 +1922,27 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://www.latent.space/p/ainews-gpt-6-astra-openais-biggest" target="_blank" rel="noopener"
+      <a href="https://simonwillison.net/2026/Sep/4/astra-pelicans/" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        [AINews] GPT-6 Astra: OpenAI’s biggest LLM launch of all time
+        The Pelican comparison grid for Astra is pretty interesting
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        OpenAI 发布新一代前沿模型 GPT-6 Astra，在计算机操作（computer use）和编程能力上刷新 SOTA。单 token 价格上涨约 2.5 倍，但因效率提升，实际单任务成本大幅降低；代价是推理过程的可监控性下降。对选择编程 Agent 底层模型与成本核算有直接参考价值。
+        Simon Willison 用他标志性的「鹈鹕骑自行车 SVG」测试对比了 GPT-6 Astra 在 low/medium/high/xhigh/max 五档推理强度下的表现，并与 GPT-5.6 的 Sol、Terra、Luna 横向对比。结论是 Astra 即便在最低推理档也优于前代最佳档位，max 档表现相当出色。这是一篇轻量的模型能力横评，可作为判断新模型代际提升幅度和推理档位性价比的直观参考。
       </p>
       
       <!-- Meta row -->
       <div class="mt-2 flex flex-wrap items-center gap-1.5">
         <!-- Level badge -->
         
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
-          🟡 中级
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-beginner">
+          🟢 入门
         </span>
         
         <!-- Source -->
         <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          Latent Space
+          Simon Willison&#39;s Weblog
         </span>
         
         
@@ -1947,16 +1957,16 @@
         </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #新功能
+          #案例分享
         </span>
         
         <!-- Quality bar (only if > 0) -->
         
         <span class="ml-auto flex items-center gap-1 shrink-0">
           <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:70%"></div>
+            <div class="score-bar" style="width:60%"></div>
           </div>
-          <span class="text-xs text-gray-400">7.0</span>
+          <span class="text-xs text-gray-400">6.0</span>
         </span>
         
       </div>
@@ -1970,10 +1980,10 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="模型能力 新功能"
-         data-source="The Verge AI"
-         data-source-type="news"
-         data-text="OpenAI’s next big AI model has ‘entered the AGI era’ OpenAI 发布新一代模型 GPT-6 Astra，宣称在网络安全、专业工作、软件工程、科学研究和计算机操作等领域实现「代际能力跃升」。该模型也是首个被 OpenAI 判定达到「关键网络安全能力阈值」的模型。对关注 AI 编程工具能力边界和模型选型的开发者有参考价值。">
+         data-tags="工具集成 案例分享 提效技巧"
+         data-source="Simon Willison&#39;s Weblog"
+         data-source-type="blog"
+         data-text="Using Blender with coding agents on macOS Simon Willison 分享了在 macOS 上让编程 agent（ChatGPT Codex）驱动 Blender 生成 3D 渲染图的技巧：只需安装 Blender 桌面版，然后用自然语言提示让 agent 调用 Blender 的 Python API 建模渲染。核心价值在于展示了 coding agent 操作本地 GUI 软件的通用模式——指明可执行文件路径，剩下交给 agent 迭代改进。文章还顺带提到用 AgentsView 估算该任务的 API 成本约 4.24 美元。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -1981,14 +1991,14 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://www.theverge.com/ai-artificial-intelligence/989601/openai-gpt-6-astra-release" target="_blank" rel="noopener"
+      <a href="https://simonwillison.net/2026/Sep/5/blender-coding-agents-macos/" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        OpenAI’s next big AI model has ‘entered the AGI era’
+        Using Blender with coding agents on macOS
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        OpenAI 发布新一代模型 GPT-6 Astra，宣称在网络安全、专业工作、软件工程、科学研究和计算机操作等领域实现「代际能力跃升」。该模型也是首个被 OpenAI 判定达到「关键网络安全能力阈值」的模型。对关注 AI 编程工具能力边界和模型选型的开发者有参考价值。
+        Simon Willison 分享了在 macOS 上让编程 agent（ChatGPT Codex）驱动 Blender 生成 3D 渲染图的技巧：只需安装 Blender 桌面版，然后用自然语言提示让 agent 调用 Blender 的 Python API 建模渲染。核心价值在于展示了 coding agent 操作本地 GUI 软件的通用模式——指明可执行文件路径，剩下交给 agent 迭代改进。文章还顺带提到用 AgentsView 估算该任务的 API 成本约 4.24 美元。
       </p>
       
       <!-- Meta row -->
@@ -2001,34 +2011,31 @@
         
         <!-- Source -->
         <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          The Verge AI
+          Simon Willison&#39;s Weblog
         </span>
         
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">Hayden Field</span>
-        
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">2 天前</span>
+        <span class="text-xs text-gray-400">1 天前</span>
         
         
         <!-- Tags (max 2) -->
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #模型能力
+          #工具集成
         </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #新功能
+          #案例分享
         </span>
         
         <!-- Quality bar (only if > 0) -->
         
         <span class="ml-auto flex items-center gap-1 shrink-0">
           <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:60%"></div>
+            <div class="score-bar" style="width:55%"></div>
           </div>
-          <span class="text-xs text-gray-400">6.0</span>
+          <span class="text-xs text-gray-400">5.5</span>
         </span>
         
       </div>
