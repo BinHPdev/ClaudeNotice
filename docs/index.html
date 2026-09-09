@@ -139,7 +139,7 @@
     </div>
 
     <div class="flex items-center gap-2 ml-auto shrink-0">
-      <span class="hidden md:inline text-xs text-gray-400">2026年09月08日 02:18</span>
+      <span class="hidden md:inline text-xs text-gray-400">2026年09月09日 02:18</span>
       <span class="inline-flex items-center gap-1 bg-green-50 dark:bg-green-900/30 text-green-600 dark:text-green-400 px-2 py-0.5 rounded-full text-xs font-medium">
         ● 每日更新
       </span>
@@ -163,7 +163,7 @@
   <!-- Stats bar -->
   <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 mb-6">
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-gray-100 dark:border-gray-800 text-center">
-      <div class="text-2xl font-bold text-brand-600">2</div>
+      <div class="text-2xl font-bold text-brand-600">4</div>
       <div class="text-xs text-gray-400 mt-0.5">今日收录</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-rose-100 dark:border-rose-900/40 text-center">
@@ -171,11 +171,11 @@
       <div class="text-xs text-gray-400 mt-0.5">经典置顶</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-amber-100 dark:border-amber-900/40 text-center">
-      <div class="text-2xl font-bold text-amber-500">0</div>
+      <div class="text-2xl font-bold text-amber-500">3</div>
       <div class="text-xs text-gray-400 mt-0.5">官方动态</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-orange-100 dark:border-orange-900/40 text-center">
-      <div class="text-2xl font-bold text-orange-500">2</div>
+      <div class="text-2xl font-bold text-orange-500">1</div>
       <div class="text-xs text-gray-400 mt-0.5">前沿速递</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-blue-100 dark:border-blue-900/40 text-center">
@@ -191,7 +191,7 @@
       <span class="text-xl mt-0.5 shrink-0">📋</span>
       <div>
         <div class="text-xs font-semibold text-brand-700 dark:text-brand-300 mb-1 uppercase tracking-wide">今日速览</div>
-        <p class="text-sm leading-relaxed text-gray-700 dark:text-gray-300">今日 Claude Code 生态聚焦于 Agent 能力的评估与规范。学术侧，arXiv 上的 Harbor Adapters 与 Harbor-Index 提出了面向大规模 Agent 评测的基础设施和精选元数据集，为衡量智能体真实表现提供了统一标尺。工程侧，everything-claude-code 修复了 skills 中凭空捏造的自主运行环境配置说明，反映出社区对文档准确性与幻觉治理的重视。两条动态一体两面：Agent 生态正从&#34;能跑起来&#34;转向&#34;可验证、可信赖&#34;。</p>
+        <p class="text-sm leading-relaxed text-gray-700 dark:text-gray-300">Claude Code 发布 v2.1.265 版本，社区侧 everything-claude-code 项目同步修补了发布评审流程漏洞并暴露失败的 CI 套件，工程质量把关成为近期迭代重点。OpenAI 官方博客则连发两篇，分别披露 GPT-5.6 Sol 在量子计算实验中的应用，以及 1Password 借助 Codex 实现 21% 的工程效率提升。一边是编码工具链自身的可靠性收敛，一边是 AI 编程助手在科研与企业场景的实测成果，两条主线正同时推进。</p>
       </div>
     </div>
   </div>
@@ -267,11 +267,6 @@
             全部
           </button>
           
-          <button onclick="filterTag('MCP')" data-tag="MCP"
-            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            MCP
-          </button>
-          
           <button onclick="filterTag('workflow')" data-tag="workflow"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
             workflow
@@ -282,19 +277,24 @@
             工具集成
           </button>
           
+          <button onclick="filterTag('新功能')" data-tag="新功能"
+            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+            新功能
+          </button>
+          
           <button onclick="filterTag('最佳实践')" data-tag="最佳实践"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
             最佳实践
           </button>
           
+          <button onclick="filterTag('案例分享')" data-tag="案例分享"
+            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+            案例分享
+          </button>
+          
           <button onclick="filterTag('模型能力')" data-tag="模型能力"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
             模型能力
-          </button>
-          
-          <button onclick="filterTag('研究论文')" data-tag="研究论文"
-            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            研究论文
           </button>
           
         </div>
@@ -1821,15 +1821,12 @@
 
       <!-- 官方动态 -->
       
-
-      <!-- 前沿速递 -->
-      
-      <section id="section-frontier">
-        <h2 class="section-divider text-sm font-bold text-orange-500 mb-4">
-          <span>🚀 前沿速递</span>
-          <span class="text-xs font-normal text-gray-400">7 天内最新动态</span>
+      <section id="section-official">
+        <h2 class="section-divider text-sm font-bold text-amber-500 mb-4">
+          <span>⚡ 官方动态</span>
+          <span class="text-xs font-normal text-gray-400">来自 Anthropic / SDK / PyPI</span>
         </h2>
-        <div class="space-y-3" id="frontier-list">
+        <div class="space-y-3" id="official-list">
           
 
 
@@ -1837,25 +1834,25 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="研究论文 模型能力 工具集成"
-         data-source="arXiv cs.AI"
-         data-source-type="research"
-         data-text="Harbor Adapters and Harbor-Index: Infrastructure and a Curated Meta-Dataset for Large-Scale Agentic Evaluation 论文提出 Harbor Adapters 统一评测基础设施，将 80+ 个 Agent 基准测试适配为可评估任意智能体的统一接口，并在 54 个基准上对 8 个不同能力层级的模型进行了大规模实测。对于关注 AI 编程 Agent 能力边界与失败模式的开发者，它提供了跨基准横向对比的参考框架和 Harbor-Index 精选元数据集。">
+         data-tags="新功能 workflow 工具集成"
+         data-source="Claude Code Releases"
+         data-source-type="official"
+         data-text="v2.1.265 Claude Code v2.1.265 版本更新，新增 --plugin-dir 指向插件文件夹的支持（子文件夹含 manifest 即自动加载，运行时增删可热感知），并为落盘的工具结果加了 1GB 上限与截断提示。同时修复了多项破坏 prompt-cache 复用的问题（前台子代理恢复时工具列表/系统提示前缀变动、agent teammates 与恢复子代理的 SubagentStart hook 上下文与预加载 skills 移出前缀），对重度使用子代理工作流的用户可显著降低成本与延迟。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      📄
+      ⚡
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://arxiv.org/abs/2609.04298" target="_blank" rel="noopener"
+      <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.265" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        Harbor Adapters and Harbor-Index: Infrastructure and a Curated Meta-Dataset for Large-Scale Agentic Evaluation
+        v2.1.265
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        论文提出 Harbor Adapters 统一评测基础设施，将 80+ 个 Agent 基准测试适配为可评估任意智能体的统一接口，并在 54 个基准上对 8 个不同能力层级的模型进行了大规模实测。对于关注 AI 编程 Agent 能力边界与失败模式的开发者，它提供了跨基准横向对比的参考框架和 Harbor-Index 精选元数据集。
+        Claude Code v2.1.265 版本更新，新增 --plugin-dir 指向插件文件夹的支持（子文件夹含 manifest 即自动加载，运行时增删可热感知），并为落盘的工具结果加了 1GB 上限与截断提示。同时修复了多项破坏 prompt-cache 复用的问题（前台子代理恢复时工具列表/系统提示前缀变动、agent teammates 与恢复子代理的 SubagentStart hook 上下文与预加载 skills 移出前缀），对重度使用子代理工作流的用户可显著降低成本与延迟。
       </p>
       
       <!-- Meta row -->
@@ -1868,25 +1865,25 @@
         
         <!-- Source -->
         <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          arXiv cs.AI
+          Claude Code Releases
         </span>
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">Lin Shi (Audrey), Haowei Lin (Audrey), Zixuan Zhu (Audrey), Xiaoyue Zhou (Audrey), Xiang Li (Audrey), Xiangning Lin (Audrey), Yaxuan Deng (Audrey), Han Xu (Audrey), Yuangang Li (Audrey), Shanda Li (Audrey), Zizhao Chen (Audrey), Hanwen Xing (Audrey), Harsh Raj (Audrey), Bo Chen (Audrey), Quan Shi (Audrey), Steven Dillmann (Audrey), Yipeng Gao (Audrey), Puneesh Khanna (Audrey), Ruofan Lu (Audrey), Chao Beyond Zhou (Audrey), Michael Yang (Audrey), Robert Zhang (Audrey), Siyuan Chai (Audrey), Jiayu Chang (Audrey), Yizhao Chen (Audrey), Xiaokun Chen (Audrey), Yiwei Dai (Audrey), Wenting Yang (Audrey), Hange Liu (Audrey), Minghao Liu (Audrey), Zihan Wang (Audrey), Adnan El Assadi (Audrey), Benedikt Stroebl (Audrey), E. Kelly Buchanan (Audrey), Han Meng (Audrey), Junwei He (Audrey), Longxuan Yu (Audrey), Radin Shayanfar (Audrey), Yukyung Lee (Audrey), Zhikang Dong (Audrey), Allen G Hart (Audrey), Anjiang Wei (Audrey), Anurag Kashyap (Audrey), Arpandeep Khatua (Audrey), Audrey Jixin Zheng (Audrey), Chengrui Ma (Audrey), David Heineman (Audrey), Dubing Chen (Audrey), Hai-Anh Trinh (Audrey), Haishuo Fang (Audrey), Hefan Zhang (Audrey), Hui Shen (Audrey), Issa Sugiura (Audrey), Jiankai Sun (Audrey), Jiechao Gao (Audrey), Junhong Lin (Audrey), Junnan Li (Audrey), Kai Yang (Audrey), Lei Hsiung (Audrey), Maoyu Wang (Audrey), Mengze Tang (Audrey), Nabil Omi (Audrey), Negin Raoof (Audrey), Nicholas Edwards (Audrey), Octavia Guo (Audrey), Orfeas Menis Mastromichalakis (Audrey), Pengliang Ji (Audrey), Przemys{\l}aw Hejman (Audrey), Qi Qi (Audrey), Qunshu Lin (Audrey), Richard Zhuang (Audrey), Rui Yang (Audrey), Ruichen Zheng (Audrey), Ryan Marten (Audrey), Shaghayegh Fazliani (Audrey), Shizheng Hou (Audrey), Sicong Jiang (Audrey), Sijie Li (Audrey), Song Bian (Audrey), Terry Yue Zhuo (Audrey), Tianqing Wu (Audrey), Tom Tang (Audrey), Wanjia Zhao (Audrey), Weihao Xuan (Audrey), Wenhua Liang (Audrey), Xian Liu (Audrey), Xin Lan (Audrey), Xuan Zhang (Audrey), Xuandong Zhao (Audrey), Yanchuan Tang (Audrey), Yifan Jiang (Audrey), Yijiang Li (Audrey), Yitong Guan (Audrey), Yizhi Li (Audrey), Yonghui Liu (Audrey), Yuheng Tang (Audrey),  Yujun (Audrey),  Mao, Yunfei Zhao, Yuxin Wang, Yuxuan Tang, Zhenheng Tang, Zhifei Li, Ziruo Wang, Ziyu She, Kaiyuan Liu, Iheb Chaabane, Yuxin Tang, Xiangyi Li, Andy Konwinski, Boxuan Li, Leon Liangyu Chen, Alex Dimakis, Nicholas Carlini, Soroush Vosoughi, Di He, Etash Guha, Benjamin Feuer, Mike Merrill, Ludwig Schmidt, Alex Shaw</span>
+        <span class="text-xs text-gray-400">ashwin-ant</span>
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">1 天前</span>
+        <span class="text-xs text-gray-400">13 小时前</span>
         
         
         <!-- Tags (max 2) -->
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #研究论文
+          #新功能
         </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #模型能力
+          #workflow
         </span>
         
         <!-- Quality bar (only if > 0) -->
@@ -1909,10 +1906,161 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="MCP 最佳实践 workflow"
+         data-tags="案例分享 workflow 模型能力"
+         data-source="OpenAI 官方博客"
+         data-source-type="official"
+         data-text="How GPT-5.6 Sol helps run quantum computing experiments MIT 研究员使用 GPT-5.6 Sol 配合 Codex，让 AI 自主运行量子计算实验、分析结果并校准量子比特。展示了 AI 编程助手在科研自动化场景中的 agentic 工作流应用，是 AI Agent 承担端到端实验闭环的典型案例。">
+  <div class="flex gap-3">
+    <!-- Source icon -->
+    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
+      ○
+    </div>
+    <div class="flex-1 min-w-0">
+      <!-- Title -->
+      <a href="https://openai.com/index/codex-quantum-computing-experiments" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
+        How GPT-5.6 Sol helps run quantum computing experiments
+      </a>
+      <!-- Summary -->
+      
+      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
+        MIT 研究员使用 GPT-5.6 Sol 配合 Codex，让 AI 自主运行量子计算实验、分析结果并校准量子比特。展示了 AI 编程助手在科研自动化场景中的 agentic 工作流应用，是 AI Agent 承担端到端实验闭环的典型案例。
+      </p>
+      
+      <!-- Meta row -->
+      <div class="mt-2 flex flex-wrap items-center gap-1.5">
+        <!-- Level badge -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
+          🟡 中级
+        </span>
+        
+        <!-- Source -->
+        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          OpenAI 官方博客
+        </span>
+        
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">17 小时前</span>
+        
+        
+        <!-- Tags (max 2) -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #案例分享
+        </span>
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #workflow
+        </span>
+        
+        <!-- Quality bar (only if > 0) -->
+        
+        <span class="ml-auto flex items-center gap-1 shrink-0">
+          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:65%"></div>
+          </div>
+          <span class="text-xs text-gray-400">6.5</span>
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+  
+
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
+         data-tags="案例分享 工具集成"
+         data-source="OpenAI 官方博客"
+         data-source-type="official"
+         data-text="1Password increases engineering productivity 21% with Codex 1Password 工程团队通过 OpenAI Codex 快速构建新功能与内部工具，在严格安全策略约束下达到生产可用水平，官方称工程效率提升 21%。属于 AI 编程工具在安全敏感型企业中的落地案例，可参考其在合规环境下的 AI 编码工作流。但内容为厂商自述的营销型案例，缺乏具体技术细节与可复现方法。">
+  <div class="flex gap-3">
+    <!-- Source icon -->
+    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
+      ○
+    </div>
+    <div class="flex-1 min-w-0">
+      <!-- Title -->
+      <a href="https://openai.com/index/1password" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
+        1Password increases engineering productivity 21% with Codex
+      </a>
+      <!-- Summary -->
+      
+      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
+        1Password 工程团队通过 OpenAI Codex 快速构建新功能与内部工具，在严格安全策略约束下达到生产可用水平，官方称工程效率提升 21%。属于 AI 编程工具在安全敏感型企业中的落地案例，可参考其在合规环境下的 AI 编码工作流。但内容为厂商自述的营销型案例，缺乏具体技术细节与可复现方法。
+      </p>
+      
+      <!-- Meta row -->
+      <div class="mt-2 flex flex-wrap items-center gap-1.5">
+        <!-- Level badge -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-beginner">
+          🟢 入门
+        </span>
+        
+        <!-- Source -->
+        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          OpenAI 官方博客
+        </span>
+        
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">1 天前</span>
+        
+        
+        <!-- Tags (max 2) -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #案例分享
+        </span>
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #工具集成
+        </span>
+        
+        <!-- Quality bar (only if > 0) -->
+        
+        <span class="ml-auto flex items-center gap-1 shrink-0">
+          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:50%"></div>
+          </div>
+          <span class="text-xs text-gray-400">5.0</span>
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+        </div>
+      </section>
+      
+
+      <!-- 前沿速递 -->
+      
+      <section id="section-frontier">
+        <h2 class="section-divider text-sm font-bold text-orange-500 mb-4">
+          <span>🚀 前沿速递</span>
+          <span class="text-xs font-normal text-gray-400">7 天内最新动态</span>
+        </h2>
+        <div class="space-y-3" id="frontier-list">
+          
+
+
+  
+  
+
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
+         data-tags="workflow 最佳实践 工具集成"
          data-source="everything-claude-code commits"
          data-source-type="community"
-         data-text="fix(skills): replace invented autonomous harness setup instructions 该 commit 修正了 skills 文档中凭空编造的「自主运行环境」配置说明，改用经过验证的 MCP 参考记忆包、原生会话调度、受支持的 CLI 调用方式和官方 computer-use 集成。同时引入了依赖版本锁定和可执行示例的回归检查，避免文档中出现幻觉式配置。">
+         data-text="fix: close release review gaps and expose failing CI suites 这是 everything-claude-code 仓库的一次修复提交，主要收紧发版审查流程中的漏洞并让失败的 CI 测试套件显式暴露出来。附带信息展示了一套学术研究技能插件（ARS）的实际配置：13 个斜杠命令按任务复杂度在 frontmatter 中固定路由到 Opus/Sonnet 不同模型，以及 3 个插件级 agent 的分工。对于想学习 Claude Code 插件化组织、命令级模型路由与成本控制的人有参考价值。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -1920,14 +2068,14 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://github.com/affaan-m/ECC/commit/c11753d0b94d3a8cc379564609a740c5e68599e3" target="_blank" rel="noopener"
+      <a href="https://github.com/affaan-m/ECC/commit/14e731c6d5f341f35a9e24609de1d91f57cf8d70" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        fix(skills): replace invented autonomous harness setup instructions
+        fix: close release review gaps and expose failing CI suites
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        该 commit 修正了 skills 文档中凭空编造的「自主运行环境」配置说明，改用经过验证的 MCP 参考记忆包、原生会话调度、受支持的 CLI 调用方式和官方 computer-use 集成。同时引入了依赖版本锁定和可执行示例的回归检查，避免文档中出现幻觉式配置。
+        这是 everything-claude-code 仓库的一次修复提交，主要收紧发版审查流程中的漏洞并让失败的 CI 测试套件显式暴露出来。附带信息展示了一套学术研究技能插件（ARS）的实际配置：13 个斜杠命令按任务复杂度在 frontmatter 中固定路由到 Opus/Sonnet 不同模型，以及 3 个插件级 agent 的分工。对于想学习 Claude Code 插件化组织、命令级模型路由与成本控制的人有参考价值。
       </p>
       
       <!-- Meta row -->
@@ -1948,13 +2096,13 @@
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">13 小时前</span>
+        <span class="text-xs text-gray-400">1 天前</span>
         
         
         <!-- Tags (max 2) -->
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #MCP
+          #workflow
         </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">

@@ -1,1 +1,1 @@
-今日 Claude Code 生态聚焦于 Agent 能力的评估与规范。学术侧，arXiv 上的 Harbor Adapters 与 Harbor-Index 提出了面向大规模 Agent 评测的基础设施和精选元数据集，为衡量智能体真实表现提供了统一标尺。工程侧，everything-claude-code 修复了 skills 中凭空捏造的自主运行环境配置说明，反映出社区对文档准确性与幻觉治理的重视。两条动态一体两面：Agent 生态正从"能跑起来"转向"可验证、可信赖"。
+Claude Code 发布 v2.1.265 版本，社区侧 everything-claude-code 项目同步修补了发布评审流程漏洞并暴露失败的 CI 套件，工程质量把关成为近期迭代重点。OpenAI 官方博客则连发两篇，分别披露 GPT-5.6 Sol 在量子计算实验中的应用，以及 1Password 借助 Codex 实现 21% 的工程效率提升。一边是编码工具链自身的可靠性收敛，一边是 AI 编程助手在科研与企业场景的实测成果，两条主线正同时推进。
