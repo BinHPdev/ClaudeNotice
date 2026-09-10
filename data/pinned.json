@@ -118,6 +118,25 @@
     "language": "en"
   },
   {
+    "title": "ScienceSep 4, 2026Formalizing Fermat's Last Theorem We are sharing the first complete computer-checked proof of Fermat’s Last Theorem. Claude worked largely autonomously over 11 days to write the proof in the Lean programming language. Below, we describe how the formalization was done and share some thoughts about what this work could mean for research mathematics.",
+    "url": "https://www.anthropic.com/research/formalizing-fermats-last-theorem",
+    "source": "Anthropic Research",
+    "source_type": "official",
+    "summary_zh": "Anthropic 公布了首个完整的费马大定理计算机验证证明，由 Claude 在 11 天内基本自主使用 Lean 语言完成形式化。文章详细说明了形式化的实施过程，并探讨了 AI 自主长周期работы对数学研究的意义。这是 LLM 在超长时程、高复杂度自主编程任务上的标志性能力验证。",
+    "pin_reason": "首个 AI 自主完成的费马大定理形式化证明，是 LLM 长时程自主编程能力的里程碑事件，具有长期参考价值。",
+    "quality_score": 9.0,
+    "score": 0,
+    "tags": [
+      "模型能力",
+      "案例分享",
+      "研究论文"
+    ],
+    "pinned_at": "2026-09-10T02:16:48.320867+00:00",
+    "raw_id": "rss::Anthropic Research::https://www.anthropic.com/research/formalizing-fermats-last-theorem",
+    "author": "",
+    "language": "en"
+  },
+  {
     "title": "awesome-claude-code — 社区权威资源目录（37k★）",
     "url": "https://github.com/hesreallyhim/awesome-claude-code",
     "source": "GitHub",
@@ -566,25 +585,6 @@
     "pinned_at": "2026-07-30T01:51:17.701304+00:00",
     "raw_id": "rss::dev.to #claudecode::https://dev.to/rulestack/what-actually-belongs-in-claudemd-and-what-to-move-to-skills-hooks-or-docs-34id",
     "author": "Rulestack",
-    "language": "en"
-  },
-  {
-    "title": "MCP Goes Stateless: What the 2026-07-28 Spec Actually Changes",
-    "url": "https://dev.to/raxxostudios/mcp-goes-stateless-what-the-2026-07-28-spec-actually-changes-4722",
-    "source": "dev.to #claudecode",
-    "source_type": "blog",
-    "summary_zh": "MCP协议发布2026-07-28新规范，取消握手和会话ID机制，使其从有状态协议转变为无状态协议，请求可直接分发到负载均衡器后的任意服务器，无需共享会话存储。同时OAuth/OIDC认证得到加强，工具和提示列表支持缓存，Tasks纳入正式版本化扩展框架，主流SDK下载量较年初增长4倍。",
-    "pin_reason": "MCP协议重大版本变更（无状态化改造），影响所有基于MCP的工具集成架构，具有长期架构参考价值",
-    "quality_score": 8.0,
-    "score": 0,
-    "tags": [
-      "MCP",
-      "新功能",
-      "SDK更新"
-    ],
-    "pinned_at": "2026-07-30T01:51:17.701355+00:00",
-    "raw_id": "rss::dev.to #claudecode::https://dev.to/raxxostudios/mcp-goes-stateless-what-the-2026-07-28-spec-actually-changes-4722",
-    "author": "RAXXO Studios",
     "language": "en"
   }
 ]

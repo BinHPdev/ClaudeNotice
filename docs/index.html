@@ -139,7 +139,7 @@
     </div>
 
     <div class="flex items-center gap-2 ml-auto shrink-0">
-      <span class="hidden md:inline text-xs text-gray-400">2026年09月09日 02:18</span>
+      <span class="hidden md:inline text-xs text-gray-400">2026年09月10日 02:16</span>
       <span class="inline-flex items-center gap-1 bg-green-50 dark:bg-green-900/30 text-green-600 dark:text-green-400 px-2 py-0.5 rounded-full text-xs font-medium">
         ● 每日更新
       </span>
@@ -163,7 +163,7 @@
   <!-- Stats bar -->
   <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 mb-6">
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-gray-100 dark:border-gray-800 text-center">
-      <div class="text-2xl font-bold text-brand-600">4</div>
+      <div class="text-2xl font-bold text-brand-600">3</div>
       <div class="text-xs text-gray-400 mt-0.5">今日收录</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-rose-100 dark:border-rose-900/40 text-center">
@@ -175,7 +175,7 @@
       <div class="text-xs text-gray-400 mt-0.5">官方动态</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-orange-100 dark:border-orange-900/40 text-center">
-      <div class="text-2xl font-bold text-orange-500">1</div>
+      <div class="text-2xl font-bold text-orange-500">0</div>
       <div class="text-xs text-gray-400 mt-0.5">前沿速递</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-blue-100 dark:border-blue-900/40 text-center">
@@ -191,7 +191,7 @@
       <span class="text-xl mt-0.5 shrink-0">📋</span>
       <div>
         <div class="text-xs font-semibold text-brand-700 dark:text-brand-300 mb-1 uppercase tracking-wide">今日速览</div>
-        <p class="text-sm leading-relaxed text-gray-700 dark:text-gray-300">Claude Code 发布 v2.1.265 版本，社区侧 everything-claude-code 项目同步修补了发布评审流程漏洞并暴露失败的 CI 套件，工程质量把关成为近期迭代重点。OpenAI 官方博客则连发两篇，分别披露 GPT-5.6 Sol 在量子计算实验中的应用，以及 1Password 借助 Codex 实现 21% 的工程效率提升。一边是编码工具链自身的可靠性收敛，一边是 AI 编程助手在科研与企业场景的实测成果，两条主线正同时推进。</p>
+        <p class="text-sm leading-relaxed text-gray-700 dark:text-gray-300">今日最重磅的进展来自 Anthropic 研究团队：Claude 在 11 天内基本自主完成了费马大定理的 Lean 形式化证明，这是该定理首个完整的机器可验证版本，标志着 AI 在数学研究中已从辅助工具走向可独立承担长周期推理任务的角色。与此同时，OpenAI 发布面向工作场景的新一代模型 GPT-6 Astra，前沿实验室在高阶推理与生产力应用上的竞争持续升温。工程侧，Claude Code 稳步迭代至 v2.1.267。整体来看，长时程自主任务能力正成为本轮模型竞赛的核心看点。</p>
       </div>
     </div>
   </div>
@@ -272,19 +272,14 @@
             workflow
           </button>
           
-          <button onclick="filterTag('工具集成')" data-tag="工具集成"
+          <button onclick="filterTag('提示工程')" data-tag="提示工程"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            工具集成
+            提示工程
           </button>
           
           <button onclick="filterTag('新功能')" data-tag="新功能"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
             新功能
-          </button>
-          
-          <button onclick="filterTag('最佳实践')" data-tag="最佳实践"
-            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            最佳实践
           </button>
           
           <button onclick="filterTag('案例分享')" data-tag="案例分享"
@@ -295,6 +290,11 @@
           <button onclick="filterTag('模型能力')" data-tag="模型能力"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
             模型能力
+          </button>
+          
+          <button onclick="filterTag('研究论文')" data-tag="研究论文"
+            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+            研究论文
           </button>
           
         </div>
@@ -598,6 +598,55 @@
                   
                   <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
                     #GitHub热门
+                  </span>
+                  
+                  
+                  <span class="ml-auto flex items-center gap-1 shrink-0">
+                    <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+                      <div class="score-bar" style="width:90%"></div>
+                    </div>
+                    <span class="text-xs text-gray-400">9.0</span>
+                  </span>
+                  
+                </div>
+              </div>
+            </div>
+          </article>
+          
+          <article class="card group bg-gradient-to-r from-rose-50 to-white dark:from-rose-950/20 dark:to-gray-900 rounded-xl border border-rose-100 dark:border-rose-900/40 p-4 hover:border-rose-300 dark:hover:border-rose-700 article-item"
+                   data-tags="模型能力 案例分享 研究论文"
+                   data-source="Anthropic Research"
+                   data-source-type="official"
+                   data-text="ScienceSep 4, 2026Formalizing Fermat&#39;s Last Theorem We are sharing the first complete computer-checked proof of Fermat’s Last Theorem. Claude worked largely autonomously over 11 days to write the proof in the Lean programming language. Below, we describe how the formalization was done and share some thoughts about what this work could mean for research mathematics. Anthropic 公布了首个完整的费马大定理计算机验证证明，由 Claude 在 11 天内基本自主使用 Lean 语言完成形式化。文章详细说明了形式化的实施过程，并探讨了 AI 自主长周期работы对数学研究的意义。这是 LLM 在超长时程、高复杂度自主编程任务上的标志性能力验证。">
+            <div class="flex gap-3">
+              <div class="shrink-0 w-8 h-8 rounded-lg bg-rose-100 dark:bg-rose-900/30 flex items-center justify-center text-sm font-bold text-rose-500 border border-rose-200 dark:border-rose-800 mt-0.5">
+                📌
+              </div>
+              <div class="flex-1 min-w-0">
+                <a href="https://www.anthropic.com/research/formalizing-fermats-last-theorem" target="_blank" rel="noopener"
+                   class="font-medium text-gray-900 dark:text-gray-100 hover:text-rose-600 dark:hover:text-rose-400 line-clamp-2 leading-snug text-sm">
+                  ScienceSep 4, 2026Formalizing Fermat&#39;s Last Theorem We are sharing the first complete computer-checked proof of Fermat’s Last Theorem. Claude worked largely autonomously over 11 days to write the proof in the Lean programming language. Below, we describe how the formalization was done and share some thoughts about what this work could mean for research mathematics.
+                </a>
+                
+                <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
+                  Anthropic 公布了首个完整的费马大定理计算机验证证明，由 Claude 在 11 天内基本自主使用 Lean 语言完成形式化。文章详细说明了形式化的实施过程，并探讨了 AI 自主长周期работы对数学研究的意义。这是 LLM 在超长时程、高复杂度自主编程任务上的标志性能力验证。
+                </p>
+                
+                <div class="mt-2 flex flex-wrap items-center gap-1.5">
+                  
+                  <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium bg-rose-50 dark:bg-rose-900/30 text-rose-600 dark:text-rose-400">
+                    💎 首个 AI 自主完成的费马大定理形式化证明，是 LLM 长时程自主编程能力的里程碑事件，具有长期参考价值。
+                  </span>
+                  
+                  <span class="text-xs text-gray-400 font-medium uppercase tracking-wide">Anthropic Research</span>
+                  
+                  
+                  <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+                    #模型能力
+                  </span>
+                  
+                  <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+                    #案例分享
                   </span>
                   
                   
@@ -1766,55 +1815,6 @@
             </div>
           </article>
           
-          <article class="card group bg-gradient-to-r from-rose-50 to-white dark:from-rose-950/20 dark:to-gray-900 rounded-xl border border-rose-100 dark:border-rose-900/40 p-4 hover:border-rose-300 dark:hover:border-rose-700 article-item"
-                   data-tags="MCP 新功能 SDK更新"
-                   data-source="dev.to #claudecode"
-                   data-source-type="blog"
-                   data-text="MCP Goes Stateless: What the 2026-07-28 Spec Actually Changes MCP协议发布2026-07-28新规范，取消握手和会话ID机制，使其从有状态协议转变为无状态协议，请求可直接分发到负载均衡器后的任意服务器，无需共享会话存储。同时OAuth/OIDC认证得到加强，工具和提示列表支持缓存，Tasks纳入正式版本化扩展框架，主流SDK下载量较年初增长4倍。">
-            <div class="flex gap-3">
-              <div class="shrink-0 w-8 h-8 rounded-lg bg-rose-100 dark:bg-rose-900/30 flex items-center justify-center text-sm font-bold text-rose-500 border border-rose-200 dark:border-rose-800 mt-0.5">
-                📌
-              </div>
-              <div class="flex-1 min-w-0">
-                <a href="https://dev.to/raxxostudios/mcp-goes-stateless-what-the-2026-07-28-spec-actually-changes-4722" target="_blank" rel="noopener"
-                   class="font-medium text-gray-900 dark:text-gray-100 hover:text-rose-600 dark:hover:text-rose-400 line-clamp-2 leading-snug text-sm">
-                  MCP Goes Stateless: What the 2026-07-28 Spec Actually Changes
-                </a>
-                
-                <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-                  MCP协议发布2026-07-28新规范，取消握手和会话ID机制，使其从有状态协议转变为无状态协议，请求可直接分发到负载均衡器后的任意服务器，无需共享会话存储。同时OAuth/OIDC认证得到加强，工具和提示列表支持缓存，Tasks纳入正式版本化扩展框架，主流SDK下载量较年初增长4倍。
-                </p>
-                
-                <div class="mt-2 flex flex-wrap items-center gap-1.5">
-                  
-                  <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium bg-rose-50 dark:bg-rose-900/30 text-rose-600 dark:text-rose-400">
-                    💎 MCP协议重大版本变更（无状态化改造），影响所有基于MCP的工具集成架构，具有长期架构参考价值
-                  </span>
-                  
-                  <span class="text-xs text-gray-400 font-medium uppercase tracking-wide">dev.to #claudecode</span>
-                  
-                  
-                  <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-                    #MCP
-                  </span>
-                  
-                  <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-                    #新功能
-                  </span>
-                  
-                  
-                  <span class="ml-auto flex items-center gap-1 shrink-0">
-                    <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-                      <div class="score-bar" style="width:80%"></div>
-                    </div>
-                    <span class="text-xs text-gray-400">8.0</span>
-                  </span>
-                  
-                </div>
-              </div>
-            </div>
-          </article>
-          
         </div>
       </section>
       
@@ -1834,10 +1834,79 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="新功能 workflow 工具集成"
+         data-tags="模型能力 案例分享 研究论文"
+         data-source="Anthropic Research"
+         data-source-type="official"
+         data-text="ScienceSep 4, 2026Formalizing Fermat&#39;s Last Theorem We are sharing the first complete computer-checked proof of Fermat’s Last Theorem. Claude worked largely autonomously over 11 days to write the proof in the Lean programming language. Below, we describe how the formalization was done and share some thoughts about what this work could mean for research mathematics. Anthropic 公布了首个完整的费马大定理计算机验证证明，由 Claude 在 11 天内基本自主使用 Lean 语言完成形式化。文章详细说明了形式化的实施过程，并探讨了 AI 自主长周期работы对数学研究的意义。这是 LLM 在超长时程、高复杂度自主编程任务上的标志性能力验证。">
+  <div class="flex gap-3">
+    <!-- Source icon -->
+    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
+      ◆
+    </div>
+    <div class="flex-1 min-w-0">
+      <!-- Title -->
+      <a href="https://www.anthropic.com/research/formalizing-fermats-last-theorem" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
+        ScienceSep 4, 2026Formalizing Fermat&#39;s Last Theorem We are sharing the first complete computer-checked proof of Fermat’s Last Theorem. Claude worked largely autonomously over 11 days to write the proof in the Lean programming language. Below, we describe how the formalization was done and share some thoughts about what this work could mean for research mathematics.
+      </a>
+      <!-- Summary -->
+      
+      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
+        Anthropic 公布了首个完整的费马大定理计算机验证证明，由 Claude 在 11 天内基本自主使用 Lean 语言完成形式化。文章详细说明了形式化的实施过程，并探讨了 AI 自主长周期работы对数学研究的意义。这是 LLM 在超长时程、高复杂度自主编程任务上的标志性能力验证。
+      </p>
+      
+      <!-- Meta row -->
+      <div class="mt-2 flex flex-wrap items-center gap-1.5">
+        <!-- Level badge -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-advanced">
+          🔴 高级
+        </span>
+        
+        <!-- Source -->
+        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          Anthropic Research
+        </span>
+        
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">6 天前</span>
+        
+        
+        <!-- Tags (max 2) -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #模型能力
+        </span>
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #案例分享
+        </span>
+        
+        <!-- Quality bar (only if > 0) -->
+        
+        <span class="ml-auto flex items-center gap-1 shrink-0">
+          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:90%"></div>
+          </div>
+          <span class="text-xs text-gray-400">9.0</span>
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+  
+
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
+         data-tags="新功能 提示工程 workflow"
          data-source="Claude Code Releases"
          data-source-type="official"
-         data-text="v2.1.265 Claude Code v2.1.265 版本更新，新增 --plugin-dir 指向插件文件夹的支持（子文件夹含 manifest 即自动加载，运行时增删可热感知），并为落盘的工具结果加了 1GB 上限与截断提示。同时修复了多项破坏 prompt-cache 复用的问题（前台子代理恢复时工具列表/系统提示前缀变动、agent teammates 与恢复子代理的 SubagentStart hook 上下文与预加载 skills 移出前缀），对重度使用子代理工作流的用户可显著降低成本与延迟。">
+         data-text="v2.1.267 Claude Code v2.1.267 版本更新，新增 maxEffortLevel 设置（可在顶层或按模型配置），可在包括 Bedrock、Vertex、Foundry 在内的所有供应商上统一限制推理强度上限；同时新增 --system-prompt-snapshot off 选项，让系统提示词每次请求都重新渲染，便于迭代调试提示词。其余为云端定时任务、移动端命令输出、tmux/ssh 会话快捷键等 bug 修复。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -1845,14 +1914,14 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.265" target="_blank" rel="noopener"
+      <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.267" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        v2.1.265
+        v2.1.267
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Claude Code v2.1.265 版本更新，新增 --plugin-dir 指向插件文件夹的支持（子文件夹含 manifest 即自动加载，运行时增删可热感知），并为落盘的工具结果加了 1GB 上限与截断提示。同时修复了多项破坏 prompt-cache 复用的问题（前台子代理恢复时工具列表/系统提示前缀变动、agent teammates 与恢复子代理的 SubagentStart hook 上下文与预加载 skills 移出前缀），对重度使用子代理工作流的用户可显著降低成本与延迟。
+        Claude Code v2.1.267 版本更新，新增 maxEffortLevel 设置（可在顶层或按模型配置），可在包括 Bedrock、Vertex、Foundry 在内的所有供应商上统一限制推理强度上限；同时新增 --system-prompt-snapshot off 选项，让系统提示词每次请求都重新渲染，便于迭代调试提示词。其余为云端定时任务、移动端命令输出、tmux/ssh 会话快捷键等 bug 修复。
       </p>
       
       <!-- Meta row -->
@@ -1873,7 +1942,7 @@
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">13 小时前</span>
+        <span class="text-xs text-gray-400">14 小时前</span>
         
         
         <!-- Tags (max 2) -->
@@ -1883,7 +1952,7 @@
         </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #workflow
+          #提示工程
         </span>
         
         <!-- Quality bar (only if > 0) -->
@@ -1906,10 +1975,10 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="案例分享 workflow 模型能力"
+         data-tags="模型能力 新功能"
          data-source="OpenAI 官方博客"
          data-source-type="official"
-         data-text="How GPT-5.6 Sol helps run quantum computing experiments MIT 研究员使用 GPT-5.6 Sol 配合 Codex，让 AI 自主运行量子计算实验、分析结果并校准量子比特。展示了 AI 编程助手在科研自动化场景中的 agentic 工作流应用，是 AI Agent 承担端到端实验闭环的典型案例。">
+         data-text="GPT-6 Astra: The next generation in intelligence for work OpenAI 发布面向企业场景的新一代模型 GPT-6 Astra，强化了推理能力、计算机操作（computer use）以及写作与设计判断力。对关注 AI 编程工具与 Agent 工作流的开发者而言，computer use 与推理能力升级直接影响自动化编码与任务执行的上限，值得作为竞品模型能力基线跟踪。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -1917,14 +1986,14 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://openai.com/index/codex-quantum-computing-experiments" target="_blank" rel="noopener"
+      <a href="https://openai.com/index/gpt-6-astra-next-generation-work" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        How GPT-5.6 Sol helps run quantum computing experiments
+        GPT-6 Astra: The next generation in intelligence for work
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        MIT 研究员使用 GPT-5.6 Sol 配合 Codex，让 AI 自主运行量子计算实验、分析结果并校准量子比特。展示了 AI 编程助手在科研自动化场景中的 agentic 工作流应用，是 AI Agent 承担端到端实验闭环的典型案例。
+        OpenAI 发布面向企业场景的新一代模型 GPT-6 Astra，强化了推理能力、计算机操作（computer use）以及写作与设计判断力。对关注 AI 编程工具与 Agent 工作流的开发者而言，computer use 与推理能力升级直接影响自动化编码与任务执行的上限，值得作为竞品模型能力基线跟踪。
       </p>
       
       <!-- Meta row -->
@@ -1942,17 +2011,17 @@
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">17 小时前</span>
+        <span class="text-xs text-gray-400">23 小时前</span>
         
         
         <!-- Tags (max 2) -->
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #案例分享
+          #模型能力
         </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #workflow
+          #新功能
         </span>
         
         <!-- Quality bar (only if > 0) -->
@@ -1969,162 +2038,11 @@
   </div>
 </article>
 
-
-
-  
-  
-
-<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="案例分享 工具集成"
-         data-source="OpenAI 官方博客"
-         data-source-type="official"
-         data-text="1Password increases engineering productivity 21% with Codex 1Password 工程团队通过 OpenAI Codex 快速构建新功能与内部工具，在严格安全策略约束下达到生产可用水平，官方称工程效率提升 21%。属于 AI 编程工具在安全敏感型企业中的落地案例，可参考其在合规环境下的 AI 编码工作流。但内容为厂商自述的营销型案例，缺乏具体技术细节与可复现方法。">
-  <div class="flex gap-3">
-    <!-- Source icon -->
-    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ○
-    </div>
-    <div class="flex-1 min-w-0">
-      <!-- Title -->
-      <a href="https://openai.com/index/1password" target="_blank" rel="noopener"
-         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        1Password increases engineering productivity 21% with Codex
-      </a>
-      <!-- Summary -->
-      
-      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        1Password 工程团队通过 OpenAI Codex 快速构建新功能与内部工具，在严格安全策略约束下达到生产可用水平，官方称工程效率提升 21%。属于 AI 编程工具在安全敏感型企业中的落地案例，可参考其在合规环境下的 AI 编码工作流。但内容为厂商自述的营销型案例，缺乏具体技术细节与可复现方法。
-      </p>
-      
-      <!-- Meta row -->
-      <div class="mt-2 flex flex-wrap items-center gap-1.5">
-        <!-- Level badge -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-beginner">
-          🟢 入门
-        </span>
-        
-        <!-- Source -->
-        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          OpenAI 官方博客
-        </span>
-        
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">1 天前</span>
-        
-        
-        <!-- Tags (max 2) -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #案例分享
-        </span>
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #工具集成
-        </span>
-        
-        <!-- Quality bar (only if > 0) -->
-        
-        <span class="ml-auto flex items-center gap-1 shrink-0">
-          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:50%"></div>
-          </div>
-          <span class="text-xs text-gray-400">5.0</span>
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
         </div>
       </section>
       
 
       <!-- 前沿速递 -->
-      
-      <section id="section-frontier">
-        <h2 class="section-divider text-sm font-bold text-orange-500 mb-4">
-          <span>🚀 前沿速递</span>
-          <span class="text-xs font-normal text-gray-400">7 天内最新动态</span>
-        </h2>
-        <div class="space-y-3" id="frontier-list">
-          
-
-
-  
-  
-
-<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="workflow 最佳实践 工具集成"
-         data-source="everything-claude-code commits"
-         data-source-type="community"
-         data-text="fix: close release review gaps and expose failing CI suites 这是 everything-claude-code 仓库的一次修复提交，主要收紧发版审查流程中的漏洞并让失败的 CI 测试套件显式暴露出来。附带信息展示了一套学术研究技能插件（ARS）的实际配置：13 个斜杠命令按任务复杂度在 frontmatter 中固定路由到 Opus/Sonnet 不同模型，以及 3 个插件级 agent 的分工。对于想学习 Claude Code 插件化组织、命令级模型路由与成本控制的人有参考价值。">
-  <div class="flex gap-3">
-    <!-- Source icon -->
-    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ◉
-    </div>
-    <div class="flex-1 min-w-0">
-      <!-- Title -->
-      <a href="https://github.com/affaan-m/ECC/commit/14e731c6d5f341f35a9e24609de1d91f57cf8d70" target="_blank" rel="noopener"
-         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        fix: close release review gaps and expose failing CI suites
-      </a>
-      <!-- Summary -->
-      
-      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        这是 everything-claude-code 仓库的一次修复提交，主要收紧发版审查流程中的漏洞并让失败的 CI 测试套件显式暴露出来。附带信息展示了一套学术研究技能插件（ARS）的实际配置：13 个斜杠命令按任务复杂度在 frontmatter 中固定路由到 Opus/Sonnet 不同模型，以及 3 个插件级 agent 的分工。对于想学习 Claude Code 插件化组织、命令级模型路由与成本控制的人有参考价值。
-      </p>
-      
-      <!-- Meta row -->
-      <div class="mt-2 flex flex-wrap items-center gap-1.5">
-        <!-- Level badge -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-beginner">
-          🟢 入门
-        </span>
-        
-        <!-- Source -->
-        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          everything-claude-code commits
-        </span>
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">haelyra</span>
-        
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">1 天前</span>
-        
-        
-        <!-- Tags (max 2) -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #workflow
-        </span>
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #最佳实践
-        </span>
-        
-        <!-- Quality bar (only if > 0) -->
-        
-        <span class="ml-auto flex items-center gap-1 shrink-0">
-          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:55%"></div>
-          </div>
-          <span class="text-xs text-gray-400">5.5</span>
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-        </div>
-      </section>
       
 
       <!-- 成熟实践 -->
