@@ -139,7 +139,7 @@
     </div>
 
     <div class="flex items-center gap-2 ml-auto shrink-0">
-      <span class="hidden md:inline text-xs text-gray-400">2026年09月11日 02:13</span>
+      <span class="hidden md:inline text-xs text-gray-400">2026年09月12日 02:18</span>
       <span class="inline-flex items-center gap-1 bg-green-50 dark:bg-green-900/30 text-green-600 dark:text-green-400 px-2 py-0.5 rounded-full text-xs font-medium">
         ● 每日更新
       </span>
@@ -171,11 +171,11 @@
       <div class="text-xs text-gray-400 mt-0.5">经典置顶</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-amber-100 dark:border-amber-900/40 text-center">
-      <div class="text-2xl font-bold text-amber-500">6</div>
+      <div class="text-2xl font-bold text-amber-500">5</div>
       <div class="text-xs text-gray-400 mt-0.5">官方动态</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-orange-100 dark:border-orange-900/40 text-center">
-      <div class="text-2xl font-bold text-orange-500">3</div>
+      <div class="text-2xl font-bold text-orange-500">4</div>
       <div class="text-xs text-gray-400 mt-0.5">前沿速递</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-blue-100 dark:border-blue-900/40 text-center">
@@ -191,7 +191,7 @@
       <span class="text-xl mt-0.5 shrink-0">📋</span>
       <div>
         <div class="text-xs font-semibold text-brand-700 dark:text-brand-300 mb-1 uppercase tracking-wide">今日速览</div>
-        <p class="text-sm leading-relaxed text-gray-700 dark:text-gray-300">Anthropic 宣布 Claude 在 Lean 语言中历时 11 天、基本自主完成了费马大定理的首个计算机验证证明，标志着 AI 在形式化数学推理上的重大突破。工具链方面更新密集，Claude Code 发布 v2.1.268，Python 与 TypeScript SDK 同步迭代至 1.5.0 与 v0.125.0，claude-api 技能新增 Managed Agents 的 `auto` 权限策略。生态竞争同步升温，OpenAI 正式推出 Agents API，智能体接口标准化成为各家共同的主线。社区侧则聚焦工程实践细节，如调整依赖升级的自动合并策略。</p>
+        <p class="text-sm leading-relaxed text-gray-700 dark:text-gray-300">Anthropic 公布了 Claude 在 Lean 中自主工作 11 天完成的费马大定理首个完整计算机验证证明，标志着 AI 在形式化数学领域的里程碑式突破。Claude Code 方面发布 v2.1.269，社区项目 everything-claude-code 密集更新，新增 Rails 框架模式技能，并修复了 Windows linter 路径、ESLint 9 兼容及 hooks 阻断逻辑等问题。竞品阵营同样活跃，OpenAI 接连宣布 Perplexity、Cognition 等伙伴将 GPT-6 Astra 用于端到端系统与自动化测试，并推出面向自然语音交互的 GPT-Live-1 API。此外，Meta 因 AI 推荐涉及侵入性个人问题而调整策略，提示行业在能力竞速之外仍需直面隐私与信任议题。</p>
       </div>
     </div>
   </div>
@@ -265,6 +265,11 @@
           <button onclick="filterTag('all')" data-tag="all"
             class="filter-pill active px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
             全部
+          </button>
+          
+          <button onclick="filterTag('GitHub热门')" data-tag="GitHub热门"
+            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+            GitHub热门
           </button>
           
           <button onclick="filterTag('SDK更新')" data-tag="SDK更新"
@@ -1847,7 +1852,7 @@
          data-tags="模型能力 案例分享 研究论文"
          data-source="Anthropic Research"
          data-source-type="official"
-         data-text="ScienceSep 4, 2026Formalizing Fermat&#39;s Last Theorem We are sharing the first complete computer-checked proof of Fermat’s Last Theorem. Claude worked largely autonomously over 11 days to write the proof in the Lean programming language. Anthropic 公布首个完整的费马大定理计算机验证证明，Claude 在 11 天内基本自主地用 Lean 语言完成了形式化证明。这是 AI 在长程自主任务、形式化验证与复杂代码生成能力上的里程碑式案例，对理解 Claude 在超长时间跨度编程任务中的能力边界极具参考价值。">
+         data-text="ScienceSep 4, 2026Formalizing Fermat&#39;s Last Theorem We are sharing the first complete computer-checked proof of Fermat’s Last Theorem. Claude worked largely autonomously over 11 days to write the proof in the Lean programming language. Anthropic 宣布 Claude 在 11 天内基本自主地用 Lean 语言完成了费马大定理的首个完整计算机可验证证明。这是 AI 在长周期、高复杂度自主形式化推理任务上的里程碑式验证，展示了模型在超长上下文、自我纠错与严格形式化工作流中的实际能力边界。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -1862,7 +1867,7 @@
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Anthropic 公布首个完整的费马大定理计算机验证证明，Claude 在 11 天内基本自主地用 Lean 语言完成了形式化证明。这是 AI 在长程自主任务、形式化验证与复杂代码生成能力上的里程碑式案例，对理解 Claude 在超长时间跨度编程任务中的能力边界极具参考价值。
+        Anthropic 宣布 Claude 在 11 天内基本自主地用 Lean 语言完成了费马大定理的首个完整计算机可验证证明。这是 AI 在长周期、高复杂度自主形式化推理任务上的里程碑式验证，展示了模型在超长上下文、自我纠错与严格形式化工作流中的实际能力边界。
       </p>
       
       <!-- Meta row -->
@@ -1913,25 +1918,25 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="新功能 SDK更新 workflow 工具集成"
-         data-source="OpenAI 官方博客"
+         data-tags="新功能 工具集成 SDK更新"
+         data-source="Claude Code Releases"
          data-source-type="official"
-         data-text="Introducing the Agents API OpenAI 发布 Agents API，一项由 Codex harness 驱动的托管式云端 Agent 服务，支持任务编排、长时运行会话和工具调用。对于构建自动化编程 Agent、长周期 LLM 工作流的开发者具有直接参考价值，也可作为 Claude Agent SDK 的横向对比对象。">
+         data-text="v2.1.269 Claude Code v2.1.269 版本更新，新增 `claude plugin eval` 命令用于对插件运行可复现的评测套件并输出 JSON/HTML 评分报告，以及 `/output-style` 命令支持在远程控制和无头会话中切换输出风格。同时增强了 Bash 工具的文件改动 diff 展示、OpenTelemetry 仓库属性标签和 LLM 网关模型发现超时配置。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ○
+      ⚡
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://openai.com/index/introducing-the-agents-api" target="_blank" rel="noopener"
+      <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.269" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        Introducing the Agents API
+        v2.1.269
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        OpenAI 发布 Agents API，一项由 Codex harness 驱动的托管式云端 Agent 服务，支持任务编排、长时运行会话和工具调用。对于构建自动化编程 Agent、长周期 LLM 工作流的开发者具有直接参考价值，也可作为 Claude Agent SDK 的横向对比对象。
+        Claude Code v2.1.269 版本更新，新增 `claude plugin eval` 命令用于对插件运行可复现的评测套件并输出 JSON/HTML 评分报告，以及 `/output-style` 命令支持在远程控制和无头会话中切换输出风格。同时增强了 Bash 工具的文件改动 diff 展示、OpenTelemetry 仓库属性标签和 LLM 网关模型发现超时配置。
       </p>
       
       <!-- Meta row -->
@@ -1944,12 +1949,15 @@
         
         <!-- Source -->
         <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          OpenAI 官方博客
+          Claude Code Releases
         </span>
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">ashwin-ant</span>
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">1 天前</span>
+        <span class="text-xs text-gray-400">15 小时前</span>
         
         
         <!-- Tags (max 2) -->
@@ -1959,79 +1967,7 @@
         </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #SDK更新
-        </span>
-        
-        <!-- Quality bar (only if > 0) -->
-        
-        <span class="ml-auto flex items-center gap-1 shrink-0">
-          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:75%"></div>
-          </div>
-          <span class="text-xs text-gray-400">7.5</span>
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-
-
-  
-  
-
-<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="SDK更新 新功能 工具集成"
-         data-source="Anthropic SDK Python"
-         data-source-type="official"
-         data-text="v1.5.0 Anthropic Python SDK v1.5.0 版本更新，新增 Managed Agents 的 auto 模式工具权限、无需授权令牌即可挂载公开 GitHub 仓库、用户档案 beta 支持，以及 Message.to_param() 和直接在 messages.create/stream/count_tokens 中传入工具对象等开发者体验改进。同时修复了 extra_body 合并顺序和凭证相关问题，并新增 CredentialsError 异常类型。">
-  <div class="flex gap-3">
-    <!-- Source icon -->
-    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ◆
-    </div>
-    <div class="flex-1 min-w-0">
-      <!-- Title -->
-      <a href="https://github.com/anthropics/anthropic-sdk-python/releases/tag/v1.5.0" target="_blank" rel="noopener"
-         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        v1.5.0
-      </a>
-      <!-- Summary -->
-      
-      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Anthropic Python SDK v1.5.0 版本更新，新增 Managed Agents 的 auto 模式工具权限、无需授权令牌即可挂载公开 GitHub 仓库、用户档案 beta 支持，以及 Message.to_param() 和直接在 messages.create/stream/count_tokens 中传入工具对象等开发者体验改进。同时修复了 extra_body 合并顺序和凭证相关问题，并新增 CredentialsError 异常类型。
-      </p>
-      
-      <!-- Meta row -->
-      <div class="mt-2 flex flex-wrap items-center gap-1.5">
-        <!-- Level badge -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
-          🟡 中级
-        </span>
-        
-        <!-- Source -->
-        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          Anthropic SDK Python
-        </span>
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">stainless-app[bot]</span>
-        
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">16 小时前</span>
-        
-        
-        <!-- Tags (max 2) -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #SDK更新
-        </span>
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #新功能
+          #工具集成
         </span>
         
         <!-- Quality bar (only if > 0) -->
@@ -2054,65 +1990,62 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="SDK更新 新功能 工具集成"
-         data-source="Anthropic SDK TypeScript"
+         data-tags="案例分享 模型能力 workflow"
+         data-source="OpenAI 官方博客"
          data-source-type="official"
-         data-text="sdk: v0.125.0 Anthropic TypeScript SDK v0.125.0 版本更新，主要围绕 Managed Agents 能力扩展：新增 auto 模式工具权限、支持无需授权令牌即可挂载公开 GitHub 仓库，并引入 user-profiles-2026-09-04 beta 版本与 external_user_details 字段。同时补充了 web_fetch 的 content_too_large 错误码，并清理了未使用的 idempotency 请求选项。">
+         data-text="Perplexity trusts GPT-6 Astra with end-to-end systems Perplexity 将 GPT-6 Astra 用于端到端系统任务：撰写沟通内容、修改软件代码、监控生产系统，且相比早期模型大幅降低了人工检查频率。这是一个关于前沿模型自主性提升的企业级案例，反映 AI 编程代理正从「辅助补全」向「可信托管完整工作流」演进。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ◆
+      ○
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/sdk-v0.125.0" target="_blank" rel="noopener"
+      <a href="https://openai.com/index/perplexity-improving-accuracy-with-astra" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        sdk: v0.125.0
+        Perplexity trusts GPT-6 Astra with end-to-end systems
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Anthropic TypeScript SDK v0.125.0 版本更新，主要围绕 Managed Agents 能力扩展：新增 auto 模式工具权限、支持无需授权令牌即可挂载公开 GitHub 仓库，并引入 user-profiles-2026-09-04 beta 版本与 external_user_details 字段。同时补充了 web_fetch 的 content_too_large 错误码，并清理了未使用的 idempotency 请求选项。
+        Perplexity 将 GPT-6 Astra 用于端到端系统任务：撰写沟通内容、修改软件代码、监控生产系统，且相比早期模型大幅降低了人工检查频率。这是一个关于前沿模型自主性提升的企业级案例，反映 AI 编程代理正从「辅助补全」向「可信托管完整工作流」演进。
       </p>
       
       <!-- Meta row -->
       <div class="mt-2 flex flex-wrap items-center gap-1.5">
         <!-- Level badge -->
         
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-beginner">
-          🟢 入门
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
+          🟡 中级
         </span>
         
         <!-- Source -->
         <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          Anthropic SDK TypeScript
+          OpenAI 官方博客
         </span>
         
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">stainless-app[bot]</span>
-        
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">16 小时前</span>
+        <span class="text-xs text-gray-400">刚刚</span>
         
         
         <!-- Tags (max 2) -->
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #SDK更新
+          #案例分享
         </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #新功能
+          #模型能力
         </span>
         
         <!-- Quality bar (only if > 0) -->
         
         <span class="ml-auto flex items-center gap-1 shrink-0">
           <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:60%"></div>
+            <div class="score-bar" style="width:65%"></div>
           </div>
-          <span class="text-xs text-gray-400">6.0</span>
+          <span class="text-xs text-gray-400">6.5</span>
         </span>
         
       </div>
@@ -2126,46 +2059,43 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="新功能 工具集成"
-         data-source="Claude Code Releases"
+         data-tags="新功能 模型能力 工具集成"
+         data-source="OpenAI 官方博客"
          data-source-type="official"
-         data-text="v2.1.268 Claude Code v2.1.268 版本更新，主要围绕企业级网关（Claude apps gateway）能力增强：支持在 gateway.yaml 中配置 pricing，使已登录客户端的 /cost 与遥测数据与实际支出一致；新增 access_control.allow_cidrs 为空时的启动告警和公网请求首次告警，以及 gatewayInternalNetworks 托管设置。此外还增加了 self-hosted-runner 会话目录清理开关、auth status --json 输出 configDirectory、plugin install/uninstall 的 --json 支持。">
+         data-text="Build more natural voice experiences with GPT‑Live‑1 in the API OpenAI 在 API 中推出 GPT-Live-1 语音模型，支持全双工自然语音对话、更强的指令遵循能力、自定义音色以及电话系统集成。对构建语音类 AI 应用和实时交互工作流的开发者有直接参考价值，属于模型能力层面的新发布。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ⚡
+      ○
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.268" target="_blank" rel="noopener"
+      <a href="https://openai.com/index/introducing-gpt-live-1-in-the-api" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        v2.1.268
+        Build more natural voice experiences with GPT‑Live‑1 in the API
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Claude Code v2.1.268 版本更新，主要围绕企业级网关（Claude apps gateway）能力增强：支持在 gateway.yaml 中配置 pricing，使已登录客户端的 /cost 与遥测数据与实际支出一致；新增 access_control.allow_cidrs 为空时的启动告警和公网请求首次告警，以及 gatewayInternalNetworks 托管设置。此外还增加了 self-hosted-runner 会话目录清理开关、auth status --json 输出 configDirectory、plugin install/uninstall 的 --json 支持。
+        OpenAI 在 API 中推出 GPT-Live-1 语音模型，支持全双工自然语音对话、更强的指令遵循能力、自定义音色以及电话系统集成。对构建语音类 AI 应用和实时交互工作流的开发者有直接参考价值，属于模型能力层面的新发布。
       </p>
       
       <!-- Meta row -->
       <div class="mt-2 flex flex-wrap items-center gap-1.5">
         <!-- Level badge -->
         
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-beginner">
-          🟢 入门
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
+          🟡 中级
         </span>
         
         <!-- Source -->
         <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          Claude Code Releases
+          OpenAI 官方博客
         </span>
         
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">ashwin-ant</span>
-        
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">13 小时前</span>
+        <span class="text-xs text-gray-400">2 天前</span>
         
         
         <!-- Tags (max 2) -->
@@ -2175,16 +2105,16 @@
         </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #工具集成
+          #模型能力
         </span>
         
         <!-- Quality bar (only if > 0) -->
         
         <span class="ml-auto flex items-center gap-1 shrink-0">
           <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:60%"></div>
+            <div class="score-bar" style="width:65%"></div>
           </div>
-          <span class="text-xs text-gray-400">6.0</span>
+          <span class="text-xs text-gray-400">6.5</span>
         </span>
         
       </div>
@@ -2198,25 +2128,25 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="SDK更新 工具集成"
-         data-source="PyPI anthropic"
+         data-tags="模型能力 案例分享 工具集成"
+         data-source="OpenAI 官方博客"
          data-source-type="official"
-         data-text="1.4.0 Anthropic 官方 Python SDK 发布 1.4.0 版本，是调用 Claude API 的标准客户端库。版本更新通常包含新模型支持、API 能力扩展和接口改进，对基于 Claude 构建应用或工作流的开发者有直接参考价值。">
+         data-text="Cognition helps Devin test its own work with GPT‑6 Astra OpenAI 与 Cognition 合作，用 GPT-6 Astra 强化 Devin 的自动化测试与自验证能力，让 AI 编程代理不仅写代码还能证明代码可用。核心价值在于展示了「代理自我验证」这一趋势，可减少人工 code review 负担。对关注 AI 编程工具演进和验证型工作流的开发者有参考意义，但公告内容较简略，缺乏具体实现细节。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      🐍
+      ○
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://pypi.org/project/anthropic/1.4.0/" target="_blank" rel="noopener"
+      <a href="https://openai.com/index/cognition-devin-testing-with-astra" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        1.4.0
+        Cognition helps Devin test its own work with GPT‑6 Astra
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Anthropic 官方 Python SDK 发布 1.4.0 版本，是调用 Claude API 的标准客户端库。版本更新通常包含新模型支持、API 能力扩展和接口改进，对基于 Claude 构建应用或工作流的开发者有直接参考价值。
+        OpenAI 与 Cognition 合作，用 GPT-6 Astra 强化 Devin 的自动化测试与自验证能力，让 AI 编程代理不仅写代码还能证明代码可用。核心价值在于展示了「代理自我验证」这一趋势，可减少人工 code review 负担。对关注 AI 编程工具演进和验证型工作流的开发者有参考意义，但公告内容较简略，缺乏具体实现细节。
       </p>
       
       <!-- Meta row -->
@@ -2229,34 +2159,31 @@
         
         <!-- Source -->
         <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          PyPI anthropic
+          OpenAI 官方博客
         </span>
         
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">support@anthropic.com</span>
-        
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">6 天前</span>
+        <span class="text-xs text-gray-400">18 小时前</span>
         
         
         <!-- Tags (max 2) -->
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #SDK更新
+          #模型能力
         </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #工具集成
+          #案例分享
         </span>
         
         <!-- Quality bar (only if > 0) -->
         
         <span class="ml-auto flex items-center gap-1 shrink-0">
           <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:50%"></div>
+            <div class="score-bar" style="width:60%"></div>
           </div>
-          <span class="text-xs text-gray-400">5.0</span>
+          <span class="text-xs text-gray-400">6.0</span>
         </span>
         
       </div>
@@ -2283,10 +2210,10 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="新功能 SDK更新 最佳实践 workflow"
-         data-source="anthropics/skills commits"
+         data-tags="工具集成 最佳实践 GitHub热门"
+         data-source="everything-claude-code commits"
          data-source-type="community"
-         data-text="Update claude-api skill: Managed Agents `auto` permission policy and … Anthropic 官方 skills 仓库更新 claude-api skill，新增 Managed Agents 的第三种权限策略 `auto`（自动放行、高风险拒绝并回传错误工具结果、不确定时暂停审批三种结果），并文档化 `agent.tool_use`/`agent.mcp_tool_use` 上的 `evaluated_permission` 与 `evaluation` 字段。客户端与多智能体指南同步改为依据 `evaluated_permission === &#39;ask&#39;` 而非配置策略来拦截，另外 CLI 指南补充了 `ant beta:sessions connect` 终端查看器、快捷键与 allow/deny 交互。">
+         data-text="feat(rails-patterns): add Rails framework patterns skill (#3074) everything-claude-code 仓库新增 rails-patterns Skill，与已有的 laravel-patterns、django-patterns 并列，涵盖瘦控制器+服务对象、Form/Query 对象、地道 ActiveRecord 写法、后台任务、ViewComponent、Hotwire 及 Rails 8 Solid 技术栈。该 Skill 已注册进 install-modules、agent.yaml 和各类清单文件，技能总数达 292，CI 全绿通过。对用 Claude Code 做 Rails 开发的人来说，是一份可直接复用的框架规范约束。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -2294,14 +2221,14 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://github.com/anthropics/skills/commit/34040c9c568585f6929bedeaad110ad08f079624" target="_blank" rel="noopener"
+      <a href="https://github.com/affaan-m/ECC/commit/95b9fe157f815ef064793e49eacfecdbbfc5b813" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        Update claude-api skill: Managed Agents `auto` permission policy and …
+        feat(rails-patterns): add Rails framework patterns skill (#3074)
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Anthropic 官方 skills 仓库更新 claude-api skill，新增 Managed Agents 的第三种权限策略 `auto`（自动放行、高风险拒绝并回传错误工具结果、不确定时暂停审批三种结果），并文档化 `agent.tool_use`/`agent.mcp_tool_use` 上的 `evaluated_permission` 与 `evaluation` 字段。客户端与多智能体指南同步改为依据 `evaluated_permission === &#39;ask&#39;` 而非配置策略来拦截，另外 CLI 指南补充了 `ant beta:sessions connect` 终端查看器、快捷键与 allow/deny 交互。
+        everything-claude-code 仓库新增 rails-patterns Skill，与已有的 laravel-patterns、django-patterns 并列，涵盖瘦控制器+服务对象、Form/Query 对象、地道 ActiveRecord 写法、后台任务、ViewComponent、Hotwire 及 Rails 8 Solid 技术栈。该 Skill 已注册进 install-modules、agent.yaml 和各类清单文件，技能总数达 292，CI 全绿通过。对用 Claude Code 做 Rails 开发的人来说，是一份可直接复用的框架规范约束。
       </p>
       
       <!-- Meta row -->
@@ -2314,34 +2241,34 @@
         
         <!-- Source -->
         <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          anthropics/skills commits
+          everything-claude-code commits
         </span>
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">cj-ant</span>
+        <span class="text-xs text-gray-400">rockwellwindsor</span>
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">14 小时前</span>
+        <span class="text-xs text-gray-400">9 小时前</span>
         
         
         <!-- Tags (max 2) -->
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #新功能
+          #工具集成
         </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #SDK更新
+          #最佳实践
         </span>
         
         <!-- Quality bar (only if > 0) -->
         
         <span class="ml-auto flex items-center gap-1 shrink-0">
           <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:75%"></div>
+            <div class="score-bar" style="width:65%"></div>
           </div>
-          <span class="text-xs text-gray-400">7.5</span>
+          <span class="text-xs text-gray-400">6.5</span>
         </span>
         
       </div>
@@ -2358,7 +2285,7 @@
          data-tags=""
          data-source="The Verge AI"
          data-source-type="news"
-         data-text="Read the Apple document explaining how new listening features still protect your privacy At Wednesday&#39;s iPhone Duo launch event, Apple announced a handful of new Siri AI Audio Intelligence features, including Siri Recap, Live Rewind, Sound">
+         data-text="Meta says it&amp;#8217;s changing AI suggestions after posing invasive personal questions Meta says it&#39;s making changes to the prompts suggested by its AI chatbot after a viral video showed it digging for personal information about a woman&#39;">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -2366,14 +2293,14 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://www.theverge.com/tech/992919/apple-siri-ai-audio-intelligence-privacy" target="_blank" rel="noopener"
+      <a href="https://www.theverge.com/tech/993974/meta-ai-prompt-invasive-suggestions" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        Read the Apple document explaining how new listening features still protect your privacy
+        Meta says it&amp;#8217;s changing AI suggestions after posing invasive personal questions
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        At Wednesday&#39;s iPhone Duo launch event, Apple announced a handful of new Siri AI Audio Intelligence features, including Siri Recap, Live Rewind, Sound
+        Meta says it&#39;s making changes to the prompts suggested by its AI chatbot after a viral video showed it digging for personal information about a woman&#39;
       </p>
       
       <!-- Meta row -->
@@ -2390,11 +2317,11 @@
         </span>
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">Stevie Bonifield</span>
+        <span class="text-xs text-gray-400">Emma Roth</span>
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">1 天前</span>
+        <span class="text-xs text-gray-400">19 小时前</span>
         
         
         <!-- Tags (max 2) -->
@@ -2419,10 +2346,10 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="最佳实践 workflow 工具集成"
+         data-tags="workflow 最佳实践 工具集成"
          data-source="everything-claude-code commits"
          data-source-type="community"
-         data-text="fix(github-ops): don&#39;t instruct auto-merge of dependency bumps 该 commit 修复了 github-ops skill 中的一处安全隐患：原本指示 agent「自动合并安全的依赖升级」，但未定义何为「安全」，且与该 skill 自身「绝不让仓库内容授权写操作」的原则冲突。修改后改为向用户提出合并建议并等待批准。对编写 Claude Code skill 时如何保持权限边界一致性有参考价值。">
+         data-text="fix(hooks): block-no-verify handles stuck optional values and long-op… 这是 everything-claude-code 仓库中一个 hooks 安全修复提交，针对 block-no-verify 钩子在词级重写时的两类漏洞：短选项粘连可选值（如 -uno、-Sn）导致的误拦截，以及 git 允许的长选项前缀缩写（--no-veri、--no-verif）绕过拦截。修复后覆盖 commit/push/merge/rebase 四类命令，并通过 34 条命令的实机验证与 35/35 钩子测试。对于用 Hook 强制约束 Claude Code 行为的团队，是一个关于「命令解析边界情况」的实用参考。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -2430,14 +2357,14 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://github.com/affaan-m/ECC/commit/22d7ed513751e66c9a3cc25ee145c87c88d4a201" target="_blank" rel="noopener"
+      <a href="https://github.com/affaan-m/ECC/commit/4f373874209b4b63fdec0469b76992923ea0a9d0" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        fix(github-ops): don&#39;t instruct auto-merge of dependency bumps
+        fix(hooks): block-no-verify handles stuck optional values and long-op…
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        该 commit 修复了 github-ops skill 中的一处安全隐患：原本指示 agent「自动合并安全的依赖升级」，但未定义何为「安全」，且与该 skill 自身「绝不让仓库内容授权写操作」的原则冲突。修改后改为向用户提出合并建议并等待批准。对编写 Claude Code skill 时如何保持权限边界一致性有参考价值。
+        这是 everything-claude-code 仓库中一个 hooks 安全修复提交，针对 block-no-verify 钩子在词级重写时的两类漏洞：短选项粘连可选值（如 -uno、-Sn）导致的误拦截，以及 git 允许的长选项前缀缩写（--no-veri、--no-verif）绕过拦截。修复后覆盖 commit/push/merge/rebase 四类命令，并通过 34 条命令的实机验证与 35/35 钩子测试。对于用 Hook 强制约束 Claude Code 行为的团队，是一个关于「命令解析边界情况」的实用参考。
       </p>
       
       <!-- Meta row -->
@@ -2454,21 +2381,21 @@
         </span>
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">luxury-sketch</span>
+        <span class="text-xs text-gray-400">bettercallzaal</span>
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">15 小时前</span>
+        <span class="text-xs text-gray-400">8 小时前</span>
         
         
         <!-- Tags (max 2) -->
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #最佳实践
+          #workflow
         </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #workflow
+          #最佳实践
         </span>
         
         <!-- Quality bar (only if > 0) -->
@@ -2478,6 +2405,78 @@
             <div class="score-bar" style="width:60%"></div>
           </div>
           <span class="text-xs text-gray-400">6.0</span>
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+  
+
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
+         data-tags="workflow 工具集成 最佳实践"
+         data-source="everything-claude-code commits"
+         data-source-type="community"
+         data-text="fix(hooks): support Windows linter paths and ESLint 9 (#3076) 该提交修复了 Claude Code hooks 中 pre-bash-commit-quality 钩子的两个问题：Windows 下 .cmd/.bat linter 路径含空格时未加引号导致失败，以及 ESLint 9 已移除的 --format compact 参数。修复方案是批处理可执行文件通过 cmd.exe 运行并用环境变量令牌传递参数，同时改用 ESLint 内置默认格式化器以兼容 8/9/10 版本。对使用跨平台 hooks 做提交前代码质量检查的用户有实际参考价值。">
+  <div class="flex gap-3">
+    <!-- Source icon -->
+    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
+      ◉
+    </div>
+    <div class="flex-1 min-w-0">
+      <!-- Title -->
+      <a href="https://github.com/affaan-m/ECC/commit/2083c9839a39c2ad0dee368d987126feb03b5650" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
+        fix(hooks): support Windows linter paths and ESLint 9 (#3076)
+      </a>
+      <!-- Summary -->
+      
+      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
+        该提交修复了 Claude Code hooks 中 pre-bash-commit-quality 钩子的两个问题：Windows 下 .cmd/.bat linter 路径含空格时未加引号导致失败，以及 ESLint 9 已移除的 --format compact 参数。修复方案是批处理可执行文件通过 cmd.exe 运行并用环境变量令牌传递参数，同时改用 ESLint 内置默认格式化器以兼容 8/9/10 版本。对使用跨平台 hooks 做提交前代码质量检查的用户有实际参考价值。
+      </p>
+      
+      <!-- Meta row -->
+      <div class="mt-2 flex flex-wrap items-center gap-1.5">
+        <!-- Level badge -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-beginner">
+          🟢 入门
+        </span>
+        
+        <!-- Source -->
+        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          everything-claude-code commits
+        </span>
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">Dante-dan</span>
+        
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">9 小时前</span>
+        
+        
+        <!-- Tags (max 2) -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #workflow
+        </span>
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #工具集成
+        </span>
+        
+        <!-- Quality bar (only if > 0) -->
+        
+        <span class="ml-auto flex items-center gap-1 shrink-0">
+          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:55%"></div>
+          </div>
+          <span class="text-xs text-gray-400">5.5</span>
         </span>
         
       </div>
