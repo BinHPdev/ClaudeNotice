@@ -137,6 +137,25 @@
     "language": "en"
   },
   {
+    "title": "Claude Fable 5.1 and Claude Mythos 5.1",
+    "url": "https://www.anthropic.com/claude-fable-and-mythos-5-1",
+    "source": "Hacker News",
+    "source_type": "community",
+    "summary_zh": "Anthropic 发布 Claude Fable 5.1 与 Mythos 5.1 两款新模型，官方同步公布「What's new」文档与联合 System Card。内容涵盖模型能力升级、行为变更与安全评估细节，是评估是否升级 Claude Code 默认模型、调整提示与工作流的一手依据。",
+    "pin_reason": "Anthropic 官方重大模型版本发布，附带完整 System Card，是长期参考的权威一手资料。",
+    "quality_score": 9.0,
+    "score": 1419,
+    "tags": [
+      "新功能",
+      "模型能力",
+      "SDK更新"
+    ],
+    "pinned_at": "2026-09-17T02:36:36.150631+00:00",
+    "raw_id": "HackerNews::49525378",
+    "author": "denysvitali",
+    "language": "en"
+  },
+  {
     "title": "awesome-claude-code — 社区权威资源目录（37k★）",
     "url": "https://github.com/hesreallyhim/awesome-claude-code",
     "source": "GitHub",
@@ -395,6 +414,47 @@
     "language": "en"
   },
   {
+    "title": "[GitHub] anthropics/claude-plugins-official — Official, Anthropic-managed directory of high quality Claude Code Plugins.",
+    "url": "https://github.com/anthropics/claude-plugins-official",
+    "source": "GitHub",
+    "source_type": "community",
+    "summary_zh": "Anthropic 官方维护的 Claude Code 插件目录仓库，收录经过官方筛选的高质量插件，覆盖 MCP、Skills 等扩展能力。36k+ Star 表明其为社区发现和安装 Claude Code 插件的权威入口，可直接通过插件市场机制接入自己的工作流。",
+    "pin_reason": "Anthropic 官方权威插件目录，是 Claude Code 生态扩展的核心入口，具备长期参考价值。",
+    "quality_score": 8.5,
+    "score": 36437,
+    "tags": [
+      "工具集成",
+      "MCP",
+      "GitHub热门",
+      "新功能"
+    ],
+    "pinned_at": "2026-09-17T02:36:36.150661+00:00",
+    "raw_id": "GitHub::1100776768",
+    "author": "anthropics",
+    "language": "en"
+  },
+  {
+    "title": "[GitHub] FlorianBruniaux/claude-code-ultimate-guide — The most comprehensive Claude Code guide: agentic workflows, hooks, skills, MCP servers, quizzes, an",
+    "url": "https://github.com/FlorianBruniaux/claude-code-ultimate-guide",
+    "source": "GitHub",
+    "source_type": "community",
+    "summary_zh": "这是一个 5982 star 的 Claude Code 综合指南仓库，涵盖 agentic 工作流、hooks、skills、MCP 服务器配置及生产级模板，内容量超过 43 万行。同时提供测验形式帮助验证学习效果，适合作为系统性掌握 Claude Code 全功能栈的参考手册。",
+    "pin_reason": "近 6000 star 的高星权威 Claude Code 全功能指南，覆盖 hooks/skills/MCP/工作流全栈并附生产级模板，具备长期查阅价值。",
+    "quality_score": 8.5,
+    "score": 5982,
+    "tags": [
+      "最佳实践",
+      "workflow",
+      "MCP",
+      "GitHub热门",
+      "提效技巧"
+    ],
+    "pinned_at": "2026-09-17T02:36:36.150668+00:00",
+    "raw_id": "GitHub::1131107802",
+    "author": "FlorianBruniaux",
+    "language": "en"
+  },
+  {
     "title": "claude-code-best-practice — 可视化最佳实践指南（33k★）",
     "url": "https://github.com/shanraisshan/claude-code-best-practice",
     "source": "GitHub",
@@ -526,66 +586,6 @@
     "pinned_at": "2026-06-27T14:57:39.798574+00:00",
     "raw_id": "GitHub::1080989149",
     "author": "ComposioHQ",
-    "language": "en"
-  },
-  {
-    "title": "[GitHub] danny-avila/LibreChat — Enhanced ChatGPT Clone: Features Agents, MCP, Skills, DeepSeek, Anthropic, AWS, OpenAI, Responses AP",
-    "url": "https://github.com/danny-avila/LibreChat",
-    "source": "GitHub",
-    "source_type": "community",
-    "summary_zh": "LibreChat 是一个 41k+ star 的开源自托管 ChatGPT 替代方案，统一接入 Anthropic、OpenAI、Gemini、DeepSeek、Bedrock、OpenRouter 等主流模型，并内置 Agents、MCP、Skills、Artifacts、代码解释器与 OpenAPI Actions。对需要多模型对比、私有部署或搭建团队级 LLM 工作台的开发者，它提供了一套开箱即用且支持多用户鉴权的完整方案。",
-    "pin_reason": "41k star 的头部开源 LLM 前端，原生支持 MCP 与 Agents，是自托管 AI 工作台的长期参考基准。",
-    "quality_score": 8.0,
-    "score": 41308,
-    "tags": [
-      "工具集成",
-      "MCP",
-      "GitHub热门",
-      "workflow"
-    ],
-    "pinned_at": "2026-07-27T02:39:49.671400+00:00",
-    "raw_id": "GitHub::600596928",
-    "author": "danny-avila",
-    "language": "en"
-  },
-  {
-    "title": "[GitHub] vercel/ai — The AI Toolkit for TypeScript. From the creators of Next.js, the AI SDK is a free open-source librar",
-    "url": "https://github.com/vercel/ai",
-    "source": "GitHub",
-    "source_type": "community",
-    "summary_zh": "Vercel AI SDK 是面向 TypeScript 的开源 AI 开发工具包，提供统一接口对接 Anthropic、OpenAI、Gemini 等多家模型供应商，支持流式输出、工具调用、Agent 构建和生成式 UI。25.8k star 的高热度项目，是 JS/TS 生态中构建 LLM 应用与 Agent 工作流的事实标准之一。",
-    "pin_reason": "TypeScript 生态构建 LLM 应用的主流基础设施，高星开源项目，具备长期参考价值。",
-    "quality_score": 8.0,
-    "score": 25844,
-    "tags": [
-      "工具集成",
-      "GitHub热门",
-      "SDK更新",
-      "workflow"
-    ],
-    "pinned_at": "2026-07-28T01:56:13.683404+00:00",
-    "raw_id": "GitHub::644461337",
-    "author": "vercel",
-    "language": "en"
-  },
-  {
-    "title": "[GitHub] AgentWrapper/agent-orchestrator — Agent IDE that enables you to manage fleets of coding agents. It comes with an agentic orchestrator ",
-    "url": "https://github.com/AgentWrapper/agent-orchestrator",
-    "source": "GitHub",
-    "source_type": "community",
-    "summary_zh": "AgentWrapper/agent-orchestrator 是一个 Go 编写的 Agent IDE，用于管理成规模的编码智能体「舰队」，内置编排器可自动规划任务、派生 agent，并自主处理 CI 修复、合并冲突与代码审查。项目集成 Claude Code 与 Codex CLI，依托 git worktrees 实现多 agent 并行隔离开发，8.6k stars 显示社区认可度高。对希望从单 agent 手工操作升级到多 agent 并行工作流的开发者有直接参考价值。",
-    "pin_reason": "8.6k star 的多 agent 编排开源工具，代表 Claude Code 从单会话走向 agent 舰队并行的关键实践方向，具有长期参考价值。",
-    "quality_score": 8.0,
-    "score": 8609,
-    "tags": [
-      "工具集成",
-      "workflow",
-      "GitHub热门",
-      "最佳实践"
-    ],
-    "pinned_at": "2026-07-28T01:56:13.683412+00:00",
-    "raw_id": "GitHub::1156994049",
-    "author": "AgentWrapper",
     "language": "en"
   }
 ]
