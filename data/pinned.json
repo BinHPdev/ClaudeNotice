@@ -455,6 +455,46 @@
     "language": "en"
   },
   {
+    "title": "[GitHub] google-gemini/gemini-cli — An open-source AI agent that brings the power of Gemini directly into your terminal.",
+    "url": "https://github.com/google-gemini/gemini-cli",
+    "source": "GitHub",
+    "source_type": "community",
+    "summary_zh": "Google 官方开源的 Gemini CLI，将 Gemini 模型能力直接引入终端，是 Claude Code 的主要竞品之一。项目采用 TypeScript 编写，原生支持 MCP 客户端与服务端，已积累超 10.7 万 Stars，可作为研究终端 AI Agent 架构与 MCP 生态集成的重要参考。",
+    "pin_reason": "十万星级的官方开源终端 AI Agent，是 Claude Code 生态对标与 MCP 集成实践的长期参考基准。",
+    "quality_score": 8.5,
+    "score": 107045,
+    "tags": [
+      "GitHub热门",
+      "工具集成",
+      "MCP",
+      "工作流"
+    ],
+    "pinned_at": "2026-09-18T02:22:47.986154+00:00",
+    "raw_id": "GitHub::968197216",
+    "author": "google-gemini",
+    "language": "en"
+  },
+  {
+    "title": "[GitHub] EveryInc/compound-engineering-plugin — Official Compound Engineering plugin for Claude Code, Codex, Cursor, and more",
+    "url": "https://github.com/EveryInc/compound-engineering-plugin",
+    "source": "GitHub",
+    "source_type": "community",
+    "summary_zh": "EveryInc 推出的官方 Compound Engineering 插件，支持 Claude Code、Codex、Cursor 等多种 AI 编程工具，用 TypeScript 编写。「复合工程」理念强调让每次开发迭代都沉淀可复用的上下文与流程资产，使 AI 辅助开发效率随时间累积增长。25k+ star 说明社区对这套跨工具工作流方法论认可度极高。",
+    "pin_reason": "25k+ star 的官方跨工具插件，代表 Compound Engineering 工作流范式，对构建可累积的 AI 编程流程具有长期参考价值。",
+    "quality_score": 8.5,
+    "score": 25139,
+    "tags": [
+      "workflow",
+      "工具集成",
+      "最佳实践",
+      "GitHub热门"
+    ],
+    "pinned_at": "2026-09-18T02:22:47.987414+00:00",
+    "raw_id": "GitHub::1073224021",
+    "author": "EveryInc",
+    "language": "en"
+  },
+  {
     "title": "claude-code-best-practice — 可视化最佳实践指南（33k★）",
     "url": "https://github.com/shanraisshan/claude-code-best-practice",
     "source": "GitHub",
@@ -547,45 +587,6 @@
     "pinned_at": "2026-06-27T14:57:39.798565+00:00",
     "raw_id": "GitHub::1166102148",
     "author": "DeusData",
-    "language": "en"
-  },
-  {
-    "title": "[GitHub] samanhappy/mcphub — A unified hub for centrally managing and dynamically orchestrating multiple MCP servers/APIs into se",
-    "url": "https://github.com/samanhappy/mcphub",
-    "source": "GitHub",
-    "source_type": "community",
-    "summary_zh": "MCPHub 是一个开源的 MCP 服务器统一管理网关，可集中托管并动态编排多个 MCP Server/API，将其聚合为带灵活路由策略的独立端点。对于需要同时接入多个 MCP 服务的 Claude Code 用户，能显著简化配置与编排，是 MCP 生态中实用的基础设施工具。",
-    "pin_reason": "2.1k 星的成熟 MCP 网关工具，解决多 MCP Server 集中管理与编排痛点，对 Claude Code/MCP 生态有长期参考价值。",
-    "quality_score": 8.0,
-    "score": 2191,
-    "tags": [
-      "MCP",
-      "工具集成",
-      "GitHub热门"
-    ],
-    "pinned_at": "2026-06-27T14:57:39.798572+00:00",
-    "raw_id": "GitHub::957825149",
-    "author": "samanhappy",
-    "language": "en"
-  },
-  {
-    "title": "[GitHub] ComposioHQ/awesome-claude-plugins — A curated list of Plugins that let you extend Claude Code with custom commands, agents, hooks, and M",
-    "url": "https://github.com/ComposioHQ/awesome-claude-plugins",
-    "source": "GitHub",
-    "source_type": "community",
-    "summary_zh": "ComposioHQ 维护的 Claude Code 插件精选清单，收录可通过插件系统扩展 Claude Code 的自定义命令、Agent、Hooks 和 MCP 服务器。1775 星的高人气资源，是寻找和发现 Claude Code 生态插件的权威入口。",
-    "pin_reason": "高星权威的 Claude Code 插件生态导航清单，覆盖命令/Agent/Hooks/MCP 全维度，具有长期参考价值。",
-    "quality_score": 8.0,
-    "score": 1775,
-    "tags": [
-      "工具集成",
-      "MCP",
-      "GitHub热门",
-      "最佳实践"
-    ],
-    "pinned_at": "2026-06-27T14:57:39.798574+00:00",
-    "raw_id": "GitHub::1080989149",
-    "author": "ComposioHQ",
     "language": "en"
   }
 ]
