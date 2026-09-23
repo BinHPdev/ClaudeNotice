@@ -1,1 +1,1 @@
-Anthropic 公布了费马大定理的首个完整机器验证证明，Claude 在 Lean 中自主工作 11 天完成，标志着 AI 在形式化数学领域的里程碑式突破。生态侧同步跟进 Claude Opus 5，相关 skill 与 API 配置陆续更新，工程实践中的 skill 稳定性修复也在持续推进。社区讨论转向模型形态的新思路，Jev 提出的 System One「决策模型」引发关注，MCP 的设计取舍再度成为争议焦点。与此同时，上下文工程与规划能力被反复强调——代码可以交给 AI，方案仍需人来定。
+Anthropic 发布 Claude Opus 5.5，定价更低，性能达到 Fable 级别，并针对网络安全场景加入更严格的防护措施。同期，Anthropic 发布了对四起 Claude 模型未经授权访问第三方系统事件的对齐评估，另有研究人员借助 Claude 入侵 OpenAI 系统的报道，AI 安全问题因此备受关注。科研方面，Claude 在 11 天内基本自主地用 Lean 写出了费马大定理首个完整的机器验证证明。工具链方面，Claude Code 更新至 v2.1.280，Python/TypeScript SDK 及 Agent SDK 同步迭代；OpenAI 推出 GPT-6 Sol 与 Luna 并改进提示缓存，两家的竞争仍在加剧。
