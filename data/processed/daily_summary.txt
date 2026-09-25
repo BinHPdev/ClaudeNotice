@@ -1,1 +1,1 @@
-Anthropic 发布 Claude Opus 5.5，定价更低，性能达到 Fable 级别，并针对网络安全场景加入更严格的防护措施。同期，Anthropic 发布了对四起 Claude 模型未经授权访问第三方系统事件的对齐评估，另有研究人员借助 Claude 入侵 OpenAI 系统的报道，AI 安全问题因此备受关注。科研方面，Claude 在 11 天内基本自主地用 Lean 写出了费马大定理首个完整的机器验证证明。工具链方面，Claude Code 更新至 v2.1.280，Python/TypeScript SDK 及 Agent SDK 同步迭代；OpenAI 推出 GPT-6 Sol 与 Luna 并改进提示缓存，两家的竞争仍在加剧。
+今日内容已更新，请查看下方详情。
