@@ -1,1 +1,1 @@
-今日内容已更新，请查看下方详情。
+今日焦点在模型与研究两条线：Claude Fable 5.1、Mythos 5.1 与 Opus 5 相继引发热议，Anthropic 同时公布了 Claude 在 11 天内基本自主完成的费马大定理 Lean 形式化证明，这是首个完整的机器检验证明。工具侧，Claude Code 发布 v2.1.280，MCP 官方 Rust SDK、Firecrawl 与 Google Workspace 等 MCP 服务器持续扩展能力边界。开源生态明显向跨工具方向发展，wshobson/agents、Compound Engineering 等插件与市场同时支持 Claude Code、Codex、Cursor 等多种工具。规范驱动开发（OpenSpec）、多模型交叉验证（claude-octopus）和上下文压缩优化也成为开发者关注的新方向。

@@ -515,6 +515,26 @@
     "language": "en"
   },
   {
+    "title": "[GitHub] wshobson/agents — Multi-harness agentic plugin marketplace for Claude Code, Codex, Cursor, OpenCode, GitHub Copilot, G",
+    "url": "https://github.com/wshobson/agents",
+    "source": "GitHub",
+    "source_type": "community",
+    "summary_zh": "wshobson/agents 是一个多平台 Agent 插件市场，可同时用于 Claude Code、Codex、Cursor、OpenCode、GitHub Copilot、Google Antigravity 和 Pi，提供可复用的 agent skills 与插件。该项目已有 4 万多星、4000 多次 fork，是 Claude Code 插件生态中热度很高的开源项目，适合用来扩展 AI 编程工作流。",
+    "pin_reason": "4万+星的 Claude Code 插件与 Agent Skills 市场，同时支持多个主流 AI 编程工具，长期参考价值高。",
+    "quality_score": 8.5,
+    "score": 40042,
+    "tags": [
+      "GitHub热门",
+      "工具集成",
+      "workflow",
+      "最佳实践"
+    ],
+    "pinned_at": "2026-09-28T02:45:17.164587+00:00",
+    "raw_id": "GitHub::1025856648",
+    "author": "wshobson",
+    "language": "en"
+  },
+  {
     "title": "claude-code-best-practice — 可视化最佳实践指南（33k★）",
     "url": "https://github.com/shanraisshan/claude-code-best-practice",
     "source": "GitHub",
@@ -568,25 +588,6 @@
     ],
     "pinned_at": "2026-06-06T14:51:18.642429+00:00",
     "raw_id": "rss::dev.to #anthropic::https://dev.to/docdavkitty/anthropics-advanced-tool-use-platform-programmatic-calling-advisor-strategy-and-the-future-of-523d",
-    "author": "DrMBL",
-    "language": "en"
-  },
-  {
-    "title": "Anthropic Launches Claude Opus 4.8 with Dynamic Workflows, 3x Cheaper Fast Mode, and Near-Mythos Alignment",
-    "url": "https://dev.to/docdavkitty/anthropic-launches-claude-opus-48-with-dynamic-workflows-3x-cheaper-fast-mode-and-near-mythos-4cec",
-    "source": "dev.to #anthropic",
-    "source_type": "blog",
-    "summary_zh": "Anthropic 于 2026 年 5 月 28 日发布旗舰模型 Claude Opus 4.8，距 4.7 仅 41 天。在 SWE-bench Verified（88.6%）、SWE-bench Pro（+4.9pp）等编程基准上稳步提升，主打动态工作流、快速模式降价 3 倍和更强对齐能力，且与 4.7 同价上线 Claude Code、API 与 Cowork。文章还重点提及 244 页系统卡的对齐细节。",
-    "pin_reason": "Claude Opus 4.8 旗舰模型发布是重大版本里程碑，对 Claude Code 用户具有长期参考价值。",
-    "quality_score": 8.0,
-    "score": 0,
-    "tags": [
-      "新功能",
-      "模型能力",
-      "最佳实践"
-    ],
-    "pinned_at": "2026-06-06T14:51:18.642438+00:00",
-    "raw_id": "rss::dev.to #anthropic::https://dev.to/docdavkitty/anthropic-launches-claude-opus-48-with-dynamic-workflows-3x-cheaper-fast-mode-and-near-mythos-4cec",
     "author": "DrMBL",
     "language": "en"
   }
