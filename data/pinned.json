@@ -535,6 +535,27 @@
     "language": "en"
   },
   {
+    "title": "Update claude-api skill: Claude Opus 5.5 default, Claude Sonnet 5.5, …",
+    "url": "https://github.com/anthropics/skills/commit/8a1541c4a3ffa5a20a5a91de0dcf3f0bab1d1ef4",
+    "source": "anthropics/skills commits",
+    "source_type": "community",
+    "summary_zh": "anthropics/skills 仓库更新了 claude-api skill。默认模型改为 Claude Opus 5.5，新增 Claude Sonnet 5.5，并同步更新了定价、平台可用性和各语言示例。同时补充了 Opus 5.5 迁移指南，以及 build-eval、eval-hillclimb、cost-hillclimb、eval-audit 等评测构建与迭代优化流程，并附带报告 schema 和 HTML 报告。",
+    "pin_reason": "官方 skill 把默认模型换成 Opus 5.5，并新增一整套官方 eval 构建与 hillclimb 优化流程，适合长期参考。",
+    "quality_score": 8.5,
+    "score": 0,
+    "tags": [
+      "新功能",
+      "SDK更新",
+      "模型能力",
+      "最佳实践",
+      "workflow"
+    ],
+    "pinned_at": "2026-09-29T03:27:45.219692+00:00",
+    "raw_id": "rss::anthropics/skills commits::tag:github.com,2008:Grit::Commit/8a1541c4a3ffa5a20a5a91de0dcf3f0bab1d1ef4",
+    "author": "rlancemartin",
+    "language": "en"
+  },
+  {
     "title": "claude-code-best-practice — 可视化最佳实践指南（33k★）",
     "url": "https://github.com/shanraisshan/claude-code-best-practice",
     "source": "GitHub",
@@ -569,26 +590,6 @@
     "pinned_at": "2026-06-06T14:51:18.642397+00:00",
     "raw_id": "rss::Sebastian Raschka::https://magazine.sebastianraschka.com/p/llm-research-papers-2026-part1",
     "author": "Sebastian Raschka, PhD",
-    "language": "en"
-  },
-  {
-    "title": "Anthropic's Advanced Tool Use Platform: Programmatic Calling, Advisor Strategy, and the Future of Claude Agents",
-    "url": "https://dev.to/docdavkitty/anthropics-advanced-tool-use-platform-programmatic-calling-advisor-strategy-and-the-future-of-523d",
-    "source": "dev.to #anthropic",
-    "source_type": "blog",
-    "summary_zh": "Anthropic 将一系列 Agent 基础设施新特性从研究预览推向公测：Programmatic Tool Calling、Advisor Strategy、Tool Search、Files API 和 MCP Connector。核心解决「上下文膨胀」问题——通过 defer_loading 标记工具，仅预加载约 500 token 的轻量搜索工具，按需发现并加载工具定义，大幅降低多 MCP 服务器场景下的 token 开销。",
-    "pin_reason": "覆盖 Anthropic 多项 Agent 平台核心能力进入公测的里程碑式更新，对构建大规模 tool-use Agent 具有长期架构参考价值。",
-    "quality_score": 8.0,
-    "score": 0,
-    "tags": [
-      "新功能",
-      "MCP",
-      "SDK更新",
-      "最佳实践"
-    ],
-    "pinned_at": "2026-06-06T14:51:18.642429+00:00",
-    "raw_id": "rss::dev.to #anthropic::https://dev.to/docdavkitty/anthropics-advanced-tool-use-platform-programmatic-calling-advisor-strategy-and-the-future-of-523d",
-    "author": "DrMBL",
     "language": "en"
   }
 ]
