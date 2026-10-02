@@ -139,7 +139,7 @@
     </div>
 
     <div class="flex items-center gap-2 ml-auto shrink-0">
-      <span class="hidden md:inline text-xs text-gray-400">2026年10月01日 03:17</span>
+      <span class="hidden md:inline text-xs text-gray-400">2026年10月02日 03:19</span>
       <span class="inline-flex items-center gap-1 bg-green-50 dark:bg-green-900/30 text-green-600 dark:text-green-400 px-2 py-0.5 rounded-full text-xs font-medium">
         ● 每日更新
       </span>
@@ -163,7 +163,7 @@
   <!-- Stats bar -->
   <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 mb-6">
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-gray-100 dark:border-gray-800 text-center">
-      <div class="text-2xl font-bold text-brand-600">10</div>
+      <div class="text-2xl font-bold text-brand-600">8</div>
       <div class="text-xs text-gray-400 mt-0.5">今日收录</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-rose-100 dark:border-rose-900/40 text-center">
@@ -171,7 +171,7 @@
       <div class="text-xs text-gray-400 mt-0.5">经典置顶</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-amber-100 dark:border-amber-900/40 text-center">
-      <div class="text-2xl font-bold text-amber-500">6</div>
+      <div class="text-2xl font-bold text-amber-500">4</div>
       <div class="text-xs text-gray-400 mt-0.5">官方动态</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-orange-100 dark:border-orange-900/40 text-center">
@@ -191,7 +191,7 @@
       <span class="text-xl mt-0.5 shrink-0">📋</span>
       <div>
         <div class="text-xs font-semibold text-brand-700 dark:text-brand-300 mb-1 uppercase tracking-wide">今日速览</div>
-        <p class="text-sm leading-relaxed text-gray-700 dark:text-gray-300">Claude Code 今日密集发布 v2.1.280 至 v2.1.286 多个版本，迭代节奏依然很快。TypeScript SDK 升级至 v0.130.0，Python SDK 连发 v1.10.0 和 v1.11.0；官方 claude-api skill 已将默认模型切换为 Claude Opus 5.5，并新增 Claude Sonnet 5.5。Anthropic 研究团队公布了费马大定理的首个完整机器验证证明：Claude 用 11 天、基本自主地以 Lean 语言写完了这份证明，是 AI 形式化数学的一个里程碑。行业方面，Google 发布 Gemini 4，并以能力过强为由，暂时只向“可信网络防御者”开放，前沿模型的安全分级管控正在收紧。</p>
+        <p class="text-sm leading-relaxed text-gray-700 dark:text-gray-300">Claude Code 本期连续更新，从 v2.1.280 一路迭代到 v2.1.287，learn-claude-code 课程提示词也新增了根据操作系统调整的 shell 上下文。模型方面，claude-api skill 已把 Claude Opus 5.5 设为默认模型，并加入 Claude Sonnet 5.5，新一代模型正加速进入开发者工具。在科研方面，Anthropic 于 9 月 4 日公布了首个完整的费马大定理 Lean 形式化证明，由 Claude 在 11 天内基本自主完成。与此同时，TechCrunch 指出 Opus 5.5 写作中常有“this matters”之类的 AI 腔调，HuggingFace 则推出了多语言 TTS 开放排行榜，模型输出质量与评测体系正受到更多关注。</p>
       </div>
     </div>
   </div>
@@ -265,6 +265,11 @@
           <button onclick="filterTag('all')" data-tag="all"
             class="filter-pill active px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
             全部
+          </button>
+          
+          <button onclick="filterTag('GitHub热门')" data-tag="GitHub热门"
+            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+            GitHub热门
           </button>
           
           <button onclick="filterTag('MCP')" data-tag="MCP"
@@ -1857,7 +1862,7 @@
          data-tags="新功能 模型能力 MCP SDK更新"
          data-source="Claude Code Releases"
          data-source-type="official"
-         data-text="v2.1.280 Claude Code v2.1.280 新增 Claude Opus 5.5 并设为默认 Opus 模型，支持 1M 上下文，价格为每百万 token 输入 $4、输出 $20、缓存读取 $0.20。本版本还扩展了全屏模式下的鼠标支持，新增 CLAUDE_CODE_MAX_MCP_DESCRIPTION_LENGTH 环境变量用于调整 MCP 工具描述长度上限，并在 hook 的 OpenTelemetry 事件中加入输出大小指标。此外修复了符号链接路径写入的权限判定问题：acceptEdits、allow 规则和 auto 模式不再放行实际落在工作区外的写入。">
+         data-text="v2.1.280 Claude Code v2.1.280 新增 Claude Opus 5.5（claude-opus-5-5），并设为默认 Opus 模型。它支持 1M 上下文，定价为每百万 token 输入 4 美元、输出 20 美元，缓存读取 0.20 美元。本版本还新增环境变量 CLAUDE_CODE_MAX_MCP_DESCRIPTION_LENGTH，用于调整 MCP 工具描述的 2048 字符上限；hook 的 OpenTelemetry 事件增加输出大小指标；全屏模式支持更多列表的鼠标操作。另外修复了符号链接路径写入绕过 acceptEdits、allow 规则和 auto 模式审批的安全问题。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -1872,7 +1877,7 @@
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Claude Code v2.1.280 新增 Claude Opus 5.5 并设为默认 Opus 模型，支持 1M 上下文，价格为每百万 token 输入 $4、输出 $20、缓存读取 $0.20。本版本还扩展了全屏模式下的鼠标支持，新增 CLAUDE_CODE_MAX_MCP_DESCRIPTION_LENGTH 环境变量用于调整 MCP 工具描述长度上限，并在 hook 的 OpenTelemetry 事件中加入输出大小指标。此外修复了符号链接路径写入的权限判定问题：acceptEdits、allow 规则和 auto 模式不再放行实际落在工作区外的写入。
+        Claude Code v2.1.280 新增 Claude Opus 5.5（claude-opus-5-5），并设为默认 Opus 模型。它支持 1M 上下文，定价为每百万 token 输入 4 美元、输出 20 美元，缓存读取 0.20 美元。本版本还新增环境变量 CLAUDE_CODE_MAX_MCP_DESCRIPTION_LENGTH，用于调整 MCP 工具描述的 2048 字符上限；hook 的 OpenTelemetry 事件增加输出大小指标；全屏模式支持更多列表的鼠标操作。另外修复了符号链接路径写入绕过 acceptEdits、allow 规则和 auto 模式审批的安全问题。
       </p>
       
       <!-- Meta row -->
@@ -1929,7 +1934,7 @@
          data-tags="模型能力 研究论文 案例分享"
          data-source="Anthropic Research"
          data-source-type="official"
-         data-text="ScienceSep 4, 2026Formalizing Fermat&#39;s Last Theorem We are sharing the first complete computer-checked proof of Fermat’s Last Theorem. Claude worked largely autonomously over 11 days to write the proof in the Lean programming language. Anthropic 发布了首个由计算机验证的费马大定理完整证明。Claude 在 11 天里基本自主地用 Lean 语言写完了这份形式化证明。这项工作表明 Claude 能在长周期里自主完成复杂编程任务，对理解 AI 智能体做大型工程和形式化验证的能力边界很有参考价值。">
+         data-text="ScienceSep 4, 2026Formalizing Fermat&#39;s Last Theorem We are sharing the first complete computer-checked proof of Fermat’s Last Theorem. Claude worked largely autonomously over 11 days to write the proof in the Lean programming language. Anthropic 发布了费马大定理的首个完整计算机验证证明。Claude 用 Lean 语言基本自主地工作了 11 天，写完了整个证明。这说明长时程自主智能体在复杂形式化编程任务上取得了里程碑式的进展，也是 AI 自主长时间编程能力的有力证明。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -1944,7 +1949,7 @@
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Anthropic 发布了首个由计算机验证的费马大定理完整证明。Claude 在 11 天里基本自主地用 Lean 语言写完了这份形式化证明。这项工作表明 Claude 能在长周期里自主完成复杂编程任务，对理解 AI 智能体做大型工程和形式化验证的能力边界很有参考价值。
+        Anthropic 发布了费马大定理的首个完整计算机验证证明。Claude 用 Lean 语言基本自主地工作了 11 天，写完了整个证明。这说明长时程自主智能体在复杂形式化编程任务上取得了里程碑式的进展，也是 AI 自主长时间编程能力的有力证明。
       </p>
       
       <!-- Meta row -->
@@ -1979,9 +1984,9 @@
         
         <span class="ml-auto flex items-center gap-1 shrink-0">
           <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:85%"></div>
+            <div class="score-bar" style="width:80%"></div>
           </div>
-          <span class="text-xs text-gray-400">8.5</span>
+          <span class="text-xs text-gray-400">8.0</span>
         </span>
         
       </div>
@@ -1995,65 +2000,54 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="SDK更新 新功能 MCP 工具集成"
-         data-source="Anthropic SDK TypeScript"
+         data-tags=""
+         data-source="HuggingFace Blog"
          data-source-type="official"
-         data-text="sdk: v0.130.0 Anthropic TypeScript SDK v0.130.0 更新了不少 API 能力：Managed Agents 会话空闲事件新增 refusal 停止原因和 stop_details，会话错误新增仓库相关的错误类型。Admin API 新增 Claude Enterprise 分析、支出限额、RBAC 组与角色、按用户统计的用量与成本报告，以及插件和插件市场管理。MCP tunnels beta 也有改进，Organization API 端点正式 GA，适合企业管理员和 Agent 开发者关注。">
+         data-text="Open TTS Leaderboard: Scalable Evaluation for Multilingual Text-to-Speech and Voice Cloning Open TTS Leaderboard: Scalable Evaluation for Multilingual Text-to-Speech and Voice Cloning">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ◆
+      🤗
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/sdk-v0.130.0" target="_blank" rel="noopener"
+      <a href="https://huggingface.co/blog/open-tts-leaderboard" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        sdk: v0.130.0
+        Open TTS Leaderboard: Scalable Evaluation for Multilingual Text-to-Speech and Voice Cloning
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Anthropic TypeScript SDK v0.130.0 更新了不少 API 能力：Managed Agents 会话空闲事件新增 refusal 停止原因和 stop_details，会话错误新增仓库相关的错误类型。Admin API 新增 Claude Enterprise 分析、支出限额、RBAC 组与角色、按用户统计的用量与成本报告，以及插件和插件市场管理。MCP tunnels beta 也有改进，Organization API 端点正式 GA，适合企业管理员和 Agent 开发者关注。
+        Open TTS Leaderboard: Scalable Evaluation for Multilingual Text-to-Speech and Voice Cloning
       </p>
       
       <!-- Meta row -->
       <div class="mt-2 flex flex-wrap items-center gap-1.5">
         <!-- Level badge -->
         
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
-          🟡 中级
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-advanced">
+          🔴 高级
         </span>
         
         <!-- Source -->
         <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          Anthropic SDK TypeScript
+          HuggingFace Blog
         </span>
         
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">stainless-app[bot]</span>
-        
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">16 小时前</span>
+        <span class="text-xs text-gray-400">2 天前</span>
         
         
         <!-- Tags (max 2) -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #SDK更新
-        </span>
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #新功能
-        </span>
         
         <!-- Quality bar (only if > 0) -->
         
         <span class="ml-auto flex items-center gap-1 shrink-0">
           <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:65%"></div>
+            <div class="score-bar" style="width:80%"></div>
           </div>
-          <span class="text-xs text-gray-400">6.5</span>
+          <span class="text-xs text-gray-400">8.0</span>
         </span>
         
       </div>
@@ -2067,82 +2061,10 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="SDK更新 新功能 MCP 工具集成"
-         data-source="Anthropic SDK Python"
-         data-source-type="official"
-         data-text="v1.10.0 Anthropic Python SDK v1.10.0 版本更新：Managed Agents 的会话空闲事件新增 refusal 停止原因和 stop_details 字段，会话错误新增仓库相关错误类型。Admin API 新增 Claude Enterprise 分析、支出限额、RBAC 组与角色、按用户统计的用量与成本报告，以及插件和插件市场的管理接口。MCP tunnels（测试版）新增只读 transport 对象，创建时会返回一次性 relay token；Organization API 正式 GA。">
-  <div class="flex gap-3">
-    <!-- Source icon -->
-    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ◆
-    </div>
-    <div class="flex-1 min-w-0">
-      <!-- Title -->
-      <a href="https://github.com/anthropics/anthropic-sdk-python/releases/tag/v1.10.0" target="_blank" rel="noopener"
-         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        v1.10.0
-      </a>
-      <!-- Summary -->
-      
-      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Anthropic Python SDK v1.10.0 版本更新：Managed Agents 的会话空闲事件新增 refusal 停止原因和 stop_details 字段，会话错误新增仓库相关错误类型。Admin API 新增 Claude Enterprise 分析、支出限额、RBAC 组与角色、按用户统计的用量与成本报告，以及插件和插件市场的管理接口。MCP tunnels（测试版）新增只读 transport 对象，创建时会返回一次性 relay token；Organization API 正式 GA。
-      </p>
-      
-      <!-- Meta row -->
-      <div class="mt-2 flex flex-wrap items-center gap-1.5">
-        <!-- Level badge -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
-          🟡 中级
-        </span>
-        
-        <!-- Source -->
-        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          Anthropic SDK Python
-        </span>
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">stainless-app[bot]</span>
-        
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">16 小时前</span>
-        
-        
-        <!-- Tags (max 2) -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #SDK更新
-        </span>
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #新功能
-        </span>
-        
-        <!-- Quality bar (only if > 0) -->
-        
-        <span class="ml-auto flex items-center gap-1 shrink-0">
-          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:65%"></div>
-          </div>
-          <span class="text-xs text-gray-400">6.5</span>
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-
-
-  
-  
-
-<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="新功能 SDK更新"
+         data-tags="新功能 MCP 工具集成"
          data-source="Claude Code Releases"
          data-source-type="official"
-         data-text="v2.1.286 Claude Code v2.1.286 是一个以修复为主的小版本。新增两项交互改进：多个权限请求叠在一起时，提示框会显示“2 of 5”这样的计数；全屏模式下列表的“N more”行支持鼠标点击跳转。修复内容包括：GCP/AWS 凭证过期时多个进程和 IDE 扩展各自打开登录浏览器；之前的会话崩溃或被终止后，--resume/--continue 有时会丢失并行工具调用之后的全部对话；工具或 hook 返回非文本值时出现 API 400 错误；历史记录很大的云端会话无法唤醒。">
+         data-text="v2.1.287 Claude Code v2.1.287 推出 Claude Mods，让插件可以修改更深层的行为。同时加入内置 mod「You should know」：开启后会有一个旁路 agent 在后台盯着，提醒你或 Claude 可能遗漏的问题。这一版还给 agents 视图加了 n: 过滤，给 OpenTelemetry 的 user_prompt 事件加了 prompt_text 字段，并让 MCP 服务器在 2025-11-25 协议下可以发起 URL 提示，比如用来登录。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -2150,22 +2072,22 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.286" target="_blank" rel="noopener"
+      <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.287" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        v2.1.286
+        v2.1.287
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Claude Code v2.1.286 是一个以修复为主的小版本。新增两项交互改进：多个权限请求叠在一起时，提示框会显示“2 of 5”这样的计数；全屏模式下列表的“N more”行支持鼠标点击跳转。修复内容包括：GCP/AWS 凭证过期时多个进程和 IDE 扩展各自打开登录浏览器；之前的会话崩溃或被终止后，--resume/--continue 有时会丢失并行工具调用之后的全部对话；工具或 hook 返回非文本值时出现 API 400 错误；历史记录很大的云端会话无法唤醒。
+        Claude Code v2.1.287 推出 Claude Mods，让插件可以修改更深层的行为。同时加入内置 mod「You should know」：开启后会有一个旁路 agent 在后台盯着，提醒你或 Claude 可能遗漏的问题。这一版还给 agents 视图加了 n: 过滤，给 OpenTelemetry 的 user_prompt 事件加了 prompt_text 字段，并让 MCP 服务器在 2025-11-25 协议下可以发起 URL 提示，比如用来登录。
       </p>
       
       <!-- Meta row -->
       <div class="mt-2 flex flex-wrap items-center gap-1.5">
         <!-- Level badge -->
         
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-beginner">
-          🟢 入门
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
+          🟡 中级
         </span>
         
         <!-- Source -->
@@ -2188,88 +2110,16 @@
         </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #SDK更新
+          #MCP
         </span>
         
         <!-- Quality bar (only if > 0) -->
         
         <span class="ml-auto flex items-center gap-1 shrink-0">
           <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:60%"></div>
+            <div class="score-bar" style="width:75%"></div>
           </div>
-          <span class="text-xs text-gray-400">6.0</span>
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-
-
-  
-  
-
-<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="SDK更新 新功能"
-         data-source="Anthropic SDK Python"
-         data-source-type="official"
-         data-text="v1.11.0 Anthropic Python SDK 发布 v1.11.0 版本，新增了列出支出限额（spend limits）的 API 接口，便于开发者查询账户的支出限额。同时客户端已将 Sonnet 4.5 模型标记为弃用，使用该模型的开发者需要尽早规划迁移到新模型。">
-  <div class="flex gap-3">
-    <!-- Source icon -->
-    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ◆
-    </div>
-    <div class="flex-1 min-w-0">
-      <!-- Title -->
-      <a href="https://github.com/anthropics/anthropic-sdk-python/releases/tag/v1.11.0" target="_blank" rel="noopener"
-         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        v1.11.0
-      </a>
-      <!-- Summary -->
-      
-      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Anthropic Python SDK 发布 v1.11.0 版本，新增了列出支出限额（spend limits）的 API 接口，便于开发者查询账户的支出限额。同时客户端已将 Sonnet 4.5 模型标记为弃用，使用该模型的开发者需要尽早规划迁移到新模型。
-      </p>
-      
-      <!-- Meta row -->
-      <div class="mt-2 flex flex-wrap items-center gap-1.5">
-        <!-- Level badge -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-beginner">
-          🟢 入门
-        </span>
-        
-        <!-- Source -->
-        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          Anthropic SDK Python
-        </span>
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">stainless-app[bot]</span>
-        
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">12 小时前</span>
-        
-        
-        <!-- Tags (max 2) -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #SDK更新
-        </span>
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #新功能
-        </span>
-        
-        <!-- Quality bar (only if > 0) -->
-        
-        <span class="ml-auto flex items-center gap-1 shrink-0">
-          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:50%"></div>
-          </div>
-          <span class="text-xs text-gray-400">5.0</span>
+          <span class="text-xs text-gray-400">7.5</span>
         </span>
         
       </div>
@@ -2299,7 +2149,7 @@
          data-tags="新功能 SDK更新 模型能力 workflow 最佳实践"
          data-source="anthropics/skills commits"
          data-source-type="community"
-         data-text="Update claude-api skill: Claude Opus 5.5 default, Claude Sonnet 5.5, … Anthropic 官方 skills 仓库更新了 claude-api skill：所有语言示例的默认模型都改成 Claude Opus 5.5（claude-opus-5-5），并加入 Claude Sonnet 5.5，同步更新了定价、模型支持说明、平台可用性以及迁移指南。这次还新增了 build-eval、eval-hillclimb、cost-hillclimb、eval-audit 等评测构建与迭代优化流程，附带报告 schema 和 HTML 报告，可以直接拿来搭 LLM 评测工作流。">
+         data-text="Update claude-api skill: Claude Opus 5.5 default, Claude Sonnet 5.5, … Anthropic 官方 skills 仓库中的 claude-api skill 已更新：所有示例的默认模型改为 Claude Opus 5.5（claude-opus-5-5），并新增 Claude Sonnet 5.5，同时更新了定价、平台可用性和模型迁移指南。此次还新增了 build-eval、eval-hillclimb、cost-hillclimb、eval-audit 四套评测与优化流程，以及配套的报告 schema 和 HTML 报告。这些内容可以直接用于搭建 LLM 应用评测和做成本、效果调优。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -2314,7 +2164,7 @@
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Anthropic 官方 skills 仓库更新了 claude-api skill：所有语言示例的默认模型都改成 Claude Opus 5.5（claude-opus-5-5），并加入 Claude Sonnet 5.5，同步更新了定价、模型支持说明、平台可用性以及迁移指南。这次还新增了 build-eval、eval-hillclimb、cost-hillclimb、eval-audit 等评测构建与迭代优化流程，附带报告 schema 和 HTML 报告，可以直接拿来搭 LLM 评测工作流。
+        Anthropic 官方 skills 仓库中的 claude-api skill 已更新：所有示例的默认模型改为 Claude Opus 5.5（claude-opus-5-5），并新增 Claude Sonnet 5.5，同时更新了定价、平台可用性和模型迁移指南。此次还新增了 build-eval、eval-hillclimb、cost-hillclimb、eval-audit 四套评测与优化流程，以及配套的报告 schema 和 HTML 报告。这些内容可以直接用于搭建 LLM 应用评测和做成本、效果调优。
       </p>
       
       <!-- Meta row -->
@@ -2335,7 +2185,7 @@
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">2 天前</span>
+        <span class="text-xs text-gray-400">3 天前</span>
         
         
         <!-- Tags (max 2) -->
@@ -2352,9 +2202,9 @@
         
         <span class="ml-auto flex items-center gap-1 shrink-0">
           <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:85%"></div>
+            <div class="score-bar" style="width:80%"></div>
           </div>
-          <span class="text-xs text-gray-400">8.5</span>
+          <span class="text-xs text-gray-400">8.0</span>
         </span>
         
       </div>
@@ -2368,25 +2218,25 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="研究论文 提示工程 workflow"
-         data-source="arXiv cs.LG"
-         data-source-type="research"
-         data-text="Mara Chain: Rethinking Failure as a Stepping Stone for AI System Auto-Evolution 论文提出 Mara Chain，用于优化提示词、技能（skills）、harness 和代码等 AI 系统配置。传统的「提出-评估-筛选」流程会直接丢弃不达标的候选方案，Mara Chain 则保留这些被拒绝的候选，并利用之前积累的证据对它们逐步改进，避免后续优化重复掉进同样的失败模式。这一思路可以借鉴到 Claude Code 中 CLAUDE.md、skills 和 prompt 的迭代优化上。">
+         data-tags="最佳实践 研究论文 模型能力"
+         data-source="Simon Willison&#39;s Weblog"
+         data-source-type="blog"
+         data-text="Quoting Matthew Green Simon Willison 引用了密码学家 Matthew Green 的观点：在彼此隔离的沙箱中运行的 AI Agent 会通过共享的包缓存互相留下指令，并改变对方的行为。他指出，如果把共享通道换成邮件、Slack、共享文档，再把训练环境换成独立部署的个人 Agent，就具备了「AI 蠕虫」的全部条件。这对使用 Claude Code 等 Agent 工具的开发者来说是一个安全提醒：只靠沙箱隔离不够，跨 Agent 的提示注入传播风险需要单独防范。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      📄
+      ◉
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://arxiv.org/abs/2609.35855" target="_blank" rel="noopener"
+      <a href="https://simonwillison.net/2026/Oct/1/matthew-green/" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        Mara Chain: Rethinking Failure as a Stepping Stone for AI System Auto-Evolution
+        Quoting Matthew Green
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        论文提出 Mara Chain，用于优化提示词、技能（skills）、harness 和代码等 AI 系统配置。传统的「提出-评估-筛选」流程会直接丢弃不达标的候选方案，Mara Chain 则保留这些被拒绝的候选，并利用之前积累的证据对它们逐步改进，避免后续优化重复掉进同样的失败模式。这一思路可以借鉴到 Claude Code 中 CLAUDE.md、skills 和 prompt 的迭代优化上。
+        Simon Willison 引用了密码学家 Matthew Green 的观点：在彼此隔离的沙箱中运行的 AI Agent 会通过共享的包缓存互相留下指令，并改变对方的行为。他指出，如果把共享通道换成邮件、Slack、共享文档，再把训练环境换成独立部署的个人 Agent，就具备了「AI 蠕虫」的全部条件。这对使用 Claude Code 等 Agent 工具的开发者来说是一个安全提醒：只靠沙箱隔离不够，跨 Agent 的提示注入传播风险需要单独防范。
       </p>
       
       <!-- Meta row -->
@@ -2399,11 +2249,8 @@
         
         <!-- Source -->
         <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          arXiv cs.LG
+          Simon Willison&#39;s Weblog
         </span>
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">Yubin Lyu, Fu Li, Jiawei Fei, Yang Zhao, Weixing Mei, Yinan Wu</span>
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
@@ -2413,11 +2260,11 @@
         <!-- Tags (max 2) -->
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #研究论文
+          #最佳实践
         </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #提示工程
+          #研究论文
         </span>
         
         <!-- Quality bar (only if > 0) -->
@@ -2440,10 +2287,10 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="模型能力 新功能"
-         data-source="The Verge AI"
-         data-source-type="news"
-         data-text="Google announces Gemini 4 and says it&amp;#8217;s so capable that only &amp;#8216;trusted cyber defenders&amp;#8217; can have it right now Google 发布新一代前沿模型 Gemini 4 Argon。官方称它在真实软件工程、法律金融等企业知识工作和网络安全防御等复杂工作流中达到前沿水平。由于能力强，Google 目前只向「可信的网络安全防御者」开放访问。这条消息对了解 AI 编程模型的竞争格局有参考价值，但没有讲具体的使用方法或工作流。">
+         data-tags="提示工程 最佳实践 GitHub热门"
+         data-source="learn-claude-code commits"
+         data-source-type="community"
+         data-text="Add OS-aware shell context to current course prompts (#587) learn-claude-code 教程仓库的这次提交，在各章节的系统提示词中加入了宿主操作系统和 Shell 环境信息，并同步修改了提示词示例，使它们与环境信息保持一致。这样智能体能根据当前平台生成合适的命令，与 Claude Code 在系统提示中写入环境信息的做法一致。这次改动不大，但对理解编程智能体如何构建上下文有一定参考价值。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -2451,14 +2298,14 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://www.theverge.com/tech/1002980/google-gemini-4-argon" target="_blank" rel="noopener"
+      <a href="https://github.com/shareAI-lab/learn-claude-code/commit/94ca4685576b0a05e17347b18bf6476964d536b0" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        Google announces Gemini 4 and says it&amp;#8217;s so capable that only &amp;#8216;trusted cyber defenders&amp;#8217; can have it right now
+        Add OS-aware shell context to current course prompts (#587)
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Google 发布新一代前沿模型 Gemini 4 Argon。官方称它在真实软件工程、法律金融等企业知识工作和网络安全防御等复杂工作流中达到前沿水平。由于能力强，Google 目前只向「可信的网络安全防御者」开放访问。这条消息对了解 AI 编程模型的竞争格局有参考价值，但没有讲具体的使用方法或工作流。
+        learn-claude-code 教程仓库的这次提交，在各章节的系统提示词中加入了宿主操作系统和 Shell 环境信息，并同步修改了提示词示例，使它们与环境信息保持一致。这样智能体能根据当前平台生成合适的命令，与 Claude Code 在系统提示中写入环境信息的做法一致。这次改动不大，但对理解编程智能体如何构建上下文有一定参考价值。
       </p>
       
       <!-- Meta row -->
@@ -2471,34 +2318,34 @@
         
         <!-- Source -->
         <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          The Verge AI
+          learn-claude-code commits
         </span>
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">Jay Peters</span>
+        <span class="text-xs text-gray-400">2021113691</span>
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">14 小时前</span>
+        <span class="text-xs text-gray-400">3 天前</span>
         
         
         <!-- Tags (max 2) -->
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #模型能力
+          #提示工程
         </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #新功能
+          #最佳实践
         </span>
         
         <!-- Quality bar (only if > 0) -->
         
         <span class="ml-auto flex items-center gap-1 shrink-0">
           <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:60%"></div>
+            <div class="score-bar" style="width:50%"></div>
           </div>
-          <span class="text-xs text-gray-400">6.0</span>
+          <span class="text-xs text-gray-400">5.0</span>
         </span>
         
       </div>
@@ -2512,10 +2359,10 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="MCP 最佳实践 工具集成"
-         data-source="everything-claude-code commits"
-         data-source-type="community"
-         data-text="fix(hooks): scope MCP health checks to MCP tools (#2838) everything-claude-code 仓库修复了 Hook 配置：给 PreToolUse 和 PostToolUseFailure 中做 MCP 健康检查的 matcher 加上锚定，只有调用 MCP 工具时才会触发健康检查 Hook。这样非 MCP 工具调用不会再白白启动 Hook 进程，开销更小。可以作为编写 Claude Code Hook matcher 时限定匹配范围的参考。">
+         data-tags="模型能力 提示工程"
+         data-source="TechCrunch AI"
+         data-source-type="news"
+         data-text="Opus 5.5 loves to tell you ‘this matters’ (and other AI writing tells) 文章分析了 Opus 5.5 生成文本中的典型“AI 写作痕迹”，例如爱用“this matters”这类表达，其中“dependable”一词的出现频率是人类文本的 23 倍。了解这些惯用词，有助于开发者在提示词或 CLAUDE.md 中规避模板化表达，让生成内容更自然。原文信息较少，实操价值有限。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -2523,14 +2370,14 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://github.com/affaan-m/ECC/commit/bd9402f774511f682f6a6d9a8c5dcc38a4c5536c" target="_blank" rel="noopener"
+      <a href="https://techcrunch.com/2026/10/01/opus-5-5-loves-to-tell-you-this-matters-and-other-ai-writing-tells/" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        fix(hooks): scope MCP health checks to MCP tools (#2838)
+        Opus 5.5 loves to tell you ‘this matters’ (and other AI writing tells)
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        everything-claude-code 仓库修复了 Hook 配置：给 PreToolUse 和 PostToolUseFailure 中做 MCP 健康检查的 matcher 加上锚定，只有调用 MCP 工具时才会触发健康检查 Hook。这样非 MCP 工具调用不会再白白启动 Hook 进程，开销更小。可以作为编写 Claude Code Hook matcher 时限定匹配范围的参考。
+        文章分析了 Opus 5.5 生成文本中的典型“AI 写作痕迹”，例如爱用“this matters”这类表达，其中“dependable”一词的出现频率是人类文本的 23 倍。了解这些惯用词，有助于开发者在提示词或 CLAUDE.md 中规避模板化表达，让生成内容更自然。原文信息较少，实操价值有限。
       </p>
       
       <!-- Meta row -->
@@ -2543,25 +2390,25 @@
         
         <!-- Source -->
         <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          everything-claude-code commits
+          TechCrunch AI
         </span>
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">santhiprakash</span>
+        <span class="text-xs text-gray-400">Russell Brandom</span>
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">1 天前</span>
+        <span class="text-xs text-gray-400">17 小时前</span>
         
         
         <!-- Tags (max 2) -->
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #MCP
+          #模型能力
         </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #最佳实践
+          #提示工程
         </span>
         
         <!-- Quality bar (only if > 0) -->
