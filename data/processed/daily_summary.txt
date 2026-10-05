@@ -1,1 +1,1 @@
-今日内容已更新，请查看下方详情。
+今日 Claude Code 生态动态集中在模型层面：Anthropic 发布 Claude Fable 5.1 与 Mythos 5.1，claude-api skill 默认模型切换为 Opus 5.5，Sonnet 5.5 以一半的价格逼近 Opus 5.5 的表现。工具侧，Claude Code 更新至 v2.1.280，wshobson/agents、opencodex 等跨 harness 插件与多模型代理项目继续升温，显示出多工具、多模型兼容的趋势。社区讨论的重点转向稳定性与安全性，话题包括 /compact 后上下文保留、无人值守 claude -p 任务的可靠性、.env 密钥保护及破坏性命令拦截，其中 cc-safety-net 等防护方案受到关注。
