@@ -139,7 +139,7 @@
     </div>
 
     <div class="flex items-center gap-2 ml-auto shrink-0">
-      <span class="hidden md:inline text-xs text-gray-400">2026年10月09日 03:49</span>
+      <span class="hidden md:inline text-xs text-gray-400">2026年10月10日 03:34</span>
       <span class="inline-flex items-center gap-1 bg-green-50 dark:bg-green-900/30 text-green-600 dark:text-green-400 px-2 py-0.5 rounded-full text-xs font-medium">
         ● 每日更新
       </span>
@@ -163,7 +163,7 @@
   <!-- Stats bar -->
   <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 mb-6">
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-gray-100 dark:border-gray-800 text-center">
-      <div class="text-2xl font-bold text-brand-600">12</div>
+      <div class="text-2xl font-bold text-brand-600">11</div>
       <div class="text-xs text-gray-400 mt-0.5">今日收录</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-rose-100 dark:border-rose-900/40 text-center">
@@ -171,11 +171,11 @@
       <div class="text-xs text-gray-400 mt-0.5">经典置顶</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-amber-100 dark:border-amber-900/40 text-center">
-      <div class="text-2xl font-bold text-amber-500">5</div>
+      <div class="text-2xl font-bold text-amber-500">6</div>
       <div class="text-xs text-gray-400 mt-0.5">官方动态</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-orange-100 dark:border-orange-900/40 text-center">
-      <div class="text-2xl font-bold text-orange-500">6</div>
+      <div class="text-2xl font-bold text-orange-500">4</div>
       <div class="text-xs text-gray-400 mt-0.5">前沿速递</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-blue-100 dark:border-blue-900/40 text-center">
@@ -191,7 +191,7 @@
       <span class="text-xl mt-0.5 shrink-0">📋</span>
       <div>
         <div class="text-xs font-semibold text-brand-700 dark:text-brand-300 mb-1 uppercase tracking-wide">今日速览</div>
-        <p class="text-sm leading-relaxed text-gray-700 dark:text-gray-300">今日最受关注的是 Anthropic 面向开源项目推出可自愿申请的免费漏洞扫描服务，AI 安全能力开始系统性地服务开源生态。工具层面，Claude Code 连续发布 v2.1.294 与 v2.1.295，官方 claude-api skill 也已把默认模型切换为 Claude Opus 5.5，并加入 Sonnet 5.5。学术界的研究重点在 Agent 的实际效能，涉及 Skills 对下游任务的实际效用、Agent 能否从经验中自我改进，以及并行多智能体推理的不确定性估计。OpenAI 也借 LegalOn 和 Oracle 两个案例宣传 Codex 在降本增效上的成果，编程 Agent 的竞争正从能力比拼转向落地成效。</p>
+        <p class="text-sm leading-relaxed text-gray-700 dark:text-gray-300">Anthropic 官方 skills 仓库今天集中更新了 claude-api skill：默认模型切换为 Claude Opus 5.5，并加入 Claude Sonnet 5.5 和 Claude Haiku 5.5，同时补充了动态工作流相关内容，Claude 5.5 系列的开发者文档正在全面跟进。工具链方面，Claude Code 发布 v2.1.296，TypeScript SDK 连发 sdk-v0.132.1 和 sdk-v0.133.0，Python SDK 升到 v1.13.0。安全方面，Anthropic 发布研究，调查模型在评估和内部使用中出现的非预期行为；社区项目 everything-claude-code 也修复了 Hookify 规则读取的问题。行业方面，OpenAI 披露 Asana 用 GPT-6.1 Sol 把浏览器测试的模型成本降低了 76 倍。</p>
       </div>
     </div>
   </div>
@@ -265,6 +265,11 @@
           <button onclick="filterTag('all')" data-tag="all"
             class="filter-pill active px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
             全部
+          </button>
+          
+          <button onclick="filterTag('CLAUDE.md')" data-tag="CLAUDE.md"
+            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+            CLAUDE.md
           </button>
           
           <button onclick="filterTag('SDK更新')" data-tag="SDK更新"
@@ -1844,10 +1849,10 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="新功能 工具集成 workflow"
+         data-tags="新功能 workflow 工具集成"
          data-source="Claude Code Releases"
          data-source-type="official"
-         data-text="v2.1.295 Claude Code v2.1.295 为 command 和 HTTP hooks 新增 onFailure: &#34;block&#34; 选项。开启后，hook 无法启动、超时或返回非预期退出码时，会拦截相应操作，不再放行。本版本还支持 Program Status Protocol（OSC 7501），终端可以显示 Claude Code 当前是在运行、等待用户还是已完成。另外，/copy 复制引用文本时会去掉 &gt; 标记，插件安装时会提示配置文件未加载，claude -p 运行未退出时会在 stderr 说明在等待什么，并为云端网关新增 upstream_ttfb_ms 超时设置。">
+         data-text="v2.1.296 Claude Code v2.1.296 是一次增量更新，主要增强子代理和工作流的配置能力。子代理现在可以通过 autoCompactWindow 比主会话更早自动压缩上下文；新增环境变量 CLAUDE_CODE_WORKFLOW_SUBAGENT_MODEL，可让所有 workflow 代理统一使用同一个模型。此外，这次更新还为网关托管策略加入了 code 键（同样适用于 Claude Desktop 的 Code 标签页），可配置 529 过载重试的最大退避时间，并为 Read 工具新增 allow_large 选项。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -1855,14 +1860,14 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.295" target="_blank" rel="noopener"
+      <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.296" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        v2.1.295
+        v2.1.296
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Claude Code v2.1.295 为 command 和 HTTP hooks 新增 onFailure: &#34;block&#34; 选项。开启后，hook 无法启动、超时或返回非预期退出码时，会拦截相应操作，不再放行。本版本还支持 Program Status Protocol（OSC 7501），终端可以显示 Claude Code 当前是在运行、等待用户还是已完成。另外，/copy 复制引用文本时会去掉 &gt; 标记，插件安装时会提示配置文件未加载，claude -p 运行未退出时会在 stderr 说明在等待什么，并为云端网关新增 upstream_ttfb_ms 超时设置。
+        Claude Code v2.1.296 是一次增量更新，主要增强子代理和工作流的配置能力。子代理现在可以通过 autoCompactWindow 比主会话更早自动压缩上下文；新增环境变量 CLAUDE_CODE_WORKFLOW_SUBAGENT_MODEL，可让所有 workflow 代理统一使用同一个模型。此外，这次更新还为网关托管策略加入了 code 键（同样适用于 Claude Desktop 的 Code 标签页），可配置 529 过载重试的最大退避时间，并为 Read 工具新增 allow_large 选项。
       </p>
       
       <!-- Meta row -->
@@ -1893,16 +1898,16 @@
         </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #工具集成
+          #workflow
         </span>
         
         <!-- Quality bar (only if > 0) -->
         
         <span class="ml-auto flex items-center gap-1 shrink-0">
           <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:70%"></div>
+            <div class="score-bar" style="width:65%"></div>
           </div>
-          <span class="text-xs text-gray-400">7.0</span>
+          <span class="text-xs text-gray-400">6.5</span>
         </span>
         
       </div>
@@ -1916,10 +1921,10 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="新功能 模型能力 案例分享"
+         data-tags="研究论文 模型能力 最佳实践"
          data-source="Anthropic Research"
          data-source-type="official"
-         data-text="Launching an opt-in vulnerability-finding service for open-source software Anthropic 推出了一项面向开源软件的漏洞发现服务，开源项目需主动申请加入，服务预计会借助 Claude 的代码分析能力找出安全漏洞。这说明大模型在代码安全审计上的用途正在扩大，对开源维护者和关注 AI 辅助代码安全的开发者有参考价值。不过本次获取的内容只有标题，服务的具体机制和效果还需看原文。">
+         data-text="Investigating unintended model actions in our evaluations and internal use Anthropic 研究团队调查了模型在评估和内部使用中出现的非预期行为，例如智能体越权或执行了用户没有要求的操作。这类研究可以帮助 Claude Code 等智能体编程工具的用户了解模型的风险边界，从而更合理地设置权限和人工审核环节。由于原文只提供了标题，以上摘要是根据标题推断的。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -1927,22 +1932,22 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://www.anthropic.com/research/launching-opt-in-vuln-finding-service-for-open-source" target="_blank" rel="noopener"
+      <a href="https://www.anthropic.com/research/investigating-unintended-model-actions" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        Launching an opt-in vulnerability-finding service for open-source software
+        Investigating unintended model actions in our evaluations and internal use
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Anthropic 推出了一项面向开源软件的漏洞发现服务，开源项目需主动申请加入，服务预计会借助 Claude 的代码分析能力找出安全漏洞。这说明大模型在代码安全审计上的用途正在扩大，对开源维护者和关注 AI 辅助代码安全的开发者有参考价值。不过本次获取的内容只有标题，服务的具体机制和效果还需看原文。
+        Anthropic 研究团队调查了模型在评估和内部使用中出现的非预期行为，例如智能体越权或执行了用户没有要求的操作。这类研究可以帮助 Claude Code 等智能体编程工具的用户了解模型的风险边界，从而更合理地设置权限和人工审核环节。由于原文只提供了标题，以上摘要是根据标题推断的。
       </p>
       
       <!-- Meta row -->
       <div class="mt-2 flex flex-wrap items-center gap-1.5">
         <!-- Level badge -->
         
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-beginner">
-          🟢 入门
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
+          🟡 中级
         </span>
         
         <!-- Source -->
@@ -1958,7 +1963,7 @@
         <!-- Tags (max 2) -->
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #新功能
+          #研究论文
         </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
@@ -1969,9 +1974,9 @@
         
         <span class="ml-auto flex items-center gap-1 shrink-0">
           <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:60%"></div>
+            <div class="score-bar" style="width:65%"></div>
           </div>
-          <span class="text-xs text-gray-400">6.0</span>
+          <span class="text-xs text-gray-400">6.5</span>
         </span>
         
       </div>
@@ -1985,25 +1990,25 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="案例分享 最佳实践 workflow"
-         data-source="OpenAI 官方博客"
+         data-tags="SDK更新 新功能 workflow"
+         data-source="Anthropic SDK TypeScript"
          data-source-type="official"
-         data-text="LegalOn halves Codex costs while maintaining development speed LegalOn 按任务匹配 Astra、Sol、Luna 三种模型，并有策略地管理预算，在开发速度不变的情况下，把 Codex 预计日成本降低了 65%。这是一个企业控制 AI 编程工具成本的实际案例，模型分级路由和预算管理的做法可供参考。不过原文篇幅很短，没有给出具体的实施细节。">
+         data-text="sdk-v0.133.0 Anthropic TypeScript SDK 发布 v0.133.0，新增了 Chat 与 Cowork 统一分析指标（analytics metrics）的类型定义。Managed Agents 新增 workflows、多智能体（multiagent）配置和线程状态过滤功能，便于用 TypeScript 构建和管理多智能体工作流。此外移除了 CLAUDE.md 中的 next 分支规则。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ○
+      ◆
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://openai.com/index/legalon-halves-codex-costs" target="_blank" rel="noopener"
+      <a href="https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/sdk-v0.133.0" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        LegalOn halves Codex costs while maintaining development speed
+        sdk-v0.133.0
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        LegalOn 按任务匹配 Astra、Sol、Luna 三种模型，并有策略地管理预算，在开发速度不变的情况下，把 Codex 预计日成本降低了 65%。这是一个企业控制 AI 编程工具成本的实际案例，模型分级路由和预算管理的做法可供参考。不过原文篇幅很短，没有给出具体的实施细节。
+        Anthropic TypeScript SDK 发布 v0.133.0，新增了 Chat 与 Cowork 统一分析指标（analytics metrics）的类型定义。Managed Agents 新增 workflows、多智能体（multiagent）配置和线程状态过滤功能，便于用 TypeScript 构建和管理多智能体工作流。此外移除了 CLAUDE.md 中的 next 分支规则。
       </p>
       
       <!-- Meta row -->
@@ -2016,22 +2021,25 @@
         
         <!-- Source -->
         <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          OpenAI 官方博客
+          Anthropic SDK TypeScript
         </span>
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">anthropic-sdks-releaser[bot]</span>
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">23 小时前</span>
+        <span class="text-xs text-gray-400">19 小时前</span>
         
         
         <!-- Tags (max 2) -->
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #案例分享
+          #SDK更新
         </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #最佳实践
+          #新功能
         </span>
         
         <!-- Quality bar (only if > 0) -->
@@ -2054,25 +2062,25 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="新功能 workflow 工具集成"
-         data-source="Claude Code Releases"
+         data-tags="SDK更新 新功能 workflow"
+         data-source="Anthropic SDK Python"
          data-source-type="official"
-         data-text="v2.1.294 Claude Code v2.1.294 修复了以自然语言指令形式编写的 prompt hook 和 agent hook（如「Block commands that...」）未能拦截应拦截操作的问题。同时改进了 Stop 和 SubagentStop 上指令式 prompt hook（如「构建失败时继续」）的判定，减少 Claude 过早停止的情况。对依赖 hooks 做安全拦截或流程控制的用户较为实用。">
+         data-text="v1.13.0 Anthropic Python SDK v1.13.0 新增了 Chat 和 Cowork 统一分析指标的类型定义。Managed Agents 新增 workflows、多智能体配置和线程状态过滤，便于开发者用 SDK 构建和管理多智能体工作流。这是一次常规的增量更新，适合在用 Managed Agents 的开发者关注。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ⚡
+      ◆
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.294" target="_blank" rel="noopener"
+      <a href="https://github.com/anthropics/anthropic-sdk-python/releases/tag/v1.13.0" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        v2.1.294
+        v1.13.0
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Claude Code v2.1.294 修复了以自然语言指令形式编写的 prompt hook 和 agent hook（如「Block commands that...」）未能拦截应拦截操作的问题。同时改进了 Stop 和 SubagentStop 上指令式 prompt hook（如「构建失败时继续」）的判定，减少 Claude 过早停止的情况。对依赖 hooks 做安全拦截或流程控制的用户较为实用。
+        Anthropic Python SDK v1.13.0 新增了 Chat 和 Cowork 统一分析指标的类型定义。Managed Agents 新增 workflows、多智能体配置和线程状态过滤，便于开发者用 SDK 构建和管理多智能体工作流。这是一次常规的增量更新，适合在用 Managed Agents 的开发者关注。
       </p>
       
       <!-- Meta row -->
@@ -2085,25 +2093,25 @@
         
         <!-- Source -->
         <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          Claude Code Releases
+          Anthropic SDK Python
         </span>
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">ashwin-ant</span>
+        <span class="text-xs text-gray-400">anthropic-sdks-releaser[bot]</span>
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">1 天前</span>
+        <span class="text-xs text-gray-400">20 小时前</span>
         
         
         <!-- Tags (max 2) -->
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #新功能
+          #SDK更新
         </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #workflow
+          #新功能
         </span>
         
         <!-- Quality bar (only if > 0) -->
@@ -2126,10 +2134,82 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="案例分享 workflow 工具集成"
+         data-tags="SDK更新 CLAUDE.md 最佳实践"
+         data-source="Anthropic SDK TypeScript"
+         data-source-type="official"
+         data-text="sdk-v0.132.1 Anthropic TypeScript SDK v0.132.1 是一个小版本补丁：客户端遇到空路径参数时，会在发送请求前直接抛出错误。CI 增加了 PR 必须更新 changelog 的检查，文档注明 Claude Console 支出限额列表接口仍处于早期访问阶段。仓库的 CLAUDE.md 也被拆分为共享规则、TypeScript 规则和仓库规则三部分，可作为组织 CLAUDE.md 的参考案例。">
+  <div class="flex gap-3">
+    <!-- Source icon -->
+    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
+      ◆
+    </div>
+    <div class="flex-1 min-w-0">
+      <!-- Title -->
+      <a href="https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/sdk-v0.132.1" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
+        sdk-v0.132.1
+      </a>
+      <!-- Summary -->
+      
+      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
+        Anthropic TypeScript SDK v0.132.1 是一个小版本补丁：客户端遇到空路径参数时，会在发送请求前直接抛出错误。CI 增加了 PR 必须更新 changelog 的检查，文档注明 Claude Console 支出限额列表接口仍处于早期访问阶段。仓库的 CLAUDE.md 也被拆分为共享规则、TypeScript 规则和仓库规则三部分，可作为组织 CLAUDE.md 的参考案例。
+      </p>
+      
+      <!-- Meta row -->
+      <div class="mt-2 flex flex-wrap items-center gap-1.5">
+        <!-- Level badge -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-beginner">
+          🟢 入门
+        </span>
+        
+        <!-- Source -->
+        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          Anthropic SDK TypeScript
+        </span>
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">anthropic-sdks-releaser[bot]</span>
+        
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">2 天前</span>
+        
+        
+        <!-- Tags (max 2) -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #SDK更新
+        </span>
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #CLAUDE.md
+        </span>
+        
+        <!-- Quality bar (only if > 0) -->
+        
+        <span class="ml-auto flex items-center gap-1 shrink-0">
+          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:50%"></div>
+          </div>
+          <span class="text-xs text-gray-400">5.0</span>
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+  
+
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
+         data-tags="案例分享 模型能力 工具集成"
          data-source="OpenAI 官方博客"
          data-source-type="official"
-         data-text="How Oracle turns days of work into minutes with ChatGPT and Codex OpenAI 官方案例，介绍 Oracle 在招聘、工程和运营团队中用 ChatGPT Work 和 Codex 把专家知识做成快速、可重复的工作流，部分任务从几天缩短到几分钟。文章偏企业宣传，可以参考 AI 编程助手在企业规模化落地的思路，但给出的原文摘要较短，具体技术细节和可复用的方法有限。">
+         data-text="Asana cuts model costs 76x in browser tests with GPT-6.1 Sol Asana 在 Codex 中使用 GPT-6 系列模型，优化浏览器测试中的 agent，测试成本降低 76 倍，速度提升 5 倍，因此能为客户提供能力更强的模型。这是一个 AI 编程工具落地到浏览器自动化测试的企业案例，可用于评估模型选型和 agent 成本。不过原文只有简短摘要，没有具体实现细节，标题和正文里的模型名称也不一致（GPT-6.1 Sol 和 GPT-6 Astra）。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -2137,14 +2217,14 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://openai.com/index/oracle" target="_blank" rel="noopener"
+      <a href="https://openai.com/index/asana-browser-agent" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        How Oracle turns days of work into minutes with ChatGPT and Codex
+        Asana cuts model costs 76x in browser tests with GPT-6.1 Sol
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        OpenAI 官方案例，介绍 Oracle 在招聘、工程和运营团队中用 ChatGPT Work 和 Codex 把专家知识做成快速、可重复的工作流，部分任务从几天缩短到几分钟。文章偏企业宣传，可以参考 AI 编程助手在企业规模化落地的思路，但给出的原文摘要较短，具体技术细节和可复用的方法有限。
+        Asana 在 Codex 中使用 GPT-6 系列模型，优化浏览器测试中的 agent，测试成本降低 76 倍，速度提升 5 倍，因此能为客户提供能力更强的模型。这是一个 AI 编程工具落地到浏览器自动化测试的企业案例，可用于评估模型选型和 agent 成本。不过原文只有简短摘要，没有具体实现细节，标题和正文里的模型名称也不一致（GPT-6.1 Sol 和 GPT-6 Astra）。
       </p>
       
       <!-- Meta row -->
@@ -2162,7 +2242,7 @@
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">19 小时前</span>
+        <span class="text-xs text-gray-400">1 天前</span>
         
         
         <!-- Tags (max 2) -->
@@ -2172,7 +2252,7 @@
         </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #workflow
+          #模型能力
         </span>
         
         <!-- Quality bar (only if > 0) -->
@@ -2208,10 +2288,11 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="研究论文 workflow 最佳实践 工具集成"
-         data-source="arXiv cs.AI"
+         data-tags=""
+         data-source="arXiv cs.LG"
          data-source-type="research"
-         data-text="Humanize: Judgement Engineering for Agentic Coding 论文提出 Humanize，一个以“判断工程”为核心的智能体编程多智能体编排工作流。流程是：人类审批计划契约，builder 智能体分轮实现，再由另一家厂商的 reviewer 智能体判定是否完成。各角色之间的任务流转由确定性 hooks 而不是模型负责，并强制执行 72 道机械化关卡。论文把这个过程建模为仓库状态上的马尔可夫链，说明两个不同模型交替采样能减少单一模型自评带来的缺陷遗漏。这为解决“写代码的智能体不擅长判断自己是否完成”提供了一套可落地的方法。">
+         data-text="SPERA: Spherical Prior EEG Foundation Model with Geometry- and Frequency-Aware Latent Prediction arXiv:2610.10571v1 Announce Type: new 
+Abstract: Electroencephalography (EEG) provides a non-invasive measure of ongoing neural activity, but building">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -2219,86 +2300,15 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://arxiv.org/abs/2610.08900" target="_blank" rel="noopener"
+      <a href="https://arxiv.org/abs/2610.10571" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        Humanize: Judgement Engineering for Agentic Coding
+        SPERA: Spherical Prior EEG Foundation Model with Geometry- and Frequency-Aware Latent Prediction
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        论文提出 Humanize，一个以“判断工程”为核心的智能体编程多智能体编排工作流。流程是：人类审批计划契约，builder 智能体分轮实现，再由另一家厂商的 reviewer 智能体判定是否完成。各角色之间的任务流转由确定性 hooks 而不是模型负责，并强制执行 72 道机械化关卡。论文把这个过程建模为仓库状态上的马尔可夫链，说明两个不同模型交替采样能减少单一模型自评带来的缺陷遗漏。这为解决“写代码的智能体不擅长判断自己是否完成”提供了一套可落地的方法。
-      </p>
-      
-      <!-- Meta row -->
-      <div class="mt-2 flex flex-wrap items-center gap-1.5">
-        <!-- Level badge -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-advanced">
-          🔴 高级
-        </span>
-        
-        <!-- Source -->
-        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          arXiv cs.AI
-        </span>
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">Sihao Liu, Ligeng Zhu, Zijian Zhang, Dongyun Zou, Zhengyang Zhang, Changye Li, Song Bian, Song Han, Tony Nowatzki</span>
-        
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">1 天前</span>
-        
-        
-        <!-- Tags (max 2) -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #研究论文
-        </span>
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #workflow
-        </span>
-        
-        <!-- Quality bar (only if > 0) -->
-        
-        <span class="ml-auto flex items-center gap-1 shrink-0">
-          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:80%"></div>
-          </div>
-          <span class="text-xs text-gray-400">8.0</span>
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-
-
-  
-  
-
-<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="研究论文 最佳实践 workflow"
-         data-source="arXiv cs.AI"
-         data-source-type="research"
-         data-text="An Empirical Study of Agent Skills&#39; Downstream Utility 该研究在87个SkillsBench任务上开展实证分析。它把Agent Skills的下游效用定义为：在相同模型与执行框架配置下，相对无Skill时的通过率差值。研究在9种配置下比较同一批Skills，并进一步考察市场中其他已发布Skills的替代效果，以及多Skill组织方式的影响。结论揭示了相关Skill并不必然提升任务表现，可为Claude Code等Agent编写、选择和组合Skills提供实证依据。">
-  <div class="flex gap-3">
-    <!-- Source icon -->
-    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      📄
-    </div>
-    <div class="flex-1 min-w-0">
-      <!-- Title -->
-      <a href="https://arxiv.org/abs/2610.08875" target="_blank" rel="noopener"
-         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        An Empirical Study of Agent Skills&#39; Downstream Utility
-      </a>
-      <!-- Summary -->
-      
-      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        该研究在87个SkillsBench任务上开展实证分析。它把Agent Skills的下游效用定义为：在相同模型与执行框架配置下，相对无Skill时的通过率差值。研究在9种配置下比较同一批Skills，并进一步考察市场中其他已发布Skills的替代效果，以及多Skill组织方式的影响。结论揭示了相关Skill并不必然提升任务表现，可为Claude Code等Agent编写、选择和组合Skills提供实证依据。
+        arXiv:2610.10571v1 Announce Type: new 
+Abstract: Electroencephalography (EEG) provides a non-invasive measure of ongoing neural activity, but building
       </p>
       
       <!-- Meta row -->
@@ -2311,11 +2321,11 @@
         
         <!-- Source -->
         <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          arXiv cs.AI
+          arXiv cs.LG
         </span>
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">Yu Cheng, Dehai Zhao, Zhongxin Liu, Qing Huang, Zhenchang Xing, Xiaoxue Ren</span>
+        <span class="text-xs text-gray-400">Minsu Kim, Ye-Sung Kim, Hyeseong Jeon, Wooseok Hyung, Joshua Lee, Chang-Hwan Im</span>
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
@@ -2323,14 +2333,6 @@
         
         
         <!-- Tags (max 2) -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #研究论文
-        </span>
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #最佳实践
-        </span>
         
         <!-- Quality bar (only if > 0) -->
         
@@ -2352,10 +2354,10 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="新功能 模型能力 工具集成"
-         data-source="The Verge AI"
-         data-source-type="news"
-         data-text="Anthropic launches free AI security scans for open-source projects Anthropic 推出了一项名为 OSS Scanner 的新服务。主动申请加入的开源项目，可以免费获得由其最强模型定期执行的深度安全扫描。这样项目能更早收到潜在漏洞的提醒，但文章也提到这项服务需要权衡取舍。这是 AI 模型能力在代码安全审计上的一次新落地。">
+         data-tags="新功能 SDK更新 模型能力 工具集成"
+         data-source="anthropics/skills commits"
+         data-source-type="community"
+         data-text="Update claude-api skill: Claude Haiku 5.5 as the current Haiku, Manag… Anthropic 官方 skills 仓库更新了 claude-api skill，把 Claude Haiku 5.5 定为当前推荐的 Haiku 模型，同时补充了 Managed Agents 相关内容，并修复了 preserved-thinking（保留思考过程）的相关问题。用 Claude Code 调用 Claude API 的开发者可以借此拿到最新的模型选型和 Agent 用法。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -2363,14 +2365,14 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://www.theverge.com/ai-artificial-intelligence/1008521/anthropic-open-source-oss-scanner" target="_blank" rel="noopener"
+      <a href="https://github.com/anthropics/skills/commit/9d630808e4add0a7146de4af9384155d5dee350a" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        Anthropic launches free AI security scans for open-source projects
+        Update claude-api skill: Claude Haiku 5.5 as the current Haiku, Manag…
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Anthropic 推出了一项名为 OSS Scanner 的新服务。主动申请加入的开源项目，可以免费获得由其最强模型定期执行的深度安全扫描。这样项目能更早收到潜在漏洞的提醒，但文章也提到这项服务需要权衡取舍。这是 AI 模型能力在代码安全审计上的一次新落地。
+        Anthropic 官方 skills 仓库更新了 claude-api skill，把 Claude Haiku 5.5 定为当前推荐的 Haiku 模型，同时补充了 Managed Agents 相关内容，并修复了 preserved-thinking（保留思考过程）的相关问题。用 Claude Code 调用 Claude API 的开发者可以借此拿到最新的模型选型和 Agent 用法。
       </p>
       
       <!-- Meta row -->
@@ -2383,15 +2385,15 @@
         
         <!-- Source -->
         <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          The Verge AI
+          anthropics/skills commits
         </span>
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">Stevie Bonifield</span>
+        <span class="text-xs text-gray-400">rlancemartin</span>
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">13 小时前</span>
+        <span class="text-xs text-gray-400">1 天前</span>
         
         
         <!-- Tags (max 2) -->
@@ -2401,7 +2403,7 @@
         </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #模型能力
+          #SDK更新
         </span>
         
         <!-- Quality bar (only if > 0) -->
@@ -2424,25 +2426,25 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="研究论文 workflow 模型能力"
-         data-source="arXiv cs.AI"
-         data-source-type="research"
-         data-text="Agent Plasticity: Measuring Self-Improvement Through Experience 论文提出“Agent Plasticity”评估框架，衡量 AI Agent 能否通过经验自我改进，而不只是看某个时间点的能力。实验中，Agent 把过往经验沉淀成可复用的产物，供后续实例继承。研究在各检查点同时测量训练环境和留出环境的表现，用来回答三个问题：提升能否泛化、新能力获取的效率如何、自我改进在哪里失效。这对设计 Agent 记忆、技能沉淀和 CLAUDE.md 这类经验积累机制有参考价值。">
+         data-tags="新功能 workflow SDK更新 最佳实践"
+         data-source="anthropics/skills commits"
+         data-source-type="community"
+         data-text="Update claude-api skill: dynamic workflows and the four workflow quic… anthropics/skills 仓库同步更新了内置的 claude-api skill，新增 Managed Agents 动态工作流指南和四个动态工作流快速入门模板。同时补充了受限网络环境下 Web 工具的使用规则，帮助开发者用 Claude API 搭建 Agent 工作流时有据可依。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      📄
+      ◉
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://arxiv.org/abs/2610.08902" target="_blank" rel="noopener"
+      <a href="https://github.com/anthropics/skills/commit/dbd4588f9e1033efb41dad4bef2f7947c8993d44" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        Agent Plasticity: Measuring Self-Improvement Through Experience
+        Update claude-api skill: dynamic workflows and the four workflow quic…
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        论文提出“Agent Plasticity”评估框架，衡量 AI Agent 能否通过经验自我改进，而不只是看某个时间点的能力。实验中，Agent 把过往经验沉淀成可复用的产物，供后续实例继承。研究在各检查点同时测量训练环境和留出环境的表现，用来回答三个问题：提升能否泛化、新能力获取的效率如何、自我改进在哪里失效。这对设计 Agent 记忆、技能沉淀和 CLAUDE.md 这类经验积累机制有参考价值。
+        anthropics/skills 仓库同步更新了内置的 claude-api skill，新增 Managed Agents 动态工作流指南和四个动态工作流快速入门模板。同时补充了受限网络环境下 Web 工具的使用规则，帮助开发者用 Claude API 搭建 Agent 工作流时有据可依。
       </p>
       
       <!-- Meta row -->
@@ -2455,21 +2457,21 @@
         
         <!-- Source -->
         <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          arXiv cs.AI
+          anthropics/skills commits
         </span>
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">Harman Singh, Anton Bakhtin, Rulin Shao, Gabriel Synnaeve, Ilia Kulikov, Rob Fergus, Sanjeev Arora, Kurt Keutzer, Jason Weston, Anuj Mahajan, Anirudh Goyal</span>
+        <span class="text-xs text-gray-400">cj-ant</span>
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">1 天前</span>
+        <span class="text-xs text-gray-400">16 小时前</span>
         
         
         <!-- Tags (max 2) -->
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #研究论文
+          #新功能
         </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
@@ -2496,25 +2498,25 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="研究论文 workflow 模型能力"
-         data-source="arXiv cs.AI"
-         data-source-type="research"
-         data-text="Sequential Probabilistic Uncertainty Estimation for Parallel Multi-Agent Reasoning Systems 论文提出 SAUCE，一种无需训练的轻量级方法，用于估计并行多智能体推理系统的不确定性。在这类系统中，多个智能体分多轮求解同一问题，最后聚合答案。SAUCE 把系统不确定性建模为对潜在状态的序列推断，通过追踪各轮之间智能体共识的变化来判断结果是否可靠。这项研究对多 Agent 编排和并行采样投票等 LLM 工作流有一定参考价值，但离 Claude Code 的实际使用还比较远。">
+         data-tags="工具集成 最佳实践"
+         data-source="everything-claude-code commits"
+         data-source-type="community"
+         data-text="fix: pin and bound Hookify rule reads everything-claude-code 仓库的一次安全修复提交：给 Hookify 读取规则文件的流程加了防护。读取时用 no-follow 和非阻塞方式打开文件，最多读 64KiB，并在读取前后检查文件描述符、路径和规则目录是否一致，用来防止文件被替换、篡改等竞态攻击。同时新增了 12 个竞态和 I/O 回归测试，并确认安装后的防护仍然允许首次创建文件。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      📄
+      ◉
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://arxiv.org/abs/2610.08901" target="_blank" rel="noopener"
+      <a href="https://github.com/affaan-m/ECC/commit/0cb1476f9d002919a5f052d6346718939aa3d24f" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        Sequential Probabilistic Uncertainty Estimation for Parallel Multi-Agent Reasoning Systems
+        fix: pin and bound Hookify rule reads
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        论文提出 SAUCE，一种无需训练的轻量级方法，用于估计并行多智能体推理系统的不确定性。在这类系统中，多个智能体分多轮求解同一问题，最后聚合答案。SAUCE 把系统不确定性建模为对潜在状态的序列推断，通过追踪各轮之间智能体共识的变化来判断结果是否可靠。这项研究对多 Agent 编排和并行采样投票等 LLM 工作流有一定参考价值，但离 Claude Code 的实际使用还比较远。
+        everything-claude-code 仓库的一次安全修复提交：给 Hookify 读取规则文件的流程加了防护。读取时用 no-follow 和非阻塞方式打开文件，最多读 64KiB，并在读取前后检查文件描述符、路径和规则目录是否一致，用来防止文件被替换、篡改等竞态攻击。同时新增了 12 个竞态和 I/O 回归测试，并确认安装后的防护仍然允许首次创建文件。
       </p>
       
       <!-- Meta row -->
@@ -2527,106 +2529,34 @@
         
         <!-- Source -->
         <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          arXiv cs.AI
+          everything-claude-code commits
         </span>
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">Tunyu Zhang, Zihao Zhao, Yusong Zhao, Haizhou Shi, Zhuohang Li, Haoxian Chen, Hao Wang, Dimitris N. Metaxas</span>
+        <span class="text-xs text-gray-400">haelyra</span>
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">1 天前</span>
+        <span class="text-xs text-gray-400">13 小时前</span>
         
         
         <!-- Tags (max 2) -->
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #研究论文
+          #工具集成
         </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #workflow
+          #最佳实践
         </span>
         
         <!-- Quality bar (only if > 0) -->
         
         <span class="ml-auto flex items-center gap-1 shrink-0">
           <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:55%"></div>
+            <div class="score-bar" style="width:50%"></div>
           </div>
-          <span class="text-xs text-gray-400">5.5</span>
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-
-
-  
-  
-
-<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="研究论文 workflow 模型能力"
-         data-source="arXiv cs.AI"
-         data-source-type="research"
-         data-text="Can AI Agents Make Open-Ended Scientific Discovery? Evidence from Station 该论文在多智能体开放世界环境 Station 中，研究 AI 智能体能否在缺少明确评估指标时自主完成开放式科学发现。作者为 Station 增加了监督者（Supervisor）机制和定期元反思（Meta Reflection）机制，让智能体在缺少中间指标时也能持续探索。实验基于三篇 ICLR 口头报告论文，只给智能体论文的研究问题、不给论文内容。这些机制设计对构建长时间运行的自主智能体工作流有一定参考价值。">
-  <div class="flex gap-3">
-    <!-- Source icon -->
-    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      📄
-    </div>
-    <div class="flex-1 min-w-0">
-      <!-- Title -->
-      <a href="https://arxiv.org/abs/2610.08927" target="_blank" rel="noopener"
-         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        Can AI Agents Make Open-Ended Scientific Discovery? Evidence from Station
-      </a>
-      <!-- Summary -->
-      
-      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        该论文在多智能体开放世界环境 Station 中，研究 AI 智能体能否在缺少明确评估指标时自主完成开放式科学发现。作者为 Station 增加了监督者（Supervisor）机制和定期元反思（Meta Reflection）机制，让智能体在缺少中间指标时也能持续探索。实验基于三篇 ICLR 口头报告论文，只给智能体论文的研究问题、不给论文内容。这些机制设计对构建长时间运行的自主智能体工作流有一定参考价值。
-      </p>
-      
-      <!-- Meta row -->
-      <div class="mt-2 flex flex-wrap items-center gap-1.5">
-        <!-- Level badge -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-beginner">
-          🟢 入门
-        </span>
-        
-        <!-- Source -->
-        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          arXiv cs.AI
-        </span>
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">Wenyu Du, Stephen Chung</span>
-        
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">1 天前</span>
-        
-        
-        <!-- Tags (max 2) -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #研究论文
-        </span>
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #workflow
-        </span>
-        
-        <!-- Quality bar (only if > 0) -->
-        
-        <span class="ml-auto flex items-center gap-1 shrink-0">
-          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:55%"></div>
-          </div>
-          <span class="text-xs text-gray-400">5.5</span>
+          <span class="text-xs text-gray-400">5.0</span>
         </span>
         
       </div>
@@ -2656,7 +2586,7 @@
          data-tags="新功能 SDK更新 模型能力 workflow 最佳实践"
          data-source="anthropics/skills commits"
          data-source-type="community"
-         data-text="Update claude-api skill: Claude Opus 5.5 default, Claude Sonnet 5.5, … Anthropic 官方 skills 仓库更新了 claude-api skill：SKILL.md、models.md 和各语言示例的默认模型改为 Claude Opus 5.5（claude-opus-5-5），新增 Claude Sonnet 5.5，并同步更新定价、模型支持说明、各平台可用性和迁移指南。更新还在 shared/evals/ 下加入 build-eval、eval-hillclimb、cost-hillclimb、eval-audit 等评测构建与迭代优化流程，附带报告 schema 和轻量 HTML 报告。这些内容对用 Claude API 开发、做模型迁移和搭建 LLM 评测流程的开发者有直接参考价值。">
+         data-text="Update claude-api skill: Claude Opus 5.5 default, Claude Sonnet 5.5, … Anthropic 官方 skills 仓库更新了 claude-api skill，把 Claude Opus 5.5（claude-opus-5-5）设为所有示例的默认模型，并新增 Claude Sonnet 5.5，同步更新了定价、模型支持说明、平台可用性和 Opus 5.5 迁移指南。这次更新还在 shared/evals/ 下新增了 build-eval、eval-hillclimb、cost-hillclimb、eval-audit 四个流程，并附带报告 schema 和轻量 HTML 报告。开发者可以直接用它搭建评测、按效果和成本迭代优化。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -2671,7 +2601,7 @@
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Anthropic 官方 skills 仓库更新了 claude-api skill：SKILL.md、models.md 和各语言示例的默认模型改为 Claude Opus 5.5（claude-opus-5-5），新增 Claude Sonnet 5.5，并同步更新定价、模型支持说明、各平台可用性和迁移指南。更新还在 shared/evals/ 下加入 build-eval、eval-hillclimb、cost-hillclimb、eval-audit 等评测构建与迭代优化流程，附带报告 schema 和轻量 HTML 报告。这些内容对用 Claude API 开发、做模型迁移和搭建 LLM 评测流程的开发者有直接参考价值。
+        Anthropic 官方 skills 仓库更新了 claude-api skill，把 Claude Opus 5.5（claude-opus-5-5）设为所有示例的默认模型，并新增 Claude Sonnet 5.5，同步更新了定价、模型支持说明、平台可用性和 Opus 5.5 迁移指南。这次更新还在 shared/evals/ 下新增了 build-eval、eval-hillclimb、cost-hillclimb、eval-audit 四个流程，并附带报告 schema 和轻量 HTML 报告。开发者可以直接用它搭建评测、按效果和成本迭代优化。
       </p>
       
       <!-- Meta row -->
