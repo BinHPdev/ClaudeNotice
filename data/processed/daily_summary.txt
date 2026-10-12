@@ -1,1 +1,1 @@
-Anthropic 官方 skills 仓库更新了 claude-api 技能，默认模型改为 Claude Opus 5.5，并加入了 Claude Sonnet 5.5。社区也在测试新模型的实际能力，30 位创作者只用一句模糊提示词考验 Opus 5.5 的理解和发挥。开发者工具方面，Simon Willison 发布了 ttok 1.0，还用语音驱动的方式给博客做了新功能。另一方面，产品团队怎么管理 AI Agent 集群、大众为何对 AI 既反感又离不开，也成了讨论热点，说明 AI 正从比拼能力走向治理和社会接受。
+今日焦点是模型版本更新：Anthropic 官方 skills 仓库已更新 claude-api 技能，默认模型切换为 Claude Opus 5.5，并新增对 Claude Sonnet 5.5 的支持。依赖该技能的开发者需要核对默认模型变化对调用成本和输出表现的影响。另据 The Verge 报道，Anthropic 正在切断内部评估与互联网的连接，以提高评测的隔离性和可靠性。整体看，Anthropic 一边加快新模型的落地，一边加强评测体系的安全与可信度。

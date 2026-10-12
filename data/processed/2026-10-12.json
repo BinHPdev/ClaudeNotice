@@ -1,0 +1,55 @@
+[
+  {
+    "title": "Update claude-api skill: Claude Opus 5.5 default, Claude Sonnet 5.5, …",
+    "url": "https://github.com/anthropics/skills/commit/8a1541c4a3ffa5a20a5a91de0dcf3f0bab1d1ef4",
+    "source": "anthropics/skills commits",
+    "source_type": "community",
+    "published_at": "2026-09-28T18:20:03+00:00",
+    "content": "Update claude-api skill: Claude Opus 5.5 default, Claude Sonnet 5.5, build-eval and hillclimb guides (#1930)\n\n* Update claude-api skill: Claude Opus 5.5 default, Claude Sonnet 5.5, build-eval and hillclimb guides\n\n- Make Claude Opus 5.5 (`claude-opus-5-5`) the default model across SKILL.md,\n  models.md, and every language's examples, with Claude Opus 5 as the previous\n  Opus; add \"Migrating to Claude Opus 5.5\" to shared/model-migration.md\n- Add Claude Sonnet 5.5 (`claude-sonnet-5-5`) as the current Sonnet, with\n  Claude Sonnet 5 as the previous one, and update pricing, model-support\n  callouts, and platform availability to match\n- Add the build-eval and hillclimb flows under shared/evals/ (build-eval,\n  eval-hillclimb, cost-hillclimb, eval-audit), the report schema, the lite HTML\n  report builder, and the runner scaffold\n- Add the preserved-thinking-migration subcommand with its cause reference and\n  probe scripts, and note that drop_block can raise token usage\n- Update cost-optimize f",
+    "author": "rlancemartin",
+    "author_url": "",
+    "score": 0,
+    "comments": 0,
+    "shares": 0,
+    "tags": [
+      "新功能",
+      "SDK更新",
+      "模型能力",
+      "workflow",
+      "最佳实践"
+    ],
+    "quality_score": 8.5,
+    "summary_zh": "Anthropic官方skills仓库更新了claude-api skill，把Claude Opus 5.5（claude-opus-5-5）设为默认模型，新增Claude Sonnet 5.5，并同步更新了定价、平台可用性和迁移指南。另外加入了build-eval、eval-hillclimb、cost-hillclimb和eval-audit等评测与迭代优化流程，还附带报告schema和HTML报告，可以直接拿来建评测、提效果、降成本。",
+    "category": "frontier",
+    "is_frontier": false,
+    "language": "en",
+    "raw_id": "rss::anthropics/skills commits::tag:github.com,2008:Grit::Commit/8a1541c4a3ffa5a20a5a91de0dcf3f0bab1d1ef4",
+    "is_pinned": true,
+    "pin_reason": "官方skill同步了新一代默认模型Opus 5.5和Sonnet 5.5，还提供了系统化的评测构建与hillclimb优化流程，开发者迁移模型、搭建评测时可长期参考。"
+  },
+  {
+    "title": "Anthropic is cutting off its internal evaluations from the internet",
+    "url": "https://www.theverge.com/ai-artificial-intelligence/1009286/anthropic-is-cutting-off-its-internal-evaluations-from-the-internet",
+    "source": "The Verge AI",
+    "source_type": "news",
+    "published_at": "2026-10-10T06:41:16+00:00",
+    "content": "After a recent spate of high-profile incidents in which AI agents escaped containment, Anthropic is cutting off internet access for all internal evaluations. In a report Friday, the company detailed \"unintended model actions,\" including submitting a false tip regarding an unsolved murder, that led to the decision. Although the impact of these behaviors was minimal […]",
+    "author": "Terrence O’Brien",
+    "author_url": "",
+    "score": 0,
+    "comments": 0,
+    "shares": 0,
+    "tags": [
+      "模型能力",
+      "最佳实践"
+    ],
+    "quality_score": 6.0,
+    "summary_zh": "此前多起 AI 智能体逃出受控环境的事件引发广泛关注，Anthropic 随后宣布切断所有内部评估的互联网访问。公司在周五发布的报告中列举了多起“非预期的模型行为”，其中包括模型就一起未破谋杀案提交了虚假线索。文章与智能体安全边界和沙箱隔离实践有关，但对 Claude Code 的日常使用没有直接的实操指导。",
+    "category": "frontier",
+    "is_frontier": true,
+    "language": "en",
+    "raw_id": "rss::The Verge AI::https://www.theverge.com/?p=1009286",
+    "is_pinned": false,
+    "pin_reason": ""
+  }
+]
