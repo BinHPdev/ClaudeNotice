@@ -139,7 +139,7 @@
     </div>
 
     <div class="flex items-center gap-2 ml-auto shrink-0">
-      <span class="hidden md:inline text-xs text-gray-400">2026年10月15日 02:31</span>
+      <span class="hidden md:inline text-xs text-gray-400">2026年10月16日 02:26</span>
       <span class="inline-flex items-center gap-1 bg-green-50 dark:bg-green-900/30 text-green-600 dark:text-green-400 px-2 py-0.5 rounded-full text-xs font-medium">
         ● 每日更新
       </span>
@@ -163,7 +163,7 @@
   <!-- Stats bar -->
   <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 mb-6">
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-gray-100 dark:border-gray-800 text-center">
-      <div class="text-2xl font-bold text-brand-600">14</div>
+      <div class="text-2xl font-bold text-brand-600">7</div>
       <div class="text-xs text-gray-400 mt-0.5">今日收录</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-rose-100 dark:border-rose-900/40 text-center">
@@ -171,11 +171,11 @@
       <div class="text-xs text-gray-400 mt-0.5">经典置顶</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-amber-100 dark:border-amber-900/40 text-center">
-      <div class="text-2xl font-bold text-amber-500">13</div>
+      <div class="text-2xl font-bold text-amber-500">4</div>
       <div class="text-xs text-gray-400 mt-0.5">官方动态</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-orange-100 dark:border-orange-900/40 text-center">
-      <div class="text-2xl font-bold text-orange-500">0</div>
+      <div class="text-2xl font-bold text-orange-500">2</div>
       <div class="text-xs text-gray-400 mt-0.5">前沿速递</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-blue-100 dark:border-blue-900/40 text-center">
@@ -191,7 +191,7 @@
       <span class="text-xl mt-0.5 shrink-0">📋</span>
       <div>
         <div class="text-xs font-semibold text-brand-700 dark:text-brand-300 mb-1 uppercase tracking-wide">今日速览</div>
-        <p class="text-sm leading-relaxed text-gray-700 dark:text-gray-300">今天 Anthropic 生态更新密集。官方 claude-api skill 已把默认模型切换为 Claude Opus 5.5，并加入 Claude Sonnet 5.5，新一代模型正式进入开发者工具链。Claude Code 连续发布 v2.1.294 到 v2.1.300 多个版本；TypeScript SDK（v0.134.0）、Python SDK（v1.14.0）和 Agent SDK Python（v0.2.166）也同步更新，Bedrock、Vertex、Foundry、AWS、Google Cloud 等云平台 SDK 一并升级，多云适配继续加强。另外，OpenAI 官方博客介绍了 Third Moment Research 让上万个智能体连续运行超过 36 小时的做法，以及 Amp 把 AI 智能体用到编程以外场景的案例，大规模、长时间运行的智能体正成为行业竞争焦点。</p>
+        <p class="text-sm leading-relaxed text-gray-700 dark:text-gray-300">今日 Claude 生态迎来密集更新：官方 claude-api skill 已将默认模型切换至 Claude Opus 5.5，并新增 Claude Sonnet 5.5 支持；Claude Code 发布 v2.1.301，TypeScript SDK（v0.135.0）与 Python SDK（v1.15.0）也同步更新。学术方面，有研究指出 Skill 的静态不一致不一定带来运行时风险，另有论文探讨编排多个编程智能体来辅助科学发现，表明智能体工程正走向更严谨的评估和更复杂的协作。开源领域，Meta 发布开放权重的多模态 MoE 模型 Muse Spark Open，前沿模型竞争进一步加剧。</p>
       </div>
     </div>
   </div>
@@ -267,11 +267,6 @@
             全部
           </button>
           
-          <button onclick="filterTag('MCP')" data-tag="MCP"
-            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            MCP
-          </button>
-          
           <button onclick="filterTag('SDK更新')" data-tag="SDK更新"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
             SDK更新
@@ -287,11 +282,6 @@
             工具集成
           </button>
           
-          <button onclick="filterTag('提效技巧')" data-tag="提效技巧"
-            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            提效技巧
-          </button>
-          
           <button onclick="filterTag('新功能')" data-tag="新功能"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
             新功能
@@ -302,14 +292,14 @@
             最佳实践
           </button>
           
-          <button onclick="filterTag('案例分享')" data-tag="案例分享"
-            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            案例分享
-          </button>
-          
           <button onclick="filterTag('模型能力')" data-tag="模型能力"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
             模型能力
+          </button>
+          
+          <button onclick="filterTag('研究论文')" data-tag="研究论文"
+            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+            研究论文
           </button>
           
         </div>
@@ -1849,82 +1839,10 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="SDK更新 新功能 工具集成"
-         data-source="Anthropic SDK TypeScript"
-         data-source-type="official"
-         data-text="sdk-v0.134.0 Anthropic TypeScript SDK v0.134.0 默认为 API 调用、流式响应和工具运行生成 OpenTelemetry span。应用注册 tracer provider 后无需额外配置即可接入链路追踪，也可以通过 openTelemetry 配置项或 ANTHROPIC_OPEN_TELEMETRY 环境变量关闭。本版本还给 Managed Agents 加了 execution_identity，并在 Admin API 中新增遥测目标管理及测试端点，方便在生产环境监控 LLM 应用。">
-  <div class="flex gap-3">
-    <!-- Source icon -->
-    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ◆
-    </div>
-    <div class="flex-1 min-w-0">
-      <!-- Title -->
-      <a href="https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/sdk-v0.134.0" target="_blank" rel="noopener"
-         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        sdk-v0.134.0
-      </a>
-      <!-- Summary -->
-      
-      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Anthropic TypeScript SDK v0.134.0 默认为 API 调用、流式响应和工具运行生成 OpenTelemetry span。应用注册 tracer provider 后无需额外配置即可接入链路追踪，也可以通过 openTelemetry 配置项或 ANTHROPIC_OPEN_TELEMETRY 环境变量关闭。本版本还给 Managed Agents 加了 execution_identity，并在 Admin API 中新增遥测目标管理及测试端点，方便在生产环境监控 LLM 应用。
-      </p>
-      
-      <!-- Meta row -->
-      <div class="mt-2 flex flex-wrap items-center gap-1.5">
-        <!-- Level badge -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
-          🟡 中级
-        </span>
-        
-        <!-- Source -->
-        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          Anthropic SDK TypeScript
-        </span>
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">anthropic-sdks-releaser[bot]</span>
-        
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">17 小时前</span>
-        
-        
-        <!-- Tags (max 2) -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #SDK更新
-        </span>
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #新功能
-        </span>
-        
-        <!-- Quality bar (only if > 0) -->
-        
-        <span class="ml-auto flex items-center gap-1 shrink-0">
-          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:70%"></div>
-          </div>
-          <span class="text-xs text-gray-400">7.0</span>
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-
-
-  
-  
-
-<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="新功能 提效技巧 工具集成"
+         data-tags="新功能 工具集成 workflow"
          data-source="Claude Code Releases"
          data-source-type="official"
-         data-text="v2.1.299 Claude Code v2.1.299 新增空闲压缩功能：上下文超过 20 万 token 的终端会话闲置约 54 分钟后会自动压缩，赶在一小时的提示缓存过期前完成，避免下次发消息时重新处理全部上下文。触发阈值可通过 CLAUDE_CODE_IDLE_COMPACT_MIN_TOKENS 调整，也可在 settings.json 中设 &#34;idleCompaction&#34;: false 关闭。另外新增 CLAUDE_CODE_DISABLE_FILE_MENTIONS 环境变量（@ 文件提及只传路径、不传内容），并为托管设置安装的 mod 提供 $.prompt.media 和 $.session.identity() 接口，可读取提示附件和会话的登录身份与所属组织。">
+         data-text="v2.1.301 Claude Code v2.1.301 是一次以功能增强为主的小版本更新。新版本新增环境变量 CLAUDE_CODE_RETRY_WATCHDOG_MAX_USAGE_LIMIT_WAIT_MS：无人值守重试模式下，如果用量限额的重置时间太远，请求会直接结束，不再一直等待。claude-api skill 增加了 OpenTelemetry 链路追踪指引，tool_decision 事件新增 classifier_verdict、permission_mode、classifier_category 字段，可以区分 auto 模式分类器的决策和权限规则。vim 模式新增 % 括号跳转，mod 的 Input 支持多行输入。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -1932,14 +1850,14 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.299" target="_blank" rel="noopener"
+      <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.301" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        v2.1.299
+        v2.1.301
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Claude Code v2.1.299 新增空闲压缩功能：上下文超过 20 万 token 的终端会话闲置约 54 分钟后会自动压缩，赶在一小时的提示缓存过期前完成，避免下次发消息时重新处理全部上下文。触发阈值可通过 CLAUDE_CODE_IDLE_COMPACT_MIN_TOKENS 调整，也可在 settings.json 中设 &#34;idleCompaction&#34;: false 关闭。另外新增 CLAUDE_CODE_DISABLE_FILE_MENTIONS 环境变量（@ 文件提及只传路径、不传内容），并为托管设置安装的 mod 提供 $.prompt.media 和 $.session.identity() 接口，可读取提示附件和会话的登录身份与所属组织。
+        Claude Code v2.1.301 是一次以功能增强为主的小版本更新。新版本新增环境变量 CLAUDE_CODE_RETRY_WATCHDOG_MAX_USAGE_LIMIT_WAIT_MS：无人值守重试模式下，如果用量限额的重置时间太远，请求会直接结束，不再一直等待。claude-api skill 增加了 OpenTelemetry 链路追踪指引，tool_decision 事件新增 classifier_verdict、permission_mode、classifier_category 字段，可以区分 auto 模式分类器的决策和权限规则。vim 模式新增 % 括号跳转，mod 的 Input 支持多行输入。
       </p>
       
       <!-- Meta row -->
@@ -1960,151 +1878,7 @@
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">1 天前</span>
-        
-        
-        <!-- Tags (max 2) -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #新功能
-        </span>
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #提效技巧
-        </span>
-        
-        <!-- Quality bar (only if > 0) -->
-        
-        <span class="ml-auto flex items-center gap-1 shrink-0">
-          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:70%"></div>
-          </div>
-          <span class="text-xs text-gray-400">7.0</span>
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-
-
-  
-  
-
-<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="SDK更新 新功能 工具集成"
-         data-source="Anthropic SDK Python"
-         data-source-type="official"
-         data-text="v1.14.0 Anthropic Python SDK v1.14.0 给客户端加入了 OpenTelemetry 追踪，覆盖 API 调用、流式响应和工具运行；同时为 Managed Agents 增加 execution_identity，并在 Admin API 中新增遥测目标（telemetry destinations）管理和测试端点。这一版还修复了几个流式问题：未知事件类型现在会直接透传，message_start 之前收到事件也不再报“Unexpected event order”错误。对用 Python SDK 做 Agent 开发、需要可观测性的团队来说，这是一次很实用的更新。">
-  <div class="flex gap-3">
-    <!-- Source icon -->
-    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ◆
-    </div>
-    <div class="flex-1 min-w-0">
-      <!-- Title -->
-      <a href="https://github.com/anthropics/anthropic-sdk-python/releases/tag/v1.14.0" target="_blank" rel="noopener"
-         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        v1.14.0
-      </a>
-      <!-- Summary -->
-      
-      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Anthropic Python SDK v1.14.0 给客户端加入了 OpenTelemetry 追踪，覆盖 API 调用、流式响应和工具运行；同时为 Managed Agents 增加 execution_identity，并在 Admin API 中新增遥测目标（telemetry destinations）管理和测试端点。这一版还修复了几个流式问题：未知事件类型现在会直接透传，message_start 之前收到事件也不再报“Unexpected event order”错误。对用 Python SDK 做 Agent 开发、需要可观测性的团队来说，这是一次很实用的更新。
-      </p>
-      
-      <!-- Meta row -->
-      <div class="mt-2 flex flex-wrap items-center gap-1.5">
-        <!-- Level badge -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
-          🟡 中级
-        </span>
-        
-        <!-- Source -->
-        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          Anthropic SDK Python
-        </span>
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">anthropic-sdks-releaser[bot]</span>
-        
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">17 小时前</span>
-        
-        
-        <!-- Tags (max 2) -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #SDK更新
-        </span>
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #新功能
-        </span>
-        
-        <!-- Quality bar (only if > 0) -->
-        
-        <span class="ml-auto flex items-center gap-1 shrink-0">
-          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:65%"></div>
-          </div>
-          <span class="text-xs text-gray-400">6.5</span>
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-
-
-  
-  
-
-<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="新功能 工具集成 SDK更新"
-         data-source="Claude Code Releases"
-         data-source-type="official"
-         data-text="v2.1.300 Claude Code v2.1.300 版本更新：mod 新增多项 UI 能力，包括 prompt 装饰中的 virtualText、用 $.ui.view 查看 agent 记录，以及支持从右到左文本的 dir 属性。OpenTelemetry 的 api_request 事件开始按 5 分钟和 1 小时两种时长拆分缓存写入 token，trace span 也加入了 GenAI 语义约定属性。AWS 上的 Claude Platform 新增 /advisor，可以按需选择或禁用 advisor 模型。">
-  <div class="flex gap-3">
-    <!-- Source icon -->
-    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ⚡
-    </div>
-    <div class="flex-1 min-w-0">
-      <!-- Title -->
-      <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.300" target="_blank" rel="noopener"
-         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        v2.1.300
-      </a>
-      <!-- Summary -->
-      
-      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Claude Code v2.1.300 版本更新：mod 新增多项 UI 能力，包括 prompt 装饰中的 virtualText、用 $.ui.view 查看 agent 记录，以及支持从右到左文本的 dir 属性。OpenTelemetry 的 api_request 事件开始按 5 分钟和 1 小时两种时长拆分缓存写入 token，trace span 也加入了 GenAI 语义约定属性。AWS 上的 Claude Platform 新增 /advisor，可以按需选择或禁用 advisor 模型。
-      </p>
-      
-      <!-- Meta row -->
-      <div class="mt-2 flex flex-wrap items-center gap-1.5">
-        <!-- Level badge -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
-          🟡 中级
-        </span>
-        
-        <!-- Source -->
-        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          Claude Code Releases
-        </span>
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">ashwin-ant</span>
-        
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">16 小时前</span>
+        <span class="text-xs text-gray-400">15 小时前</span>
         
         
         <!-- Tags (max 2) -->
@@ -2137,166 +1911,25 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="新功能 workflow 工具集成"
-         data-source="Claude Code Releases"
+         data-tags="SDK更新 新功能 模型能力"
+         data-source="Anthropic SDK TypeScript"
          data-source-type="official"
-         data-text="v2.1.294 Claude Code v2.1.294 修复了一个问题：以指令形式编写的 prompt hook 和 agent hook（如&#34;Block commands that...&#34;）会放行本应阻止的操作。同时改进了 Stop 和 SubagentStop 上指令式 prompt hook（如&#34;Carry on if the build is broken&#34;）的判断方式，Claude 提前停止的情况会更少。依赖 hook 做安全拦截或流程控制的用户应尽快升级。">
+         data-text="sdk-v0.135.0 Anthropic TypeScript SDK 发布 v0.135.0。Messages API 新增 speed 参数和 usage.speed 字段，部分模型需要加 beta 头才能使用 speed；模型能力 API 的 thinking 类型新增 between_tools；另外可以读取 Console 组织所在用量等级的支出上限（只读）。客户端修复了两个问题：流没读完就被丢弃时现在会关闭，JSONL 响应还被持有时不会被提前关闭。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ⚡
+      ◆
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.294" target="_blank" rel="noopener"
+      <a href="https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/sdk-v0.135.0" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        v2.1.294
+        sdk-v0.135.0
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Claude Code v2.1.294 修复了一个问题：以指令形式编写的 prompt hook 和 agent hook（如&#34;Block commands that...&#34;）会放行本应阻止的操作。同时改进了 Stop 和 SubagentStop 上指令式 prompt hook（如&#34;Carry on if the build is broken&#34;）的判断方式，Claude 提前停止的情况会更少。依赖 hook 做安全拦截或流程控制的用户应尽快升级。
-      </p>
-      
-      <!-- Meta row -->
-      <div class="mt-2 flex flex-wrap items-center gap-1.5">
-        <!-- Level badge -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
-          🟡 中级
-        </span>
-        
-        <!-- Source -->
-        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          Claude Code Releases
-        </span>
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">ashwin-ant</span>
-        
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">10月07日</span>
-        
-        
-        <!-- Tags (max 2) -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #新功能
-        </span>
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #workflow
-        </span>
-        
-        <!-- Quality bar (only if > 0) -->
-        
-        <span class="ml-auto flex items-center gap-1 shrink-0">
-          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:65%"></div>
-          </div>
-          <span class="text-xs text-gray-400">6.5</span>
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-
-
-  
-  
-
-<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="案例分享 workflow 模型能力 工具集成"
-         data-source="OpenAI 官方博客"
-         data-source-type="official"
-         data-text="How Third Moment Research runs 10,000 agents for 36+ hours OpenAI 官方案例：AI 实验室 Third Moment Research 用 GPT-6 Astra、GPT-6.1 Sol、Codex 和网络安全工具 Daybreak，同时运行 1 万个智能体，单次连续工作超过 36 小时。文章重点讲如何让智能体长时间保持专注，并在使用中不断变好，对设计大规模、长时程的 Agent 工作流有参考价值。不过目前只有摘要，具体技术细节还不清楚。">
-  <div class="flex gap-3">
-    <!-- Source icon -->
-    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ○
-    </div>
-    <div class="flex-1 min-w-0">
-      <!-- Title -->
-      <a href="https://openai.com/index/third-moment-research" target="_blank" rel="noopener"
-         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        How Third Moment Research runs 10,000 agents for 36+ hours
-      </a>
-      <!-- Summary -->
-      
-      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        OpenAI 官方案例：AI 实验室 Third Moment Research 用 GPT-6 Astra、GPT-6.1 Sol、Codex 和网络安全工具 Daybreak，同时运行 1 万个智能体，单次连续工作超过 36 小时。文章重点讲如何让智能体长时间保持专注，并在使用中不断变好，对设计大规模、长时程的 Agent 工作流有参考价值。不过目前只有摘要，具体技术细节还不清楚。
-      </p>
-      
-      <!-- Meta row -->
-      <div class="mt-2 flex flex-wrap items-center gap-1.5">
-        <!-- Level badge -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
-          🟡 中级
-        </span>
-        
-        <!-- Source -->
-        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          OpenAI 官方博客
-        </span>
-        
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">1 天前</span>
-        
-        
-        <!-- Tags (max 2) -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #案例分享
-        </span>
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #workflow
-        </span>
-        
-        <!-- Quality bar (only if > 0) -->
-        
-        <span class="ml-auto flex items-center gap-1 shrink-0">
-          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:65%"></div>
-          </div>
-          <span class="text-xs text-gray-400">6.5</span>
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-
-
-  
-  
-
-<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="SDK更新 新功能 MCP"
-         data-source="Claude Agent SDK Python Releases"
-         data-source-type="official"
-         data-text="v0.2.166 Claude Agent SDK Python v0.2.166 新增了 hook 专用的类型化输出类，并补全了 hook 缺失的输入字段，hook 实现因此拿到精确的类型信息，不再处理无类型的 dict。init 系统消息的载荷现在通过 SystemInitData TypedDict 完整定型，包括 MCP 服务器、插件、FastMode 状态等嵌套类型。本版还修复了 SandboxSettings.ignoreViolations 的类型定义，使其与 CLI 实际使用的 schema 一致。">
-  <div class="flex gap-3">
-    <!-- Source icon -->
-    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ◉
-    </div>
-    <div class="flex-1 min-w-0">
-      <!-- Title -->
-      <a href="https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.166" target="_blank" rel="noopener"
-         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        v0.2.166
-      </a>
-      <!-- Summary -->
-      
-      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Claude Agent SDK Python v0.2.166 新增了 hook 专用的类型化输出类，并补全了 hook 缺失的输入字段，hook 实现因此拿到精确的类型信息，不再处理无类型的 dict。init 系统消息的载荷现在通过 SystemInitData TypedDict 完整定型，包括 MCP 服务器、插件、FastMode 状态等嵌套类型。本版还修复了 SandboxSettings.ignoreViolations 的类型定义，使其与 CLI 实际使用的 schema 一致。
+        Anthropic TypeScript SDK 发布 v0.135.0。Messages API 新增 speed 参数和 usage.speed 字段，部分模型需要加 beta 头才能使用 speed；模型能力 API 的 thinking 类型新增 between_tools；另外可以读取 Console 组织所在用量等级的支出上限（只读）。客户端修复了两个问题：流没读完就被丢弃时现在会关闭，JSONL 响应还被持有时不会被提前关闭。
       </p>
       
       <!-- Meta row -->
@@ -2309,15 +1942,15 @@
         
         <!-- Source -->
         <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          Claude Agent SDK Python Releases
+          Anthropic SDK TypeScript
         </span>
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">github-actions[bot]</span>
+        <span class="text-xs text-gray-400">anthropic-sdks-releaser[bot]</span>
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">1 天前</span>
+        <span class="text-xs text-gray-400">14 小时前</span>
         
         
         <!-- Tags (max 2) -->
@@ -2350,79 +1983,10 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="案例分享 工具集成 模型能力"
-         data-source="OpenAI 官方博客"
+         data-tags="SDK更新 新功能"
+         data-source="Anthropic SDK Python"
          data-source-type="official"
-         data-text="Amp puts AI agents to work beyond code with OpenAI models OpenAI 官方博客介绍了编程代理工具 Amp 的案例：Amp 借助 GPT-6 Astra、Ultrafast、GPT-Live-1 等模型以及 Sign in with ChatGPT 登录方式，把 AI 代理的用途从写代码扩展到更多工作场景。文章对了解 AI 编程代理的产品方向和多模型集成有参考价值，但给出的内容很少，缺少具体的技术细节和实践方法。">
-  <div class="flex gap-3">
-    <!-- Source icon -->
-    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ○
-    </div>
-    <div class="flex-1 min-w-0">
-      <!-- Title -->
-      <a href="https://openai.com/index/amp-beyond-coding" target="_blank" rel="noopener"
-         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        Amp puts AI agents to work beyond code with OpenAI models
-      </a>
-      <!-- Summary -->
-      
-      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        OpenAI 官方博客介绍了编程代理工具 Amp 的案例：Amp 借助 GPT-6 Astra、Ultrafast、GPT-Live-1 等模型以及 Sign in with ChatGPT 登录方式，把 AI 代理的用途从写代码扩展到更多工作场景。文章对了解 AI 编程代理的产品方向和多模型集成有参考价值，但给出的内容很少，缺少具体的技术细节和实践方法。
-      </p>
-      
-      <!-- Meta row -->
-      <div class="mt-2 flex flex-wrap items-center gap-1.5">
-        <!-- Level badge -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-beginner">
-          🟢 入门
-        </span>
-        
-        <!-- Source -->
-        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          OpenAI 官方博客
-        </span>
-        
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">22 小时前</span>
-        
-        
-        <!-- Tags (max 2) -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #案例分享
-        </span>
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #工具集成
-        </span>
-        
-        <!-- Quality bar (only if > 0) -->
-        
-        <span class="ml-auto flex items-center gap-1 shrink-0">
-          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:55%"></div>
-          </div>
-          <span class="text-xs text-gray-400">5.5</span>
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-
-
-  
-  
-
-<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="SDK更新 新功能 工具集成"
-         data-source="Anthropic SDK TypeScript"
-         data-source-type="official"
-         data-text="vertex-sdk-v0.21.0 Anthropic Vertex SDK TypeScript 发布 v0.21.0 版本，新增 Managed Agents 的 execution_identity 参数，并为 API 调用加入 OpenTelemetry 链路追踪，方便监控生产环境。此外，发布包现在附带许可证文件，公开的类型声明中也去掉了 @internal 内部声明。">
+         data-text="v1.15.0 Anthropic Python SDK v1.15.0 在 Messages API 中新增了 speed 参数和 usage.speed 字段，模型能力接口的 thinking 类型增加了 between_tools，还可以只读获取 Console 组织所在用量层级的支出上限。文档同时说明，部分模型需要加 beta header 才能使用 speed。其余改动是 CI、文档和测试方面的维护，对使用 Python SDK 的开发者有一定的升级参考价值。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -2430,14 +1994,14 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/vertex-sdk-v0.21.0" target="_blank" rel="noopener"
+      <a href="https://github.com/anthropics/anthropic-sdk-python/releases/tag/v1.15.0" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        vertex-sdk-v0.21.0
+        v1.15.0
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Anthropic Vertex SDK TypeScript 发布 v0.21.0 版本，新增 Managed Agents 的 execution_identity 参数，并为 API 调用加入 OpenTelemetry 链路追踪，方便监控生产环境。此外，发布包现在附带许可证文件，公开的类型声明中也去掉了 @internal 内部声明。
+        Anthropic Python SDK v1.15.0 在 Messages API 中新增了 speed 参数和 usage.speed 字段，模型能力接口的 thinking 类型增加了 between_tools，还可以只读获取 Console 组织所在用量层级的支出上限。文档同时说明，部分模型需要加 beta header 才能使用 speed。其余改动是 CI、文档和测试方面的维护，对使用 Python SDK 的开发者有一定的升级参考价值。
       </p>
       
       <!-- Meta row -->
@@ -2450,7 +2014,7 @@
         
         <!-- Source -->
         <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          Anthropic SDK TypeScript
+          Anthropic SDK Python
         </span>
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
@@ -2458,7 +2022,7 @@
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">17 小时前</span>
+        <span class="text-xs text-gray-400">14 小时前</span>
         
         
         <!-- Tags (max 2) -->
@@ -2475,9 +2039,9 @@
         
         <span class="ml-auto flex items-center gap-1 shrink-0">
           <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:50%"></div>
+            <div class="score-bar" style="width:60%"></div>
           </div>
-          <span class="text-xs text-gray-400">5.0</span>
+          <span class="text-xs text-gray-400">6.0</span>
         </span>
         
       </div>
@@ -2491,25 +2055,25 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="SDK更新 新功能 工具集成"
-         data-source="Anthropic SDK TypeScript"
+         data-tags="模型能力 新功能"
+         data-source="HuggingFace Blog"
          data-source-type="official"
-         data-text="google-cloud-sdk-v0.1.0 Anthropic TypeScript SDK 的 Google Cloud 包发布首个版本 v0.1.0。新增两项功能：Managed Agents 的 agents 接口支持 execution_identity 参数，客户端为 API 调用加入 OpenTelemetry 追踪 span，方便做可观测性监控。其余是发布包附带许可证文件、去掉内部类型声明等工程维护改动。">
+         data-text="Welcome Muse Spark Open: open-weight frontier multimodal mixture-of-experts model from Meta Hugging Face 宣布上线 Meta 新发布的 Muse Spark Open。这是一款开放权重的前沿多模态混合专家（MoE）模型，开发者可以自行部署和微调。由于原文正文为空，以上信息只来自标题，无法确认基准表现、编程能力和工具调用能力等细节。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ◆
+      🤗
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/google-cloud-sdk-v0.1.0" target="_blank" rel="noopener"
+      <a href="https://huggingface.co/blog/meta-muse-spark-open" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        google-cloud-sdk-v0.1.0
+        Welcome Muse Spark Open: open-weight frontier multimodal mixture-of-experts model from Meta
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Anthropic TypeScript SDK 的 Google Cloud 包发布首个版本 v0.1.0。新增两项功能：Managed Agents 的 agents 接口支持 execution_identity 参数，客户端为 API 调用加入 OpenTelemetry 追踪 span，方便做可观测性监控。其余是发布包附带许可证文件、去掉内部类型声明等工程维护改动。
+        Hugging Face 宣布上线 Meta 新发布的 Muse Spark Open。这是一款开放权重的前沿多模态混合专家（MoE）模型，开发者可以自行部署和微调。由于原文正文为空，以上信息只来自标题，无法确认基准表现、编程能力和工具调用能力等细节。
       </p>
       
       <!-- Meta row -->
@@ -2522,21 +2086,18 @@
         
         <!-- Source -->
         <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          Anthropic SDK TypeScript
+          HuggingFace Blog
         </span>
         
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">anthropic-sdks-releaser[bot]</span>
-        
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">17 小时前</span>
+        <span class="text-xs text-gray-400">1 天前</span>
         
         
         <!-- Tags (max 2) -->
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #SDK更新
+          #模型能力
         </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
@@ -2547,225 +2108,9 @@
         
         <span class="ml-auto flex items-center gap-1 shrink-0">
           <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:50%"></div>
+            <div class="score-bar" style="width:60%"></div>
           </div>
-          <span class="text-xs text-gray-400">5.0</span>
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-
-
-  
-  
-
-<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="SDK更新 新功能 工具集成"
-         data-source="Anthropic SDK TypeScript"
-         data-source-type="official"
-         data-text="foundry-sdk-v0.6.0 Anthropic Foundry SDK（TypeScript）发布 v0.6.0 版本，为 Managed Agents 的 agents 接口新增 execution_identity 字段，并在客户端为 API 调用加入 OpenTelemetry spans，便于做可观测性追踪。其余是发布包内附带许可证文件、类型声明中移除 @internal 等例行维护，对使用 Managed Agents 和需要链路监控的开发者有一定参考价值。">
-  <div class="flex gap-3">
-    <!-- Source icon -->
-    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ◆
-    </div>
-    <div class="flex-1 min-w-0">
-      <!-- Title -->
-      <a href="https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/foundry-sdk-v0.6.0" target="_blank" rel="noopener"
-         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        foundry-sdk-v0.6.0
-      </a>
-      <!-- Summary -->
-      
-      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Anthropic Foundry SDK（TypeScript）发布 v0.6.0 版本，为 Managed Agents 的 agents 接口新增 execution_identity 字段，并在客户端为 API 调用加入 OpenTelemetry spans，便于做可观测性追踪。其余是发布包内附带许可证文件、类型声明中移除 @internal 等例行维护，对使用 Managed Agents 和需要链路监控的开发者有一定参考价值。
-      </p>
-      
-      <!-- Meta row -->
-      <div class="mt-2 flex flex-wrap items-center gap-1.5">
-        <!-- Level badge -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-beginner">
-          🟢 入门
-        </span>
-        
-        <!-- Source -->
-        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          Anthropic SDK TypeScript
-        </span>
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">anthropic-sdks-releaser[bot]</span>
-        
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">17 小时前</span>
-        
-        
-        <!-- Tags (max 2) -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #SDK更新
-        </span>
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #新功能
-        </span>
-        
-        <!-- Quality bar (only if > 0) -->
-        
-        <span class="ml-auto flex items-center gap-1 shrink-0">
-          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:50%"></div>
-          </div>
-          <span class="text-xs text-gray-400">5.0</span>
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-
-
-  
-  
-
-<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="SDK更新 新功能 工具集成"
-         data-source="Anthropic SDK TypeScript"
-         data-source-type="official"
-         data-text="bedrock-sdk-v0.35.0 Anthropic Bedrock SDK（TypeScript）发布 v0.35.0 版本。这一版为 Managed Agents 的 agents 接口新增 execution_identity 字段，并在客户端为 API 调用加入 OpenTelemetry 追踪 span，方便做可观测性监控。另外，发布包现在附带许可证文件，并去掉了标记为 @internal 的类型声明。">
-  <div class="flex gap-3">
-    <!-- Source icon -->
-    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ◆
-    </div>
-    <div class="flex-1 min-w-0">
-      <!-- Title -->
-      <a href="https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/bedrock-sdk-v0.35.0" target="_blank" rel="noopener"
-         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        bedrock-sdk-v0.35.0
-      </a>
-      <!-- Summary -->
-      
-      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Anthropic Bedrock SDK（TypeScript）发布 v0.35.0 版本。这一版为 Managed Agents 的 agents 接口新增 execution_identity 字段，并在客户端为 API 调用加入 OpenTelemetry 追踪 span，方便做可观测性监控。另外，发布包现在附带许可证文件，并去掉了标记为 @internal 的类型声明。
-      </p>
-      
-      <!-- Meta row -->
-      <div class="mt-2 flex flex-wrap items-center gap-1.5">
-        <!-- Level badge -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-beginner">
-          🟢 入门
-        </span>
-        
-        <!-- Source -->
-        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          Anthropic SDK TypeScript
-        </span>
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">anthropic-sdks-releaser[bot]</span>
-        
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">17 小时前</span>
-        
-        
-        <!-- Tags (max 2) -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #SDK更新
-        </span>
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #新功能
-        </span>
-        
-        <!-- Quality bar (only if > 0) -->
-        
-        <span class="ml-auto flex items-center gap-1 shrink-0">
-          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:50%"></div>
-          </div>
-          <span class="text-xs text-gray-400">5.0</span>
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-
-
-  
-  
-
-<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="SDK更新 新功能 工具集成"
-         data-source="Anthropic SDK TypeScript"
-         data-source-type="official"
-         data-text="aws-sdk-v0.8.0 Anthropic TypeScript SDK 的 AWS 包发布 v0.8.0 版本，为 Managed Agents 的 agents 接口新增 execution_identity 字段，并为 API 调用加入 OpenTelemetry 追踪 span，可观测性更好。此外，发布包现已包含许可证文件，并移除了标记为 @internal 的类型声明。本次属于常规小版本更新，对通过 AWS 使用 Claude 并构建 Agent 的开发者有一定参考价值。">
-  <div class="flex gap-3">
-    <!-- Source icon -->
-    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ◆
-    </div>
-    <div class="flex-1 min-w-0">
-      <!-- Title -->
-      <a href="https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/aws-sdk-v0.8.0" target="_blank" rel="noopener"
-         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        aws-sdk-v0.8.0
-      </a>
-      <!-- Summary -->
-      
-      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Anthropic TypeScript SDK 的 AWS 包发布 v0.8.0 版本，为 Managed Agents 的 agents 接口新增 execution_identity 字段，并为 API 调用加入 OpenTelemetry 追踪 span，可观测性更好。此外，发布包现已包含许可证文件，并移除了标记为 @internal 的类型声明。本次属于常规小版本更新，对通过 AWS 使用 Claude 并构建 Agent 的开发者有一定参考价值。
-      </p>
-      
-      <!-- Meta row -->
-      <div class="mt-2 flex flex-wrap items-center gap-1.5">
-        <!-- Level badge -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-beginner">
-          🟢 入门
-        </span>
-        
-        <!-- Source -->
-        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          Anthropic SDK TypeScript
-        </span>
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">anthropic-sdks-releaser[bot]</span>
-        
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">17 小时前</span>
-        
-        
-        <!-- Tags (max 2) -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #SDK更新
-        </span>
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #新功能
-        </span>
-        
-        <!-- Quality bar (only if > 0) -->
-        
-        <span class="ml-auto flex items-center gap-1 shrink-0">
-          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:50%"></div>
-          </div>
-          <span class="text-xs text-gray-400">5.0</span>
+          <span class="text-xs text-gray-400">6.0</span>
         </span>
         
       </div>
@@ -2778,6 +2123,160 @@
       
 
       <!-- 前沿速递 -->
+      
+      <section id="section-frontier">
+        <h2 class="section-divider text-sm font-bold text-orange-500 mb-4">
+          <span>🚀 前沿速递</span>
+          <span class="text-xs font-normal text-gray-400">7 天内最新动态</span>
+        </h2>
+        <div class="space-y-3" id="frontier-list">
+          
+
+
+  
+  
+
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
+         data-tags="研究论文 最佳实践 工具集成"
+         data-source="arXiv cs.AI"
+         data-source-type="research"
+         data-text="Why Static Skill Inconsistencies Do Not Equate to Runtime Risks: A Behavioral Analysis of LLM Agent Execution 该论文对 LLM Agent 技能包（文档、脚本、配置文件）中的跨文件不一致问题做了系统性实证研究，结论是：静态审计发现的缺陷数量，并不能直接反映 Agent 运行时的实际风险和性能下降。这为开发者评估 Skills 资产质量、确定修复优先级提供了基于行为分析的依据，对编写和维护 Claude Code Skills 等技能包有参考价值。">
+  <div class="flex gap-3">
+    <!-- Source icon -->
+    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
+      📄
+    </div>
+    <div class="flex-1 min-w-0">
+      <!-- Title -->
+      <a href="https://arxiv.org/abs/2610.18927" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
+        Why Static Skill Inconsistencies Do Not Equate to Runtime Risks: A Behavioral Analysis of LLM Agent Execution
+      </a>
+      <!-- Summary -->
+      
+      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
+        该论文对 LLM Agent 技能包（文档、脚本、配置文件）中的跨文件不一致问题做了系统性实证研究，结论是：静态审计发现的缺陷数量，并不能直接反映 Agent 运行时的实际风险和性能下降。这为开发者评估 Skills 资产质量、确定修复优先级提供了基于行为分析的依据，对编写和维护 Claude Code Skills 等技能包有参考价值。
+      </p>
+      
+      <!-- Meta row -->
+      <div class="mt-2 flex flex-wrap items-center gap-1.5">
+        <!-- Level badge -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
+          🟡 中级
+        </span>
+        
+        <!-- Source -->
+        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          arXiv cs.AI
+        </span>
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">Fengrui Fan, Huahao Wang, Jingyi Fang, Yutao Hu, Yueming Wu, Deqing Zou</span>
+        
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">1 天前</span>
+        
+        
+        <!-- Tags (max 2) -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #研究论文
+        </span>
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #最佳实践
+        </span>
+        
+        <!-- Quality bar (only if > 0) -->
+        
+        <span class="ml-auto flex items-center gap-1 shrink-0">
+          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:70%"></div>
+          </div>
+          <span class="text-xs text-gray-400">7.0</span>
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+  
+
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
+         data-tags="研究论文 workflow 模型能力"
+         data-source="arXiv cs.AI"
+         data-source-type="research"
+         data-text="The Agentic Scientist: Orchestrating Coding Agents for Automated Scientific (Co-)Discovery 论文提出 The Agentic Scientist，这是一个端到端的分布式流水线，让人类研究者和现代编程智能体一起开展计算类科研。它把研究拆成任务起草、想法生成、规划、沙箱实验、结果汇总、基线与消融构建等环节，以弥补全自主智能体构思范围有限、搜索过程短视爬山的问题。这篇论文适合用来参考如何编排编程智能体处理长周期、多阶段的工作流。">
+  <div class="flex gap-3">
+    <!-- Source icon -->
+    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
+      📄
+    </div>
+    <div class="flex-1 min-w-0">
+      <!-- Title -->
+      <a href="https://arxiv.org/abs/2610.18933" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
+        The Agentic Scientist: Orchestrating Coding Agents for Automated Scientific (Co-)Discovery
+      </a>
+      <!-- Summary -->
+      
+      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
+        论文提出 The Agentic Scientist，这是一个端到端的分布式流水线，让人类研究者和现代编程智能体一起开展计算类科研。它把研究拆成任务起草、想法生成、规划、沙箱实验、结果汇总、基线与消融构建等环节，以弥补全自主智能体构思范围有限、搜索过程短视爬山的问题。这篇论文适合用来参考如何编排编程智能体处理长周期、多阶段的工作流。
+      </p>
+      
+      <!-- Meta row -->
+      <div class="mt-2 flex flex-wrap items-center gap-1.5">
+        <!-- Level badge -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
+          🟡 中级
+        </span>
+        
+        <!-- Source -->
+        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          arXiv cs.AI
+        </span>
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">Robert Tjarko Lange, Luca Grillotti, Yutaro Yamada, Rujikorn Charakorn, David Ha</span>
+        
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">1 天前</span>
+        
+        
+        <!-- Tags (max 2) -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #研究论文
+        </span>
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #workflow
+        </span>
+        
+        <!-- Quality bar (only if > 0) -->
+        
+        <span class="ml-auto flex items-center gap-1 shrink-0">
+          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:70%"></div>
+          </div>
+          <span class="text-xs text-gray-400">7.0</span>
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+        </div>
+      </section>
       
 
       <!-- 成熟实践 -->
@@ -2798,7 +2297,7 @@
          data-tags="新功能 SDK更新 模型能力 workflow 最佳实践"
          data-source="anthropics/skills commits"
          data-source-type="community"
-         data-text="Update claude-api skill: Claude Opus 5.5 default, Claude Sonnet 5.5, … Anthropic 官方 skills 仓库更新了 claude-api skill，将 Claude Opus 5.5（claude-opus-5-5）设为所有语言示例中的默认模型，并新增 Claude Sonnet 5.5 及对应的定价、可用性和模型迁移说明。本次还在 shared/evals 下新增了 build-eval、eval-hillclimb、cost-hillclimb、eval-audit 等评测构建与迭代优化流程，并附带报告 schema 和简版 HTML 报告。这对用 Claude API 开发、做模型升级和效果评测迭代的开发者有直接参考价值。">
+         data-text="Update claude-api skill: Claude Opus 5.5 default, Claude Sonnet 5.5, … Anthropic 官方 skills 仓库更新了 claude-api skill，把默认模型改为 Claude Opus 5.5（claude-opus-5-5），并加入 Claude Sonnet 5.5，同时更新了定价、模型支持说明、平台可用性，以及迁移到 Opus 5.5 的指南。这次还在 shared/evals/ 下新增了 build-eval、eval-hillclimb、cost-hillclimb、eval-audit 四个评测流程，附带报告 schema 和轻量 HTML 报告，对搭建 LLM 评测和持续优化流程很有参考价值。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -2813,7 +2312,7 @@
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Anthropic 官方 skills 仓库更新了 claude-api skill，将 Claude Opus 5.5（claude-opus-5-5）设为所有语言示例中的默认模型，并新增 Claude Sonnet 5.5 及对应的定价、可用性和模型迁移说明。本次还在 shared/evals 下新增了 build-eval、eval-hillclimb、cost-hillclimb、eval-audit 等评测构建与迭代优化流程，并附带报告 schema 和简版 HTML 报告。这对用 Claude API 开发、做模型升级和效果评测迭代的开发者有直接参考价值。
+        Anthropic 官方 skills 仓库更新了 claude-api skill，把默认模型改为 Claude Opus 5.5（claude-opus-5-5），并加入 Claude Sonnet 5.5，同时更新了定价、模型支持说明、平台可用性，以及迁移到 Opus 5.5 的指南。这次还在 shared/evals/ 下新增了 build-eval、eval-hillclimb、cost-hillclimb、eval-audit 四个评测流程，附带报告 schema 和轻量 HTML 报告，对搭建 LLM 评测和持续优化流程很有参考价值。
       </p>
       
       <!-- Meta row -->
