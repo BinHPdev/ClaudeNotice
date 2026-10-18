@@ -139,7 +139,7 @@
     </div>
 
     <div class="flex items-center gap-2 ml-auto shrink-0">
-      <span class="hidden md:inline text-xs text-gray-400">2026年10月17日 02:18</span>
+      <span class="hidden md:inline text-xs text-gray-400">2026年10月18日 02:17</span>
       <span class="inline-flex items-center gap-1 bg-green-50 dark:bg-green-900/30 text-green-600 dark:text-green-400 px-2 py-0.5 rounded-full text-xs font-medium">
         ● 每日更新
       </span>
@@ -171,11 +171,11 @@
       <div class="text-xs text-gray-400 mt-0.5">经典置顶</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-amber-100 dark:border-amber-900/40 text-center">
-      <div class="text-2xl font-bold text-amber-500">5</div>
+      <div class="text-2xl font-bold text-amber-500">2</div>
       <div class="text-xs text-gray-400 mt-0.5">官方动态</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-orange-100 dark:border-orange-900/40 text-center">
-      <div class="text-2xl font-bold text-orange-500">1</div>
+      <div class="text-2xl font-bold text-orange-500">4</div>
       <div class="text-xs text-gray-400 mt-0.5">前沿速递</div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-blue-100 dark:border-blue-900/40 text-center">
@@ -191,7 +191,7 @@
       <span class="text-xl mt-0.5 shrink-0">📋</span>
       <div>
         <div class="text-xs font-semibold text-brand-700 dark:text-brand-300 mb-1 uppercase tracking-wide">今日速览</div>
-        <p class="text-sm leading-relaxed text-gray-700 dark:text-gray-300">今日 Anthropic 官方 skills 仓库更新了 claude-api 技能，默认模型改为 Claude Opus 5.5，同时加入 Claude Sonnet 5.5。配套方面，Claude Code 发布 v2.1.302，Python SDK anthropic 升级到 1.15.0，awesome-claude-code 收录了地理空间 AI 方向的 geoai-skills。Anthropic Research 发表两篇文章，一篇讲用 Claude 设计更高效的量子电路，另一篇讨论前沿工作对未来预期的影响。OpenAI 方面，Stack Overflow for Agents 推出 ChatGPT 插件后注册量增长到原来的三倍，各家都在加快面向智能体的开发者生态建设。</p>
+        <p class="text-sm leading-relaxed text-gray-700 dark:text-gray-300">Anthropic 今日发布“Cyber Mission”，在网络安全方向有了新的战略布局。anthropics/skills 仓库同步更新了 claude-api skill，默认模型改为 Claude Opus 5.5，并加入 Claude Sonnet 5.5，开发者工具链跟进新一代模型。生态方面，OpenAI Python SDK 发布 3.30.0 版本。Simon Willison 连发多个小工具和实验项目，包括 LaTeX 渲染器、Chirp Pong 等，用 AI 辅助快速做小应用的风气还在升温。</p>
       </div>
     </div>
   </div>
@@ -267,11 +267,6 @@
             全部
           </button>
           
-          <button onclick="filterTag('GitHub热门')" data-tag="GitHub热门"
-            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            GitHub热门
-          </button>
-          
           <button onclick="filterTag('SDK更新')" data-tag="SDK更新"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
             SDK更新
@@ -287,9 +282,9 @@
             工具集成
           </button>
           
-          <button onclick="filterTag('提效技巧')" data-tag="提效技巧"
+          <button onclick="filterTag('提示工程')" data-tag="提示工程"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            提效技巧
+            提示工程
           </button>
           
           <button onclick="filterTag('新功能')" data-tag="新功能"
@@ -310,11 +305,6 @@
           <button onclick="filterTag('模型能力')" data-tag="模型能力"
             class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
             模型能力
-          </button>
-          
-          <button onclick="filterTag('研究论文')" data-tag="研究论文"
-            class="filter-pill px-2 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-            研究论文
           </button>
           
         </div>
@@ -1855,9 +1845,9 @@
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
          data-tags=""
-         data-source="PyPI anthropic"
+         data-source="PyPI openai"
          data-source-type="official"
-         data-text="1.15.0 The official Python library for the anthropic API">
+         data-text="3.30.0 The official Python library for the openai API">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -1865,14 +1855,14 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://pypi.org/project/anthropic/1.15.0/" target="_blank" rel="noopener"
+      <a href="https://pypi.org/project/openai/3.30.0/" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        1.15.0
+        3.30.0
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        The official Python library for the anthropic API
+        The official Python library for the openai API
       </p>
       
       <!-- Meta row -->
@@ -1885,15 +1875,15 @@
         
         <!-- Source -->
         <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          PyPI anthropic
+          PyPI openai
         </span>
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">support@anthropic.com</span>
+        <span class="text-xs text-gray-400">support@openai.com</span>
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">1 天前</span>
+        <span class="text-xs text-gray-400">4 天前</span>
         
         
         <!-- Tags (max 2) -->
@@ -1918,82 +1908,10 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="新功能 SDK更新 提效技巧"
-         data-source="Claude Code Releases"
+         data-tags=""
+         data-source="Anthropic News"
          data-source-type="official"
-         data-text="v2.1.302 Claude Code v2.1.302 新增环境变量 CLAUDE_CODE_AUTO_MODE_MODEL，用来指定客户端 auto mode 分类器使用的模型，但不影响服务端 auto mode。/config 里新增了空闲压缩（idle compaction）开关，/design-sync 和 /design-login 也加了提示：独立版 Claude Design 将于 2026 年 12 月 14 日关闭。本版本还修复了几个问题：压缩过程中停止对话时报 Prompt is too long；会话中途切换到 Vertex 或 Bedrock 后请求出错；Read 工具读取图片时会把整个文件载入内存。">
-  <div class="flex gap-3">
-    <!-- Source icon -->
-    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ⚡
-    </div>
-    <div class="flex-1 min-w-0">
-      <!-- Title -->
-      <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.302" target="_blank" rel="noopener"
-         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        v2.1.302
-      </a>
-      <!-- Summary -->
-      
-      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Claude Code v2.1.302 新增环境变量 CLAUDE_CODE_AUTO_MODE_MODEL，用来指定客户端 auto mode 分类器使用的模型，但不影响服务端 auto mode。/config 里新增了空闲压缩（idle compaction）开关，/design-sync 和 /design-login 也加了提示：独立版 Claude Design 将于 2026 年 12 月 14 日关闭。本版本还修复了几个问题：压缩过程中停止对话时报 Prompt is too long；会话中途切换到 Vertex 或 Bedrock 后请求出错；Read 工具读取图片时会把整个文件载入内存。
-      </p>
-      
-      <!-- Meta row -->
-      <div class="mt-2 flex flex-wrap items-center gap-1.5">
-        <!-- Level badge -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
-          🟡 中级
-        </span>
-        
-        <!-- Source -->
-        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          Claude Code Releases
-        </span>
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">ashwin-ant</span>
-        
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">13 小时前</span>
-        
-        
-        <!-- Tags (max 2) -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #新功能
-        </span>
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #SDK更新
-        </span>
-        
-        <!-- Quality bar (only if > 0) -->
-        
-        <span class="ml-auto flex items-center gap-1 shrink-0">
-          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:65%"></div>
-          </div>
-          <span class="text-xs text-gray-400">6.5</span>
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-
-
-  
-  
-
-<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="研究论文 模型能力 案例分享"
-         data-source="Anthropic Research"
-         data-source-type="official"
-         data-text="Designing more efficient quantum circuits with Claude Anthropic Research 介绍了用 Claude 设计更高效的量子电路，属于 AI 辅助科研和代码优化的应用案例。可供参考的是，大模型能在专业的电路与算法设计中提出更好的方案，并帮助发现可行的优化方向。原文只提供了标题，具体方法和实验结果无法核实。">
+         data-text="Introducing the Anthropic Cyber Mission Introducing the Anthropic Cyber Mission">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -2001,189 +1919,43 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://www.anthropic.com/research/designing-efficient-quantum-circuits" target="_blank" rel="noopener"
+      <a href="https://www.anthropic.com/news/anthropic-cyber-mission" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        Designing more efficient quantum circuits with Claude
+        Introducing the Anthropic Cyber Mission
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Anthropic Research 介绍了用 Claude 设计更高效的量子电路，属于 AI 辅助科研和代码优化的应用案例。可供参考的是，大模型能在专业的电路与算法设计中提出更好的方案，并帮助发现可行的优化方向。原文只提供了标题，具体方法和实验结果无法核实。
+        Introducing the Anthropic Cyber Mission
       </p>
       
       <!-- Meta row -->
       <div class="mt-2 flex flex-wrap items-center gap-1.5">
         <!-- Level badge -->
         
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-beginner">
-          🟢 入门
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-advanced">
+          🔴 高级
         </span>
         
         <!-- Source -->
         <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          Anthropic Research
+          Anthropic News
         </span>
         
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">1 天前</span>
+        <span class="text-xs text-gray-400">10月07日</span>
         
         
         <!-- Tags (max 2) -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #研究论文
-        </span>
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #模型能力
-        </span>
         
         <!-- Quality bar (only if > 0) -->
         
         <span class="ml-auto flex items-center gap-1 shrink-0">
           <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:60%"></div>
+            <div class="score-bar" style="width:80%"></div>
           </div>
-          <span class="text-xs text-gray-400">6.0</span>
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-
-
-  
-  
-
-<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="案例分享 工具集成 workflow"
-         data-source="OpenAI 官方博客"
-         data-source-type="official"
-         data-text="Stack Overflow for Agents triples signups with ChatGPT plugin OpenAI 官方案例：Stack Overflow 的两名工程师借助 Codex，在几周内开发出面向 AI Agent 的问答平台「Stack Overflow for Agents」。平台推出 ChatGPT 插件后，注册量增至三倍，Agent 创建量最多增长 10 倍。文章说明了 AI 编程工具能让小团队快速交付产品，也说明了插件生态对增长的作用，但原文摘要较短，技术细节有限。">
-  <div class="flex gap-3">
-    <!-- Source icon -->
-    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ○
-    </div>
-    <div class="flex-1 min-w-0">
-      <!-- Title -->
-      <a href="https://openai.com/index/stack-overflow-chatgpt-plugin" target="_blank" rel="noopener"
-         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        Stack Overflow for Agents triples signups with ChatGPT plugin
-      </a>
-      <!-- Summary -->
-      
-      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        OpenAI 官方案例：Stack Overflow 的两名工程师借助 Codex，在几周内开发出面向 AI Agent 的问答平台「Stack Overflow for Agents」。平台推出 ChatGPT 插件后，注册量增至三倍，Agent 创建量最多增长 10 倍。文章说明了 AI 编程工具能让小团队快速交付产品，也说明了插件生态对增长的作用，但原文摘要较短，技术细节有限。
-      </p>
-      
-      <!-- Meta row -->
-      <div class="mt-2 flex flex-wrap items-center gap-1.5">
-        <!-- Level badge -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-beginner">
-          🟢 入门
-        </span>
-        
-        <!-- Source -->
-        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          OpenAI 官方博客
-        </span>
-        
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">1 天前</span>
-        
-        
-        <!-- Tags (max 2) -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #案例分享
-        </span>
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #工具集成
-        </span>
-        
-        <!-- Quality bar (only if > 0) -->
-        
-        <span class="ml-auto flex items-center gap-1 shrink-0">
-          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:60%"></div>
-          </div>
-          <span class="text-xs text-gray-400">6.0</span>
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-
-
-  
-  
-
-<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="研究论文 模型能力"
-         data-source="Anthropic Research"
-         data-source-type="official"
-         data-text="Working at the frontier shapes expectations for the future 这是 Anthropic Research 的一篇研究文章，从标题看，主题是走在 AI 前沿的使用者如何形成对未来 AI 能力和工作方式的预期。提供的正文只有标题，无法确认具体结论和数据，参考价值主要在于了解 AI 重度使用者的行为与认知趋势。">
-  <div class="flex gap-3">
-    <!-- Source icon -->
-    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
-      ◆
-    </div>
-    <div class="flex-1 min-w-0">
-      <!-- Title -->
-      <a href="https://www.anthropic.com/research/expectations-for-the-future" target="_blank" rel="noopener"
-         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        Working at the frontier shapes expectations for the future
-      </a>
-      <!-- Summary -->
-      
-      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        这是 Anthropic Research 的一篇研究文章，从标题看，主题是走在 AI 前沿的使用者如何形成对未来 AI 能力和工作方式的预期。提供的正文只有标题，无法确认具体结论和数据，参考价值主要在于了解 AI 重度使用者的行为与认知趋势。
-      </p>
-      
-      <!-- Meta row -->
-      <div class="mt-2 flex flex-wrap items-center gap-1.5">
-        <!-- Level badge -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-beginner">
-          🟢 入门
-        </span>
-        
-        <!-- Source -->
-        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          Anthropic Research
-        </span>
-        
-        
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">1 天前</span>
-        
-        
-        <!-- Tags (max 2) -->
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #研究论文
-        </span>
-        
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #模型能力
-        </span>
-        
-        <!-- Quality bar (only if > 0) -->
-        
-        <span class="ml-auto flex items-center gap-1 shrink-0">
-          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:50%"></div>
-          </div>
-          <span class="text-xs text-gray-400">5.0</span>
+          <span class="text-xs text-gray-400">8.0</span>
         </span>
         
       </div>
@@ -2210,10 +1982,10 @@
   
 
 <article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
-         data-tags="工具集成 GitHub热门"
-         data-source="awesome-claude-code commits"
-         data-source-type="community"
-         data-text="Add resource: geoai-skills (#3183) awesome-claude-code 列表在“研究与科学探究”分类下新收录了 geoai-skills 资源，作者为 muend。这是一组面向地理空间 AI（GeoAI）场景的 Claude Code 技能，适合需要在科研或空间数据分析中使用 Claude Code 的用户参考。这条提交只是新增条目，没有提供具体用法或细节。">
+         data-tags="workflow 最佳实践 案例分享"
+         data-source="Simon Willison&#39;s Weblog"
+         data-source-type="blog"
+         data-text="Quoting Addy Osmani, Morgan Westlee Lunt, and Qing Wang 引用 Claude Code 团队关于代码审查的文章：他们认为“是否有人读过代码”只是个粗略的替代指标，真正该问的是“这次改动可能出什么问题，用哪种检查（自动或人工）最适合发现它”。审查因此从 PR 末端的关卡，变成像拼写检查一样边写边持续进行。大多数改动在交给人看之前，已经被 Claude 审查并修复过至少一次，常规错误基本在这一步被拦下，团队的注意力可以留给更高层次的问题。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -2221,14 +1993,152 @@
     </div>
     <div class="flex-1 min-w-0">
       <!-- Title -->
-      <a href="https://github.com/hesreallyhim/awesome-claude-code/commit/cc4ed59c35675a44bd1a108fd89a6de3bd7a0348" target="_blank" rel="noopener"
+      <a href="https://simonwillison.net/2026/Oct/16/code-review/" target="_blank" rel="noopener"
          class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
-        Add resource: geoai-skills (#3183)
+        Quoting Addy Osmani, Morgan Westlee Lunt, and Qing Wang
       </a>
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        awesome-claude-code 列表在“研究与科学探究”分类下新收录了 geoai-skills 资源，作者为 muend。这是一组面向地理空间 AI（GeoAI）场景的 Claude Code 技能，适合需要在科研或空间数据分析中使用 Claude Code 的用户参考。这条提交只是新增条目，没有提供具体用法或细节。
+        引用 Claude Code 团队关于代码审查的文章：他们认为“是否有人读过代码”只是个粗略的替代指标，真正该问的是“这次改动可能出什么问题，用哪种检查（自动或人工）最适合发现它”。审查因此从 PR 末端的关卡，变成像拼写检查一样边写边持续进行。大多数改动在交给人看之前，已经被 Claude 审查并修复过至少一次，常规错误基本在这一步被拦下，团队的注意力可以留给更高层次的问题。
+      </p>
+      
+      <!-- Meta row -->
+      <div class="mt-2 flex flex-wrap items-center gap-1.5">
+        <!-- Level badge -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
+          🟡 中级
+        </span>
+        
+        <!-- Source -->
+        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          Simon Willison&#39;s Weblog
+        </span>
+        
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">1 天前</span>
+        
+        
+        <!-- Tags (max 2) -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #workflow
+        </span>
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #最佳实践
+        </span>
+        
+        <!-- Quality bar (only if > 0) -->
+        
+        <span class="ml-auto flex items-center gap-1 shrink-0">
+          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:70%"></div>
+          </div>
+          <span class="text-xs text-gray-400">7.0</span>
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+  
+
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
+         data-tags="案例分享 提示工程 模型能力"
+         data-source="Simon Willison&#39;s Weblog"
+         data-source-type="blog"
+         data-text="Tree Appreciator Simon Willison 用 Claude iPhone 应用的普通聊天模式（不是 Claude Code）让 Opus 5.5 Max 生成了一个 three.js 小游戏「Tree Appreciator」。玩家在两棵程序生成的树之间找不同。模型连续运行了 3 小时 7 分钟，交付的成品带音乐、动画和成就系统。文中提到一个提示技巧：在提示词里直接要求“确保好玩”，效果出奇地好。">
+  <div class="flex gap-3">
+    <!-- Source icon -->
+    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
+      ◉
+    </div>
+    <div class="flex-1 min-w-0">
+      <!-- Title -->
+      <a href="https://simonwillison.net/2026/Oct/14/tree-appreciator/" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
+        Tree Appreciator
+      </a>
+      <!-- Summary -->
+      
+      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
+        Simon Willison 用 Claude iPhone 应用的普通聊天模式（不是 Claude Code）让 Opus 5.5 Max 生成了一个 three.js 小游戏「Tree Appreciator」。玩家在两棵程序生成的树之间找不同。模型连续运行了 3 小时 7 分钟，交付的成品带音乐、动画和成就系统。文中提到一个提示技巧：在提示词里直接要求“确保好玩”，效果出奇地好。
+      </p>
+      
+      <!-- Meta row -->
+      <div class="mt-2 flex flex-wrap items-center gap-1.5">
+        <!-- Level badge -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-mid">
+          🟡 中级
+        </span>
+        
+        <!-- Source -->
+        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          Simon Willison&#39;s Weblog
+        </span>
+        
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">3 天前</span>
+        
+        
+        <!-- Tags (max 2) -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #案例分享
+        </span>
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #提示工程
+        </span>
+        
+        <!-- Quality bar (only if > 0) -->
+        
+        <span class="ml-auto flex items-center gap-1 shrink-0">
+          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:65%"></div>
+          </div>
+          <span class="text-xs text-gray-400">6.5</span>
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+  
+
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
+         data-tags="案例分享 模型能力 提示工程"
+         data-source="Simon Willison&#39;s Weblog"
+         data-source-type="blog"
+         data-text="Chirp Pong Simon Willison 用一句提示词，让 Claude Code（Claude Opus 5.5 Extra）生成了一个双人对战游戏 Chirp Pong。游戏是纯静态 HTML，两部手机之间不走网络，而是靠麦克风 API 收发音频啁啾声来同步游戏状态。这个案例说明 AI 编程工具能快速验证非常规的技术想法，但文章只有原始提示词和结果，没有讲具体的工作流或技巧。">
+  <div class="flex gap-3">
+    <!-- Source icon -->
+    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
+      ◉
+    </div>
+    <div class="flex-1 min-w-0">
+      <!-- Title -->
+      <a href="https://simonwillison.net/2026/Oct/15/chirp-pong/" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
+        Chirp Pong
+      </a>
+      <!-- Summary -->
+      
+      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
+        Simon Willison 用一句提示词，让 Claude Code（Claude Opus 5.5 Extra）生成了一个双人对战游戏 Chirp Pong。游戏是纯静态 HTML，两部手机之间不走网络，而是靠麦克风 API 收发音频啁啾声来同步游戏状态。这个案例说明 AI 编程工具能快速验证非常规的技术想法，但文章只有原始提示词和结果，没有讲具体的工作流或技巧。
       </p>
       
       <!-- Meta row -->
@@ -2241,34 +2151,100 @@
         
         <!-- Source -->
         <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
-          awesome-claude-code commits
+          Simon Willison&#39;s Weblog
         </span>
         
-        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">github-actions</span>
-        
         
         <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
-        <span class="text-xs text-gray-400">11 小时前</span>
+        <span class="text-xs text-gray-400">2 天前</span>
         
         
         <!-- Tags (max 2) -->
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #工具集成
+          #案例分享
         </span>
         
         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-          #GitHub热门
+          #模型能力
         </span>
         
         <!-- Quality bar (only if > 0) -->
         
         <span class="ml-auto flex items-center gap-1 shrink-0">
           <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-            <div class="score-bar" style="width:50%"></div>
+            <div class="score-bar" style="width:55%"></div>
           </div>
-          <span class="text-xs text-gray-400">5.0</span>
+          <span class="text-xs text-gray-400">5.5</span>
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+  
+
+<article class="card group bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-4 hover:border-brand-200 dark:hover:border-brand-800 article-item"
+         data-tags="案例分享 工具集成 workflow"
+         data-source="Simon Willison&#39;s Weblog"
+         data-source-type="blog"
+         data-text="LaTeX renderer Simon Willison 受 Paul Ford 的 Tiny Little Office 启发，用 Claude 做了一个 LaTeX 渲染小工具。Tiny Little Office 把文档数据全部存在 URL 的 #fragment 里，每份文档都能直接收藏和分享，还提供 llms.txt 告诉 AI 智能体如何拼出能渲染成文档的 URL。Claude 正是读了这个 llms.txt 来生成工具的，说明 llms.txt 能帮助智能体理解和使用 Web 应用。">
+  <div class="flex gap-3">
+    <!-- Source icon -->
+    <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
+      ◉
+    </div>
+    <div class="flex-1 min-w-0">
+      <!-- Title -->
+      <a href="https://simonwillison.net/2026/Oct/15/latex/" target="_blank" rel="noopener"
+         class="font-medium text-gray-900 dark:text-gray-100 hover:text-brand-600 dark:hover:text-brand-400 line-clamp-2 leading-snug text-sm">
+        LaTeX renderer
+      </a>
+      <!-- Summary -->
+      
+      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
+        Simon Willison 受 Paul Ford 的 Tiny Little Office 启发，用 Claude 做了一个 LaTeX 渲染小工具。Tiny Little Office 把文档数据全部存在 URL 的 #fragment 里，每份文档都能直接收藏和分享，还提供 llms.txt 告诉 AI 智能体如何拼出能渲染成文档的 URL。Claude 正是读了这个 llms.txt 来生成工具的，说明 llms.txt 能帮助智能体理解和使用 Web 应用。
+      </p>
+      
+      <!-- Meta row -->
+      <div class="mt-2 flex flex-wrap items-center gap-1.5">
+        <!-- Level badge -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium badge-beginner">
+          🟢 入门
+        </span>
+        
+        <!-- Source -->
+        <span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">
+          Simon Willison&#39;s Weblog
+        </span>
+        
+        
+        <span class="text-xs text-gray-300 dark:text-gray-600">·</span>
+        <span class="text-xs text-gray-400">3 天前</span>
+        
+        
+        <!-- Tags (max 2) -->
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #案例分享
+        </span>
+        
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+          #工具集成
+        </span>
+        
+        <!-- Quality bar (only if > 0) -->
+        
+        <span class="ml-auto flex items-center gap-1 shrink-0">
+          <div class="w-10 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div class="score-bar" style="width:55%"></div>
+          </div>
+          <span class="text-xs text-gray-400">5.5</span>
         </span>
         
       </div>
@@ -2298,7 +2274,7 @@
          data-tags="新功能 SDK更新 模型能力 workflow 最佳实践"
          data-source="anthropics/skills commits"
          data-source-type="community"
-         data-text="Update claude-api skill: Claude Opus 5.5 default, Claude Sonnet 5.5, … Anthropic 官方 skills 仓库更新了 claude-api skill：Claude Opus 5.5（claude-opus-5-5）成为所有语言示例的默认模型，同时加入 Claude Sonnet 5.5，并同步更新了定价、模型支持说明和平台可用性，还提供了迁移到 Opus 5.5 的指南。本次还新增了 build-eval、eval-hillclimb、cost-hillclimb、eval-audit 等评测构建与迭代优化流程，并附带报告 schema 和轻量 HTML 报告，可直接用于 LLM 应用的评测与调优。">
+         data-text="Update claude-api skill: Claude Opus 5.5 default, Claude Sonnet 5.5, … Anthropic 官方 claude-api skill 更新：默认模型改为 Claude Opus 5.5（claude-opus-5-5），新增 Claude Sonnet 5.5，同时更新了定价、平台可用性和 Opus 5.5 迁移指南。更新还在 shared/evals/ 下加入了 build-eval、eval-hillclimb、cost-hillclimb、eval-audit 等评测构建与迭代优化流程，并附带报告 schema 和轻量 HTML 报告，适合用来做 LLM 应用的效果和成本优化。">
   <div class="flex gap-3">
     <!-- Source icon -->
     <div class="shrink-0 w-8 h-8 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-sm font-bold text-gray-500 border border-gray-100 dark:border-gray-700 mt-0.5">
@@ -2313,7 +2289,7 @@
       <!-- Summary -->
       
       <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
-        Anthropic 官方 skills 仓库更新了 claude-api skill：Claude Opus 5.5（claude-opus-5-5）成为所有语言示例的默认模型，同时加入 Claude Sonnet 5.5，并同步更新了定价、模型支持说明和平台可用性，还提供了迁移到 Opus 5.5 的指南。本次还新增了 build-eval、eval-hillclimb、cost-hillclimb、eval-audit 等评测构建与迭代优化流程，并附带报告 schema 和轻量 HTML 报告，可直接用于 LLM 应用的评测与调优。
+        Anthropic 官方 claude-api skill 更新：默认模型改为 Claude Opus 5.5（claude-opus-5-5），新增 Claude Sonnet 5.5，同时更新了定价、平台可用性和 Opus 5.5 迁移指南。更新还在 shared/evals/ 下加入了 build-eval、eval-hillclimb、cost-hillclimb、eval-audit 等评测构建与迭代优化流程，并附带报告 schema 和轻量 HTML 报告，适合用来做 LLM 应用的效果和成本优化。
       </p>
       
       <!-- Meta row -->
