@@ -1,0 +1,52 @@
+[
+  {
+    "title": "Update claude-api skill: Claude Opus 5.5 default, Claude Sonnet 5.5, …",
+    "url": "https://github.com/anthropics/skills/commit/8a1541c4a3ffa5a20a5a91de0dcf3f0bab1d1ef4",
+    "source": "anthropics/skills commits",
+    "source_type": "community",
+    "published_at": "2026-09-28T18:20:03+00:00",
+    "content": "Update claude-api skill: Claude Opus 5.5 default, Claude Sonnet 5.5, build-eval and hillclimb guides (#1930)\n\n* Update claude-api skill: Claude Opus 5.5 default, Claude Sonnet 5.5, build-eval and hillclimb guides\n\n- Make Claude Opus 5.5 (`claude-opus-5-5`) the default model across SKILL.md,\n  models.md, and every language's examples, with Claude Opus 5 as the previous\n  Opus; add \"Migrating to Claude Opus 5.5\" to shared/model-migration.md\n- Add Claude Sonnet 5.5 (`claude-sonnet-5-5`) as the current Sonnet, with\n  Claude Sonnet 5 as the previous one, and update pricing, model-support\n  callouts, and platform availability to match\n- Add the build-eval and hillclimb flows under shared/evals/ (build-eval,\n  eval-hillclimb, cost-hillclimb, eval-audit), the report schema, the lite HTML\n  report builder, and the runner scaffold\n- Add the preserved-thinking-migration subcommand with its cause reference and\n  probe scripts, and note that drop_block can raise token usage\n- Update cost-optimize f",
+    "author": "rlancemartin",
+    "author_url": "",
+    "score": 0,
+    "comments": 0,
+    "shares": 0,
+    "tags": [
+      "新功能",
+      "SDK更新",
+      "workflow",
+      "最佳实践",
+      "模型能力"
+    ],
+    "quality_score": 8.0,
+    "summary_zh": "Anthropic 官方 skills 仓库更新了 claude-api skill：默认模型改为 Claude Opus 5.5（claude-opus-5-5），并加入 Claude Sonnet 5.5，同步更新了定价、平台可用性和迁移指南。另外在 shared/evals/ 下新增了 build-eval、eval-hillclimb、cost-hillclimb、eval-audit 等评测与迭代优化流程，还附带报告 schema 和轻量 HTML 报告。开发者可以直接用这套官方流程搭建评测，并把效果和成本逐步调优。",
+    "category": "frontier",
+    "is_frontier": false,
+    "language": "en",
+    "raw_id": "rss::anthropics/skills commits::tag:github.com,2008:Grit::Commit/8a1541c4a3ffa5a20a5a91de0dcf3f0bab1d1ef4",
+    "is_pinned": true,
+    "pin_reason": "这次官方 skill 更新同时带来了新旗舰模型的默认切换和迁移指南，以及一套完整的 eval/hillclimb 评测优化流程，长期都有参考价值。"
+  },
+  {
+    "title": "Sullivan & Cromwell brings legal expertise into agreement review",
+    "url": "https://openai.com/index/sullivan-cromwell",
+    "source": "OpenAI 官方博客",
+    "source_type": "official",
+    "published_at": "2026-10-14T16:00:00+00:00",
+    "content": "In collaboration with OpenAI, Sullivan & Cromwell developed Agreement Analyzer, an AI tool for identifying issues in a draft agreement.",
+    "author": "",
+    "author_url": "",
+    "score": 0,
+    "comments": 0,
+    "shares": 0,
+    "tags": [],
+    "quality_score": 8.0,
+    "summary_zh": "In collaboration with OpenAI, Sullivan & Cromwell developed Agreement Analyzer, an AI tool for identifying issues in a draft agreement.",
+    "category": "frontier",
+    "is_frontier": true,
+    "language": "en",
+    "raw_id": "rss::OpenAI 官方博客::https://openai.com/index/sullivan-cromwell",
+    "is_pinned": false,
+    "pin_reason": ""
+  }
+]

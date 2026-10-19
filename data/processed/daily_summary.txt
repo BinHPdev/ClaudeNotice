@@ -1,1 +1,1 @@
-Anthropic 今日发布“Cyber Mission”，在网络安全方向有了新的战略布局。anthropics/skills 仓库同步更新了 claude-api skill，默认模型改为 Claude Opus 5.5，并加入 Claude Sonnet 5.5，开发者工具链跟进新一代模型。生态方面，OpenAI Python SDK 发布 3.30.0 版本。Simon Willison 连发多个小工具和实验项目，包括 LaTeX 渲染器、Chirp Pong 等，用 AI 辅助快速做小应用的风气还在升温。
+今日最值得关注的是 Anthropic 官方 skills 仓库：claude-api skill 已将默认模型升级为 Claude Opus 5.5，并加入 Claude Sonnet 5.5 支持。开发者调用 API 的默认配置会因此切换到新一代模型，需要及时检查兼容性和成本预期。另据 OpenAI 官方博客，律所 Sullivan & Cromwell 正把法律专业知识引入 AI 协议审查流程。这说明 AI 正加速进入法律等高门槛专业领域。
