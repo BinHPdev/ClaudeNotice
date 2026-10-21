@@ -201,7 +201,7 @@ class ProcessingPipeline:
     def _claude_analyze(self, articles: list[Article]) -> list[Article]:
         """调用 Claude CLI 分析每篇文章（并发执行，带总体超时保护）"""
         concurrency = self.proc_config.get("claude_concurrency", 3)
-        max_total_seconds = 1800  # 30 分钟总超时（周更单次最多 250 条，约 20 分钟）
+        max_total_seconds = 4500  # 75 分钟总超时（周更单次最多 500 条，约 40~50 分钟）
         total = len(articles)
         analyzed = []
         start_time = time.monotonic()

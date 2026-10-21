@@ -29,8 +29,8 @@ jobs:
       pages: write
 
     # 30 min 曾经偏紧（7-30 那次跑了 24 min），再叠加最长 5 min 的网络等待会溢出。
-    # 周更后单次分析上限 250 条（原 100），主步骤放宽到 45 min，整体相应放宽
-    timeout-minutes: 75
+    # 周更后单次分析上限 500 条（原 100），主步骤放宽到 90 min，整体相应放宽
+    timeout-minutes: 110
 
     env:
       # `claude setup-token` 生成的长期 token，走订阅额度，不产生按量 API 费用。
@@ -170,8 +170,8 @@ jobs:
 
       - name: 运行爬虫 + 处理 + 生成网站
         if: steps.guard.outputs.skip != 'true'
-        # 抓取约 5 min + 分析最多 30 min（pipeline 内的总超时）+ 余量
-        timeout-minutes: 45
+        # 抓取约 5 min + 分析最多 75 min（pipeline 内的总超时）+ 余量
+        timeout-minutes: 90
         env:
           REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
           REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}

@@ -185,7 +185,8 @@ def analyze_article(title: str, content: str, source: str) -> Optional[dict]:
 文章标题：{title}
 文章内容：{content[:800]}"""
 
-    result = call_claude(prompt)
+    # 30s 默认值下约 15% 的调用超时（10-21：15/100）；周更不赶时间，放宽到 60s
+    result = call_claude(prompt, timeout=60)
     if not result:
         return None
 
