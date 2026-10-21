@@ -1,20 +1,23 @@
-name: Daily Claude Notice Update
+name: Weekly Claude Notice Update
 
 on:
   schedule:
-    # 主跑：北京时间 08:00
-    - cron: '0 0 * * *'
-    # 补跑：北京时间 11:00 / 15:00。当天已更新则秒退（见「今日是否已更新」步骤），
-    # 只有主跑失败时才真正干活 —— 网络抖动不再需要人工补跑。
-    - cron: '0 3 * * *'
-    - cron: '0 7 * * *'
+    # 主跑：每周一北京时间 08:00
+    - cron: '0 0 * * 1'
+    # 补跑：周一 15:00 / 周二 11:00（北京时间）。本周已更新则秒退（见「本周是否已更新」步骤），
+    # 只有主跑失败时才真正干活。周更下一次失败就是空一周，所以补跑跨到第二天，
+    # 避开同一天内持续的网络故障（10-20 / 10-21 两次补跑都是 runner 接单时
+    # acquirejob 请求超时，即 job 根本没被 runner 领到，见 annotation
+    # "The job was not acquired by Runner"）。
+    - cron: '0 7 * * 1'
+    - cron: '0 3 * * 2'
   workflow_dispatch:
     # 支持手动触发（GitHub Actions 页面点按钮），手动触发时跳过补跑判定强制执行
 
 # 主跑被 GitHub 排队推迟时（实测常延后 1.5~2h）可能与补跑撞车。
 # 排队而非取消：让主跑先跑完，补跑随后启动并在判定步骤秒退。
 concurrency:
-  group: daily-update
+  group: weekly-update
   cancel-in-progress: false
 
 jobs:
@@ -40,7 +43,7 @@ jobs:
     # 根因（6-06 / 6-27 / 7-21 / 7-25 / 8-02 五次失败，占总失败数的 5/6）：
     # 带 `uses:` 时，runner 必须在「Prepare all required actions」阶段从
     # codeload.github.com 下载 action tarball —— 这发生在所有 steps 之前，
-    # _work/_actions 不做跨 run 缓存，所以每天都要重新下载一次。
+    # _work/_actions 不做跨 run 缓存，所以每次运行都要重新下载一次。
     # 本机 DNS 走 Clash Verge Rev 的本地解析器（127.0.0.1，fake-ip 30.100.21.x），
     # 代理热更新/重启时有几十秒解析空窗，恰好撞上定时任务窗口，报
     # "nodename nor servname provided (codeload.github.com:443)"。
@@ -100,22 +103,26 @@ jobs:
           # 只清未跟踪文件，不带 -x：保留 .venv（下一步要复用）和 data/raw/
           git clean -ffd
 
-      - name: 今日是否已更新
-        # 补跑判定：主跑成功后，当天的补跑在这里秒退，后续步骤全部跳过（job 仍为绿）。
+      - name: 本周是否已更新
+        # 补跑判定：本周（周一起算）已有更新提交时秒退，后续步骤全部跳过（job 仍为绿）。
         id: guard
         run: |
           # 用北京时间而非 date -u：晚间手动触发时 UTC 日期会比本地早一天
           today=$(TZ=Asia/Shanghai date +%Y-%m-%d)
           echo "date=$today" >> "$GITHUB_OUTPUT"
+          # 本周一（北京时间）。ISO 日期可直接按字符串比较大小
+          monday=$(TZ=Asia/Shanghai date -v-$(( $(TZ=Asia/Shanghai date +%u) - 1 ))d +%Y-%m-%d)
+          last=$(git log origin/main -50 --pretty=%s \
+                   | sed -n 's/^chore: weekly update \([0-9-]*\)$/\1/p' | head -1)
 
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "手动触发，强制执行"
             echo "skip=false" >> "$GITHUB_OUTPUT"
-          elif git log origin/main -20 --pretty=%s | grep -qx "chore: daily update $today"; then
-            echo "今天（$today）已完成更新，跳过本次补跑"
+          elif [ -n "$last" ] && [ ! "$last" \< "$monday" ]; then
+            echo "本周（$monday 起）已于 $last 完成更新，跳过本次补跑"
             echo "skip=true" >> "$GITHUB_OUTPUT"
           else
-            echo "今天（$today）尚未更新，继续执行"
+            echo "本周（$monday 起）尚未更新（上次：${last:-无}），继续执行"
             echo "skip=false" >> "$GITHUB_OUTPUT"
           fi
 
@@ -183,22 +190,22 @@ jobs:
           # author 与 committer 刻意分开，两者各有用途：
           #
           # committer = ClaudeNotice Bot —— 保留「这条提交是自动跑出来的」这一事实标识。
-          #   历史里能一眼区分 daily 自动提交和手动改动（判断"今天到底跑没跑"就靠它）。
+          #   历史里能一眼区分自动更新提交和手动改动（判断"本周到底跑没跑"就靠它）。
           #
           # author = 我的 noreply 地址 —— GitHub 贡献图按 author 邮箱归属，而原先
           #   author 也是 bot@claudenotice.local：这是个编造的本地域名，不属于任何
-          #   GitHub 账号、也无法验证，所以历次 daily update 全都不计入绿格子。
+          #   GitHub 账号、也无法验证，所以历次自动更新全都不计入绿格子。
           #   用 <用户ID>+<用户名>@users.noreply.github.com 而非真实邮箱：
           #   本仓库是 public，noreply 不受邮箱隐私设置影响，也不把真实邮箱写进公开历史。
           #   （注意：已有历史提交不会追溯生效，除非重写 author 并 force-push —— 不值得）
           git config user.name  "ClaudeNotice Bot"
           git config user.email "bot@claudenotice.local"
           git add docs/ data/processed/ data/seen_ids.json data/pinned.json
-          # commit message 必须与「今日是否已更新」的判定串完全一致，否则补跑会重复执行
+          # commit message 必须与「本周是否已更新」的判定串完全一致，否则补跑会重复执行
           git diff --cached --quiet || \
             git commit \
               --author="Bin Deng <219093083+BinHPdev@users.noreply.github.com>" \
-              -m "chore: daily update ${{ steps.guard.outputs.date }}"
+              -m "chore: weekly update ${{ steps.guard.outputs.date }}"
 
           # 5-28 事故：push 时 GitHub 连不上（75s 超时），整个 job 失败但 commit 已经在 runner 上了。
           # 加 3 次重试，间隔 30s，覆盖瞬时网络抖动；失败时先 pull --rebase 处理 race

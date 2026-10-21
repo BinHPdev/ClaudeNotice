@@ -379,7 +379,7 @@ class ProcessingPipeline:
             json.dump({"ids": ids_list}, f)
 
     def generate_summary(self, articles: list[Article], date: str) -> str:
-        """生成今日摘要导语"""
+        """生成本周摘要导语"""
         summary_input = "\n".join(
             f"- {a.title} ({a.source})"
             for a in articles[:20]

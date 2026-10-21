@@ -1,6 +1,6 @@
 # ⚡ ClaudeNotice
 
-> Claude Code 最新资讯与最佳实践自动聚合，每日更新
+> Claude Code 最新资讯与最佳实践自动聚合，每周更新
 
 **访问地址**: `https://binhpdev.github.io/ClaudeNotice/`
 
@@ -11,7 +11,7 @@
 - 🚀 **前沿速递** — 7天内最新动态（X、GitHub、HN、Reddit）
 - 📚 **成熟实践** — 经验证的最佳使用方法
 - 🤖 **Claude CLI 驱动** — 自动中文摘要、质量评分、标签分类
-- 🔄 **每日自动更新** — GitHub Actions + 本机自托管 Runner
+- 🔄 **每周自动更新** — GitHub Actions + 本机自托管 Runner
 
 ## 数据来源
 
@@ -69,7 +69,8 @@ git push -u origin main
 ```
 
 **步骤 2：开启 GitHub Pages**
-- 仓库 Settings → Pages → Source 选 `gh-pages` 分支
+- 仓库 Settings → Pages → Source 选 `main` 分支的 `/docs` 目录
+- 推送到 main 后由 GitHub 自动发布，workflow 里不需要任何 deploy 步骤
 
 **步骤 3：安装自托管 Runner（让任务在你的 Mac 上执行）**
 - 仓库 Settings → Actions → Runners → New self-hosted runner
@@ -82,7 +83,10 @@ bash scripts/setup_runner.sh
 **步骤 4：配置 Secrets（可选）**
 - `REDDIT_CLIENT_ID` / `REDDIT_CLIENT_SECRET` — 提升 Reddit 配额
 
-之后每天北京时间 8:00 自动运行，网站自动更新 ✅
+之后每周一北京时间 8:00 自动运行，网站自动更新 ✅
+
+主跑失败时，周一 15:00、周二 11:00 会自动补跑（本周已更新则秒退）。
+需要立即更新可手动触发：`gh workflow run weekly.yml --ref main`
 
 ---
 
@@ -97,7 +101,7 @@ ClaudeNotice/
 ├── data/
 │   ├── raw/           原始抓取数据（不提交）
 │   └── processed/     处理后数据（提交）
-├── site/              生成的静态网站（GitHub Pages）
+├── docs/              生成的静态网站（GitHub Pages 发布源）
 ├── scripts/           工具脚本
 │   └── setup_runner.sh  Runner 安装脚本
 ├── .github/workflows/ GitHub Actions

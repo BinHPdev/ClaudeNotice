@@ -15,7 +15,7 @@ from typing import Optional
 
 
 # CLI 每次调用都会加载插件 / hooks / skills / MCP / CLAUDE.md，
-# 对"打分 + 两三句摘要"这种一次性分类任务纯属浪费（每天 100 次 × 全套开销）。
+# 对"打分 + 两三句摘要"这种一次性分类任务纯属浪费（每次 100 条 × 全套开销）。
 # 下面这组参数把会话裁到最小：
 #   --strict-mcp-config       不加载任何 MCP server（未配 --mcp-config 即为空集）
 #   --disable-slash-commands  不加载 skills
@@ -205,10 +205,10 @@ def analyze_article(title: str, content: str, source: str) -> Optional[dict]:
 
 
 def generate_daily_summary(articles_summary: str, date: str) -> str:
-    """生成每日摘要（用于网站首页导语）"""
-    prompt = f"""今天是 {date}，根据以下 Claude Code 相关资讯摘要，用3-4句话写一个简洁的"今日速览"导语，
-突出最重要的动态和趋势，语气简练专业，输出纯文本：
+    """生成每周摘要（用于网站首页导语）"""
+    prompt = f"""今天是 {date}，根据以下 Claude Code 相关资讯摘要，用3-4句话写一个简洁的"本周速览"导语，
+突出本周最重要的动态和趋势，语气简练专业，输出纯文本：
 
 {articles_summary[:2000]}"""
 
-    return call_claude(prompt) or "今日内容已更新，请查看下方详情。"
+    return call_claude(prompt) or "本周内容已更新，请查看下方详情。"
