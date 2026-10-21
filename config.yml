@@ -298,8 +298,9 @@ processing:
   min_quality_score: 5.0
   # Claude CLI 处理并发数
   claude_concurrency: 3
-  # 每次最多处理条数（控制 CLI 调用次数）
-  max_items_per_run: 100
+  # 每次最多处理条数（控制 CLI 调用次数）。周更后一次覆盖 7 天，从 100 放宽到 250；
+  # 实测约 3 条/10s（并发 3），250 条约 15~20 分钟
+  max_items_per_run: 250
   # 语言：zh=输出中文摘要, en=英文, both=双语
   summary_language: "zh"
 

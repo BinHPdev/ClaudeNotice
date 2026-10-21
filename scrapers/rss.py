@@ -5,8 +5,10 @@ from datetime import datetime, timezone, timedelta
 from dateutil import parser as dateparser
 from .base import BaseScraper, Article
 
-# 每个 feed 最多取最新 N 条，避免历史条目占满处理槽
-MAX_ITEMS_PER_FEED = 10
+# 每个 feed 最多取最新 N 条，避免历史条目占满处理槽。
+# 周更后一次要覆盖 7 天，高频源（科技媒体、dev.to）一周远超 10 条，故放宽到 30。
+# 不会挤占其他来源：进入 Claude 分析前按来源轮转排序，见 pipeline._prioritize
+MAX_ITEMS_PER_FEED = 30
 # 跳过超过这么多天的旧内容（PyPI 历史版本等）
 MAX_AGE_DAYS = 60
 # 单个 feed 抓取超时（秒）

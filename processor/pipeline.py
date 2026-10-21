@@ -49,8 +49,8 @@ class ProcessingPipeline:
         articles = self._basic_filter(articles)
         print(f"基本过滤后: {len(articles)} 条")
 
-        # 4. 限制处理数量
-        articles = articles[:self.max_items]
+        # 4. 限制处理数量（先按来源轮转排序，避免排在前面的爬虫占满名额）
+        articles = self._prioritize(articles)[:self.max_items]
 
         # 5. Claude CLI 智能分析
         articles = self._claude_analyze(articles)
@@ -180,10 +180,28 @@ class ProcessingPipeline:
 
         return filtered
 
+    def _prioritize(self, articles: list[Article]) -> list[Article]:
+        """官方/学术来源优先，其余按来源轮转交错。
+
+        原先直接按抓取顺序截断：RSS 最先抓，光官方源就占了 100 个名额的一半，
+        GitHub / HN / Reddit / 中文源几乎排不进分析（10-20 那次 496 条里 396 条被截掉）。
+        """
+        priority = [a for a in articles if a.source_type in ("official", "research")]
+        by_source: dict[str, list[Article]] = {}
+        for a in articles:
+            if a.source_type not in ("official", "research"):
+                by_source.setdefault(a.source, []).append(a)
+
+        queues = list(by_source.values())
+        rest = []
+        for i in range(max((len(q) for q in queues), default=0)):
+            rest.extend(q[i] for q in queues if i < len(q))
+        return priority + rest
+
     def _claude_analyze(self, articles: list[Article]) -> list[Article]:
         """调用 Claude CLI 分析每篇文章（并发执行，带总体超时保护）"""
         concurrency = self.proc_config.get("claude_concurrency", 3)
-        max_total_seconds = 600  # 10 分钟总超时
+        max_total_seconds = 1800  # 30 分钟总超时（周更单次最多 250 条，约 20 分钟）
         total = len(articles)
         analyzed = []
         start_time = time.monotonic()
