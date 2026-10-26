@@ -556,40 +556,43 @@
     "language": "en"
   },
   {
-    "title": "claude-code-best-practice — 可视化最佳实践指南（33k★）",
-    "url": "https://github.com/shanraisshan/claude-code-best-practice",
+    "title": "[GitHub] mksglu/context-mode — Context window optimization for AI coding agents. Sandboxes tool output (98% reduction), persists se",
+    "url": "https://github.com/mksglu/context-mode",
     "source": "GitHub",
     "source_type": "community",
-    "summary_zh": "「Practice made Claude perfect」——可视化、示例驱动的 Claude Code 最佳实践指南。从初级到中级的学习曲线友好，包含大量真实案例，帮助开发者快速掌握正确的使用姿势。",
-    "pin_reason": "33k stars，最适合初中级用户的可视化学习资源。",
-    "quality_score": 8.0,
-    "score": 33000,
+    "summary_zh": "context-mode 是一个面向 AI 编程代理的上下文窗口优化工具。它通过 MCP 和 hooks 把工具输出放进沙箱处理，号称可将上下文占用降低 98%，同时能持久化会话记忆。它支持 Claude Code、Codex CLI 等 17 个平台的路由约束，对长会话下的上下文管理和 token 成本控制有直接帮助。",
+    "pin_reason": "这是有 3.2 万星的高星开源项目，针对 Claude Code 等 AI 编程代理的上下文窗口优化提供了基于 MCP 和 hooks 的通用方案，有长期参考价值。",
+    "quality_score": 8.5,
+    "score": 32273,
     "tags": [
-      "开源项目",
-      "最佳实践",
-      "入门教程"
+      "工具集成",
+      "MCP",
+      "提效技巧",
+      "GitHub热门"
     ],
-    "pinned_at": "2026-04-08T00:00:00+00:00",
-    "raw_id": "github::shanraisshan/claude-code-best-practice",
-    "author": "shanraisshan",
+    "pinned_at": "2026-10-26T03:02:32.006602+00:00",
+    "raw_id": "GitHub::1164477708",
+    "author": "mksglu",
     "language": "en"
   },
   {
-    "title": "LLM Research Papers: The 2026 List (January to May)",
-    "url": "https://magazine.sebastianraschka.com/p/llm-research-papers-2026-part1",
-    "source": "Sebastian Raschka",
+    "title": "sparqlite: SPARQL 1.1 inside SQLite, written in Rust",
+    "url": "https://simonwillison.net/2026/Oct/16/sqlite-sparql-rust/",
+    "source": "Simon Willison's Weblog",
     "source_type": "blog",
-    "summary_zh": "Sebastian Raschka 整理的 2026 年（1-5 月）重要 LLM 研究论文清单，按主题精选并附注解。对追踪大模型前沿进展、了解推理/训练/架构等方向的最新研究极具参考价值。",
-    "pin_reason": "出自权威作者 Sebastian Raschka 的年度 LLM 论文精选合集，覆盖面广、注解专业，是长期可查阅的研究索引资源。",
-    "quality_score": 8.0,
+    "summary_zh": "Simon Willison 在 Claude Code for web 中开启「Ultracode」模式做了一次实验。这个模式会大量使用动态工作流，自动生成 JavaScript 来编排一组子代理，处理复杂任务。他只给了一句带错别字的简短提示，Claude Code 就连续运行了 12 小时以上，最终用 Rust 写出 sparqlite，一个在 SQLite 里实现 SPARQL 1.1 的扩展。这是长时间自主运行、多代理编排的真实案例。",
+    "pin_reason": "这是 Claude Code Ultracode 动态工作流（子代理大规模编排）的早期权威实测案例，作者在业界影响力高，对理解长时程自主编程能力有参考价值。",
+    "quality_score": 8.5,
     "score": 0,
     "tags": [
-      "研究论文",
+      "新功能",
+      "案例分享",
+      "workflow",
       "模型能力"
     ],
-    "pinned_at": "2026-06-06T14:51:18.642397+00:00",
-    "raw_id": "rss::Sebastian Raschka::https://magazine.sebastianraschka.com/p/llm-research-papers-2026-part1",
-    "author": "Sebastian Raschka, PhD",
+    "pinned_at": "2026-10-26T03:02:32.006629+00:00",
+    "raw_id": "rss::Simon Willison's Weblog::https://simonwillison.net/2026/Oct/16/sqlite-sparql-rust/",
+    "author": "",
     "language": "en"
   }
 ]
