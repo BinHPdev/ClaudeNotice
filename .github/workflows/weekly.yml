@@ -9,6 +9,10 @@ on:
     # 避开同一天内持续的网络故障（10-20 / 10-21 两次补跑都是 runner 接单时
     # acquirejob 请求超时，即 job 根本没被 runner 领到，见 annotation
     # "The job was not acquired by Runner"）。
+    # 10-26 补跑失败（"runner lost communication"）：GitHub 把 15:00 的补跑推迟到 21:41 才派发，
+    # 此时 Mac 已合盖用电池进入 Clamshell Sleep，runner 在 DarkWake 间隙领到 job 后机器又睡了，
+    # 检出步骤卡死、renewjob 超时被服务端判丢。主跑当天已成功，此失败无数据影响。
+    # 补跑能否成功取决于派发时 Mac 醒着且接电源（AC 下 sleep=0，电池合盖仍会睡）。
     - cron: '0 7 * * 1'
     - cron: '0 3 * * 2'
   workflow_dispatch:
